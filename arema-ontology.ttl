@@ -1,0 +1,359 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix ex: <http://example.org/taxonomy/> .
+
+# Concept Schemes
+ex:building-material a skos:ConceptScheme ;
+    skos:prefLabel "Building Materials"@en ;
+    skos:prefLabel "Baustoffe"@de ;
+    skos:prefLabel "Matériaux de construction"@fr ;
+    skos:prefLabel "Materiali da costruzione"@it .
+
+ex:building a skos:ConceptScheme ;
+    skos:prefLabel "Buildings"@en ;
+    skos:prefLabel "Gebäude"@de ;
+    skos:prefLabel "Bâtiments"@fr ;
+    skos:prefLabel "Edifici"@it .
+
+ex:natural-resource a skos:ConceptScheme ;
+    skos:prefLabel "Natural Resources"@en ;
+    skos:prefLabel "Natürliche Ressourcen"@de ;
+    skos:prefLabel "Ressources naturelles"@fr ;
+    skos:prefLabel "Risorse naturali"@it .
+
+ex:professional a skos:ConceptScheme ;
+    skos:prefLabel "Professionals"@en ;
+    skos:prefLabel "Fachleute"@de ;
+    skos:prefLabel "Professionnels"@fr ;
+    skos:prefLabel "Professionisti"@it .
+
+ex:technical-construction a skos:ConceptScheme ;
+    skos:prefLabel "Technical Constructions"@en ;
+    skos:prefLabel "Technische Konstruktionen"@de ;
+    skos:prefLabel "Constructions techniques"@fr ;
+    skos:prefLabel "Costruzioni tecniche"@it .
+
+# Building Materials
+ex:bm-type a skos:Concept ;
+    skos:prefLabel "Type"@en ;
+    skos:prefLabel "Typ"@de ;
+    skos:prefLabel "Type"@fr ;
+    skos:prefLabel "Tipo"@it ;
+    skos:broader ex:building-material .
+
+ex:massive a skos:Concept ;
+    skos:prefLabel "Massive"@en ;
+    skos:prefLabel "Massivlehmbau"@de ;
+    skos:prefLabel "Massif"@fr ;
+    skos:prefLabel "Massiccio"@it ;
+    skos:broader ex:bm-type .
+
+ex:bricks a skos:Concept ;
+    skos:prefLabel "Bricks"@en ;
+    skos:prefLabel "Baustein"@de ;
+    skos:prefLabel "Briques"@fr ;
+    skos:prefLabel "Mattoni"@it ;
+    skos:broader ex:bm-type .
+
+ex:panels a skos:Concept ;
+    skos:prefLabel "Panels, Boards"@en ;
+    skos:prefLabel "Platten"@de ;
+    skos:prefLabel "Plaques"@fr ;
+    skos:prefLabel "Pannelli"@it ;
+    skos:broader ex:bm-type .
+
+ex:bulk a skos:Concept ;
+    skos:prefLabel "Bulk"@en ;
+    skos:prefLabel "Schüttgut"@de ;
+    skos:prefLabel "Vrac"@fr ;
+    skos:prefLabel "Massa"@it ;
+    skos:broader ex:bm-type .
+
+ex:mortar a skos:Concept ;
+    skos:prefLabel "Mortar, Plaster"@en ;
+    skos:prefLabel "Mörtel, Putz"@de ;
+    skos:prefLabel "Mortier, Crépis"@fr ;
+    skos:prefLabel "Malta, Intonaco"@it ;
+    skos:broader ex:bm-type .
+
+# Buildings
+ex:building-status a skos:Concept ;
+    skos:prefLabel "Intervention Type"@en ;
+    skos:prefLabel "Eingriffstyp"@de ;
+    skos:prefLabel "Type d'intervention"@fr ;
+    skos:prefLabel "Tipo di intervento"@it ;
+    skos:broader ex:building .
+
+ex:new a skos:Concept ;
+    skos:prefLabel "New"@en ;
+    skos:prefLabel "Neu"@de ;
+    skos:prefLabel "Nouveau"@fr ;
+    skos:prefLabel "Nuovo"@it ;
+    skos:broader ex:building-status .
+
+ex:renovation a skos:Concept ;
+    skos:prefLabel "Renovation"@en ;
+    skos:prefLabel "Renovierung"@de ;
+    skos:prefLabel "Rénovation"@fr ;
+    skos:prefLabel "Ristrutturazione"@it ;
+    skos:broader ex:building-status .
+
+ex:building-type a skos:Concept ;
+    skos:prefLabel "Type"@en ;
+    skos:prefLabel "Typ"@de ;
+    skos:prefLabel "Type"@fr ;
+    skos:prefLabel "Tipo"@it ;
+    skos:broader ex:building .
+
+ex:apartment-building a skos:Concept ;
+    skos:prefLabel "Apartment Building"@en ;
+    skos:prefLabel "Mehrfamilienhaus"@de ;
+    skos:prefLabel "Immeuble d'habitation"@fr ;
+    skos:prefLabel "Edificio residenziale"@it ;
+    skos:broader ex:building-type .
+
+ex:single-family-house a skos:Concept ;
+    skos:prefLabel "Single Family House"@en ;
+    skos:prefLabel "Einfamilienhaus"@de ;
+    skos:prefLabel "Maison individuelle"@fr ;
+    skos:prefLabel "Casa unifamiliare"@it ;
+    skos:broader ex:building-type .
+
+ex:office-building a skos:Concept ;
+    skos:prefLabel "Office Building"@en ;
+    skos:prefLabel "Bürogebäude"@de ;
+    skos:prefLabel "Immeuble de bureaux"@fr ;
+    skos:prefLabel "Edificio per uffici"@it ;
+    skos:broader ex:building-type .
+
+ex:public-building a skos:Concept ;
+    skos:prefLabel "Public Building"@en ;
+    skos:prefLabel "Öffentliches Gebäude"@de ;
+    skos:prefLabel "Bâtiment public"@fr ;
+    skos:prefLabel "Edificio pubblico"@it ;
+    skos:broader ex:building-type .
+
+ex:simple-structure a skos:Concept ;
+    skos:prefLabel "Simple Structure"@en ;
+    skos:prefLabel "Einfache Struktur"@de ;
+    skos:prefLabel "Structure simple"@fr ;
+    skos:prefLabel "Struttura semplice"@it ;
+    skos:broader ex:building-type .
+
+# Natural Resources
+ex:nr-type a skos:Concept ;
+    skos:prefLabel "Type"@en ;
+    skos:prefLabel "Typ"@de ;
+    skos:prefLabel "Type"@fr ;
+    skos:prefLabel "Tipo"@it ;
+    skos:broader ex:natural-resource .
+
+ex:earth a skos:Concept ;
+    skos:prefLabel "Earth"@en ;
+    skos:prefLabel "Erde"@de ;
+    skos:prefLabel "Terre"@fr ;
+    skos:prefLabel "Terra"@it ;
+    skos:broader ex:nr-type .
+
+ex:rock a skos:Concept ;
+    skos:prefLabel "Rock"@en ;
+    skos:prefLabel "Gestein"@de ;
+    skos:prefLabel "Roche"@fr ;
+    skos:prefLabel "Rocce"@it ;
+    skos:broader ex:nr-type .
+
+ex:straw a skos:Concept ;
+    skos:prefLabel "Straw"@en ;
+    skos:prefLabel "Stroh"@de ;
+    skos:prefLabel "Paille"@fr ;
+    skos:prefLabel "Paglia"@it ;
+    skos:broader ex:nr-type .
+
+ex:hemp a skos:Concept ;
+    skos:prefLabel "Hemp"@en ;
+    skos:prefLabel "Hanf"@de ;
+    skos:prefLabel "Chanvre"@fr ;
+    skos:prefLabel "Canapa"@it ;
+    skos:broader ex:nr-type .
+
+ex:wood a skos:Concept ;
+    skos:prefLabel "Wood"@en ;
+    skos:prefLabel "Holz"@de ;
+    skos:prefLabel "Bois"@fr ;
+    skos:prefLabel "Legno"@it ;
+    skos:broader ex:nr-type .
+
+ex:other-fibers a skos:Concept ;
+    skos:prefLabel "Other Fibers"@en ;
+    skos:prefLabel "Andere Fasern"@de ;
+    skos:prefLabel "Autres fibres"@fr ;
+    skos:prefLabel "Altre fibre"@it ;
+    skos:broader ex:nr-type .
+
+# Professionals
+ex:prof-type a skos:Concept ;
+    skos:prefLabel "Type"@en ;
+    skos:prefLabel "Typ"@de ;
+    skos:prefLabel "Type"@fr ;
+    skos:prefLabel "Tipo"@it ;
+    skos:broader ex:professional .
+
+ex:architect a skos:Concept ;
+    skos:prefLabel "Architect"@en ;
+    skos:prefLabel "Architekt"@de ;
+    skos:prefLabel "Architecte"@fr ;
+    skos:prefLabel "Architetto"@it ;
+    skos:broader ex:prof-type .
+
+ex:civil-engineer a skos:Concept ;
+    skos:prefLabel "Civil engineer"@en ;
+    skos:prefLabel "Bauingenieur"@de ;
+    skos:prefLabel "Ingénieur civil"@fr ;
+    skos:prefLabel "Ingegnere civile"@it ;
+    skos:broader ex:professional-type .
+
+ex:craftsman a skos:Concept ;
+    skos:prefLabel "Craftsman"@en ;
+    skos:prefLabel "Handwerker"@de ;
+    skos:prefLabel "Artisan"@fr ;
+    skos:prefLabel "Artigiano"@it ;
+    skos:broader ex:professional-type .
+
+ex:material-producer a skos:Concept ;
+    skos:prefLabel "Material Producer"@en ;
+    skos:prefLabel "Materialhersteller"@de ;
+    skos:prefLabel "Producteur de matériaux"@fr ;
+    skos:prefLabel "Produttore di materiali"@it ;
+    skos:broader ex:professional-type .
+
+ex:building-physics a skos:Concept ;
+    skos:prefLabel "Building Physics"@en ;
+    skos:prefLabel "Bauphysik"@de ;
+    skos:prefLabel "Physique du bâtiment"@fr ;
+    skos:prefLabel "Fisica dell'edificio"@it ;
+    skos:broader ex:professional-type .
+
+ex:association a skos:Concept ;
+    skos:prefLabel "Association"@en ;
+    skos:prefLabel "Verband"@de ;
+    skos:prefLabel "Association"@fr ;
+    skos:prefLabel "Associazione"@it ;
+    skos:broader ex:professional-type .
+
+ex:construction-firm a skos:Concept ;
+    skos:prefLabel "Construction Firm"@en ;
+    skos:prefLabel "Bauunternehmen"@de ;
+    skos:prefLabel "Entreprise de construction"@fr ;
+    skos:prefLabel "Impresa di costruzioni"@it ;
+    skos:broader ex:professional-type .
+
+ex:researcher a skos:Concept ;
+    skos:prefLabel "Researcher"@en ;
+    skos:prefLabel "Forscher"@de ;
+    skos:prefLabel "Chercheur"@fr ;
+    skos:prefLabel "Ricercatore"@it ;
+    skos:broader ex:professional-type .
+
+ex:reseller a skos:Concept ;
+    skos:prefLabel "Reseller"@en ;
+    skos:prefLabel "Wiederverkäufer"@de ;
+    skos:prefLabel "Revendeur"@fr ;
+    skos:prefLabel "Rivenditore"@it ;
+    skos:broader ex:professional-type .
+
+ex:professional-other a skos:Concept ;
+    skos:prefLabel "Other"@en ;
+    skos:prefLabel "Andere"@de ;
+    skos:prefLabel "Autre"@fr ;
+    skos:prefLabel "Altro"@it ;
+    skos:broader ex:professional-type .
+
+ex:technical-construction a skos:Concept ;
+    skos:prefLabel "Technical Construction"@en ;
+    skos:prefLabel "Technische Ausführung"@de ;
+    skos:prefLabel "Construction technique"@fr ;
+    skos:prefLabel "Esecuzione tecnica"@it ;
+    skos:topConceptOf ex:domain .
+
+ex:fire-protection a skos:Concept ;
+    skos:prefLabel "Fire Protection"@en ;
+    skos:prefLabel "Brandschutz"@de ;
+    skos:prefLabel "Protection incendie"@fr ;
+    skos:prefLabel "Protezione antincendio"@it ;
+    skos:broader ex:technical-construction .
+
+ex:thermal-insulation a skos:Concept ;
+    skos:prefLabel "Thermal Insulation"@en ;
+    skos:prefLabel "Wärmeschutz"@de ;
+    skos:prefLabel "Isolation thermique"@fr ;
+    skos:prefLabel "Isolamento termico"@it ;
+    skos:broader ex:technical-construction .
+
+ex:moisture-protection a skos:Concept ;
+    skos:prefLabel "Moisture Protection"@en ;
+    skos:prefLabel "Feuchteschutz"@de ;
+    skos:prefLabel "Protection contre l'humidité"@fr ;
+    skos:prefLabel "Protezione dall'umidità"@it ;
+    skos:broader ex:technical-construction .
+
+ex:sound-insulation a skos:Concept ;
+    skos:prefLabel "Sound Insulation"@en ;
+    skos:prefLabel "Schallschutz"@de ;
+    skos:prefLabel "Isolation acoustique"@fr ;
+    skos:prefLabel "Isolamento acustico"@it ;
+    skos:broader ex:technical-construction .
+
+ex:load-bearing-structure a skos:Concept ;
+    skos:prefLabel "Load-bearing Structure"@en ;
+    skos:prefLabel "Tragkonstruktion"@de ;
+    skos:prefLabel "Structure porteuse"@fr ;
+    skos:prefLabel "Struttura portante"@it ;
+    skos:broader ex:technical-construction .
+
+ex:lightweight-construction a skos:Concept ;
+    skos:prefLabel "Lightweight Construction"@en ;
+    skos:prefLabel "Leichtbau"@de ;
+    skos:prefLabel "Construction légère"@fr ;
+    skos:prefLabel "Costruzione leggera"@it ;
+    skos:broader ex:technical-construction .
+
+ex:building-services a skos:Concept ;
+    skos:prefLabel "Building Services"@en ;
+    skos:prefLabel "Technische Gebäudeausrüstung"@de ;
+    skos:prefLabel "Services du bâtiment"@fr ;
+    skos:prefLabel "Impianti tecnici dell’edificio"@it ;
+    skos:broader ex:technical-construction .
+
+ex:building-envelope a skos:Concept ;
+    skos:prefLabel "Building Envelope"@en ;
+    skos:prefLabel "Gebäudehülle"@de ;
+    skos:prefLabel "Enveloppe du bâtiment"@fr ;
+    skos:prefLabel "Involucro edilizio"@it ;
+    skos:broader ex:technical-construction .
+
+ex:prefabrication a skos:Concept ;
+    skos:prefLabel "Prefabrication"@en ;
+    skos:prefLabel "Vorproduktion"@de ;
+    skos:prefLabel "Préfabrication"@fr ;
+    skos:prefLabel "Prefabbricazione"@it ;
+    skos:broader ex:technical-construction .
+
+ex:renovation a skos:Concept ;
+    skos:prefLabel "Renovation"@en ;
+    skos:prefLabel "Sanierung"@de ;
+    skos:prefLabel "Rénovation"@fr ;
+    skos:prefLabel "Ristrutturazione"@it ;
+    skos:broader ex:technical-construction .
+
+ex:deconstruction a skos:Concept ;
+    skos:prefLabel "Deconstruction"@en ;
+    skos:prefLabel "Rückbau"@de ;
+    skos:prefLabel "Déconstruction"@fr ;
+    skos:prefLabel "Decostruzione"@it ;
+    skos:broader ex:technical-construction .
+
+ex:technical-construction-other a skos:Concept ;
+    skos:prefLabel "Other"@en ;
+    skos:prefLabel "Andere"@de ;
+    skos:prefLabel "Autre"@fr ;
+    skos:prefLabel "Altro"@it ;
+    skos:broader ex:technical-construction .
