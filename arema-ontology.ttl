@@ -1,359 +1,249 @@
-@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix ex: <http://example.org/taxonomy/> .
+@prefix brick: <https://w3id.org/brick#> .
+@prefix ifc: <https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
 
-# Concept Schemes
-ex:building-material a skos:ConceptScheme ;
-    skos:prefLabel "Building Materials"@en ;
-    skos:prefLabel "Baustoffe"@de ;
-    skos:prefLabel "Matériaux de construction"@fr ;
-    skos:prefLabel "Materiali da costruzione"@it .
 
-ex:building a skos:ConceptScheme ;
-    skos:prefLabel "Buildings"@en ;
-    skos:prefLabel "Gebäude"@de ;
-    skos:prefLabel "Bâtiments"@fr ;
-    skos:prefLabel "Edifici"@it .
+# Top-level classes (formerly Concept Schemes)
+ex:BuildingMaterial rdfs:label "Building Materials"@en , "Baustoffe"@de , "Matériaux de construction"@fr , "Materiali da costruzione"@it .
+ex:Building rdfs:label "Buildings"@en , "Gebäude"@de , "Bâtiments"@fr , "Edifici"@it .
+ex:NaturalResource rdfs:label "Natural Resources"@en , "Natürliche Ressourcen"@de , "Ressources naturelles"@fr , "Risorse naturali"@it .
+ex:Professional rdfs:label "Professionals"@en , "Fachleute"@de , "Professionnels"@fr , "Professionisti"@it .
+ex:TechnicalConstruction rdfs:label "Technical Constructions"@en , "Technische Konstruktionen"@de , "Constructions techniques"@fr , "Costruzioni tecniche"@it ;
+    rdfs:comment "Aspects of construction related to the physical realization of buildings, encompassing structural, thermal, acoustic, and service-related elements."@en .
 
-ex:natural-resource a skos:ConceptScheme ;
-    skos:prefLabel "Natural Resources"@en ;
-    skos:prefLabel "Natürliche Ressourcen"@de ;
-    skos:prefLabel "Ressources naturelles"@fr ;
-    skos:prefLabel "Risorse naturali"@it .
+# Building Materials Taxonomy
+ex:BMType rdfs:subClassOf ex:BuildingMaterial ;
+    rdfs:label "Type"@en , "Typ"@de , "Type"@fr , "Tipo"@it .
 
-ex:professional a skos:ConceptScheme ;
-    skos:prefLabel "Professionals"@en ;
-    skos:prefLabel "Fachleute"@de ;
-    skos:prefLabel "Professionnels"@fr ;
-    skos:prefLabel "Professionisti"@it .
+ex:Massive rdfs:subClassOf ex:BMType ;
+    rdfs:label "Massive"@en , "Massivlehmbau"@de , "Massif"@fr , "Massiccio"@it .
 
-ex:technical-construction a skos:ConceptScheme ;
-    skos:prefLabel "Technical Constructions"@en ;
-    skos:prefLabel "Technische Konstruktionen"@de ;
-    skos:prefLabel "Constructions techniques"@fr ;
-    skos:prefLabel "Costruzioni tecniche"@it .
+ex:Bricks rdfs:subClassOf ex:BMType ;
+    rdfs:label "Bricks"@en , "Baustein"@de , "Briques"@fr , "Mattoni"@it .
+
+ex:Panels rdfs:subClassOf ex:BMType ;
+    rdfs:label "Panels, Boards"@en , "Platten"@de , "Plaques"@fr , "Pannelli"@it .
+
+ex:Bulk rdfs:subClassOf ex:BMType ;
+    rdfs:label "Bulk"@en , "Schüttgut"@de , "Vrac"@fr , "Massa"@it .
+
+ex:Mortar rdfs:subClassOf ex:BMType ;
+    rdfs:label "Mortar, Plaster"@en , "Mörtel, Putz"@de , "Mortier, Crépis"@fr , "Malta, Intonaco"@it .
+
+# Buildings Taxonomy
+ex:BuildingStatus rdfs:subClassOf ex:Building ;
+    rdfs:label "Intervention Type"@en , "Eingriffstyp"@de , "Type d'intervention"@fr , "Tipo di intervento"@it .
+
+ex:NewBuilding rdfs:subClassOf ex:BuildingStatus ;
+    rdfs:label "New"@en , "Neu"@de , "Nouveau"@fr , "Nuovo"@it .
+
+ex:RenovationBuilding rdfs:subClassOf ex:BuildingStatus ;
+    rdfs:label "Renovation"@en , "Renovierung"@de , "Rénovation"@fr , "Ristrutturazione"@it .
+
+ex:BuildingType rdfs:subClassOf ex:Building ;
+    rdfs:label "Type"@en , "Typ"@de , "Type"@fr , "Tipo"@it .
+
+ex:ApartmentBuilding rdfs:subClassOf ex:BuildingType ;
+    rdfs:label "Apartment Building"@en , "Mehrfamilienhaus"@de , "Immeuble d'habitation"@fr , "Edificio residenziale"@it .
+
+ex:SingleFamilyHouse rdfs:subClassOf ex:BuildingType ;
+    rdfs:label "Single Family House"@en , "Einfamilienhaus"@de , "Maison individuelle"@fr , "Casa unifamiliare"@it .
+
+ex:OfficeBuilding rdfs:subClassOf ex:BuildingType ;
+    rdfs:label "Office Building"@en , "Bürogebäude"@de , "Immeuble de bureaux"@fr , "Edificio per uffici"@it .
+
+ex:PublicBuilding rdfs:subClassOf ex:BuildingType ;
+    rdfs:label "Public Building"@en , "Öffentliches Gebäude"@de , "Bâtiment public"@fr , "Edificio pubblico"@it .
+
+ex:SimpleStructure rdfs:subClassOf ex:BuildingType ;
+    rdfs:label "Simple Structure"@en , "Einfache Struktur"@de , "Structure simple"@fr , "Struttura semplice"@it .
+
+# Natural Resources Taxonomy
+ex:NRType rdfs:subClassOf ex:NaturalResource ;
+    rdfs:label "Type"@en , "Typ"@de , "Type"@fr , "Tipo"@it .
+
+ex:Earth rdfs:subClassOf ex:NRType ;
+    rdfs:label "Earth"@en , "Erde"@de , "Terre"@fr , "Terra"@it .
+
+ex:Rock rdfs:subClassOf ex:NRType ;
+    rdfs:label "Rock"@en , "Gestein"@de , "Roche"@fr , "Rocce"@it .
+
+ex:Straw rdfs:subClassOf ex:NRType ;
+    rdfs:label "Straw"@en , "Stroh"@de , "Paille"@fr , "Paglia"@it .
+
+ex:Hemp rdfs:subClassOf ex:NRType ;
+    rdfs:label "Hemp"@en , "Hanf"@de , "Chanvre"@fr , "Canapa"@it .
+
+ex:Wood rdfs:subClassOf ex:NRType ;
+    rdfs:label "Wood"@en , "Holz"@de , "Bois"@fr , "Legno"@it .
+
+ex:OtherFibers rdfs:subClassOf ex:NRType ;
+    rdfs:label "Other Fibers"@en , "Andere Fasern"@de , "Autres fibres"@fr , "Altre fibre"@it .
+
+# Professionals Taxonomy
+ex:ProfType rdfs:subClassOf ex:Professional ;
+    rdfs:label "Type"@en , "Typ"@de , "Type"@fr , "Tipo"@it .
+
+ex:Architect rdfs:subClassOf ex:ProfType ;
+    rdfs:label "Architect"@en , "Architekt"@de , "Architecte"@fr , "Architetto"@it .
+
+ex:CivilEngineer rdfs:subClassOf ex:ProfType ;
+    rdfs:label "Civil engineer"@en , "Bauingenieur"@de , "Ingénieur civil"@fr , "Ingegnere civile"@it .
+
+ex:Craftsman rdfs:subClassOf ex:ProfType ;
+    rdfs:label "Craftsman"@en , "Handwerker"@de , "Artisan"@fr , "Artigiano"@it .
+
+ex:MaterialProducer rdfs:subClassOf ex:ProfType ;
+    rdfs:label "Material Producer"@en , "Materialhersteller"@de , "Producteur de matériaux"@fr , "Produttore di materiali"@it .
+
+ex:BuildingPhysicsProfessional rdfs:subClassOf ex:ProfType ;
+    rdfs:label "Building Physics"@en , "Bauphysik"@de , "Physique du bâtiment"@fr , "Fisica dell'edificio"@it .
+
+ex:AssociationProfessional rdfs:subClassOf ex:ProfType ;
+    rdfs:label "Association"@en , "Verband"@de , "Association"@fr , "Associazione"@it .
+
+ex:ConstructionFirmProfessional rdfs:subClassOf ex:ProfType ;
+    rdfs:label "Construction Firm"@en , "Bauunternehmen"@de , "Entreprise de construction"@fr , "Impresa di costruzioni"@it .
+
+ex:ResearcherProfessional rdfs:subClassOf ex:ProfType ;
+    rdfs:label "Researcher"@en , "Forscher"@de , "Chercheur"@fr , "Ricercatore"@it .
+
+ex:ResellerProfessional rdfs:subClassOf ex:ProfType ;
+    rdfs:label "Reseller"@en , "Wiederverkäufer"@de , "Revendeur"@fr , "Rivenditore"@it .
+
+ex:ProfessionalOther rdfs:subClassOf ex:ProfType ;
+    rdfs:label "Other"@en , "Andere"@de , "Autre"@fr , "Altro"@it .
+
+# Technical Constructions Taxonomy
+ex:FireProtection rdfs:subClassOf ex:TechnicalConstruction ;
+    rdfs:label "Fire Protection"@en , "Brandschutz"@de , "Protection incendie"@fr , "Protezione antincendio"@it ;
+    rdfs:comment "Measures and design elements intended to prevent, contain, and mitigate the effects of fire within a building."@en .
+
+ex:ThermalInsulation rdfs:subClassOf ex:TechnicalConstruction ;
+    rdfs:label "Thermal Insulation"@en , "Wärmeschutz"@de , "Isolation thermique"@fr , "Isolamento termico"@it ;
+    rdfs:comment "Techniques and materials used to reduce the transfer of heat between the inside and outside of a building."@en .
+
+ex:MoistureProtection rdfs:subClassOf ex:TechnicalConstruction ;
+    rdfs:label "Moisture Protection"@en , "Feuchteschutz"@de , "Protection contre l'humidité"@fr , "Protezione dall'umidità"@it ;
+    rdfs:comment "Strategies and components used to prevent moisture infiltration and control humidity in building structures."@en .
+
+ex:SoundInsulation rdfs:subClassOf ex:TechnicalConstruction ;
+    rdfs:label "Sound Insulation"@en , "Schallschutz"@de , "Isolation acoustique"@fr , "Isolamento acustico"@it ;
+    rdfs:comment "Methods and materials designed to reduce the transmission of sound between and within building spaces."@en .
+
+ex:LoadBearingStructure rdfs:subClassOf ex:TechnicalConstruction ;
+    rdfs:label "Load-bearing Structure"@en , "Tragkonstruktion"@de , "Structure porteuse"@fr , "Struttura portante"@it ;
+    rdfs:comment "The system of structural elements that support and transfer the weight and forces of a building to the ground."@en .
+
+ex:LightweightConstruction rdfs:subClassOf ex:TechnicalConstruction ;
+    rdfs:label "Lightweight Construction"@en , "Leichtbau"@de , "Construction légère"@fr , "Costruzione leggera"@it ;
+    rdfs:comment "Construction techniques emphasizing minimal material usage and weight while maintaining structural integrity."@en .
+
+ex:BuildingServices rdfs:subClassOf ex:TechnicalConstruction ;
+    rdfs:label "Building Services"@en , "Technische Gebäudeausrüstung"@de , "Services du bâtiment"@fr , "Impianti tecnici dell'edificio"@it ;
+    rdfs:comment "Technical systems installed in buildings, such as heating, ventilation, plumbing, and electrical infrastructure."@en .
+
+ex:BuildingEnvelope rdfs:subClassOf ex:TechnicalConstruction ;
+    rdfs:label "Building Envelope"@en , "Gebäudehülle"@de , "Enveloppe du bâtiment"@fr , "Involucro edilizio"@it ;
+    rdfs:comment "The physical separator between the interior and exterior of a building, including walls, roofs, and windows."@en .
+
+ex:Prefabrication rdfs:subClassOf ex:TechnicalConstruction ;
+    rdfs:label "Prefabrication"@en , "Vorproduktion"@de , "Préfabrication"@fr , "Prefabbricazione"@it ;
+    rdfs:comment "The process of manufacturing building components off-site for later assembly on-site."@en .
+
+ex:RenovationTechnicalConstruction rdfs:subClassOf ex:TechnicalConstruction ;
+    rdfs:label "Renovation"@en , "Sanierung"@de , "Rénovation"@fr , "Ristrutturazione"@it ;
+    rdfs:comment "The process of improving, modernizing, or restoring an existing building."@en .
+
+ex:Deconstruction rdfs:subClassOf ex:TechnicalConstruction ;
+    rdfs:label "Deconstruction"@en , "Rückbau"@de , "Déconstruction"@fr , "Decostruzione"@it ;
+    rdfs:comment "The systematic dismantling of a building with the goal of preserving materials for reuse or recycling."@en .
+
+ex:TechnicalConstructionOther rdfs:subClassOf ex:TechnicalConstruction ;
+    rdfs:label "Other"@en , "Andere"@de , "Autre"@fr , "Altro"@it ;
+    rdfs:comment "Technical construction topics not covered by the predefined categories."@en .
 
 # Building Materials
-ex:bm-type a skos:Concept ;
-    skos:prefLabel "Type"@en ;
-    skos:prefLabel "Typ"@de ;
-    skos:prefLabel "Type"@fr ;
-    skos:prefLabel "Tipo"@it ;
-    skos:broader ex:building-material .
+ex:BuildingMaterial
+    owl:equivalentClass brick:Material , ifc:IfcMaterial .
 
-ex:massive a skos:Concept ;
-    skos:prefLabel "Massive"@en ;
-    skos:prefLabel "Massivlehmbau"@de ;
-    skos:prefLabel "Massif"@fr ;
-    skos:prefLabel "Massiccio"@it ;
-    skos:broader ex:bm-type .
+ex:Bricks
+    rdfs:subClassOf ex:BuildingMaterial ;
+    rdfs:subClassOf ifc:IfcMaterial .
 
-ex:bricks a skos:Concept ;
-    skos:prefLabel "Bricks"@en ;
-    skos:prefLabel "Baustein"@de ;
-    skos:prefLabel "Briques"@fr ;
-    skos:prefLabel "Mattoni"@it ;
-    skos:broader ex:bm-type .
+ex:Concrete
+    rdfs:subClassOf ex:BuildingMaterial ;
+    rdfs:subClassOf ifc:IfcMaterial .
 
-ex:panels a skos:Concept ;
-    skos:prefLabel "Panels, Boards"@en ;
-    skos:prefLabel "Platten"@de ;
-    skos:prefLabel "Plaques"@fr ;
-    skos:prefLabel "Pannelli"@it ;
-    skos:broader ex:bm-type .
+ex:Glass
+    rdfs:subClassOf ex:BuildingMaterial ;
+    rdfs:subClassOf ifc:IfcMaterial .
 
-ex:bulk a skos:Concept ;
-    skos:prefLabel "Bulk"@en ;
-    skos:prefLabel "Schüttgut"@de ;
-    skos:prefLabel "Vrac"@fr ;
-    skos:prefLabel "Massa"@it ;
-    skos:broader ex:bm-type .
+ex:Steel
+    rdfs:subClassOf ex:BuildingMaterial ;
+    rdfs:subClassOf ifc:IfcMaterial .
 
-ex:mortar a skos:Concept ;
-    skos:prefLabel "Mortar, Plaster"@en ;
-    skos:prefLabel "Mörtel, Putz"@de ;
-    skos:prefLabel "Mortier, Crépis"@fr ;
-    skos:prefLabel "Malta, Intonaco"@it ;
-    skos:broader ex:bm-type .
+ex:Wood
+    rdfs:subClassOf ex:BuildingMaterial ;
+    rdfs:subClassOf ifc:IfcMaterial .
 
-# Buildings
-ex:building-status a skos:Concept ;
-    skos:prefLabel "Intervention Type"@en ;
-    skos:prefLabel "Eingriffstyp"@de ;
-    skos:prefLabel "Type d'intervention"@fr ;
-    skos:prefLabel "Tipo di intervento"@it ;
-    skos:broader ex:building .
+# Building Types
+ex:Building
+    owl:equivalentClass brick:Building ;
+    owl:equivalentClass ifc:IfcBuilding .
 
-ex:new a skos:Concept ;
-    skos:prefLabel "New"@en ;
-    skos:prefLabel "Neu"@de ;
-    skos:prefLabel "Nouveau"@fr ;
-    skos:prefLabel "Nuovo"@it ;
-    skos:broader ex:building-status .
+ex:ApartmentBuilding
+    rdfs:subClassOf ex:Building ;
+    rdfs:subClassOf ifc:IfcBuilding .
 
-ex:renovation a skos:Concept ;
-    skos:prefLabel "Renovation"@en ;
-    skos:prefLabel "Renovierung"@de ;
-    skos:prefLabel "Rénovation"@fr ;
-    skos:prefLabel "Ristrutturazione"@it ;
-    skos:broader ex:building-status .
+ex:OfficeBuilding
+    rdfs:subClassOf ex:Building ;
+    rdfs:subClassOf ifc:IfcBuilding .
 
-ex:building-type a skos:Concept ;
-    skos:prefLabel "Type"@en ;
-    skos:prefLabel "Typ"@de ;
-    skos:prefLabel "Type"@fr ;
-    skos:prefLabel "Tipo"@it ;
-    skos:broader ex:building .
+ex:SingleFamilyHouse
+    rdfs:subClassOf ex:Building ;
+    rdfs:subClassOf ifc:IfcBuilding .
 
-ex:apartment-building a skos:Concept ;
-    skos:prefLabel "Apartment Building"@en ;
-    skos:prefLabel "Mehrfamilienhaus"@de ;
-    skos:prefLabel "Immeuble d'habitation"@fr ;
-    skos:prefLabel "Edificio residenziale"@it ;
-    skos:broader ex:building-type .
+# Technical Constructions
+ex:TechnicalConstruction
+    rdfs:subClassOf brick:Equipment ;
+    rdfs:subClassOf ifc:IfcElement .
 
-ex:single-family-house a skos:Concept ;
-    skos:prefLabel "Single Family House"@en ;
-    skos:prefLabel "Einfamilienhaus"@de ;
-    skos:prefLabel "Maison individuelle"@fr ;
-    skos:prefLabel "Casa unifamiliare"@it ;
-    skos:broader ex:building-type .
+ex:LoadBearingStructure
+    rdfs:subClassOf ex:TechnicalConstruction ;
+    rdfs:subClassOf ifc:IfcStructuralElement .
 
-ex:office-building a skos:Concept ;
-    skos:prefLabel "Office Building"@en ;
-    skos:prefLabel "Bürogebäude"@de ;
-    skos:prefLabel "Immeuble de bureaux"@fr ;
-    skos:prefLabel "Edificio per uffici"@it ;
-    skos:broader ex:building-type .
+ex:ThermalInsulation
+    rdfs:subClassOf ex:TechnicalConstruction ;
+    rdfs:subClassOf ifc:IfcMaterialLayer .
 
-ex:public-building a skos:Concept ;
-    skos:prefLabel "Public Building"@en ;
-    skos:prefLabel "Öffentliches Gebäude"@de ;
-    skos:prefLabel "Bâtiment public"@fr ;
-    skos:prefLabel "Edificio pubblico"@it ;
-    skos:broader ex:building-type .
+ex:SoundInsulation
+    rdfs:subClassOf ex:TechnicalConstruction ;
+    rdfs:subClassOf ifc:IfcMaterialLayer .
 
-ex:simple-structure a skos:Concept ;
-    skos:prefLabel "Simple Structure"@en ;
-    skos:prefLabel "Einfache Struktur"@de ;
-    skos:prefLabel "Structure simple"@fr ;
-    skos:prefLabel "Struttura semplice"@it ;
-    skos:broader ex:building-type .
+ex:FireProtection
+    rdfs:subClassOf ex:TechnicalConstruction ;
+    rdfs:subClassOf ifc:IfcFireSuppressionTerminal .
 
-# Natural Resources
-ex:nr-type a skos:Concept ;
-    skos:prefLabel "Type"@en ;
-    skos:prefLabel "Typ"@de ;
-    skos:prefLabel "Type"@fr ;
-    skos:prefLabel "Tipo"@it ;
-    skos:broader ex:natural-resource .
-
-ex:earth a skos:Concept ;
-    skos:prefLabel "Earth"@en ;
-    skos:prefLabel "Erde"@de ;
-    skos:prefLabel "Terre"@fr ;
-    skos:prefLabel "Terra"@it ;
-    skos:broader ex:nr-type .
-
-ex:rock a skos:Concept ;
-    skos:prefLabel "Rock"@en ;
-    skos:prefLabel "Gestein"@de ;
-    skos:prefLabel "Roche"@fr ;
-    skos:prefLabel "Rocce"@it ;
-    skos:broader ex:nr-type .
-
-ex:straw a skos:Concept ;
-    skos:prefLabel "Straw"@en ;
-    skos:prefLabel "Stroh"@de ;
-    skos:prefLabel "Paille"@fr ;
-    skos:prefLabel "Paglia"@it ;
-    skos:broader ex:nr-type .
-
-ex:hemp a skos:Concept ;
-    skos:prefLabel "Hemp"@en ;
-    skos:prefLabel "Hanf"@de ;
-    skos:prefLabel "Chanvre"@fr ;
-    skos:prefLabel "Canapa"@it ;
-    skos:broader ex:nr-type .
-
-ex:wood a skos:Concept ;
-    skos:prefLabel "Wood"@en ;
-    skos:prefLabel "Holz"@de ;
-    skos:prefLabel "Bois"@fr ;
-    skos:prefLabel "Legno"@it ;
-    skos:broader ex:nr-type .
-
-ex:other-fibers a skos:Concept ;
-    skos:prefLabel "Other Fibers"@en ;
-    skos:prefLabel "Andere Fasern"@de ;
-    skos:prefLabel "Autres fibres"@fr ;
-    skos:prefLabel "Altre fibre"@it ;
-    skos:broader ex:nr-type .
+ex:MoistureProtection
+    rdfs:subClassOf ex:TechnicalConstruction ;
+    rdfs:subClassOf ifc:IfcCovering .
 
 # Professionals
-ex:prof-type a skos:Concept ;
-    skos:prefLabel "Type"@en ;
-    skos:prefLabel "Typ"@de ;
-    skos:prefLabel "Type"@fr ;
-    skos:prefLabel "Tipo"@it ;
-    skos:broader ex:professional .
+ex:Professional
+    rdfs:subClassOf ifc:IfcActor .
 
-ex:architect a skos:Concept ;
-    skos:prefLabel "Architect"@en ;
-    skos:prefLabel "Architekt"@de ;
-    skos:prefLabel "Architecte"@fr ;
-    skos:prefLabel "Architetto"@it ;
-    skos:broader ex:prof-type .
+ex:Architect
+    rdfs:subClassOf ex:Professional .
 
-ex:civil-engineer a skos:Concept ;
-    skos:prefLabel "Civil engineer"@en ;
-    skos:prefLabel "Bauingenieur"@de ;
-    skos:prefLabel "Ingénieur civil"@fr ;
-    skos:prefLabel "Ingegnere civile"@it ;
-    skos:broader ex:professional-type .
+ex:CivilEngineer
+    rdfs:subClassOf ex:Professional .
 
-ex:craftsman a skos:Concept ;
-    skos:prefLabel "Craftsman"@en ;
-    skos:prefLabel "Handwerker"@de ;
-    skos:prefLabel "Artisan"@fr ;
-    skos:prefLabel "Artigiano"@it ;
-    skos:broader ex:professional-type .
+ex:ConstructionWorker
+    rdfs:subClassOf ex:Professional .
 
-ex:material-producer a skos:Concept ;
-    skos:prefLabel "Material Producer"@en ;
-    skos:prefLabel "Materialhersteller"@de ;
-    skos:prefLabel "Producteur de matériaux"@fr ;
-    skos:prefLabel "Produttore di materiali"@it ;
-    skos:broader ex:professional-type .
+ex:BuildingInspector
+    rdfs:subClassOf ex:Professional .
 
-ex:building-physics a skos:Concept ;
-    skos:prefLabel "Building Physics"@en ;
-    skos:prefLabel "Bauphysik"@de ;
-    skos:prefLabel "Physique du bâtiment"@fr ;
-    skos:prefLabel "Fisica dell'edificio"@it ;
-    skos:broader ex:professional-type .
-
-ex:association a skos:Concept ;
-    skos:prefLabel "Association"@en ;
-    skos:prefLabel "Verband"@de ;
-    skos:prefLabel "Association"@fr ;
-    skos:prefLabel "Associazione"@it ;
-    skos:broader ex:professional-type .
-
-ex:construction-firm a skos:Concept ;
-    skos:prefLabel "Construction Firm"@en ;
-    skos:prefLabel "Bauunternehmen"@de ;
-    skos:prefLabel "Entreprise de construction"@fr ;
-    skos:prefLabel "Impresa di costruzioni"@it ;
-    skos:broader ex:professional-type .
-
-ex:researcher a skos:Concept ;
-    skos:prefLabel "Researcher"@en ;
-    skos:prefLabel "Forscher"@de ;
-    skos:prefLabel "Chercheur"@fr ;
-    skos:prefLabel "Ricercatore"@it ;
-    skos:broader ex:professional-type .
-
-ex:reseller a skos:Concept ;
-    skos:prefLabel "Reseller"@en ;
-    skos:prefLabel "Wiederverkäufer"@de ;
-    skos:prefLabel "Revendeur"@fr ;
-    skos:prefLabel "Rivenditore"@it ;
-    skos:broader ex:professional-type .
-
-ex:professional-other a skos:Concept ;
-    skos:prefLabel "Other"@en ;
-    skos:prefLabel "Andere"@de ;
-    skos:prefLabel "Autre"@fr ;
-    skos:prefLabel "Altro"@it ;
-    skos:broader ex:professional-type .
-
-ex:technical-construction a skos:Concept ;
-    skos:prefLabel "Technical Construction"@en ;
-    skos:prefLabel "Technische Ausführung"@de ;
-    skos:prefLabel "Construction technique"@fr ;
-    skos:prefLabel "Esecuzione tecnica"@it ;
-    skos:topConceptOf ex:domain .
-
-ex:fire-protection a skos:Concept ;
-    skos:prefLabel "Fire Protection"@en ;
-    skos:prefLabel "Brandschutz"@de ;
-    skos:prefLabel "Protection incendie"@fr ;
-    skos:prefLabel "Protezione antincendio"@it ;
-    skos:broader ex:technical-construction .
-
-ex:thermal-insulation a skos:Concept ;
-    skos:prefLabel "Thermal Insulation"@en ;
-    skos:prefLabel "Wärmeschutz"@de ;
-    skos:prefLabel "Isolation thermique"@fr ;
-    skos:prefLabel "Isolamento termico"@it ;
-    skos:broader ex:technical-construction .
-
-ex:moisture-protection a skos:Concept ;
-    skos:prefLabel "Moisture Protection"@en ;
-    skos:prefLabel "Feuchteschutz"@de ;
-    skos:prefLabel "Protection contre l'humidité"@fr ;
-    skos:prefLabel "Protezione dall'umidità"@it ;
-    skos:broader ex:technical-construction .
-
-ex:sound-insulation a skos:Concept ;
-    skos:prefLabel "Sound Insulation"@en ;
-    skos:prefLabel "Schallschutz"@de ;
-    skos:prefLabel "Isolation acoustique"@fr ;
-    skos:prefLabel "Isolamento acustico"@it ;
-    skos:broader ex:technical-construction .
-
-ex:load-bearing-structure a skos:Concept ;
-    skos:prefLabel "Load-bearing Structure"@en ;
-    skos:prefLabel "Tragkonstruktion"@de ;
-    skos:prefLabel "Structure porteuse"@fr ;
-    skos:prefLabel "Struttura portante"@it ;
-    skos:broader ex:technical-construction .
-
-ex:lightweight-construction a skos:Concept ;
-    skos:prefLabel "Lightweight Construction"@en ;
-    skos:prefLabel "Leichtbau"@de ;
-    skos:prefLabel "Construction légère"@fr ;
-    skos:prefLabel "Costruzione leggera"@it ;
-    skos:broader ex:technical-construction .
-
-ex:building-services a skos:Concept ;
-    skos:prefLabel "Building Services"@en ;
-    skos:prefLabel "Technische Gebäudeausrüstung"@de ;
-    skos:prefLabel "Services du bâtiment"@fr ;
-    skos:prefLabel "Impianti tecnici dell’edificio"@it ;
-    skos:broader ex:technical-construction .
-
-ex:building-envelope a skos:Concept ;
-    skos:prefLabel "Building Envelope"@en ;
-    skos:prefLabel "Gebäudehülle"@de ;
-    skos:prefLabel "Enveloppe du bâtiment"@fr ;
-    skos:prefLabel "Involucro edilizio"@it ;
-    skos:broader ex:technical-construction .
-
-ex:prefabrication a skos:Concept ;
-    skos:prefLabel "Prefabrication"@en ;
-    skos:prefLabel "Vorproduktion"@de ;
-    skos:prefLabel "Préfabrication"@fr ;
-    skos:prefLabel "Prefabbricazione"@it ;
-    skos:broader ex:technical-construction .
-
-ex:renovation a skos:Concept ;
-    skos:prefLabel "Renovation"@en ;
-    skos:prefLabel "Sanierung"@de ;
-    skos:prefLabel "Rénovation"@fr ;
-    skos:prefLabel "Ristrutturazione"@it ;
-    skos:broader ex:technical-construction .
-
-ex:deconstruction a skos:Concept ;
-    skos:prefLabel "Deconstruction"@en ;
-    skos:prefLabel "Rückbau"@de ;
-    skos:prefLabel "Déconstruction"@fr ;
-    skos:prefLabel "Decostruzione"@it ;
-    skos:broader ex:technical-construction .
-
-ex:technical-construction-other a skos:Concept ;
-    skos:prefLabel "Other"@en ;
-    skos:prefLabel "Andere"@de ;
-    skos:prefLabel "Autre"@fr ;
-    skos:prefLabel "Altro"@it ;
-    skos:broader ex:technical-construction .
