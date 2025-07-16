@@ -28,4 +28,4 @@ jobs:
 
       - name: SHACL validation
         run: |
-          python tools/python/checks/shacl.py src/ontology/bedretto-ontology.ttl src/quality-checks/skohub.shacl.ttl
+          python tools/python/checks/shacl.py src/ontology/arema-ontology.ttl src/quality-checks/skohub.shacl.ttl
