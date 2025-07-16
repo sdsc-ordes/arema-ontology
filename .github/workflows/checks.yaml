@@ -1,0 +1,31 @@
+name: SHACL validation
+
+on:
+  workflow_call:
+  push:
+    paths:
+      - 'src/ontology/**'
+  pull_request:
+    paths:
+      - 'src/ontology/**'
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r tools/python/requirements.txt
+
+      - name: SHACL validation
+        run: |
+          python tools/python/checks/shacl.py src/ontology/bedretto-ontology.ttl src/quality-checks/skohub.shacl.ttl
