@@ -12,18 +12,10 @@
 
 
 me:MyThesaurus a skos:ConceptScheme ;
-    # skos:prefLabel "AREMA Ontology"@en ;
-    # skos:altLabel "AREMA Ontology"@en ;
+    skos:prefLabel "AREMA Ontology"@en ;
     dct:description "AREMA Ontology for building materials, buildings, natural resources, professionals, and technical constructions."@en ;
-    # skos:hasTopConcept me:BuildingMaterial, me:Building, me:NaturalResource, me:Professional, me:TechnicalConstruction ;
-    # skos:definition "AREMA Ontology for building materials, buildings, natural resources, professionals, and technical constructions."@en ;
-    # skos:note "This ontology is designed to provide a structured vocabulary for the AREMA domain."@en ;
-    #         dct:issued "2020-02-07" ;
     vann:preferredNamespaceUri "https://w3id.org/arema/ontology/" ;
     vann:preferredNamespacePrefix "me" ;
-    # skos:creator "AREMA" ;
-    # skos:created "2025-07-01"^^xsd:date ;
-    # skos:modified "2025-07-01"^^xsd:date ;
     skos:hasTopConcept me:BuildingMaterial, me:Building, me:NaturalResource, me:Professional, me:TechnicalConstruction ;
     skos:prefLabel "AREMA Ontology"@en , "AREMA Ontologie"@de , "Ontologie AREMA"@fr , "Ontologia AREMA"@it ;
     dct:license <https://creativecommons.org/licenses/by/4.0/> .
