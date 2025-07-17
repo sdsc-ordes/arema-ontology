@@ -351,7 +351,6 @@ me:MoistureProtection
 .
 
 
-
 me:BuildingMaterial skos:definition "Materials used for construction purposes, including natural and manufactured substances."@en .
 
 me:Building skos:definition "Physical structures intended for human use or occupancy, such as houses, offices, and public buildings."@en .
