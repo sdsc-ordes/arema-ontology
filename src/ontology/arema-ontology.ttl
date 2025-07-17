@@ -10,6 +10,7 @@
 @base <https://w3id.org/arema/ontology/>.
 
 
+
 me:AremaVocabulary a skos:ConceptScheme ;
     skos:prefLabel "AREMA Ontology"@en ;
     dct:description "AREMA Ontology for building materials, buildings, natural resources, professionals, and technical constructions."@en ;
