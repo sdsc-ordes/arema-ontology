@@ -1,0 +1,229 @@
+{
+  "id": "http://example.org/taxonomy/Building",
+  "type": "Concept",
+  "prefLabel": {
+    "en": "Buildings",
+    "de": "Gebäude",
+    "fr": "Bâtiments",
+    "it": "Edifici"
+  },
+  "definition": {
+    "en": "Physical structures intended for human use or occupancy, such as houses, offices, and public buildings."
+  },
+  "narrower": [
+    {
+      "id": "http://example.org/taxonomy/BuildingStatus",
+      "prefLabel": {
+        "en": "Building Status",
+        "de": "Gebäudestatus",
+        "fr": "Statut du bâtiment",
+        "it": "Stato dell'edificio"
+      }
+    },
+    {
+      "id": "http://example.org/taxonomy/ApartmentBuilding",
+      "prefLabel": {
+        "en": "Apartment Building",
+        "de": "Mehrfamilienhaus",
+        "fr": "Immeuble d'habitation",
+        "it": "Edificio residenziale"
+      }
+    },
+    {
+      "id": "http://example.org/taxonomy/SingleFamilyHouse",
+      "prefLabel": {
+        "en": "Single Family House",
+        "de": "Einfamilienhaus",
+        "fr": "Maison individuelle",
+        "it": "Casa unifamiliare"
+      }
+    },
+    {
+      "id": "http://example.org/taxonomy/OfficeBuilding",
+      "prefLabel": {
+        "en": "Office Building",
+        "de": "Bürogebäude",
+        "fr": "Immeuble de bureaux",
+        "it": "Edificio per uffici"
+      }
+    },
+    {
+      "id": "http://example.org/taxonomy/PublicBuilding",
+      "prefLabel": {
+        "en": "Public Building",
+        "de": "Öffentliches Gebäude",
+        "fr": "Bâtiment public",
+        "it": "Edificio pubblico"
+      }
+    },
+    {
+      "id": "http://example.org/taxonomy/SimpleStructure",
+      "prefLabel": {
+        "en": "Simple Structure",
+        "de": "Einfache Struktur",
+        "fr": "Structure simple",
+        "it": "Struttura semplice"
+      }
+    }
+  ],
+  "inScheme": [
+    {
+      "id": "http://example.org/taxonomy/AremaVocabulary"
+    }
+  ],
+  "inSchemeAll": [
+    {
+      "id": "http://example.org/taxonomy/AremaVocabulary"
+    }
+  ],
+  "topConceptOf": [
+    {
+      "id": "http://example.org/taxonomy/AremaVocabulary"
+    }
+  ],
+  "@context": {
+    "@version": 1.1,
+    "id": "@id",
+    "type": "@type",
+    "@vocab": "http://www.w3.org/2004/02/skos/core#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "dct": "http://purl.org/dc/terms/",
+    "dc": "http://purl.org/dc/elements/1.1/",
+    "schema": "https://schema.org/",
+    "vann": "http://purl.org/vocab/vann/",
+    "ldp": "http://www.w3.org/ns/ldp#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "title": {
+      "@id": "dct:title",
+      "@container": "@language"
+    },
+    "dc:title": {
+      "@id": "dc:title",
+      "@container": "@language"
+    },
+    "dc:description": {
+      "@id": "dc:description",
+      "@container": "@language"
+    },
+    "description": {
+      "@id": "dct:description",
+      "@container": "@language"
+    },
+    "issued": {
+      "@id": "dct:issued",
+      "@type": "xsd:date"
+    },
+    "created": {
+      "@id": "dct:created",
+      "@type": "xsd:date"
+    },
+    "modified": {
+      "@id": "dct:modified",
+      "@type": "xsd:date"
+    },
+    "creator": "dct:creator",
+    "publisher": "dct:publisher",
+    "preferredNamespacePrefix": "vann:preferredNamespacePrefix",
+    "preferredNamespaceUri": "vann:preferredNamespaceUri",
+    "isBasedOn": "schema:isBasedOn",
+    "source": "dct:source",
+    "prefLabel": {
+      "@container": "@language"
+    },
+    "altLabel": {
+      "@container": [
+        "@language",
+        "@set"
+      ]
+    },
+    "hiddenLabel": {
+      "@container": [
+        "@language",
+        "@set"
+      ]
+    },
+    "definition": {
+      "@container": "@language"
+    },
+    "note": {
+      "@container": [
+        "@language",
+        "@set"
+      ]
+    },
+    "changeNote": {
+      "@container": [
+        "@language",
+        "@set"
+      ]
+    },
+    "editorialNote": {
+      "@container": [
+        "@language",
+        "@set"
+      ]
+    },
+    "historyNote": {
+      "@container": [
+        "@language",
+        "@set"
+      ]
+    },
+    "scopeNote": {
+      "@container": [
+        "@language",
+        "@set"
+      ]
+    },
+    "notation": {
+      "@container": "@set"
+    },
+    "example": {
+      "@container": "@language"
+    },
+    "narrower": {
+      "@container": "@set"
+    },
+    "related": {
+      "@container": "@set"
+    },
+    "relatedMatch": {
+      "@container": "@set"
+    },
+    "narrowerTransitive": {
+      "@container": "@set"
+    },
+    "broaderTransitive": {
+      "@container": "@set"
+    },
+    "broadMatch": {
+      "@container": "@set"
+    },
+    "narrowMatch": {
+      "@container": "@set"
+    },
+    "closeMatch": {
+      "@container": "@set"
+    },
+    "exactMatch": {
+      "@container": "@set"
+    },
+    "hasTopConcept": {
+      "@container": "@set"
+    },
+    "inScheme": {
+      "@container": "@set"
+    },
+    "topConceptOf": {
+      "@container": "@set"
+    },
+    "deprecated": {
+      "@id": "owl:deprecated",
+      "@type": "xsd:boolean"
+    },
+    "isReplacedBy": {
+      "@id": "dct:isReplacedBy",
+      "@container": "@set"
+    }
+  }
+}
