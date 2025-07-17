@@ -65,3 +65,10 @@ pip install -r tools/python/requirements.txt
 ```bash
 python tools/python/checks/shacl.py
 ```
+
+## Contact
+The Atlas of Regenerative Materials originates as a project from the Chair of Sustainable Construction at ETH Zurich, led by Professor Guillaume Habert.
+
+The project was made possible thanks to the initial support of the Ricola Foundation, and the ETH Domain Open Research Data Program .
+
+For comments, ideas or remarks, please contact shhuber@ethz.ch
