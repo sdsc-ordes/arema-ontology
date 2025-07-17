@@ -68,3 +68,40 @@
 #         with:
 #           name: shacl-documentation
 #           path: docs/index.html
+
+
+name: Generate Public Ontology Docs
+
+on:
+  push:
+    paths:
+      - 'src/ontology/arema-ontology.ttl'
+      - '.github/workflows/docs.yml'
+
+jobs:
+  generate-vocabs:
+    runs-on: ubuntu-latest
+    name: Generate Skohub Vocabulary Docs (via Docker)
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Run Skohub Vocabs via Docker
+        run: |
+          mkdir -p docs/public
+          docker run --rm \
+            -v ${{ github.workspace }}/src/ontology:/app/in \
+            -v ${{ github.workspace }}/docs/public:/app/out \
+            skohub/skohub-vocabs-docker \
+            vocabs /app/in/arema-ontology.ttl /app/out --format html
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs/public
+          git diff --cached --quiet || git commit -m "Update docs/public via skohub-vocabs-docker"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
