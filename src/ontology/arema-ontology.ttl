@@ -328,10 +328,7 @@ me:SingleFamilyHouse
     skos:broader me:Building ;
     #skos:related ifc:IfcBuilding .
 .
-# Technical Constructions
-# me:TechnicalConstruction
-#     #skos:related ifc:IfcElement .
-# .
+
 me:LoadBearingStructure
     skos:broader me:TechnicalConstruction ;
     #skos:related ifc:IfcStructuralElement .
