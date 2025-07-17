@@ -6,13 +6,13 @@ The ontology is designed to provide a shared conceptual framework and common voc
 ## 📚 Purpose of the Ontology
 An ontology defines terms, relationships, and structures to describe a particular domain — in this case, regenerative materials. For AREMA, this ontology serves multiple purposes:
 
-Controlled Vocabulary for the Website
+### Controlled Vocabulary for the Website
 It powers the AREMA front-end by providing a standardized vocabulary for categories, material properties, processes, and more. This ensures that users interact with consistent terms throughout the platform.
 
-Interoperability and Data Quality
-By formalizing the domain knowledge as RDF and SHACL, the ontology supports structured data exchange and integration with external systems, while enabling automated quality checks and re-using existig metadata standards.
+### Interoperability and Data Quality
+By formalizing the domain knowledge as RDF and SHACL, the ontology supports structured data exchange and integration with external systems, while enabling automated quality checks and re-using existing metadata standards.
 
-Documentation and Transparency
+### Documentation and Transparency
 It provides a clear, explicit model of how AREMA organizes knowledge about regenerative materials.
 
 ## 📂 Repository Structure
@@ -37,24 +37,25 @@ AREMA Ontology Repository
         │   └── sparql.py
         └── requirements.txt
 ```
-Key Components
-src/ontology/:
+
+### Key Components
+**src/ontology/**:  
 The core ontology in Turtle (.ttl) format.
 
-src/quality-checks/:
+**src/quality-checks/**:  
 SHACL shapes for validating ontology consistency and compatibility with tools like SKOHUB.
 
-tools/python/:
+**tools/python/**:  
 Python scripts for running SHACL checks.
 
 ## 🔍 Quality Assurance
-We employ SHACL shapes to validate the ontology structure and ensure ongoing data integrity. Scripts in tools/python/ assist with:
+We employ SHACL shapes to validate the ontology structure and ensure ongoing data integrity. Scripts in `tools/python/` assist with:
 
-Running SHACL validation against the ontology.
-
-Generating documentation from SPARQL queries.
+- Running SHACL validation against the ontology.
+- Generating documentation from SPARQL queries.
 
 ## 🚀 Usage (For Developers / Maintainers)
+
 ### Requirements
 ```bash
 pip install -r tools/python/requirements.txt
