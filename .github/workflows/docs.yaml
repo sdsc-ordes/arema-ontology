@@ -102,10 +102,11 @@ jobs:
             -v ${{ github.workspace }}/.env:/app/.env \
             skohub/skohub-vocabs-docker:latest
 
-      - name: Move results to docs/public
+      - name: Move results to docs
         run: |
-          mkdir -p docs/public
-          cp -r public/* docs/public/
+          rm -rf docs/*
+          cp -r public/* docs/
+
 
       - name: Commit updated docs
         run: |
