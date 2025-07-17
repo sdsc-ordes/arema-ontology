@@ -352,10 +352,7 @@ me:MoistureProtection
     skos:broader me:TechnicalConstruction ;
     #skos:related ifc:IfcCovering .
 .
-# Professionals
-# me:Professional
-#     #skos:related ifc:IfcActor .
-# .
+
 
 
 me:BuildingMaterial skos:definition "Materials used for construction purposes, including natural and manufactured substances."@en .
