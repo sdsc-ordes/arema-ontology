@@ -105,7 +105,7 @@ jobs:
       - name: Move results to docs
         run: |
           rm -rf docs/*
-          cp -r public/* docs/
+          cp -r ${{ github.workspace }}/public/* ${{ github.workspace }}/docs/
 
 
       - name: Commit updated docs
