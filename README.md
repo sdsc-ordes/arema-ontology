@@ -7,13 +7,10 @@ The ontology is designed to provide a shared conceptual framework and common voc
 An ontology defines terms, relationships, and structures to describe a particular domain — in this case, regenerative materials. For AREMA, this ontology serves multiple purposes:
 
 ### Controlled Vocabulary for the Website
-It powers the AREMA front-end by providing a standardized vocabulary for categories, material properties, processes, and more. This ensures that users interact with consistent terms throughout the platform.
+It powers the AREMA front-end by providing a standardized vocabulary for objects and properties that AREMA uses. This ensures that users interact with consistent terms throughout the platform, and allows us to link terms used on the front-end to definitions and relations in the ontology.
 
 ### Interoperability and Data Quality
 By formalizing the domain knowledge as RDF and SHACL, the ontology supports structured data exchange and integration with external systems, while enabling automated quality checks and re-using existing metadata standards.
-
-### Documentation and Transparency
-It provides a clear, explicit model of how AREMA organizes knowledge about regenerative materials.
 
 ## 📂 Repository Structure
 ```plaintext
