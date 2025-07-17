@@ -11,7 +11,7 @@
 @base <https://w3id.org/arema/ontology/>.
 
 
-me:MyThesaurus a skos:ConceptScheme ;
+me:AremaVocabulary a skos:ConceptScheme ;
     skos:prefLabel "AREMA Ontology"@en ;
     dct:description "AREMA Ontology for building materials, buildings, natural resources, professionals, and technical constructions."@en ;
     vann:preferredNamespaceUri "https://w3id.org/arema/ontology/" ;
@@ -22,256 +22,256 @@ me:MyThesaurus a skos:ConceptScheme ;
 
 # Top-level classes (formerly Concept Schemes)
 me:BuildingMaterial a skos:Concept ;
-skos:inScheme me:MyThesaurus ;
+skos:inScheme me:AremaVocabulary ;
 skos:prefLabel "Building Materials"@en , "Baustoffe"@de , "Matériaux de construction"@fr , "Materiali da costruzione"@it .
 me:Building a skos:Concept ;
-skos:inScheme me:MyThesaurus ;
+skos:inScheme me:AremaVocabulary ;
 skos:prefLabel "Buildings"@en , "Gebäude"@de , "Bâtiments"@fr , "Edifici"@it .
 me:NaturalResource a skos:Concept ;
-skos:inScheme me:MyThesaurus ;
+skos:inScheme me:AremaVocabulary ;
 skos:prefLabel "Natural Resources"@en , "Natürliche Ressourcen"@de , "Ressources naturelles"@fr , "Risorse naturali"@it .
 me:Professional a skos:Concept ;
-skos:inScheme me:MyThesaurus ;
+skos:inScheme me:AremaVocabulary ;
 skos:prefLabel "Professionals"@en , "Fachleute"@de , "Professionnels"@fr , "Professionisti"@it .
 me:TechnicalConstruction a skos:Concept ;
-skos:inScheme me:MyThesaurus ;
+skos:inScheme me:AremaVocabulary ;
 skos:prefLabel "Technical Constructions"@en , "Technische Konstruktionen"@de , "Constructions techniques"@fr , "Costruzioni tecniche"@it ;
     skos:definition "Aspects of construction related to the physical realization of buildings, encompassing structural, thermal, acoustic, and service-related elements."@en .
 
 # Building Materials Taxonomy
 me:Massive skos:broader me:BuildingMaterial ;
     a skos:Concept ;
-skos:inScheme me:MyThesaurus ;
+skos:inScheme me:AremaVocabulary ;
 skos:prefLabel "Massive"@en , "Massivlehmbau"@de , "Massif"@fr , "Massiccio"@it .
 
 me:Bricks skos:broader me:BuildingMaterial ;
     a skos:Concept ;
-skos:inScheme me:MyThesaurus ;
+skos:inScheme me:AremaVocabulary ;
 skos:prefLabel "Bricks"@en , "Baustein"@de , "Briques"@fr , "Mattoni"@it .
 
 me:Panels skos:broader me:BuildingMaterial ;
     a skos:Concept ;
-skos:inScheme me:MyThesaurus ;
+skos:inScheme me:AremaVocabulary ;
 skos:prefLabel "Panels, Boards"@en , "Platten"@de , "Plaques"@fr , "Pannelli"@it .
 
 me:Bulk skos:broader me:BuildingMaterial ;
     a skos:Concept ;
-skos:inScheme me:MyThesaurus ;
+skos:inScheme me:AremaVocabulary ;
 skos:prefLabel "Bulk"@en , "Schüttgut"@de , "Vrac"@fr , "Massa"@it .
 
 me:Mortar skos:broader me:BuildingMaterial ;
     a skos:Concept ;
-skos:inScheme me:MyThesaurus ;
+skos:inScheme me:AremaVocabulary ;
 skos:prefLabel "Mortar, Plaster"@en , "Mörtel, Putz"@de , "Mortier, Crépis"@fr , "Malta, Intonaco"@it .
 
 # Buildings Taxonomy
 me:BuildingStatus skos:broader me:Building ;
     a skos:Concept ;
-skos:inScheme me:MyThesaurus ;
+skos:inScheme me:AremaVocabulary ;
 skos:prefLabel "Building Status"@en , "Gebäudestatus"@de , "Statut du bâtiment"@fr , "Stato dell'edificio"@it .
 
 me:NewBuilding skos:broader me:BuildingStatus ;
     a skos:Concept ;
-skos:inScheme me:MyThesaurus ;
+skos:inScheme me:AremaVocabulary ;
 skos:prefLabel "New"@en , "Neu"@de , "Nouveau"@fr , "Nuovo"@it .
 
 me:RenovationBuilding skos:broader me:BuildingStatus ;
     a skos:Concept ;
-skos:inScheme me:MyThesaurus ;
+skos:inScheme me:AremaVocabulary ;
 skos:prefLabel "Renovation"@en , "Renovierung"@de , "Rénovation"@fr , "Ristrutturazione"@it .
 
 me:ApartmentBuilding skos:broader me:Building ;
     a skos:Concept ;
-skos:inScheme me:MyThesaurus ;
+skos:inScheme me:AremaVocabulary ;
 skos:prefLabel "Apartment Building"@en , "Mehrfamilienhaus"@de , "Immeuble d'habitation"@fr , "Edificio residenziale"@it .
 
 me:SingleFamilyHouse skos:broader me:Building ;
     a skos:Concept ;
-skos:inScheme me:MyThesaurus ;
+skos:inScheme me:AremaVocabulary ;
 skos:prefLabel "Single Family House"@en , "Einfamilienhaus"@de , "Maison individuelle"@fr , "Casa unifamiliare"@it .
 
 me:OfficeBuilding skos:broader me:Building ;
     a skos:Concept ;
-skos:inScheme me:MyThesaurus ;
+skos:inScheme me:AremaVocabulary ;
 skos:prefLabel "Office Building"@en , "Bürogebäude"@de , "Immeuble de bureaux"@fr , "Edificio per uffici"@it .
 
 me:PublicBuilding skos:broader me:Building ;
     a skos:Concept ;
-skos:inScheme me:MyThesaurus ;
+skos:inScheme me:AremaVocabulary ;
 skos:prefLabel "Public Building"@en , "Öffentliches Gebäude"@de , "Bâtiment public"@fr , "Edificio pubblico"@it .
 
 me:SimpleStructure skos:broader me:Building ;
     a skos:Concept ;
-skos:inScheme me:MyThesaurus ;
+skos:inScheme me:AremaVocabulary ;
 skos:prefLabel "Simple Structure"@en , "Einfache Struktur"@de , "Structure simple"@fr , "Struttura semplice"@it .
 
 # Natural Resources Taxonomy
 me:Earth skos:broader me:NaturalResource ;
     a skos:Concept ;
-skos:inScheme me:MyThesaurus ;
+skos:inScheme me:AremaVocabulary ;
 skos:prefLabel "Earth"@en , "Erde"@de , "Terre"@fr , "Terra"@it .
 
 me:Rock skos:broader me:NaturalResource ;
     a skos:Concept ;
-skos:inScheme me:MyThesaurus ;
+skos:inScheme me:AremaVocabulary ;
 skos:prefLabel "Rock"@en , "Gestein"@de , "Roche"@fr , "Rocce"@it .
 
 me:Straw skos:broader me:NaturalResource ;
     a skos:Concept ;
-skos:inScheme me:MyThesaurus ;
+skos:inScheme me:AremaVocabulary ;
 skos:prefLabel "Straw"@en , "Stroh"@de , "Paille"@fr , "Paglia"@it .
 
 me:Hemp skos:broader me:NaturalResource ;
     a skos:Concept ;
-skos:inScheme me:MyThesaurus ;
+skos:inScheme me:AremaVocabulary ;
 skos:prefLabel "Hemp"@en , "Hanf"@de , "Chanvre"@fr , "Canapa"@it .
 
 me:Wood skos:broader me:NaturalResource ;
     a skos:Concept ;
-skos:inScheme me:MyThesaurus ;
+skos:inScheme me:AremaVocabulary ;
 skos:prefLabel "Wood"@en , "Holz"@de , "Bois"@fr , "Legno"@it .
 
 me:OtherFibers skos:broader me:NaturalResource ;
     a skos:Concept ;
-skos:inScheme me:MyThesaurus ;
+skos:inScheme me:AremaVocabulary ;
 skos:prefLabel "Other Fibers"@en , "Andere Fasern"@de , "Autres fibres"@fr , "Altre fibre"@it .
 
 # Professionals Taxonomy
 me:Architect skos:broader me:Professional ;
     a skos:Concept ;
-skos:inScheme me:MyThesaurus ;
+skos:inScheme me:AremaVocabulary ;
 skos:prefLabel "Architect"@en , "Architekt"@de , "Architecte"@fr , "Architetto"@it .
 
 me:CivilEngineer skos:broader me:Professional ;
     a skos:Concept ;
-skos:inScheme me:MyThesaurus ;
+skos:inScheme me:AremaVocabulary ;
 skos:prefLabel "Civil engineer"@en , "Bauingenieur"@de , "Ingénieur civil"@fr , "Ingegnere civile"@it .
 
 me:Craftsman skos:broader me:Professional ;
     a skos:Concept ;
-skos:inScheme me:MyThesaurus ;
+skos:inScheme me:AremaVocabulary ;
 skos:prefLabel "Craftsman"@en , "Handwerker"@de , "Artisan"@fr , "Artigiano"@it .
 
 me:MaterialProducer skos:broader me:Professional ;
     a skos:Concept ;
-skos:inScheme me:MyThesaurus ;
+skos:inScheme me:AremaVocabulary ;
 skos:prefLabel "Material Producer"@en , "Materialhersteller"@de , "Producteur de matériaux"@fr , "Produttore di materiali"@it .
 
 me:BuildingPhysicsProfessional skos:broader me:Professional ;
     a skos:Concept ;
-skos:inScheme me:MyThesaurus ;
+skos:inScheme me:AremaVocabulary ;
 skos:prefLabel "Building Physics"@en , "Bauphysik"@de , "Physique du bâtiment"@fr , "Fisica dell'edificio"@it .
 
 me:AssociationProfessional skos:broader me:Professional ;
     a skos:Concept ;
-skos:inScheme me:MyThesaurus ;
+skos:inScheme me:AremaVocabulary ;
 skos:prefLabel "Association"@en , "Verband"@de , "Association"@fr , "Associazione"@it .
 
 me:ConstructionFirmProfessional skos:broader me:Professional ;
     a skos:Concept ;
-skos:inScheme me:MyThesaurus ;
+skos:inScheme me:AremaVocabulary ;
 skos:prefLabel "Construction Firm"@en , "Bauunternehmen"@de , "Entreprise de construction"@fr , "Impresa di costruzioni"@it .
 
 me:ResearcherProfessional skos:broader me:Professional ;
     a skos:Concept ;
-skos:inScheme me:MyThesaurus ;
+skos:inScheme me:AremaVocabulary ;
 skos:prefLabel "Researcher"@en , "Forscher"@de , "Chercheur"@fr , "Ricercatore"@it .
 
 me:ResellerProfessional skos:broader me:Professional ;
     a skos:Concept ;
-skos:inScheme me:MyThesaurus ;
+skos:inScheme me:AremaVocabulary ;
 skos:prefLabel "Reseller"@en , "Wiederverkäufer"@de , "Revendeur"@fr , "Rivenditore"@it .
 
 me:ProfessionalOther skos:broader me:Professional ;
     a skos:Concept ;
-skos:inScheme me:MyThesaurus ;
+skos:inScheme me:AremaVocabulary ;
 skos:prefLabel "Other"@en , "Andere"@de , "Autre"@fr , "Altro"@it .
 
 
 me:ConstructionWorker
     skos:broader me:Professional ;
     a skos:Concept ;
-skos:inScheme me:MyThesaurus ;
+skos:inScheme me:AremaVocabulary ;
 skos:prefLabel "Construction Worker"@en , "Bauarbeiter"@de , "Ouvrier du bâtiment"@fr , "Operaio edile"@it ;
 .
 
 me:BuildingInspector
     skos:broader me:Professional ;
     a skos:Concept ;
-skos:inScheme me:MyThesaurus ;
+skos:inScheme me:AremaVocabulary ;
 skos:prefLabel "Building Inspector"@en , "Bauinspektor"@de , "Inspecteur du bâtiment"@fr , "Ispettore edilizio"@it ;
 .
 
 # Technical Constructions Taxonomy
 me:FireProtection skos:broader me:TechnicalConstruction ;
     a skos:Concept ;
-skos:inScheme me:MyThesaurus ;
+skos:inScheme me:AremaVocabulary ;
 skos:prefLabel "Fire Protection"@en , "Brandschutz"@de , "Protection incendie"@fr , "Protezione antincendio"@it ;
     skos:definition "Measures and design elements intended to prevent, contain, and mitigate the effects of fire within a building."@en .
 
 me:ThermalInsulation skos:broader me:TechnicalConstruction ;
     a skos:Concept ;
-skos:inScheme me:MyThesaurus ;
+skos:inScheme me:AremaVocabulary ;
 skos:prefLabel "Thermal Insulation"@en , "Wärmeschutz"@de , "Isolation thermique"@fr , "Isolamento termico"@it ;
     skos:definition "Techniques and materials used to reduce the transfer of heat between the inside and outside of a building."@en .
 
 me:MoistureProtection skos:broader me:TechnicalConstruction ;
     a skos:Concept ;
-skos:inScheme me:MyThesaurus ;
+skos:inScheme me:AremaVocabulary ;
 skos:prefLabel "Moisture Protection"@en , "Feuchteschutz"@de , "Protection contre l'humidité"@fr , "Protezione dall'umidità"@it ;
     skos:definition "Strategies and components used to prevent moisture infiltration and control humidity in building structures."@en .
 
 me:SoundInsulation skos:broader me:TechnicalConstruction ;
     a skos:Concept ;
-skos:inScheme me:MyThesaurus ;
+skos:inScheme me:AremaVocabulary ;
 skos:prefLabel "Sound Insulation"@en , "Schallschutz"@de , "Isolation acoustique"@fr , "Isolamento acustico"@it ;
     skos:definition "Methods and materials designed to reduce the transmission of sound between and within building spaces."@en .
 
 me:LoadBearingStructure skos:broader me:TechnicalConstruction ;
     a skos:Concept ;
-skos:inScheme me:MyThesaurus ;
+skos:inScheme me:AremaVocabulary ;
 skos:prefLabel "Load-bearing Structure"@en , "Tragkonstruktion"@de , "Structure porteuse"@fr , "Struttura portante"@it ;
     skos:definition "The system of structural elements that support and transfer the weight and forces of a building to the ground."@en .
 
 me:LightweightConstruction skos:broader me:TechnicalConstruction ;
     a skos:Concept ;
-skos:inScheme me:MyThesaurus ;
+skos:inScheme me:AremaVocabulary ;
 skos:prefLabel "Lightweight Construction"@en , "Leichtbau"@de , "Construction légère"@fr , "Costruzione leggera"@it ;
     skos:definition "Construction techniques emphasizing minimal material usage and weight while maintaining structural integrity."@en .
 
 me:BuildingServices skos:broader me:TechnicalConstruction ;
     a skos:Concept ;
-skos:inScheme me:MyThesaurus ;
+skos:inScheme me:AremaVocabulary ;
 skos:prefLabel "Building Services"@en , "Technische Gebäudeausrüstung"@de , "Services du bâtiment"@fr , "Impianti tecnici dell'edificio"@it ;
     skos:definition "Technical systems installed in buildings, such as heating, ventilation, plumbing, and electrical infrastructure."@en .
 
 me:BuildingEnvelope skos:broader me:TechnicalConstruction ;
     a skos:Concept ;
-skos:inScheme me:MyThesaurus ;
+skos:inScheme me:AremaVocabulary ;
 skos:prefLabel "Building Envelope"@en , "Gebäudehülle"@de , "Enveloppe du bâtiment"@fr , "Involucro edilizio"@it ;
     skos:definition "The physical separator between the interior and exterior of a building, including walls, roofs, and windows."@en .
 
 me:Prefabrication skos:broader me:TechnicalConstruction ;
     a skos:Concept ;
-skos:inScheme me:MyThesaurus ;
+skos:inScheme me:AremaVocabulary ;
 skos:prefLabel "Prefabrication"@en , "Vorproduktion"@de , "Préfabrication"@fr , "Prefabbricazione"@it ;
     skos:definition "The process of manufacturing building components off-site for later assembly on-site."@en .
 
 me:RenovationTechnicalConstruction skos:broader me:TechnicalConstruction ;
     a skos:Concept ;
-skos:inScheme me:MyThesaurus ;
+skos:inScheme me:AremaVocabulary ;
 skos:prefLabel "Renovation"@en , "Sanierung"@de , "Rénovation"@fr , "Ristrutturazione"@it ;
     skos:definition "The process of improving, modernizing, or restoring an existing building."@en .
 
 me:Deconstruction skos:broader me:TechnicalConstruction ;
     a skos:Concept ;
-skos:inScheme me:MyThesaurus ;
+skos:inScheme me:AremaVocabulary ;
 skos:prefLabel "Deconstruction"@en , "Rückbau"@de , "Déconstruction"@fr , "Decostruzione"@it ;
     skos:definition "The systematic dismantling of a building with the goal of preserving materials for reuse or recycling."@en .
 
 me:TechnicalConstructionOther skos:broader me:TechnicalConstruction ;
     a skos:Concept ;
-skos:inScheme me:MyThesaurus ;
+skos:inScheme me:AremaVocabulary ;
 skos:prefLabel "Other"@en , "Andere"@de , "Autre"@fr , "Altro"@it ;
     skos:definition "Technical construction topics not covered by the predefined categories."@en .
 
@@ -281,31 +281,31 @@ skos:prefLabel "Other"@en , "Andere"@de , "Autre"@fr , "Altro"@it ;
 #     .
 
 me:Concrete a skos:Concept ;
-    skos:inScheme me:MyThesaurus ;
+    skos:inScheme me:AremaVocabulary ;
     skos:prefLabel "Concrete"@en , "Beton"@de , "Béton"@fr , "Calcestruzzo"@it ;
     skos:broader me:BuildingMaterial ;
     .
 
 me:moreSpecificTypeOfConcrete a skos:Concept ;
-    skos:inScheme me:MyThesaurus ;
+    skos:inScheme me:AremaVocabulary ;
     skos:prefLabel "More Specific Type of Concrete"@en , "Spezifischer Beton"@de , "Type de béton plus spécifique"@fr , "Tipo di calcestruzzo più specifico"@it ;
     skos:broader me:Concrete ;
     .
 
 me:Glass a skos:Concept ;
-    skos:inScheme me:MyThesaurus ;
+    skos:inScheme me:AremaVocabulary ;
     skos:prefLabel "Glass"@en , "Glas"@de , "Verre"@fr , "Vetro"@it ;
     skos:broader me:BuildingMaterial ;
     .
 
 me:Steel a skos:Concept ;
-    skos:inScheme me:MyThesaurus ;
+    skos:inScheme me:AremaVocabulary ;
     skos:prefLabel "Steel"@en , "Stahl"@de , "Acier"@fr , "Acciaio"@it ;
     skos:broader me:BuildingMaterial ;
     .
 
 me:Wood a skos:Concept ;
-    skos:inScheme me:MyThesaurus ;
+    skos:inScheme me:AremaVocabulary ;
     skos:prefLabel "Wood"@en , "Holz"@de , "Bois"@fr , "Legno"@it ;
     skos:broader me:BuildingMaterial ;
     .
