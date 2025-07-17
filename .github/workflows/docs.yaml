@@ -78,32 +78,34 @@ on:
       - '.github/workflows/docs.yml'
 
 jobs:
-  generate-vocabs:
+  build-docs:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Prepare directories
+      - name: Prepare clean public and data directories
         run: |
-          mkdir -p skohub/data
-          cp src/ontology/arema-ontology.ttl skohub/data/
-          echo "" > skohub/.env
+          rm -rf public data docs/public
+          mkdir -p public data
+          chmod -R 777 public data
+          cp src/ontology/arema-ontology.ttl data/
+          echo "BASEURL=/$(basename $GITHUB_REPOSITORY)" > .env
+          chmod 666 .env
 
-      - name: Run Skohub Vocabs Docker (internal public)
+      - name: Run Skohub Vocabs Docker
         run: |
           docker run --rm \
-            -v ${{ github.workspace }}/skohub/data:/app/data \
-            -v ${{ github.workspace }}/skohub/.env:/app/.env \
-            -v ${{ github.workspace }}/skohub/out:/app/public \
+            -v ${{ github.workspace }}/public:/app/public \
+            -v ${{ github.workspace }}/data:/app/data \
+            -v ${{ github.workspace }}/.env:/app/.env \
             skohub/skohub-vocabs-docker:latest
 
-      - name: Copy results to docs/public
+      - name: Move results to docs/public
         run: |
-          rm -rf docs/public
           mkdir -p docs/public
-          cp -r skohub/out/* docs/public/
+          cp -r public/* docs/public/
 
       - name: Commit updated docs
         run: |
@@ -114,3 +116,4 @@ jobs:
           git push
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
