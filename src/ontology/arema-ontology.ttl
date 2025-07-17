@@ -7,7 +7,6 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix dct: <http://purl.org/dc/terms/>.
 @prefix vann: <http://purl.org/vocab/vann/> .
-
 @base <https://w3id.org/arema/ontology/>.
 
 
