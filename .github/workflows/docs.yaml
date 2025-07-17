@@ -69,7 +69,6 @@
 #           name: shacl-documentation
 #           path: docs/index.html
 
-
 name: Generate Public Ontology Docs
 
 on:
@@ -87,14 +86,23 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Run Skohub Vocabs via Docker
+      - name: Prepare directories
         run: |
+          mkdir -p skohub/data
           mkdir -p docs/public
+          cp src/ontology/arema-ontology.ttl skohub/data/
+
+      - name: Create .env file for Skohub (required even if empty)
+        run: |
+          echo "" > skohub/.env
+
+      - name: Run Skohub Vocabs Docker
+        run: |
           docker run --rm \
-            -v ${{ github.workspace }}/src/ontology:/app/in \
-            -v ${{ github.workspace }}/docs/public:/app/out \
-            skohub/skohub-vocabs-docker \
-            vocabs /app/in/arema-ontology.ttl /app/out --format html
+            -v ${{ github.workspace }}/docs/public:/app/public \
+            -v ${{ github.workspace }}/skohub/data:/app/data \
+            -v ${{ github.workspace }}/skohub/.env:/app/.env \
+            skohub/skohub-vocabs-docker:latest
 
       - name: Commit changes
         run: |
@@ -105,3 +113,4 @@ jobs:
           git push
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
