@@ -80,7 +80,6 @@ on:
 jobs:
   generate-vocabs:
     runs-on: ubuntu-latest
-    name: Generate Skohub Vocabulary Docs (via Docker)
 
     steps:
       - name: Checkout repository
@@ -90,30 +89,28 @@ jobs:
         run: |
           mkdir -p skohub/data
           cp src/ontology/arema-ontology.ttl skohub/data/
-
-      - name: Create .env file for Skohub (required even if empty)
-        run: |
           echo "" > skohub/.env
 
-      - name: Run Skohub Vocabs Docker
+      - name: Run Skohub Vocabs Docker (internal public)
         run: |
           docker run --rm \
-            -v ${{ github.workspace }}/docs:/app/public \
             -v ${{ github.workspace }}/skohub/data:/app/data \
             -v ${{ github.workspace }}/skohub/.env:/app/.env \
+            -v ${{ github.workspace }}/skohub/out:/app/public \
             skohub/skohub-vocabs-docker:latest
 
-      - name: Fix permissions (optional, defensive)
+      - name: Copy results to docs/public
         run: |
-          sudo chown -R $USER:$USER docs/
+          rm -rf docs/public
+          mkdir -p docs/public
+          cp -r skohub/out/* docs/public/
 
-      - name: Commit changes
+      - name: Commit updated docs
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add docs/public
-          git diff --cached --quiet || git commit -m "Update docs/public via skohub-vocabs-docker"
+          git diff --cached --quiet || git commit -m "Update docs/public via skohub-vocabs"
           git push
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
