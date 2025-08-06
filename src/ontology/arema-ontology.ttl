@@ -413,48 +413,42 @@ me:BuildingMaterial a skos:Concept ;
     skos:inScheme me:MyThesaurus ;
     skos:prefLabel "Baustoffe"@de,
         "Building Materials"@en,
-        "Matériaux de Construction"@fr,
-        "Matériaux de construction"@fr,
-        "Materiali da costruzione"@it .
+        "Matériaux de Construction"@fr .
 
 me:NaturalResource a skos:Concept ;
     skos:definition "Resources that can potentially be used for construction; both occuring naturally (like bio- or geo-sourced) or being salvaged from demoltions."@en ;
     skos:inScheme me:MyThesaurus ;
-    skos:prefLabel "Natürliche Ressourcen"@de,
-        "Ressourcen"@de,
-        "Natural Resources"@en,
+    skos:prefLabel "Ressourcen"@de,
         "Resources"@en,
-        "Ressources"@fr,
-        "Ressources naturelles"@fr,
-        "Risorse naturali"@it .
+        "Ressources"@fr .
 
 me:Building a skos:Concept ;
     skos:definition "Exemplary buildings or structures made with a earnest commitment to using regenerative materials."@en ;
     skos:inScheme me:MyThesaurus ;
     skos:prefLabel "Gebäude"@de,
         "Buildings"@en,
-        "Bâtiments"@fr,
-        "Edifici"@it .
+        "Bâtiments"@fr .
 
 me:Professional a skos:Concept ;
     skos:definition "Persons or organizations providing services or materials around regenerative materials."@en ;
     skos:inScheme me:MyThesaurus ;
     skos:prefLabel "Fachleute"@de,
         "Professionals"@en,
-        "Professionnels"@fr,
-        "Professionisti"@it .
+        "Professionnels"@fr .
+
+me:Structure a skos:Concept ;
+    skos:definition "A structure"@en ;
+    skos:inScheme me:MyThesaurus ;
+    skos:prefLabel "Struktur"@de,
+        "Structure"@en,
+        "Structure"@fr .
 
 me:TechnicalConstruction a skos:Concept ;
-    skos:definition "Aspects of construction related to the physical realization of buildings, encompassing structural, thermal, acoustic, and service-related elements."@en,
-        "Techniques used to assemble building materials to become building elements."@en ;
+    skos:definition "Techniques used to assemble building materials to become building elements."@en ;
     skos:inScheme me:MyThesaurus ;
     skos:prefLabel "Bauweise"@de,
-        "Technische Konstruktionen"@de,
         "Construction Techniques"@en,
-        "Technical Constructions"@en,
-        "Constructions techniques"@fr,
-        "Systèmes Constructifs"@fr,
-        "Costruzioni tecniche"@it .
+        "Systèmes Constructifs"@fr .
 
 me:MyThesaurus a skos:ConceptScheme ;
     dct:description "AREMA Ontology for building materials, buildings, natural resources, professionals, and technical constructions."@en ;

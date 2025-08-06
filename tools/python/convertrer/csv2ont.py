@@ -80,26 +80,6 @@ me:MyThesaurus a skos:ConceptScheme ;
     skos:prefLabel "AREMA Ontology"@en , "AREMA Ontologie"@de , "Ontologie AREMA"@fr , "Ontologia AREMA"@it ;
     dct:license <https://creativecommons.org/licenses/by/4.0/> .
 
-me:BuildingMaterial a skos:Concept ;
-    skos:inScheme me:MyThesaurus ;
-    skos:prefLabel "Building Materials"@en , "Baustoffe"@de , "Matériaux de construction"@fr , "Materiali da costruzione"@it .
-
-me:Building a skos:Concept ;
-    skos:inScheme me:MyThesaurus ;
-    skos:prefLabel "Buildings"@en , "Gebäude"@de , "Bâtiments"@fr , "Edifici"@it .
-
-me:NaturalResource a skos:Concept ;
-    skos:inScheme me:MyThesaurus ;
-    skos:prefLabel "Natural Resources"@en , "Natürliche Ressourcen"@de , "Ressources naturelles"@fr , "Risorse naturali"@it .
-
-me:Professional a skos:Concept ;
-    skos:inScheme me:MyThesaurus ;
-    skos:prefLabel "Professionals"@en , "Fachleute"@de , "Professionnels"@fr , "Professionisti"@it .
-
-me:TechnicalConstruction a skos:Concept ;
-    skos:inScheme me:MyThesaurus ;
-    skos:prefLabel "Technical Constructions"@en , "Technische Konstruktionen"@de , "Constructions techniques"@fr , "Costruzioni tecniche"@it ;
-    skos:definition "Aspects of construction related to the physical realization of buildings, encompassing structural, thermal, acoustic, and service-related elements."@en .
 """
 
 # Parse the static Turtle into your existing graph
