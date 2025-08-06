@@ -3,9 +3,8 @@
   "type": "Concept",
   "prefLabel": {
     "en": "Material Producer",
-    "de": "Materialhersteller",
-    "fr": "Producteur de matériaux",
-    "it": "Produttore di materiali"
+    "de": "Materialhersteller:in",
+    "fr": "Producteur de Matériaux"
   },
   "definition": {
     "en": "A company or individual involved in the production and supply of construction materials."
@@ -15,18 +14,17 @@
     "prefLabel": {
       "en": "Professionals",
       "de": "Fachleute",
-      "fr": "Professionnels",
-      "it": "Professionisti"
+      "fr": "Professionnels"
     }
   },
   "inScheme": [
     {
-      "id": "http://example.org/taxonomy/AremaVocabulary"
+      "id": "http://example.org/taxonomy/MyThesaurus"
     }
   ],
   "inSchemeAll": [
     {
-      "id": "http://example.org/taxonomy/AremaVocabulary"
+      "id": "http://example.org/taxonomy/MyThesaurus"
     }
   ],
   "@context": {

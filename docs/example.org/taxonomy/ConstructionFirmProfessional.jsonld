@@ -4,8 +4,7 @@
   "prefLabel": {
     "en": "Construction Firm",
     "de": "Bauunternehmen",
-    "fr": "Entreprise de construction",
-    "it": "Impresa di costruzioni"
+    "fr": "Entreprise de Construction"
   },
   "definition": {
     "en": "A company engaged in building construction projects and services."
@@ -15,18 +14,17 @@
     "prefLabel": {
       "en": "Professionals",
       "de": "Fachleute",
-      "fr": "Professionnels",
-      "it": "Professionisti"
+      "fr": "Professionnels"
     }
   },
   "inScheme": [
     {
-      "id": "http://example.org/taxonomy/AremaVocabulary"
+      "id": "http://example.org/taxonomy/MyThesaurus"
     }
   ],
   "inSchemeAll": [
     {
-      "id": "http://example.org/taxonomy/AremaVocabulary"
+      "id": "http://example.org/taxonomy/MyThesaurus"
     }
   ],
   "@context": {

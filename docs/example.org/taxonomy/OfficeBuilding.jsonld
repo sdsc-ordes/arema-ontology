@@ -4,8 +4,7 @@
   "prefLabel": {
     "en": "Office Building",
     "de": "Bürogebäude",
-    "fr": "Immeuble de bureaux",
-    "it": "Edificio per uffici"
+    "fr": "Immeuble de Bureaux"
   },
   "definition": {
     "en": "Buildings primarily used for commercial office purposes."
@@ -15,18 +14,17 @@
     "prefLabel": {
       "en": "Buildings",
       "de": "Gebäude",
-      "fr": "Bâtiments",
-      "it": "Edifici"
+      "fr": "Bâtiments"
     }
   },
   "inScheme": [
     {
-      "id": "http://example.org/taxonomy/AremaVocabulary"
+      "id": "http://example.org/taxonomy/MyThesaurus"
     }
   ],
   "inSchemeAll": [
     {
-      "id": "http://example.org/taxonomy/AremaVocabulary"
+      "id": "http://example.org/taxonomy/MyThesaurus"
     }
   ],
   "@context": {

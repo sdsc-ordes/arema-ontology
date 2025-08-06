@@ -3,30 +3,28 @@
   "type": "Concept",
   "prefLabel": {
     "en": "Craftsman",
-    "de": "Handwerker",
-    "fr": "Artisan",
-    "it": "Artigiano"
+    "de": "Handwerker:in",
+    "fr": "Artisan/ne"
   },
   "definition": {
-    "en": "A skilled worker specializing in manual trades related to construction, such as carpentry or masonry."
+    "en": "A skilled worker specializing in manual trades related to construction"
   },
   "broader": {
     "id": "http://example.org/taxonomy/Professional",
     "prefLabel": {
       "en": "Professionals",
       "de": "Fachleute",
-      "fr": "Professionnels",
-      "it": "Professionisti"
+      "fr": "Professionnels"
     }
   },
   "inScheme": [
     {
-      "id": "http://example.org/taxonomy/AremaVocabulary"
+      "id": "http://example.org/taxonomy/MyThesaurus"
     }
   ],
   "inSchemeAll": [
     {
-      "id": "http://example.org/taxonomy/AremaVocabulary"
+      "id": "http://example.org/taxonomy/MyThesaurus"
     }
   ],
   "@context": {

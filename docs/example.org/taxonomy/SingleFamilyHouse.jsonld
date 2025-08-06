@@ -4,29 +4,27 @@
   "prefLabel": {
     "en": "Single Family House",
     "de": "Einfamilienhaus",
-    "fr": "Maison individuelle",
-    "it": "Casa unifamiliare"
+    "fr": "Maison Individuelle"
   },
   "definition": {
-    "en": "Residential buildings designed for occupancy by a single family."
+    "en": "Buildings intended for a smaller amount of inhabitants"
   },
   "broader": {
     "id": "http://example.org/taxonomy/Building",
     "prefLabel": {
       "en": "Buildings",
       "de": "Gebäude",
-      "fr": "Bâtiments",
-      "it": "Edifici"
+      "fr": "Bâtiments"
     }
   },
   "inScheme": [
     {
-      "id": "http://example.org/taxonomy/AremaVocabulary"
+      "id": "http://example.org/taxonomy/MyThesaurus"
     }
   ],
   "inSchemeAll": [
     {
-      "id": "http://example.org/taxonomy/AremaVocabulary"
+      "id": "http://example.org/taxonomy/MyThesaurus"
     }
   ],
   "@context": {

@@ -4,20 +4,27 @@
   "prefLabel": {
     "en": "Wood",
     "de": "Holz",
-    "fr": "Bois",
-    "it": "Legno"
+    "fr": "Bois"
   },
   "definition": {
-    "en": "Timber or lumber derived from trees, commonly used in building structures and finishes."
+    "en": "Wood"
+  },
+  "broader": {
+    "id": "http://example.org/taxonomy/NaturalResource",
+    "prefLabel": {
+      "en": "Resources",
+      "de": "Ressourcen",
+      "fr": "Ressources"
+    }
   },
   "inScheme": [
     {
-      "id": "http://example.org/taxonomy/AremaVocabulary"
+      "id": "http://example.org/taxonomy/MyThesaurus"
     }
   ],
   "inSchemeAll": [
     {
-      "id": "http://example.org/taxonomy/AremaVocabulary"
+      "id": "http://example.org/taxonomy/MyThesaurus"
     }
   ],
   "@context": {

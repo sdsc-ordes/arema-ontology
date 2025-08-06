@@ -4,8 +4,7 @@
   "prefLabel": {
     "en": "Public Building",
     "de": "Öffentliches Gebäude",
-    "fr": "Bâtiment public",
-    "it": "Edificio pubblico"
+    "fr": "Bâtiment Public"
   },
   "definition": {
     "en": "Buildings intended for use by the public, such as schools, libraries, or government offices."
@@ -15,18 +14,17 @@
     "prefLabel": {
       "en": "Buildings",
       "de": "Gebäude",
-      "fr": "Bâtiments",
-      "it": "Edifici"
+      "fr": "Bâtiments"
     }
   },
   "inScheme": [
     {
-      "id": "http://example.org/taxonomy/AremaVocabulary"
+      "id": "http://example.org/taxonomy/MyThesaurus"
     }
   ],
   "inSchemeAll": [
     {
-      "id": "http://example.org/taxonomy/AremaVocabulary"
+      "id": "http://example.org/taxonomy/MyThesaurus"
     }
   ],
   "@context": {

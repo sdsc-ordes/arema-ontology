@@ -3,9 +3,8 @@
   "type": "Concept",
   "prefLabel": {
     "en": "Civil engineer",
-    "de": "Bauingenieur",
-    "fr": "Ingénieur civil",
-    "it": "Ingegnere civile"
+    "de": "Bauingenieur:in",
+    "fr": "Ingénieur civil"
   },
   "definition": {
     "en": "A professional specializing in the design, construction, and maintenance of infrastructure and buildings."
@@ -15,18 +14,17 @@
     "prefLabel": {
       "en": "Professionals",
       "de": "Fachleute",
-      "fr": "Professionnels",
-      "it": "Professionisti"
+      "fr": "Professionnels"
     }
   },
   "inScheme": [
     {
-      "id": "http://example.org/taxonomy/AremaVocabulary"
+      "id": "http://example.org/taxonomy/MyThesaurus"
     }
   ],
   "inSchemeAll": [
     {
-      "id": "http://example.org/taxonomy/AremaVocabulary"
+      "id": "http://example.org/taxonomy/MyThesaurus"
     }
   ],
   "@context": {

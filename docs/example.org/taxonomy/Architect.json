@@ -3,30 +3,28 @@
   "type": "Concept",
   "prefLabel": {
     "en": "Architect",
-    "de": "Architekt",
-    "fr": "Architecte",
-    "it": "Architetto"
+    "de": "Architekt:in",
+    "fr": "Architecte"
   },
   "definition": {
-    "en": "A professional responsible for designing buildings and overseeing their construction."
+    "en": "A professional responsible for designing buildings"
   },
   "broader": {
     "id": "http://example.org/taxonomy/Professional",
     "prefLabel": {
       "en": "Professionals",
       "de": "Fachleute",
-      "fr": "Professionnels",
-      "it": "Professionisti"
+      "fr": "Professionnels"
     }
   },
   "inScheme": [
     {
-      "id": "http://example.org/taxonomy/AremaVocabulary"
+      "id": "http://example.org/taxonomy/MyThesaurus"
     }
   ],
   "inSchemeAll": [
     {
-      "id": "http://example.org/taxonomy/AremaVocabulary"
+      "id": "http://example.org/taxonomy/MyThesaurus"
     }
   ],
   "@context": {

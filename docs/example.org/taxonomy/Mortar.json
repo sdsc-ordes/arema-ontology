@@ -4,29 +4,27 @@
   "prefLabel": {
     "en": "Mortar, Plaster",
     "de": "Mörtel, Putz",
-    "fr": "Mortier, Crépis",
-    "it": "Malta, Intonaco"
+    "fr": "Mortier, Crépis"
   },
   "definition": {
-    "en": "A mixture used in masonry to bond bricks, stones, or concrete blocks together."
+    "en": "Mixes of a binder, fillers and sometimes additives to bond bricks or to plaster or render surfaces."
   },
   "broader": {
     "id": "http://example.org/taxonomy/BuildingMaterial",
     "prefLabel": {
       "en": "Building Materials",
       "de": "Baustoffe",
-      "fr": "Matériaux de construction",
-      "it": "Materiali da costruzione"
+      "fr": "Matériaux de Construction"
     }
   },
   "inScheme": [
     {
-      "id": "http://example.org/taxonomy/AremaVocabulary"
+      "id": "http://example.org/taxonomy/MyThesaurus"
     }
   ],
   "inSchemeAll": [
     {
-      "id": "http://example.org/taxonomy/AremaVocabulary"
+      "id": "http://example.org/taxonomy/MyThesaurus"
     }
   ],
   "@context": {

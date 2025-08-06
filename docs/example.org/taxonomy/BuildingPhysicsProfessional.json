@@ -3,9 +3,8 @@
   "type": "Concept",
   "prefLabel": {
     "en": "Building Physics",
-    "de": "Bauphysik",
-    "fr": "Physique du bâtiment",
-    "it": "Fisica dell'edificio"
+    "de": "Bauphysiker:in",
+    "fr": "Physique du Bâtiment"
   },
   "definition": {
     "en": "A specialist focusing on the physical properties of buildings, including thermal, acoustic, and energy performance."
@@ -15,18 +14,17 @@
     "prefLabel": {
       "en": "Professionals",
       "de": "Fachleute",
-      "fr": "Professionnels",
-      "it": "Professionisti"
+      "fr": "Professionnels"
     }
   },
   "inScheme": [
     {
-      "id": "http://example.org/taxonomy/AremaVocabulary"
+      "id": "http://example.org/taxonomy/MyThesaurus"
     }
   ],
   "inSchemeAll": [
     {
-      "id": "http://example.org/taxonomy/AremaVocabulary"
+      "id": "http://example.org/taxonomy/MyThesaurus"
     }
   ],
   "@context": {

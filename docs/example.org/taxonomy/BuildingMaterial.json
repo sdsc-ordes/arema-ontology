@@ -4,38 +4,18 @@
   "prefLabel": {
     "en": "Building Materials",
     "de": "Baustoffe",
-    "fr": "Matériaux de construction",
-    "it": "Materiali da costruzione"
+    "fr": "Matériaux de Construction"
   },
   "definition": {
-    "en": "Materials used for construction purposes, including natural and manufactured substances."
+    "en": "Materials made out of resources by transformation and processing for the purpose of building."
   },
   "narrower": [
-    {
-      "id": "http://example.org/taxonomy/Massive",
-      "prefLabel": {
-        "en": "Massive",
-        "de": "Massivlehmbau",
-        "fr": "Massif",
-        "it": "Massiccio"
-      }
-    },
     {
       "id": "http://example.org/taxonomy/Bricks",
       "prefLabel": {
         "en": "Bricks",
         "de": "Baustein",
-        "fr": "Briques",
-        "it": "Mattoni"
-      }
-    },
-    {
-      "id": "http://example.org/taxonomy/Panels",
-      "prefLabel": {
-        "en": "Panels, Boards",
-        "de": "Platten",
-        "fr": "Plaques",
-        "it": "Pannelli"
+        "fr": "Briques"
       }
     },
     {
@@ -43,8 +23,15 @@
       "prefLabel": {
         "en": "Bulk",
         "de": "Schüttgut",
-        "fr": "Vrac",
-        "it": "Massa"
+        "fr": "Vrac"
+      }
+    },
+    {
+      "id": "http://example.org/taxonomy/Massive",
+      "prefLabel": {
+        "en": "Massive",
+        "de": "Massivbau",
+        "fr": "Massif"
       }
     },
     {
@@ -52,60 +39,37 @@
       "prefLabel": {
         "en": "Mortar, Plaster",
         "de": "Mörtel, Putz",
-        "fr": "Mortier, Crépis",
-        "it": "Malta, Intonaco"
+        "fr": "Mortier, Crépis"
       }
     },
     {
-      "id": "http://example.org/taxonomy/Wood",
+      "id": "http://example.org/taxonomy/Panels",
       "prefLabel": {
-        "en": "Wood",
-        "de": "Holz",
-        "fr": "Bois",
-        "it": "Legno"
+        "en": "Panels, Boards",
+        "de": "Platten",
+        "fr": "Plaques"
       }
     },
     {
-      "id": "http://example.org/taxonomy/Concrete",
+      "id": "http://example.org/taxonomy/Timber",
       "prefLabel": {
-        "en": "Concrete",
-        "de": "Beton",
-        "fr": "Béton",
-        "it": "Calcestruzzo"
-      }
-    },
-    {
-      "id": "http://example.org/taxonomy/Glass",
-      "prefLabel": {
-        "en": "Glass",
-        "de": "Glas",
-        "fr": "Verre",
-        "it": "Vetro"
-      }
-    },
-    {
-      "id": "http://example.org/taxonomy/Steel",
-      "prefLabel": {
-        "en": "Steel",
-        "de": "Stahl",
-        "fr": "Acier",
-        "it": "Acciaio"
+        "en": "Timber"
       }
     }
   ],
   "inScheme": [
     {
-      "id": "http://example.org/taxonomy/AremaVocabulary"
+      "id": "http://example.org/taxonomy/MyThesaurus"
     }
   ],
   "inSchemeAll": [
     {
-      "id": "http://example.org/taxonomy/AremaVocabulary"
+      "id": "http://example.org/taxonomy/MyThesaurus"
     }
   ],
   "topConceptOf": [
     {
-      "id": "http://example.org/taxonomy/AremaVocabulary"
+      "id": "http://example.org/taxonomy/MyThesaurus"
     }
   ],
   "@context": {

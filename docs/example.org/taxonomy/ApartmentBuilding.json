@@ -2,31 +2,29 @@
   "id": "http://example.org/taxonomy/ApartmentBuilding",
   "type": "Concept",
   "prefLabel": {
-    "en": "Apartment Building",
+    "en": "Multi-Storey Housing",
     "de": "Mehrfamilienhaus",
-    "fr": "Immeuble d'habitation",
-    "it": "Edificio residenziale"
+    "fr": "Immeuble d'Habitation"
   },
   "definition": {
-    "en": "Buildings containing multiple separate residential units."
+    "en": "Buildings sporting multiple storeys."
   },
   "broader": {
     "id": "http://example.org/taxonomy/Building",
     "prefLabel": {
       "en": "Buildings",
       "de": "Gebäude",
-      "fr": "Bâtiments",
-      "it": "Edifici"
+      "fr": "Bâtiments"
     }
   },
   "inScheme": [
     {
-      "id": "http://example.org/taxonomy/AremaVocabulary"
+      "id": "http://example.org/taxonomy/MyThesaurus"
     }
   ],
   "inSchemeAll": [
     {
-      "id": "http://example.org/taxonomy/AremaVocabulary"
+      "id": "http://example.org/taxonomy/MyThesaurus"
     }
   ],
   "@context": {

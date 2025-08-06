@@ -4,29 +4,19 @@
   "prefLabel": {
     "en": "New",
     "de": "Neu",
-    "fr": "Nouveau",
-    "it": "Nuovo"
+    "fr": "Nouveau"
   },
   "definition": {
-    "en": "Buildings that are newly constructed and not previously used or occupied."
-  },
-  "broader": {
-    "id": "http://example.org/taxonomy/BuildingStatus",
-    "prefLabel": {
-      "en": "Building Status",
-      "de": "Gebäudestatus",
-      "fr": "Statut du bâtiment",
-      "it": "Stato dell'edificio"
-    }
+    "en": "Buildings that were newly constructed."
   },
   "inScheme": [
     {
-      "id": "http://example.org/taxonomy/AremaVocabulary"
+      "id": "http://example.org/taxonomy/MyThesaurus"
     }
   ],
   "inSchemeAll": [
     {
-      "id": "http://example.org/taxonomy/AremaVocabulary"
+      "id": "http://example.org/taxonomy/MyThesaurus"
     }
   ],
   "@context": {

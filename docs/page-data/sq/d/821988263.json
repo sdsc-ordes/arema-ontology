@@ -1,1 +1,1 @@
-{"data":{"allConceptScheme":{"edges":[{"node":{"id":"http://example.org/taxonomy/AremaVocabulary","fields":{"languages":["en","de","fr","it"]}}}]}}}
+{"data":{"allConceptScheme":{"edges":[{"node":{"id":"http://example.org/taxonomy/MyThesaurus","fields":{"languages":["de","en","fr","it"]}}}]}}}

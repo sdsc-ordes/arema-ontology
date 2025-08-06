@@ -4,29 +4,27 @@
   "prefLabel": {
     "en": "Bricks",
     "de": "Baustein",
-    "fr": "Briques",
-    "it": "Mattoni"
+    "fr": "Briques"
   },
   "definition": {
-    "en": "Modular building materials typically made of fired clay or similar substances, used in masonry construction."
+    "en": "Blocks of various formats depending on density, preferences, available forms and purposes."
   },
   "broader": {
     "id": "http://example.org/taxonomy/BuildingMaterial",
     "prefLabel": {
       "en": "Building Materials",
       "de": "Baustoffe",
-      "fr": "Matériaux de construction",
-      "it": "Materiali da costruzione"
+      "fr": "Matériaux de Construction"
     }
   },
   "inScheme": [
     {
-      "id": "http://example.org/taxonomy/AremaVocabulary"
+      "id": "http://example.org/taxonomy/MyThesaurus"
     }
   ],
   "inSchemeAll": [
     {
-      "id": "http://example.org/taxonomy/AremaVocabulary"
+      "id": "http://example.org/taxonomy/MyThesaurus"
     }
   ],
   "@context": {

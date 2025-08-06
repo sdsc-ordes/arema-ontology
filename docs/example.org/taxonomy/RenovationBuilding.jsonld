@@ -3,30 +3,20 @@
   "type": "Concept",
   "prefLabel": {
     "en": "Renovation",
-    "de": "Renovierung",
-    "fr": "Rénovation",
-    "it": "Ristrutturazione"
+    "de": "Umbau",
+    "fr": "Rénovation"
   },
   "definition": {
-    "en": "Buildings undergoing repair, improvement, or modernization."
-  },
-  "broader": {
-    "id": "http://example.org/taxonomy/BuildingStatus",
-    "prefLabel": {
-      "en": "Building Status",
-      "de": "Gebäudestatus",
-      "fr": "Statut du bâtiment",
-      "it": "Stato dell'edificio"
-    }
+    "en": "Buildings that underwent repair or adaptation to new needs."
   },
   "inScheme": [
     {
-      "id": "http://example.org/taxonomy/AremaVocabulary"
+      "id": "http://example.org/taxonomy/MyThesaurus"
     }
   ],
   "inSchemeAll": [
     {
-      "id": "http://example.org/taxonomy/AremaVocabulary"
+      "id": "http://example.org/taxonomy/MyThesaurus"
     }
   ],
   "@context": {

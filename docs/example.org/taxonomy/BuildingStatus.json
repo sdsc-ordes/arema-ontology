@@ -2,10 +2,9 @@
   "id": "http://example.org/taxonomy/BuildingStatus",
   "type": "Concept",
   "prefLabel": {
-    "en": "Building Status",
-    "de": "Gebäudestatus",
-    "fr": "Statut du bâtiment",
-    "it": "Stato dell'edificio"
+    "en": "Intervention Type",
+    "de": "Art der Massnahme",
+    "fr": "Type d'Intervention"
   },
   "definition": {
     "en": "Classification of buildings based on the type of intervention, such as new construction or renovation."
@@ -16,17 +15,15 @@
       "prefLabel": {
         "en": "New",
         "de": "Neu",
-        "fr": "Nouveau",
-        "it": "Nuovo"
+        "fr": "Nouveau"
       }
     },
     {
       "id": "http://example.org/taxonomy/RenovationBuilding",
       "prefLabel": {
         "en": "Renovation",
-        "de": "Renovierung",
-        "fr": "Rénovation",
-        "it": "Ristrutturazione"
+        "de": "Umbau",
+        "fr": "Rénovation"
       }
     }
   ],
@@ -35,18 +32,17 @@
     "prefLabel": {
       "en": "Buildings",
       "de": "Gebäude",
-      "fr": "Bâtiments",
-      "it": "Edifici"
+      "fr": "Bâtiments"
     }
   },
   "inScheme": [
     {
-      "id": "http://example.org/taxonomy/AremaVocabulary"
+      "id": "http://example.org/taxonomy/MyThesaurus"
     }
   ],
   "inSchemeAll": [
     {
-      "id": "http://example.org/taxonomy/AremaVocabulary"
+      "id": "http://example.org/taxonomy/MyThesaurus"
     }
   ],
   "@context": {

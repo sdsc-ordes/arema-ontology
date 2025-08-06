@@ -4,8 +4,7 @@
   "prefLabel": {
     "en": "Simple Structure",
     "de": "Einfache Struktur",
-    "fr": "Structure simple",
-    "it": "Struttura semplice"
+    "fr": "Structure Simple"
   },
   "definition": {
     "en": "Basic or minimal buildings or structures, typically with limited complexity or use."
@@ -15,18 +14,17 @@
     "prefLabel": {
       "en": "Buildings",
       "de": "Gebäude",
-      "fr": "Bâtiments",
-      "it": "Edifici"
+      "fr": "Bâtiments"
     }
   },
   "inScheme": [
     {
-      "id": "http://example.org/taxonomy/AremaVocabulary"
+      "id": "http://example.org/taxonomy/MyThesaurus"
     }
   ],
   "inSchemeAll": [
     {
-      "id": "http://example.org/taxonomy/AremaVocabulary"
+      "id": "http://example.org/taxonomy/MyThesaurus"
     }
   ],
   "@context": {

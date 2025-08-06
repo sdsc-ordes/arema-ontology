@@ -4,29 +4,27 @@
   "prefLabel": {
     "en": "Bulk",
     "de": "Schüttgut",
-    "fr": "Vrac",
-    "it": "Massa"
+    "fr": "Vrac"
   },
   "definition": {
-    "en": "Loose construction materials used in large quantities, such as gravel or sand."
+    "en": "Loose building materials used to fill voids"
   },
   "broader": {
     "id": "http://example.org/taxonomy/BuildingMaterial",
     "prefLabel": {
       "en": "Building Materials",
       "de": "Baustoffe",
-      "fr": "Matériaux de construction",
-      "it": "Materiali da costruzione"
+      "fr": "Matériaux de Construction"
     }
   },
   "inScheme": [
     {
-      "id": "http://example.org/taxonomy/AremaVocabulary"
+      "id": "http://example.org/taxonomy/MyThesaurus"
     }
   ],
   "inSchemeAll": [
     {
-      "id": "http://example.org/taxonomy/AremaVocabulary"
+      "id": "http://example.org/taxonomy/MyThesaurus"
     }
   ],
   "@context": {

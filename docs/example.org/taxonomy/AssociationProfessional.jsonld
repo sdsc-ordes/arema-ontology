@@ -3,30 +3,28 @@
   "type": "Concept",
   "prefLabel": {
     "en": "Association",
-    "de": "Verband",
-    "fr": "Association",
-    "it": "Associazione"
+    "de": "Verband/Verein",
+    "fr": "Association"
   },
   "definition": {
-    "en": "An organization representing the interests of professionals within the construction sector."
+    "en": "An organization promoting either a way of building or the professionals using it"
   },
   "broader": {
     "id": "http://example.org/taxonomy/Professional",
     "prefLabel": {
       "en": "Professionals",
       "de": "Fachleute",
-      "fr": "Professionnels",
-      "it": "Professionisti"
+      "fr": "Professionnels"
     }
   },
   "inScheme": [
     {
-      "id": "http://example.org/taxonomy/AremaVocabulary"
+      "id": "http://example.org/taxonomy/MyThesaurus"
     }
   ],
   "inSchemeAll": [
     {
-      "id": "http://example.org/taxonomy/AremaVocabulary"
+      "id": "http://example.org/taxonomy/MyThesaurus"
     }
   ],
   "@context": {

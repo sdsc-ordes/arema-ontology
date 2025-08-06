@@ -2,40 +2,20 @@
   "id": "http://example.org/taxonomy/NaturalResource",
   "type": "Concept",
   "prefLabel": {
-    "en": "Natural Resources",
-    "de": "Natürliche Ressourcen",
-    "fr": "Ressources naturelles",
-    "it": "Risorse naturali"
+    "en": "Resources",
+    "de": "Ressourcen",
+    "fr": "Ressources"
   },
   "definition": {
-    "en": "Naturally occurring substances or materials that can be used for construction, manufacturing, or energy production."
+    "en": "Resources that can potentially be used for construction; both occuring naturally (like bio- or geo-sourced) or being salvaged from demoltions."
   },
   "narrower": [
     {
       "id": "http://example.org/taxonomy/Earth",
       "prefLabel": {
         "en": "Earth",
-        "de": "Erde",
-        "fr": "Terre",
-        "it": "Terra"
-      }
-    },
-    {
-      "id": "http://example.org/taxonomy/Rock",
-      "prefLabel": {
-        "en": "Rock",
-        "de": "Gestein",
-        "fr": "Roche",
-        "it": "Rocce"
-      }
-    },
-    {
-      "id": "http://example.org/taxonomy/Straw",
-      "prefLabel": {
-        "en": "Straw",
-        "de": "Stroh",
-        "fr": "Paille",
-        "it": "Paglia"
+        "de": "Lehm",
+        "fr": "Terre"
       }
     },
     {
@@ -43,8 +23,31 @@
       "prefLabel": {
         "en": "Hemp",
         "de": "Hanf",
-        "fr": "Chanvre",
-        "it": "Canapa"
+        "fr": "Chanvre"
+      }
+    },
+    {
+      "id": "http://example.org/taxonomy/OtherFibers",
+      "prefLabel": {
+        "en": "Other Fibres",
+        "de": "Andere Fasern",
+        "fr": "Autres fibres"
+      }
+    },
+    {
+      "id": "http://example.org/taxonomy/Rock",
+      "prefLabel": {
+        "en": "Rock",
+        "de": "Gestein",
+        "fr": "Roche"
+      }
+    },
+    {
+      "id": "http://example.org/taxonomy/Straw",
+      "prefLabel": {
+        "en": "Straw",
+        "de": "Stroh",
+        "fr": "Paille"
       }
     },
     {
@@ -52,33 +55,23 @@
       "prefLabel": {
         "en": "Wood",
         "de": "Holz",
-        "fr": "Bois",
-        "it": "Legno"
-      }
-    },
-    {
-      "id": "http://example.org/taxonomy/OtherFibers",
-      "prefLabel": {
-        "en": "Other Fibers",
-        "de": "Andere Fasern",
-        "fr": "Autres fibres",
-        "it": "Altre fibre"
+        "fr": "Bois"
       }
     }
   ],
   "inScheme": [
     {
-      "id": "http://example.org/taxonomy/AremaVocabulary"
+      "id": "http://example.org/taxonomy/MyThesaurus"
     }
   ],
   "inSchemeAll": [
     {
-      "id": "http://example.org/taxonomy/AremaVocabulary"
+      "id": "http://example.org/taxonomy/MyThesaurus"
     }
   ],
   "topConceptOf": [
     {
-      "id": "http://example.org/taxonomy/AremaVocabulary"
+      "id": "http://example.org/taxonomy/MyThesaurus"
     }
   ],
   "@context": {

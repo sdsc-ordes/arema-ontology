@@ -2,137 +2,60 @@
   "id": "http://example.org/taxonomy/TechnicalConstruction",
   "type": "Concept",
   "prefLabel": {
-    "en": "Technical Constructions",
-    "de": "Technische Konstruktionen",
-    "fr": "Constructions techniques",
-    "it": "Costruzioni tecniche"
+    "en": "Construction Techniques",
+    "de": "Bauweise",
+    "fr": "Systèmes Constructifs"
   },
   "definition": {
-    "en": "Aspects of construction related to the physical realization of buildings, encompassing structural, thermal, acoustic, and service-related elements."
+    "en": "Techniques used to assemble building materials to become building elements."
   },
   "narrower": [
     {
-      "id": "http://example.org/taxonomy/FireProtection",
+      "id": "http://example.org/taxonomy/Structure",
       "prefLabel": {
-        "en": "Fire Protection",
-        "de": "Brandschutz",
-        "fr": "Protection incendie",
-        "it": "Protezione antincendio"
+        "en": "Structure",
+        "de": "Struktur",
+        "fr": "Structure"
       }
     },
     {
-      "id": "http://example.org/taxonomy/ThermalInsulation",
+      "id": "http://example.org/taxonomy/Finishings",
       "prefLabel": {
-        "en": "Thermal Insulation",
-        "de": "Wärmeschutz",
-        "fr": "Isolation thermique",
-        "it": "Isolamento termico"
+        "en": "Finishings",
+        "de": "Oberflächen",
+        "fr": "Finitions"
       }
     },
     {
-      "id": "http://example.org/taxonomy/MoistureProtection",
+      "id": "http://example.org/taxonomy/Envelope",
       "prefLabel": {
-        "en": "Moisture Protection",
-        "de": "Feuchteschutz",
-        "fr": "Protection contre l'humidité",
-        "it": "Protezione dall'umidità"
+        "en": "Envelope",
+        "de": "Hülle",
+        "fr": "Enveloppe"
       }
     },
     {
-      "id": "http://example.org/taxonomy/SoundInsulation",
-      "prefLabel": {
-        "en": "Sound Insulation",
-        "de": "Schallschutz",
-        "fr": "Isolation acoustique",
-        "it": "Isolamento acustico"
-      }
-    },
-    {
-      "id": "http://example.org/taxonomy/LoadBearingStructure",
-      "prefLabel": {
-        "en": "Load-bearing Structure",
-        "de": "Tragkonstruktion",
-        "fr": "Structure porteuse",
-        "it": "Struttura portante"
-      }
-    },
-    {
-      "id": "http://example.org/taxonomy/LightweightConstruction",
-      "prefLabel": {
-        "en": "Lightweight Construction",
-        "de": "Leichtbau",
-        "fr": "Construction légère",
-        "it": "Costruzione leggera"
-      }
-    },
-    {
-      "id": "http://example.org/taxonomy/BuildingServices",
-      "prefLabel": {
-        "en": "Building Services",
-        "de": "Technische Gebäudeausrüstung",
-        "fr": "Services du bâtiment",
-        "it": "Impianti tecnici dell'edificio"
-      }
-    },
-    {
-      "id": "http://example.org/taxonomy/BuildingEnvelope",
-      "prefLabel": {
-        "en": "Building Envelope",
-        "de": "Gebäudehülle",
-        "fr": "Enveloppe du bâtiment",
-        "it": "Involucro edilizio"
-      }
-    },
-    {
-      "id": "http://example.org/taxonomy/Prefabrication",
-      "prefLabel": {
-        "en": "Prefabrication",
-        "de": "Vorproduktion",
-        "fr": "Préfabrication",
-        "it": "Prefabbricazione"
-      }
-    },
-    {
-      "id": "http://example.org/taxonomy/RenovationTechnicalConstruction",
-      "prefLabel": {
-        "en": "Renovation",
-        "de": "Sanierung",
-        "fr": "Rénovation",
-        "it": "Ristrutturazione"
-      }
-    },
-    {
-      "id": "http://example.org/taxonomy/Deconstruction",
-      "prefLabel": {
-        "en": "Deconstruction",
-        "de": "Rückbau",
-        "fr": "Déconstruction",
-        "it": "Decostruzione"
-      }
-    },
-    {
-      "id": "http://example.org/taxonomy/TechnicalConstructionOther",
+      "id": "http://example.org/taxonomy/Other",
       "prefLabel": {
         "en": "Other",
         "de": "Andere",
-        "fr": "Autre",
-        "it": "Altro"
+        "fr": "Autre"
       }
     }
   ],
   "inScheme": [
     {
-      "id": "http://example.org/taxonomy/AremaVocabulary"
+      "id": "http://example.org/taxonomy/MyThesaurus"
     }
   ],
   "inSchemeAll": [
     {
-      "id": "http://example.org/taxonomy/AremaVocabulary"
+      "id": "http://example.org/taxonomy/MyThesaurus"
     }
   ],
   "topConceptOf": [
     {
-      "id": "http://example.org/taxonomy/AremaVocabulary"
+      "id": "http://example.org/taxonomy/MyThesaurus"
     }
   ],
   "@context": {

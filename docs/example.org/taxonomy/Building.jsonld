@@ -4,38 +4,34 @@
   "prefLabel": {
     "en": "Buildings",
     "de": "Gebäude",
-    "fr": "Bâtiments",
-    "it": "Edifici"
+    "fr": "Bâtiments"
   },
   "definition": {
-    "en": "Physical structures intended for human use or occupancy, such as houses, offices, and public buildings."
+    "en": "Exemplary buildings or structures made with a earnest commitment to using regenerative materials."
   },
   "narrower": [
     {
-      "id": "http://example.org/taxonomy/BuildingStatus",
-      "prefLabel": {
-        "en": "Building Status",
-        "de": "Gebäudestatus",
-        "fr": "Statut du bâtiment",
-        "it": "Stato dell'edificio"
-      }
-    },
-    {
       "id": "http://example.org/taxonomy/ApartmentBuilding",
       "prefLabel": {
-        "en": "Apartment Building",
+        "en": "Multi-Storey Housing",
         "de": "Mehrfamilienhaus",
-        "fr": "Immeuble d'habitation",
-        "it": "Edificio residenziale"
+        "fr": "Immeuble d'Habitation"
       }
     },
     {
-      "id": "http://example.org/taxonomy/SingleFamilyHouse",
+      "id": "http://example.org/taxonomy/NewBuilding",
       "prefLabel": {
-        "en": "Single Family House",
-        "de": "Einfamilienhaus",
-        "fr": "Maison individuelle",
-        "it": "Casa unifamiliare"
+        "en": "New",
+        "de": "Neu",
+        "fr": "Nouveau"
+      }
+    },
+    {
+      "id": "http://example.org/taxonomy/BuildingStatus",
+      "prefLabel": {
+        "en": "Intervention Type",
+        "de": "Art der Massnahme",
+        "fr": "Type d'Intervention"
       }
     },
     {
@@ -43,8 +39,7 @@
       "prefLabel": {
         "en": "Office Building",
         "de": "Bürogebäude",
-        "fr": "Immeuble de bureaux",
-        "it": "Edificio per uffici"
+        "fr": "Immeuble de Bureaux"
       }
     },
     {
@@ -52,8 +47,15 @@
       "prefLabel": {
         "en": "Public Building",
         "de": "Öffentliches Gebäude",
-        "fr": "Bâtiment public",
-        "it": "Edificio pubblico"
+        "fr": "Bâtiment Public"
+      }
+    },
+    {
+      "id": "http://example.org/taxonomy/RenovationBuilding",
+      "prefLabel": {
+        "en": "Renovation",
+        "de": "Umbau",
+        "fr": "Rénovation"
       }
     },
     {
@@ -61,24 +63,31 @@
       "prefLabel": {
         "en": "Simple Structure",
         "de": "Einfache Struktur",
-        "fr": "Structure simple",
-        "it": "Struttura semplice"
+        "fr": "Structure Simple"
+      }
+    },
+    {
+      "id": "http://example.org/taxonomy/SingleFamilyHouse",
+      "prefLabel": {
+        "en": "Single Family House",
+        "de": "Einfamilienhaus",
+        "fr": "Maison Individuelle"
       }
     }
   ],
   "inScheme": [
     {
-      "id": "http://example.org/taxonomy/AremaVocabulary"
+      "id": "http://example.org/taxonomy/MyThesaurus"
     }
   ],
   "inSchemeAll": [
     {
-      "id": "http://example.org/taxonomy/AremaVocabulary"
+      "id": "http://example.org/taxonomy/MyThesaurus"
     }
   ],
   "topConceptOf": [
     {
-      "id": "http://example.org/taxonomy/AremaVocabulary"
+      "id": "http://example.org/taxonomy/MyThesaurus"
     }
   ],
   "@context": {

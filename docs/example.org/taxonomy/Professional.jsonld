@@ -4,65 +4,42 @@
   "prefLabel": {
     "en": "Professionals",
     "de": "Fachleute",
-    "fr": "Professionnels",
-    "it": "Professionisti"
+    "fr": "Professionnels"
   },
   "definition": {
-    "en": "Persons or organizations providing expertise or services within the construction or building sectors."
+    "en": "Persons or organizations providing services or materials around regenerative materials."
   },
   "narrower": [
     {
       "id": "http://example.org/taxonomy/Architect",
       "prefLabel": {
         "en": "Architect",
-        "de": "Architekt",
-        "fr": "Architecte",
-        "it": "Architetto"
-      }
-    },
-    {
-      "id": "http://example.org/taxonomy/CivilEngineer",
-      "prefLabel": {
-        "en": "Civil engineer",
-        "de": "Bauingenieur",
-        "fr": "Ingénieur civil",
-        "it": "Ingegnere civile"
-      }
-    },
-    {
-      "id": "http://example.org/taxonomy/Craftsman",
-      "prefLabel": {
-        "en": "Craftsman",
-        "de": "Handwerker",
-        "fr": "Artisan",
-        "it": "Artigiano"
-      }
-    },
-    {
-      "id": "http://example.org/taxonomy/MaterialProducer",
-      "prefLabel": {
-        "en": "Material Producer",
-        "de": "Materialhersteller",
-        "fr": "Producteur de matériaux",
-        "it": "Produttore di materiali"
-      }
-    },
-    {
-      "id": "http://example.org/taxonomy/BuildingPhysicsProfessional",
-      "prefLabel": {
-        "en": "Building Physics",
-        "de": "Bauphysik",
-        "fr": "Physique du bâtiment",
-        "it": "Fisica dell'edificio"
+        "de": "Architekt:in",
+        "fr": "Architecte"
       }
     },
     {
       "id": "http://example.org/taxonomy/AssociationProfessional",
       "prefLabel": {
         "en": "Association",
-        "de": "Verband",
-        "fr": "Association",
-        "it": "Associazione"
+        "de": "Verband/Verein",
+        "fr": "Association"
+      }
+    },
+    {
+      "id": "http://example.org/taxonomy/BuildingPhysicsProfessional",
+      "prefLabel": {
+        "en": "Building Physics",
+        "de": "Bauphysiker:in",
+        "fr": "Physique du Bâtiment"
+      }
+    },
+    {
+      "id": "http://example.org/taxonomy/CivilEngineer",
+      "prefLabel": {
+        "en": "Civil engineer",
+        "de": "Bauingenieur:in",
+        "fr": "Ingénieur civil"
       }
     },
     {
@@ -70,69 +47,55 @@
       "prefLabel": {
         "en": "Construction Firm",
         "de": "Bauunternehmen",
-        "fr": "Entreprise de construction",
-        "it": "Impresa di costruzioni"
+        "fr": "Entreprise de Construction"
       }
     },
     {
-      "id": "http://example.org/taxonomy/ResearcherProfessional",
+      "id": "http://example.org/taxonomy/Craftsman",
+      "prefLabel": {
+        "en": "Craftsman",
+        "de": "Handwerker:in",
+        "fr": "Artisan/ne"
+      }
+    },
+    {
+      "id": "http://example.org/taxonomy/MaterialProducer",
+      "prefLabel": {
+        "en": "Material Producer",
+        "de": "Materialhersteller:in",
+        "fr": "Producteur de Matériaux"
+      }
+    },
+    {
+      "id": "http://example.org/taxonomy/Researcher",
       "prefLabel": {
         "en": "Researcher",
-        "de": "Forscher",
-        "fr": "Chercheur",
-        "it": "Ricercatore"
+        "de": "Forscher:in",
+        "fr": "Chercheur/se"
       }
     },
     {
-      "id": "http://example.org/taxonomy/ResellerProfessional",
+      "id": "http://example.org/taxonomy/Reseller",
       "prefLabel": {
         "en": "Reseller",
-        "de": "Wiederverkäufer",
-        "fr": "Revendeur",
-        "it": "Rivenditore"
-      }
-    },
-    {
-      "id": "http://example.org/taxonomy/ProfessionalOther",
-      "prefLabel": {
-        "en": "Other",
-        "de": "Andere",
-        "fr": "Autre",
-        "it": "Altro"
-      }
-    },
-    {
-      "id": "http://example.org/taxonomy/ConstructionWorker",
-      "prefLabel": {
-        "en": "Construction Worker",
-        "de": "Bauarbeiter",
-        "fr": "Ouvrier du bâtiment",
-        "it": "Operaio edile"
-      }
-    },
-    {
-      "id": "http://example.org/taxonomy/BuildingInspector",
-      "prefLabel": {
-        "en": "Building Inspector",
-        "de": "Bauinspektor",
-        "fr": "Inspecteur du bâtiment",
-        "it": "Ispettore edilizio"
+        "de": "Händler:in",
+        "fr": "Revendeur/se"
       }
     }
   ],
   "inScheme": [
     {
-      "id": "http://example.org/taxonomy/AremaVocabulary"
+      "id": "http://example.org/taxonomy/MyThesaurus"
     }
   ],
   "inSchemeAll": [
     {
-      "id": "http://example.org/taxonomy/AremaVocabulary"
+      "id": "http://example.org/taxonomy/MyThesaurus"
     }
   ],
   "topConceptOf": [
     {
-      "id": "http://example.org/taxonomy/AremaVocabulary"
+      "id": "http://example.org/taxonomy/MyThesaurus"
     }
   ],
   "@context": {

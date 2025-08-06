@@ -4,29 +4,27 @@
   "prefLabel": {
     "en": "Straw",
     "de": "Stroh",
-    "fr": "Paille",
-    "it": "Paglia"
+    "fr": "Paille"
   },
   "definition": {
-    "en": "Dried stalks of grain plants used as a natural building material, often in combination with earth."
+    "en": "Dried stalks of cereals"
   },
   "broader": {
     "id": "http://example.org/taxonomy/NaturalResource",
     "prefLabel": {
-      "en": "Natural Resources",
-      "de": "Natürliche Ressourcen",
-      "fr": "Ressources naturelles",
-      "it": "Risorse naturali"
+      "en": "Resources",
+      "de": "Ressourcen",
+      "fr": "Ressources"
     }
   },
   "inScheme": [
     {
-      "id": "http://example.org/taxonomy/AremaVocabulary"
+      "id": "http://example.org/taxonomy/MyThesaurus"
     }
   ],
   "inSchemeAll": [
     {
-      "id": "http://example.org/taxonomy/AremaVocabulary"
+      "id": "http://example.org/taxonomy/MyThesaurus"
     }
   ],
   "@context": {

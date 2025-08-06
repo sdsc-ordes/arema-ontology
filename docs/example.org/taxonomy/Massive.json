@@ -3,30 +3,28 @@
   "type": "Concept",
   "prefLabel": {
     "en": "Massive",
-    "de": "Massivlehmbau",
-    "fr": "Massif",
-    "it": "Massiccio"
+    "de": "Massivbau",
+    "fr": "Massif"
   },
   "definition": {
-    "en": "Building materials characterized by their mass and solidity, such as concrete or rammed earth."
+    "en": "Building Materials that can be processed to become massive, homogene building elements. They can be load-bearing or not and are mostly in need of formwork. "
   },
   "broader": {
     "id": "http://example.org/taxonomy/BuildingMaterial",
     "prefLabel": {
       "en": "Building Materials",
       "de": "Baustoffe",
-      "fr": "Matériaux de construction",
-      "it": "Materiali da costruzione"
+      "fr": "Matériaux de Construction"
     }
   },
   "inScheme": [
     {
-      "id": "http://example.org/taxonomy/AremaVocabulary"
+      "id": "http://example.org/taxonomy/MyThesaurus"
     }
   ],
   "inSchemeAll": [
     {
-      "id": "http://example.org/taxonomy/AremaVocabulary"
+      "id": "http://example.org/taxonomy/MyThesaurus"
     }
   ],
   "@context": {

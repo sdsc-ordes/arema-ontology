@@ -4,29 +4,27 @@
   "prefLabel": {
     "en": "Panels, Boards",
     "de": "Platten",
-    "fr": "Plaques",
-    "it": "Pannelli"
+    "fr": "Plaques"
   },
   "definition": {
-    "en": "Prefabricated flat building components, often used for walls, floors, and ceilings."
+    "en": "Prefabricated flat building materials, designed for different purposes as panelling and/or insulation"
   },
   "broader": {
     "id": "http://example.org/taxonomy/BuildingMaterial",
     "prefLabel": {
       "en": "Building Materials",
       "de": "Baustoffe",
-      "fr": "Matériaux de construction",
-      "it": "Materiali da costruzione"
+      "fr": "Matériaux de Construction"
     }
   },
   "inScheme": [
     {
-      "id": "http://example.org/taxonomy/AremaVocabulary"
+      "id": "http://example.org/taxonomy/MyThesaurus"
     }
   ],
   "inSchemeAll": [
     {
-      "id": "http://example.org/taxonomy/AremaVocabulary"
+      "id": "http://example.org/taxonomy/MyThesaurus"
     }
   ],
   "@context": {

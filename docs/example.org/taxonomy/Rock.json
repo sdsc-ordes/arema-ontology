@@ -4,29 +4,27 @@
   "prefLabel": {
     "en": "Rock",
     "de": "Gestein",
-    "fr": "Roche",
-    "it": "Rocce"
+    "fr": "Roche"
   },
   "definition": {
-    "en": "Natural stone materials used in construction for strength and durability."
+    "en": "Natural rocks that can be found the bedrock"
   },
   "broader": {
     "id": "http://example.org/taxonomy/NaturalResource",
     "prefLabel": {
-      "en": "Natural Resources",
-      "de": "Natürliche Ressourcen",
-      "fr": "Ressources naturelles",
-      "it": "Risorse naturali"
+      "en": "Resources",
+      "de": "Ressourcen",
+      "fr": "Ressources"
     }
   },
   "inScheme": [
     {
-      "id": "http://example.org/taxonomy/AremaVocabulary"
+      "id": "http://example.org/taxonomy/MyThesaurus"
     }
   ],
   "inSchemeAll": [
     {
-      "id": "http://example.org/taxonomy/AremaVocabulary"
+      "id": "http://example.org/taxonomy/MyThesaurus"
     }
   ],
   "@context": {
