@@ -29,6 +29,7 @@ g.bind("vann", "http://purl.org/vocab/vann/")
 for _, row in df.iterrows():
     concept = URIRef(row['s'])
     g.add((concept, RDF.type, SKOS.Concept))
+    g.add((concept, SKOS.inScheme, ME.MyThesaurus))
 
     # Labels
     if pd.notna(row['enLabel']):
@@ -55,6 +56,7 @@ for _, row in df.iterrows():
         g.add((concept, SKOS.broader, URIRef(row['sub-entity level'])))
     if pd.notna(row['entity']):
         g.add((concept, SKOS.broader, URIRef(row['entity'])))
+
 
 static_turtle = """
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
