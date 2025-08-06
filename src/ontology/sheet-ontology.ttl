@@ -1,0 +1,480 @@
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix me: <http://example.org/taxonomy/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+
+me:ApartmentBuilding a skos:Concept ;
+    skos:broader me:Building ;
+    skos:definition "Buildings sporting multiple storeys."@en ;
+    skos:inScheme me:MyThesaurus ;
+    skos:prefLabel "Mehrfamilienhaus"@de,
+        "Multi-Storey Housing"@en,
+        "Immeuble d'Habitation"@fr .
+
+me:Architect a skos:Concept ;
+    skos:broader me:Professional ;
+    skos:definition "A professional responsible for designing buildings"@en ;
+    skos:inScheme me:MyThesaurus ;
+    skos:prefLabel "Architekt:in"@de,
+        "Architect"@en,
+        "Architecte"@fr .
+
+me:AssociationProfessional a skos:Concept ;
+    skos:broader me:Professional ;
+    skos:definition "An organization promoting either a way of building or the professionals using it"@en ;
+    skos:inScheme me:MyThesaurus ;
+    skos:prefLabel "Verband/Verein"@de,
+        "Association"@en,
+        "Association"@fr .
+
+me:Balcony a skos:Concept ;
+    skos:broader me:Structure,
+        me:TechnicalConstruction ;
+    skos:definition "Structure outside exterior wall"@en ;
+    skos:inScheme me:MyThesaurus ;
+    skos:prefLabel "Balkon"@de,
+        "Balcony"@en .
+
+me:Bricks a skos:Concept ;
+    skos:broader me:BuildingMaterial ;
+    skos:definition "Blocks of various formats depending on density, preferences, available forms and purposes."@en ;
+    skos:inScheme me:MyThesaurus ;
+    skos:prefLabel "Baustein"@de,
+        "Bricks"@en,
+        "Briques"@fr .
+
+me:BuildingPhysicsProfessional a skos:Concept ;
+    skos:broader me:Professional ;
+    skos:definition "A specialist focusing on the physical properties of buildings, including thermal, acoustic, and energy performance."@en ;
+    skos:inScheme me:MyThesaurus ;
+    skos:prefLabel "Bauphysiker:in"@de,
+        "Building Physics"@en,
+        "Physique du Bâtiment"@fr .
+
+me:Bulk a skos:Concept ;
+    skos:broader me:BuildingMaterial ;
+    skos:definition "Loose building materials used to fill voids"@en ;
+    skos:inScheme me:MyThesaurus ;
+    skos:prefLabel "Schüttgut"@de,
+        "Bulk"@en,
+        "Vrac"@fr .
+
+me:Ceiling a skos:Concept ;
+    skos:broader me:Structure,
+        me:TechnicalConstruction ;
+    skos:definition "Separation between storeys"@en ;
+    skos:inScheme me:MyThesaurus ;
+    skos:prefLabel "Decke"@de,
+        "Ceiling"@en .
+
+me:CeilingFinishing a skos:Concept ;
+    skos:broader me:Finishings,
+        me:TechnicalConstruction ;
+    skos:definition "Ceiling Finishing"@en ;
+    skos:inScheme me:MyThesaurus ;
+    skos:prefLabel "Deckenbekleidung"@de,
+        "Ceiling Finishing"@en .
+
+me:CivilEngineer a skos:Concept ;
+    skos:broader me:Professional ;
+    skos:definition "A professional specializing in the design, construction, and maintenance of infrastructure and buildings."@en ;
+    skos:inScheme me:MyThesaurus ;
+    skos:prefLabel "Bauingenieur:in"@de,
+        "Civil engineer"@en,
+        "Ingénieur civil"@fr .
+
+me:Column a skos:Concept ;
+    skos:broader me:Structure,
+        me:TechnicalConstruction ;
+    skos:definition "Load-bearing elements usually indoors"@en ;
+    skos:inScheme me:MyThesaurus ;
+    skos:prefLabel "Stütze"@de,
+        "Column"@en .
+
+me:ConstructionFirmProfessional a skos:Concept ;
+    skos:broader me:Professional ;
+    skos:definition "A company engaged in building construction projects and services."@en ;
+    skos:inScheme me:MyThesaurus ;
+    skos:prefLabel "Bauunternehmen"@de,
+        "Construction Firm"@en,
+        "Entreprise de Construction"@fr .
+
+me:Craftsman a skos:Concept ;
+    skos:broader me:Professional ;
+    skos:definition "A skilled worker specializing in manual trades related to construction"@en ;
+    skos:inScheme me:MyThesaurus ;
+    skos:prefLabel "Handwerker:in"@de,
+        "Craftsman"@en,
+        "Artisan/ne"@fr .
+
+me:Earth a skos:Concept ;
+    skos:broader me:NaturalResource ;
+    skos:definition "Naturally occuring resource in the sub-soil containing clay as binder for silts and sands in different proportions."@en ;
+    skos:inScheme me:MyThesaurus ;
+    skos:prefLabel "Lehm"@de,
+        "Earth"@en,
+        "Terre"@fr .
+
+me:ExteriorThermalInsulation a skos:Concept ;
+    skos:broader me:Envelope,
+        me:TechnicalConstruction ;
+    skos:definition "External Thermal Insulation"@en ;
+    skos:inScheme me:MyThesaurus ;
+    skos:prefLabel "Aussenwärmedämmung"@de,
+        "Ext. Thermal Insulation"@en .
+
+me:ExteriorWallAboveGround a skos:Concept ;
+    skos:broader me:Structure,
+        me:TechnicalConstruction ;
+    skos:definition "Wall that separates the exterior from teh interior of the building above ground"@en ;
+    skos:inScheme me:MyThesaurus ;
+    skos:prefLabel "Aussenwand Über Terrain"@de,
+        "Exterior Wall Above Ground"@en .
+
+me:ExteriorWallFinishingAboveGround a skos:Concept ;
+    skos:broader me:Envelope,
+        me:TechnicalConstruction ;
+    skos:definition "Facade finishing above ground"@en ;
+    skos:inScheme me:MyThesaurus ;
+    skos:prefLabel "Fassadenbekleidung"@de,
+        "Ext. Wall Finishing Above Ground"@en .
+
+me:ExteriorWallFinishingBasement a skos:Concept ;
+    skos:broader me:Envelope,
+        me:TechnicalConstruction ;
+    skos:definition "External wall finishing under ground"@en ;
+    skos:inScheme me:MyThesaurus ;
+    skos:prefLabel "Äussere Beschichtung Unter Terrain"@de,
+        "Ext. Wall Finishing Under Ground"@en .
+
+me:ExteriorWallUnderGround a skos:Concept ;
+    skos:broader me:Structure,
+        me:TechnicalConstruction ;
+    skos:definition "Wall that separates the exterior from teh interior of the building under ground"@en ;
+    skos:inScheme me:MyThesaurus ;
+    skos:prefLabel "Aussenwand Unter Terrain"@de,
+        "Exterior Wall Under Ground"@en .
+
+me:FloorCovering a skos:Concept ;
+    skos:broader me:Finishings,
+        me:TechnicalConstruction ;
+    skos:definition "Floor Covering"@en ;
+    skos:inScheme me:MyThesaurus ;
+    skos:prefLabel "Bodenbelag"@de,
+        "Floor Covering"@en .
+
+me:FloorSlabGroundFloor a skos:Concept ;
+    skos:broader me:Structure,
+        me:TechnicalConstruction ;
+    skos:definition "Slab that represents the floor at ground level"@en ;
+    skos:inScheme me:MyThesaurus ;
+    skos:prefLabel "Bodenplatte EG"@de,
+        "Floor Slab Ground Floor"@en,
+        "Dalle Rez-de-chaussée"@fr .
+
+me:Foundation a skos:Concept ;
+    skos:broader me:Structure,
+        me:TechnicalConstruction ;
+    skos:definition "Foundation of a structure, either underground or above, to transmit the forces applied by the structure to the ground, underground or bedrock"@en ;
+    skos:inScheme me:MyThesaurus ;
+    skos:prefLabel "Fundament"@de,
+        "Foundation"@en .
+
+me:Hemp a skos:Concept ;
+    skos:broader me:NaturalResource ;
+    skos:definition "Hemp"@en ;
+    skos:inScheme me:MyThesaurus ;
+    skos:prefLabel "Hanf"@de,
+        "Hemp"@en,
+        "Chanvre"@fr .
+
+me:InteriorDoor a skos:Concept ;
+    skos:broader me:Finishings,
+        me:TechnicalConstruction ;
+    skos:definition "Interior Door"@en ;
+    skos:inScheme me:MyThesaurus ;
+    skos:prefLabel "Innentür"@de,
+        "Interior Door"@en .
+
+me:InteriorWall a skos:Concept ;
+    skos:broader me:Structure,
+        me:TechnicalConstruction ;
+    skos:definition "Structural wall inside the building"@en ;
+    skos:inScheme me:MyThesaurus ;
+    skos:prefLabel "Innenwand"@de,
+        "Interior Wall"@en .
+
+me:InteriorWallFinishing a skos:Concept ;
+    skos:broader me:Finishings,
+        me:TechnicalConstruction ;
+    skos:definition "Interior Wall Finishing"@en ;
+    skos:inScheme me:MyThesaurus ;
+    skos:prefLabel "Wandbekleidung"@de,
+        "Interior Wall Finishing"@en .
+
+me:Massive a skos:Concept ;
+    skos:broader me:BuildingMaterial ;
+    skos:definition "Building Materials that can be processed to become massive, homogene building elements. They can be load-bearing or not and are mostly in need of formwork. "@en ;
+    skos:inScheme me:MyThesaurus ;
+    skos:prefLabel "Massivbau"@de,
+        "Massive"@en,
+        "Massif"@fr .
+
+me:MaterialProducer a skos:Concept ;
+    skos:broader me:Professional ;
+    skos:definition "A company or individual involved in the production and supply of construction materials."@en ;
+    skos:inScheme me:MyThesaurus ;
+    skos:prefLabel "Materialhersteller:in"@de,
+        "Material Producer"@en,
+        "Producteur de Matériaux"@fr .
+
+me:Mortar a skos:Concept ;
+    skos:broader me:BuildingMaterial ;
+    skos:definition "Mixes of a binder, fillers and sometimes additives to bond bricks or to plaster or render surfaces."@en ;
+    skos:inScheme me:MyThesaurus ;
+    skos:prefLabel "Mörtel, Putz"@de,
+        "Mortar, Plaster"@en,
+        "Mortier, Crépis"@fr .
+
+me:NewBuilding a skos:Concept ;
+    skos:broader me:Building,
+        me:BuildingStatus ;
+    skos:definition "Buildings that were newly constructed."@en ;
+    skos:inScheme me:MyThesaurus ;
+    skos:prefLabel "Neu"@de,
+        "New"@en,
+        "Nouveau"@fr .
+
+me:OfficeBuilding a skos:Concept ;
+    skos:broader me:Building ;
+    skos:definition "Buildings primarily used for commercial office purposes."@en ;
+    skos:inScheme me:MyThesaurus ;
+    skos:prefLabel "Bürogebäude"@de,
+        "Office Building"@en,
+        "Immeuble de Bureaux"@fr .
+
+me:OtherFibers a skos:Concept ;
+    skos:broader me:NaturalResource ;
+    skos:definition "Fibrous plants other than cereals or hemp"@en ;
+    skos:inScheme me:MyThesaurus ;
+    skos:prefLabel "Andere Fasern"@de,
+        "Other Fibres"@en,
+        "Autres fibres"@fr .
+
+me:Panels a skos:Concept ;
+    skos:broader me:BuildingMaterial ;
+    skos:definition "Prefabricated flat building materials, designed for different purposes as panelling and/or insulation"@en ;
+    skos:inScheme me:MyThesaurus ;
+    skos:prefLabel "Platten"@de,
+        "Panels, Boards"@en,
+        "Plaques"@fr .
+
+me:PartitionWall a skos:Concept ;
+    skos:broader me:Finishings,
+        me:TechnicalConstruction ;
+    skos:definition "Partition Wall, non load-bearing"@en ;
+    skos:inScheme me:MyThesaurus ;
+    skos:prefLabel "Trennwand"@de,
+        "Partition Wall"@en .
+
+me:PublicBuilding a skos:Concept ;
+    skos:broader me:Building ;
+    skos:definition "Buildings intended for use by the public, such as schools, libraries, or government offices."@en ;
+    skos:inScheme me:MyThesaurus ;
+    skos:prefLabel "Öffentliches Gebäude"@de,
+        "Public Building"@en,
+        "Bâtiment Public"@fr .
+
+me:RenovationBuilding a skos:Concept ;
+    skos:broader me:Building,
+        me:BuildingStatus ;
+    skos:definition "Buildings that underwent repair or adaptation to new needs."@en ;
+    skos:inScheme me:MyThesaurus ;
+    skos:prefLabel "Umbau"@de,
+        "Renovation"@en,
+        "Rénovation"@fr .
+
+me:Researcher a skos:Concept ;
+    skos:broader me:Professional ;
+    skos:definition "A academic or industrial researcher with expertise in regenerative materials"@en ;
+    skos:inScheme me:MyThesaurus ;
+    skos:prefLabel "Forscher:in"@de,
+        "Researcher"@en,
+        "Chercheur/se"@fr .
+
+me:Reseller a skos:Concept ;
+    skos:broader me:Professional ;
+    skos:definition "Company or individual reselling building materials "@en ;
+    skos:inScheme me:MyThesaurus ;
+    skos:prefLabel "Händler:in"@de,
+        "Reseller"@en,
+        "Revendeur/se"@fr .
+
+me:Rock a skos:Concept ;
+    skos:broader me:NaturalResource ;
+    skos:definition "Natural rocks that can be found the bedrock"@en ;
+    skos:inScheme me:MyThesaurus ;
+    skos:prefLabel "Gestein"@de,
+        "Rock"@en,
+        "Roche"@fr .
+
+me:Roof a skos:Concept ;
+    skos:broader me:Structure,
+        me:TechnicalConstruction ;
+    skos:definition "Roof construction load-bearing"@en ;
+    skos:inScheme me:MyThesaurus ;
+    skos:prefLabel "Dach"@de,
+        "Roof"@en .
+
+me:RoofCovering a skos:Concept ;
+    skos:broader me:Envelope,
+        me:TechnicalConstruction ;
+    skos:definition "Roof Covering"@en ;
+    skos:inScheme me:MyThesaurus ;
+    skos:prefLabel "Bedachung"@de,
+        "Roof Covering"@en .
+
+me:SimpleStructure a skos:Concept ;
+    skos:broader me:Building ;
+    skos:definition "Basic or minimal buildings or structures, typically with limited complexity or use."@en ;
+    skos:inScheme me:MyThesaurus ;
+    skos:prefLabel "Einfache Struktur"@de,
+        "Simple Structure"@en,
+        "Structure Simple"@fr .
+
+me:SingleFamilyHouse a skos:Concept ;
+    skos:broader me:Building ;
+    skos:definition "Buildings intended for a smaller amount of inhabitants"@en ;
+    skos:inScheme me:MyThesaurus ;
+    skos:prefLabel "Einfamilienhaus"@de,
+        "Single Family House"@en,
+        "Maison Individuelle"@fr .
+
+me:Stair a skos:Concept ;
+    skos:broader me:Structure,
+        me:TechnicalConstruction ;
+    skos:definition "Stair"@en ;
+    skos:inScheme me:MyThesaurus ;
+    skos:prefLabel "Treppe"@de,
+        "Stair"@en .
+
+me:Straw a skos:Concept ;
+    skos:broader me:NaturalResource ;
+    skos:definition "Dried stalks of cereals"@en ;
+    skos:inScheme me:MyThesaurus ;
+    skos:prefLabel "Stroh"@de,
+        "Straw"@en,
+        "Paille"@fr .
+
+me:SunWeatherProtection a skos:Concept ;
+    skos:broader me:Envelope,
+        me:TechnicalConstruction ;
+    skos:definition "Sun & Weather Protection"@en ;
+    skos:inScheme me:MyThesaurus ;
+    skos:prefLabel "Sonnen- & Wetterschutz"@de,
+        "Sun & Weather Protection"@en .
+
+me:TechnicalEquipement a skos:Concept ;
+    skos:broader me:Other,
+        me:TechnicalConstruction ;
+    skos:definition "Technical Equipement as Heating, Ventilation, Water or electricity supply"@en ;
+    skos:inScheme me:MyThesaurus ;
+    skos:prefLabel "Technik"@de,
+        "Technical Equipement"@en .
+
+me:WindowDoor a skos:Concept ;
+    skos:broader me:Envelope,
+        me:TechnicalConstruction ;
+    skos:definition "Windows and doors in envelope"@en ;
+    skos:inScheme me:MyThesaurus ;
+    skos:prefLabel "Fenster & Türen"@de,
+        "Windows & Doors"@en .
+
+me:Wood a skos:Concept ;
+    skos:broader me:BuildingMaterial,
+        me:NaturalResource ;
+    skos:definition "Timber"@en,
+        "Wood"@en ;
+    skos:inScheme me:MyThesaurus ;
+    skos:prefLabel "Holz"@de,
+        "Wood"@en,
+        "Bois"@fr .
+
+me:BuildingStatus a skos:Concept ;
+    skos:broader me:Building ;
+    skos:definition "Classification of buildings based on the type of intervention, such as new construction or renovation."@en ;
+    skos:inScheme me:MyThesaurus ;
+    skos:prefLabel "Art der Massnahme"@de,
+        "Intervention Type"@en,
+        "Type d'Intervention"@fr .
+
+me:BuildingMaterial a skos:Concept ;
+    skos:definition "Materials made out of resources by transformation and processing for the purpose of building."@en ;
+    skos:inScheme me:MyThesaurus ;
+    skos:prefLabel "Baustoffe"@de,
+        "Building Materials"@en,
+        "Matériaux de Construction"@fr,
+        "Matériaux de construction"@fr,
+        "Materiali da costruzione"@it .
+
+me:NaturalResource a skos:Concept ;
+    skos:definition "Resources that can potentially be used for construction; both occuring naturally (like bio- or geo-sourced) or being salvaged from demoltions."@en ;
+    skos:inScheme me:MyThesaurus ;
+    skos:prefLabel "Natürliche Ressourcen"@de,
+        "Ressourcen"@de,
+        "Natural Resources"@en,
+        "Resources"@en,
+        "Ressources"@fr,
+        "Ressources naturelles"@fr,
+        "Risorse naturali"@it .
+
+me:Building a skos:Concept ;
+    skos:definition "Exemplary buildings or structures made with a earnest commitment to using regenerative materials."@en ;
+    skos:inScheme me:MyThesaurus ;
+    skos:prefLabel "Gebäude"@de,
+        "Buildings"@en,
+        "Bâtiments"@fr,
+        "Edifici"@it .
+
+me:Professional a skos:Concept ;
+    skos:definition "Persons or organizations providing services or materials around regenerative materials."@en ;
+    skos:inScheme me:MyThesaurus ;
+    skos:prefLabel "Fachleute"@de,
+        "Professionals"@en,
+        "Professionnels"@fr,
+        "Professionisti"@it .
+
+me:Structure a skos:Concept ;
+    skos:definition "A structure"@en ;
+    skos:inScheme me:MyThesaurus ;
+    skos:prefLabel "Struktur"@de,
+        "Structure"@en,
+        "Structure"@fr .
+
+me:TechnicalConstruction a skos:Concept ;
+    skos:definition "Aspects of construction related to the physical realization of buildings, encompassing structural, thermal, acoustic, and service-related elements."@en,
+        "Techniques used to assemble building materials to become building elements."@en ;
+    skos:inScheme me:MyThesaurus ;
+    skos:prefLabel "Bauweise"@de,
+        "Technische Konstruktionen"@de,
+        "Construction Techniques"@en,
+        "Technical Constructions"@en,
+        "Constructions techniques"@fr,
+        "Systèmes Constructifs"@fr,
+        "Costruzioni tecniche"@it .
+
+me:MyThesaurus a skos:ConceptScheme ;
+    dct:description "AREMA Ontology for building materials, buildings, natural resources, professionals, and technical constructions."@en ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
+    vann:preferredNamespacePrefix "me" ;
+    vann:preferredNamespaceUri "https://w3id.org/arema/ontology/" ;
+    skos:hasTopConcept me:Building,
+        me:BuildingMaterial,
+        me:NaturalResource,
+        me:Professional,
+        me:TechnicalConstruction ;
+    skos:prefLabel "AREMA Ontologie"@de,
+        "AREMA Ontology"@en,
+        "Ontologie AREMA"@fr,
+        "Ontologia AREMA"@it .
+
