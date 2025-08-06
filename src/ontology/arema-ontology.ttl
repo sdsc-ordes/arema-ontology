@@ -199,7 +199,7 @@ skos:inScheme me:AremaVocabulary ;
 skos:prefLabel "Construction Worker"@en , "Bauarbeiter"@de , "Ouvrier du bâtiment"@fr , "Operaio edile"@it ;
 .
 
-me:BuildingInspector
+me:AssociationProfessional a skos:Concept ;
     skos:broader me:Professional ;
     a skos:Concept ;
 skos:inScheme me:AremaVocabulary ;
@@ -288,7 +288,10 @@ me:Concrete a skos:Concept ;
     skos:inScheme me:AremaVocabulary ;
     skos:prefLabel "Concrete"@en , "Beton"@de , "Béton"@fr , "Calcestruzzo"@it ;
     skos:broader me:BuildingMaterial ;
-    .
+    skos:definition "Loose building materials used to fill voids"@en ;
+    skos:prefLabel "Schüttgut"@de,
+        "Bulk"@en,
+        "Vrac"@fr .
 
 me:moreSpecificTypeOfConcrete a skos:Concept ;
     skos:inScheme me:AremaVocabulary ;
@@ -300,35 +303,94 @@ me:Glass a skos:Concept ;
     skos:inScheme me:AremaVocabulary ;
     skos:prefLabel "Glass"@en , "Glas"@de , "Verre"@fr , "Vetro"@it ;
     skos:broader me:BuildingMaterial ;
-    .
+    skos:definition "Building Materials that can be processed to become massive, homogene building elements. They can be load-bearing or not and are mostly in need of formwork. "@en ;
+    skos:prefLabel "Massivbau"@de,
+        "Massive"@en,
+        "Massif"@fr .
 
 me:Steel a skos:Concept ;
     skos:inScheme me:AremaVocabulary ;
     skos:prefLabel "Steel"@en , "Stahl"@de , "Acier"@fr , "Acciaio"@it ;
     skos:broader me:BuildingMaterial ;
-    .
+    skos:definition "Mixes of a binder, fillers and sometimes additives to bond bricks or to plaster or render surfaces."@en ;
+    skos:prefLabel "Mörtel, Putz"@de,
+        "Mortar, Plaster"@en,
+        "Mortier, Crépis"@fr .
 
 me:Wood a skos:Concept ;
     skos:inScheme me:AremaVocabulary ;
     skos:prefLabel "Wood"@en , "Holz"@de , "Bois"@fr , "Legno"@it ;
     skos:broader me:BuildingMaterial ;
-    .
-    
-# Building Types
-me:Building
-    owl:equivalentClass brick:Building ;
-    owl:equivalentClass ifc:IfcBuilding .
+    skos:definition "Prefabricated flat building materials, designed for different purposes as panelling and/or insulation"@en ;
+    skos:prefLabel "Platten"@de,
+        "Panels, Boards"@en,
+        "Plaques"@fr .
 
-me:ApartmentBuilding
-    skos:broader me:Building ;
-    #skos:related ifc:IfcBuilding .
-    .
+me:PartitionWall a skos:Concept ;
+    skos:broader me:Finishings,
+        me:TechnicalConstruction ;
+    skos:definition "Partition Wall, non load-bearing"@en ;
+    skos:prefLabel "Trennwand"@de,
+        "Partition Wall"@en .
 
-me:OfficeBuilding
+me:PublicBuilding a skos:Concept ;
     skos:broader me:Building ;
-    #skos:related ifc:IfcBuilding .
-.
-me:SingleFamilyHouse
+    skos:definition "Buildings intended for use by the public, such as schools, libraries, or government offices."@en ;
+    skos:prefLabel "Öffentliches Gebäude"@de,
+        "Public Building"@en,
+        "Bâtiment Public"@fr .
+
+me:RenovationBuilding a skos:Concept ;
+    skos:broader me:Building,
+        me:BuildingStatus ;
+    skos:definition "Buildings that underwent repair or adaptation to new needs."@en ;
+    skos:prefLabel "Umbau"@de,
+        "Renovation"@en,
+        "Rénovation"@fr .
+
+me:Researcher a skos:Concept ;
+    skos:broader me:Professional ;
+    skos:definition "A academic or industrial researcher with expertise in regenerative materials"@en ;
+    skos:prefLabel "Forscher:in"@de,
+        "Researcher"@en,
+        "Chercheur/se"@fr .
+
+me:Reseller a skos:Concept ;
+    skos:broader me:Professional ;
+    skos:definition "Company or individual reselling building materials "@en ;
+    skos:prefLabel "Händler:in"@de,
+        "Reseller"@en,
+        "Revendeur/se"@fr .
+
+me:Rock a skos:Concept ;
+    skos:broader me:NaturalResource ;
+    skos:definition "Natural rocks that can be found the bedrock"@en ;
+    skos:prefLabel "Gestein"@de,
+        "Rock"@en,
+        "Roche"@fr .
+
+me:Roof a skos:Concept ;
+    skos:broader me:Structure,
+        me:TechnicalConstruction ;
+    skos:definition "Roof construction load-bearing"@en ;
+    skos:prefLabel "Dach"@de,
+        "Roof"@en .
+
+me:RoofCovering a skos:Concept ;
+    skos:broader me:Envelope,
+        me:TechnicalConstruction ;
+    skos:definition "Roof Covering"@en ;
+    skos:prefLabel "Bedachung"@de,
+        "Roof Covering"@en .
+
+me:SimpleStructure a skos:Concept ;
+    skos:broader me:Building ;
+    skos:definition "Basic or minimal buildings or structures, typically with limited complexity or use."@en ;
+    skos:prefLabel "Einfache Struktur"@de,
+        "Simple Structure"@en,
+        "Structure Simple"@fr .
+
+me:SingleFamilyHouse a skos:Concept ;
     skos:broader me:Building ;
     #skos:related ifc:IfcBuilding .
 .
@@ -357,62 +419,63 @@ me:MoistureProtection
 
 me:BuildingMaterial skos:definition "Materials used for construction purposes, including natural and manufactured substances."@en .
 
-me:Building skos:definition "Physical structures intended for human use or occupancy, such as houses, offices, and public buildings."@en .
+me:TechnicalEquipement a skos:Concept ;
+    skos:broader me:Other,
+        me:TechnicalConstruction ;
+    skos:definition "Technical Equipement as Heating, Ventilation, Water or electricity supply"@en ;
+    skos:prefLabel "Technik"@de,
+        "Technical Equipement"@en .
 
-me:NaturalResource skos:definition "Naturally occurring substances or materials that can be used for construction, manufacturing, or energy production."@en .
+me:WindowDoor a skos:Concept ;
+    skos:broader me:Envelope,
+        me:TechnicalConstruction ;
+    skos:definition "Windows and doors in envelope"@en ;
+    skos:prefLabel "Fenster & Türen"@de,
+        "Windows & Doors"@en .
 
-me:Professional skos:definition "Persons or organizations providing expertise or services within the construction or building sectors."@en .
+me:Wood a skos:Concept ;
+    skos:broader me:BuildingMaterial,
+        me:NaturalResource ;
+    skos:definition "Timber"@en,
+        "Wood"@en ;
+    skos:prefLabel "Holz"@de,
+        "Wood"@en,
+        "Bois"@fr .
 
-me:TechnicalConstruction skos:definition "Aspects of construction related to the physical realization of buildings, encompassing structural, thermal, acoustic, and service-related elements."@en .
+me:BuildingStatus a skos:Concept ;
+    skos:broader me:Building ;
+    skos:definition "Classification of buildings based on the type of intervention, such as new construction or renovation."@en ;
+    skos:prefLabel "Art der Massnahme"@de,
+        "Intervention Type"@en,
+        "Type d'Intervention"@fr .
 
-me:Massive skos:definition "Building materials characterized by their mass and solidity, such as concrete or rammed earth."@en .
+me:BuildingMaterial a skos:Concept ;
+    skos:definition "Materials made out of resources by transformation and processing for the purpose of building."@en ;
+    skos:prefLabel "Baustoffe"@de,
+        "Building Materials"@en,
+        "Matériaux de Construction"@fr .
 
-me:Bricks skos:definition "Modular building materials typically made of fired clay or similar substances, used in masonry construction."@en .
+me:NaturalResource a skos:Concept ;
+    skos:definition "Resources that can potentially be used for construction; both occuring naturally (like bio- or geo-sourced) or being salvaged from demoltions."@en ;
+    skos:prefLabel "Ressourcen"@de,
+        "Resources"@en,
+        "Ressources"@fr .
 
-me:Panels skos:definition "Prefabricated flat building components, often used for walls, floors, and ceilings."@en .
+me:Building a skos:Concept ;
+    skos:definition "Exemplary buildings or structures made with a earnest commitment to using regenerative materials."@en ;
+    skos:prefLabel "Gebäude"@de,
+        "Buildings"@en,
+        "Bâtiments"@fr .
 
-me:Bulk skos:definition "Loose construction materials used in large quantities, such as gravel or sand."@en .
+me:Professional a skos:Concept ;
+    skos:definition "Persons or organizations providing services or materials around regenerative materials."@en ;
+    skos:prefLabel "Fachleute"@de,
+        "Professionals"@en,
+        "Professionnels"@fr .
 
-me:Mortar skos:definition "A mixture used in masonry to bond bricks, stones, or concrete blocks together."@en .
+me:TechnicalConstruction a skos:Concept ;
+    skos:definition "Techniques used to assemble building materials to become building elements."@en ;
+    skos:prefLabel "Bauweise"@de,
+        "Construction Techniques"@en,
+        "Systèmes Constructifs"@fr .
 
-me:BuildingStatus skos:definition "Classification of buildings based on the type of intervention, such as new construction or renovation."@en .
-
-me:NewBuilding skos:definition "Buildings that are newly constructed and not previously used or occupied."@en .
-
-me:RenovationBuilding skos:definition "Buildings undergoing repair, improvement, or modernization."@en .
-
-me:ApartmentBuilding skos:definition "Buildings containing multiple separate residential units."@en .
-
-me:SingleFamilyHouse skos:definition "Residential buildings designed for occupancy by a single family."@en .
-
-me:OfficeBuilding skos:definition "Buildings primarily used for commercial office purposes."@en .
-
-me:PublicBuilding skos:definition "Buildings intended for use by the public, such as schools, libraries, or government offices."@en .
-
-me:SimpleStructure skos:definition "Basic or minimal buildings or structures, typically with limited complexity or use."@en .
-
-me:Earth skos:definition "Soil or clay materials used in construction, often in traditional building techniques."@en .
-
-me:Rock skos:definition "Natural stone materials used in construction for strength and durability."@en .
-
-me:Straw skos:definition "Dried stalks of grain plants used as a natural building material, often in combination with earth."@en .
-
-me:Hemp skos:definition "Fibrous plant material used for insulation, blocks, and other eco-friendly construction purposes."@en .
-
-me:Wood skos:definition "Timber or lumber derived from trees, commonly used in building structures and finishes."@en .
-
-me:OtherFibers skos:definition "Various plant-based or synthetic fibers used as components in construction materials."@en .
-
-me:Architect skos:definition "A professional responsible for designing buildings and overseeing their construction."@en .
-
-me:CivilEngineer skos:definition "A professional specializing in the design, construction, and maintenance of infrastructure and buildings."@en .
-
-me:Craftsman skos:definition "A skilled worker specializing in manual trades related to construction, such as carpentry or masonry."@en .
-
-me:MaterialProducer skos:definition "A company or individual involved in the production and supply of construction materials."@en .
-
-me:BuildingPhysicsProfessional skos:definition "A specialist focusing on the physical properties of buildings, including thermal, acoustic, and energy performance."@en .
-
-me:AssociationProfessional skos:definition "An organization representing the interests of professionals within the construction sector."@en .
-
-me:ConstructionFirmProfessional skos:definition "A company engaged in building construction projects and services."@en .
