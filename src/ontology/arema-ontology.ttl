@@ -3,20 +3,6 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix vann: <http://purl.org/vocab/vann/> .
 
-me:Property a skos:Concept ;
-    skos:definition "Properties of building materials."@en ;
-    skos:inScheme me:MyThesaurus ;
-    skos:prefLabel "Eigenschaften"@de,
-        "Properties"@en,
-        "Propriétés"@fr .
-
-me:Object a skos:Concept ;
-    skos:definition "A physical entity that can be described or measured, such as a building material or a structure."@en ;
-    skos:inScheme me:MyThesaurus ;
-    skos:prefLabel "Objekt"@de,
-        "Object"@en,
-        "Objet"@fr .
-
 me:mechanical a skos:Concept ;
     skos:broader me:Property ;
     skos:definition "Properties of materials that are related to their mechanical behavior, such as strength, elasticity, and durability."@en ;
@@ -611,7 +597,7 @@ me:Professional a skos:Concept ;
     skos:definition "Persons or organizations providing services or materials around regenerative materials."@en ;
     skos:inScheme me:MyThesaurus ;
     skos:prefLabel "Fachleute"@de,
-        "Professionals"@en,
+        "ProfessionalsTest"@en,
         "Professionnels"@fr .
 
 me:Structure a skos:Concept ;
@@ -622,6 +608,20 @@ me:Structure a skos:Concept ;
         "Structure"@en,
         "Structure"@fr .
 
+me:Property a skos:Concept ;
+    skos:definition "Properties of building materials."@en ;
+    skos:inScheme me:MyThesaurus ;
+    skos:prefLabel "Eigenschaften"@de,
+        "Properties"@en,
+        "Propriétés"@fr .
+
+me:Object a skos:Concept ;
+    skos:definition "A physical entity that can be described or measured, such as a building material or a structure."@en ;
+    skos:inScheme me:MyThesaurus ;
+    skos:prefLabel "Objekt"@de,
+        "Object"@en,
+        "Objet"@fr .
+        
 me:MyThesaurus a skos:ConceptScheme ;
     dct:description "AREMA Ontology for building materials, buildings, natural resources, professionals, and technical constructions."@en ;
     dct:license <https://creativecommons.org/licenses/by/4.0/> ;
