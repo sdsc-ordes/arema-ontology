@@ -611,9 +611,9 @@ me:Structure a skos:Concept ;
 me:Property a skos:Concept ;
     skos:definition "Properties of building materials."@en ;
     skos:inScheme me:MyThesaurus ;
-    skos:prefLabel "Eigenschaften"@de,
-        "Properties"@en,
-        "Propriétés"@fr .
+    skos:prefLabel "Eigenschaft"@de,
+        "Property"@en,
+        "Propriété"@fr .
 
 me:Object a skos:Concept ;
     skos:definition "A physical entity that can be described or measured, such as a building material or a structure."@en ;
