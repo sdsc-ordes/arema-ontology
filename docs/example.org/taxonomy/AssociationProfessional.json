@@ -12,7 +12,7 @@
   "broader": {
     "id": "http://example.org/taxonomy/Professional",
     "prefLabel": {
-      "en": "Professionals",
+      "en": "ProfessionalsTest",
       "de": "Fachleute",
       "fr": "Professionnels"
     }
