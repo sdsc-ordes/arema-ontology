@@ -93,6 +93,14 @@ jobs:
           cp src/ontology/arema-ontology.ttl data/
           echo "BASEURL=/$(basename $GITHUB_REPOSITORY)" > .env
           chmod 666 .env
+          
+      - name: Debug files before Docker run
+        run: |
+          echo "Listing data directory:"
+          ls -l data/
+          echo "First 20 lines of TTL file:"
+          head -20 data/arema-ontology.ttl
+
 
       - name: Run Skohub Vocabs Docker
         run: |
