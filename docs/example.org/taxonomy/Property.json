@@ -2,9 +2,9 @@
   "id": "http://example.org/taxonomy/Property",
   "type": "Concept",
   "prefLabel": {
-    "en": "Properties",
-    "de": "Eigenschaften",
-    "fr": "Propriétés"
+    "en": "Property",
+    "de": "Eigenschaft",
+    "fr": "Propriété"
   },
   "definition": {
     "en": "Properties of building materials."

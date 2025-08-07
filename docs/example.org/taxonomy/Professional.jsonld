@@ -2,7 +2,7 @@
   "id": "http://example.org/taxonomy/Professional",
   "type": "Concept",
   "prefLabel": {
-    "en": "ProfessionalsTest",
+    "en": "Professionals",
     "de": "Fachleute",
     "fr": "Professionnels"
   },
