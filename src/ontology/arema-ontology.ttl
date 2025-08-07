@@ -597,7 +597,7 @@ me:Professional a skos:Concept ;
     skos:definition "Persons or organizations providing services or materials around regenerative materials."@en ;
     skos:inScheme me:MyThesaurus ;
     skos:prefLabel "Fachleute"@de,
-        "ProfessionalsTest"@en,
+        "Professionals"@en,
         "Professionnels"@fr .
 
 me:Structure a skos:Concept ;
