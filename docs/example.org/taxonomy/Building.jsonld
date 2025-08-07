@@ -75,17 +75,20 @@
       }
     }
   ],
+  "broader": {
+    "id": "http://example.org/taxonomy/Object",
+    "prefLabel": {
+      "en": "Object",
+      "de": "Objekt",
+      "fr": "Objet"
+    }
+  },
   "inScheme": [
     {
       "id": "http://example.org/taxonomy/MyThesaurus"
     }
   ],
   "inSchemeAll": [
-    {
-      "id": "http://example.org/taxonomy/MyThesaurus"
-    }
-  ],
-  "topConceptOf": [
     {
       "id": "http://example.org/taxonomy/MyThesaurus"
     }
