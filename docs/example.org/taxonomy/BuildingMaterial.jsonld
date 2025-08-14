@@ -51,6 +51,14 @@
       }
     }
   ],
+  "broader": {
+    "id": "http://example.org/taxonomy/Object",
+    "prefLabel": {
+      "en": "Object",
+      "de": "Objekt",
+      "fr": "Objet"
+    }
+  },
   "inScheme": [
     {
       "id": "http://example.org/taxonomy/MyThesaurus"

@@ -1,75 +1,62 @@
 {
-  "id": "http://example.org/taxonomy/BuildingMaterial",
+  "id": "http://example.org/taxonomy/Object",
   "type": "Concept",
   "prefLabel": {
-    "en": "Building Material",
-    "de": "Baustoff",
-    "fr": "Matériaux de Construction"
+    "en": "Object",
+    "de": "Objekt",
+    "fr": "Objet"
   },
   "definition": {
-    "en": "Materials made out of resources by transformation and processing for the purpose of building."
+    "en": "A general term for any physical entity that can be identified and described."
   },
   "narrower": [
     {
-      "id": "http://example.org/taxonomy/Brick",
+      "id": "http://example.org/taxonomy/Building",
       "prefLabel": {
-        "en": "Brick",
-        "de": "Baustein",
-        "fr": "Briques"
+        "en": "Building",
+        "de": "Gebäude",
+        "fr": "Bâtiments"
       }
     },
     {
-      "id": "http://example.org/taxonomy/Bulk",
+      "id": "http://example.org/taxonomy/Professional",
       "prefLabel": {
-        "en": "Bulk",
-        "de": "Schüttgut",
-        "fr": "Vrac"
+        "en": "Professional",
+        "de": "Fachleute",
+        "fr": "Professionnels"
       }
     },
     {
-      "id": "http://example.org/taxonomy/Massive",
+      "id": "http://example.org/taxonomy/BuildingMaterial",
       "prefLabel": {
-        "en": "Massive",
-        "de": "Massivbau",
-        "fr": "Massif"
+        "en": "Building Material",
+        "de": "Baustoff",
+        "fr": "Matériaux de Construction"
       }
     },
     {
-      "id": "http://example.org/taxonomy/Mortar",
+      "id": "http://example.org/taxonomy/NaturalResource",
       "prefLabel": {
-        "en": "Mortar, Plaster",
-        "de": "Mörtel, Putz",
-        "fr": "Mortier, Crépis"
+        "en": "Resource",
+        "de": "Ressourcen",
+        "fr": "Ressources"
       }
     },
     {
-      "id": "http://example.org/taxonomy/Panel",
+      "id": "http://example.org/taxonomy/Construction",
       "prefLabel": {
-        "en": "Panel",
-        "de": "Platten",
-        "fr": "Plaques"
+        "en": "Construction",
+        "de": "Bauwerk",
+        "fr": "Construction"
       }
     }
   ],
-  "broader": {
-    "id": "http://example.org/taxonomy/Object",
-    "prefLabel": {
-      "en": "Object",
-      "de": "Objekt",
-      "fr": "Objet"
-    }
-  },
   "inScheme": [
     {
       "id": "http://example.org/taxonomy/MyThesaurus"
     }
   ],
   "inSchemeAll": [
-    {
-      "id": "http://example.org/taxonomy/MyThesaurus"
-    }
-  ],
-  "topConceptOf": [
     {
       "id": "http://example.org/taxonomy/MyThesaurus"
     }
