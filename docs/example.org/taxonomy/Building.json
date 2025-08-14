@@ -19,22 +19,6 @@
       }
     },
     {
-      "id": "http://example.org/taxonomy/NewBuilding",
-      "prefLabel": {
-        "en": "New",
-        "de": "Neu",
-        "fr": "Nouveau"
-      }
-    },
-    {
-      "id": "http://example.org/taxonomy/BuildingStatus",
-      "prefLabel": {
-        "en": "Intervention Type",
-        "de": "Art der Massnahme",
-        "fr": "Type d'Intervention"
-      }
-    },
-    {
       "id": "http://example.org/taxonomy/OfficeBuilding",
       "prefLabel": {
         "en": "Office Building",
@@ -48,14 +32,6 @@
         "en": "Public Building",
         "de": "Öffentliches Gebäude",
         "fr": "Bâtiment Public"
-      }
-    },
-    {
-      "id": "http://example.org/taxonomy/RenovationBuilding",
-      "prefLabel": {
-        "en": "Renovation",
-        "de": "Umbau",
-        "fr": "Rénovation"
       }
     },
     {
