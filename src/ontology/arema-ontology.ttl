@@ -236,6 +236,18 @@ me:NewBuilding a skos:Concept ;
         "New"@en,
         "Nouveau"@fr .
 
+me:Object a skos:Concept ;
+    skos:definition "A general term for any physical entity that can be identified and described."@en ;
+    skos:inScheme me:MyThesaurus ;
+    skos:narrower me:Building,
+        me:BuildingMaterial,
+        me:Construction,
+        me:NaturalResource,
+        me:Professional ;
+    skos:prefLabel "Objekt"@de,
+        "Object"@en,
+        "Objet"@fr .
+
 me:OfficeBuilding a skos:Concept ;
     skos:broader me:Building ;
     skos:definition "Buildings primarily used for commercial office purposes."@en ;
@@ -547,13 +559,6 @@ me:mechanical a skos:Concept ;
         "Mechanical"@en,
         "Mécanique"@fr .
 
-me:Construction a skos:Concept ;
-    skos:definition "Constructions using building materials to become building elements."@en ;
-    skos:inScheme me:MyThesaurus ;
-    skos:prefLabel "Bauwerk"@de,
-        "Construction"@en,
-        "Construction"@fr .
-
 me:Finishings a skos:Concept ;
     skos:broader me:Construction ;
     skos:definition "Finishing elements of a building, such as wall coverings, floor coverings, and ceiling finishes."@en ;
@@ -562,12 +567,12 @@ me:Finishings a skos:Concept ;
         "Finishings"@en,
         "Finitions"@fr .
 
-me:BuildingMaterial a skos:Concept ;
-    skos:definition "Materials made out of resources by transformation and processing for the purpose of building."@en ;
+me:Construction a skos:Concept ;
+    skos:definition "Constructions using building materials to become building elements."@en ;
     skos:inScheme me:MyThesaurus ;
-    skos:prefLabel "Baustoff"@de,
-        "Building Material"@en,
-        "Matériaux de Construction"@fr .
+    skos:prefLabel "Bauwerk"@de,
+        "Construction"@en,
+        "Construction"@fr .
 
 me:Envelope a skos:Concept ;
     skos:broader me:Construction ;
@@ -577,6 +582,13 @@ me:Envelope a skos:Concept ;
     skos:prefLabel "Hülle"@de,
         "Envelope"@en,
         "Enveloppe"@fr .
+
+me:BuildingMaterial a skos:Concept ;
+    skos:definition "Materials made out of resources by transformation and processing for the purpose of building."@en ;
+    skos:inScheme me:MyThesaurus ;
+    skos:prefLabel "Baustoff"@de,
+        "Building Material"@en,
+        "Matériaux de Construction"@fr .
 
 me:NaturalResource a skos:Concept ;
     skos:definition "Resources that can potentially be used for construction; both occuring naturally (like bio- or geo-sourced) or being salvaged from demoltions."@en ;
@@ -600,13 +612,6 @@ me:Building a skos:Concept ;
         "Building"@en,
         "Bâtiments"@fr .
 
-me:Professional a skos:Concept ;
-    skos:definition "Persons or organizations providing services or materials around regenerative materials."@en ;
-    skos:inScheme me:MyThesaurus ;
-    skos:prefLabel "Fachleute"@de,
-        "Professional"@en,
-        "Professionnels"@fr .
-
 me:Structure a skos:Concept ;
     skos:broader me:Construction ;
     skos:definition "A structure"@en ;
@@ -614,6 +619,13 @@ me:Structure a skos:Concept ;
     skos:prefLabel "Struktur"@de,
         "Structure"@en,
         "Structure"@fr .
+
+me:Professional a skos:Concept ;
+    skos:definition "Persons or organizations providing services or materials around regenerative materials."@en ;
+    skos:inScheme me:MyThesaurus ;
+    skos:prefLabel "Fachleute"@de,
+        "Professional"@en,
+        "Professionnels"@fr .
 
 me:MyThesaurus a skos:ConceptScheme ;
     dct:description "AREMA Ontology for building materials, buildings, natural resources, professionals, and technical constructions."@en ;
