@@ -61,6 +61,11 @@
       "id": "http://example.org/taxonomy/MyThesaurus"
     }
   ],
+  "topConceptOf": [
+    {
+      "id": "http://example.org/taxonomy/MyThesaurus"
+    }
+  ],
   "@context": {
     "@version": 1.1,
     "id": "@id",
