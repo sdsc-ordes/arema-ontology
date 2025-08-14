@@ -227,15 +227,6 @@ me:Mortar a skos:Concept ;
         "Mortar, Plaster"@en,
         "Mortier, Crépis"@fr .
 
-me:NewBuilding a skos:Concept ;
-    skos:broader me:Building,
-        me:BuildingStatus ;
-    skos:definition "Buildings that were newly constructed."@en ;
-    skos:inScheme me:MyThesaurus ;
-    skos:prefLabel "Neu"@de,
-        "New"@en,
-        "Nouveau"@fr .
-
 me:OfficeBuilding a skos:Concept ;
     skos:broader me:Building ;
     skos:definition "Buildings primarily used for commercial office purposes."@en ;
@@ -274,15 +265,6 @@ me:PublicBuilding a skos:Concept ;
     skos:prefLabel "Öffentliches Gebäude"@de,
         "Public Building"@en,
         "Bâtiment Public"@fr .
-
-me:RenovationBuilding a skos:Concept ;
-    skos:broader me:Building,
-        me:BuildingStatus ;
-    skos:definition "Buildings that underwent repair or adaptation to new needs."@en ;
-    skos:inScheme me:MyThesaurus ;
-    skos:prefLabel "Umbau"@de,
-        "Renovation"@en,
-        "Rénovation"@fr .
 
 me:Researcher a skos:Concept ;
     skos:broader me:Professional ;
@@ -517,14 +499,6 @@ me:fireResistance a skos:Concept ;
         "Fire Resistance"@en,
         "Résistance au Feu"@fr .
 
-me:BuildingStatus a skos:Concept ;
-    skos:broader me:Building ;
-    skos:definition "Classification of buildings based on the type of intervention, such as new construction or renovation."@en ;
-    skos:inScheme me:MyThesaurus ;
-    skos:prefLabel "Art der Massnahme"@de,
-        "Intervention Type"@en,
-        "Type d'Intervention"@fr .
-
 me:Opening a skos:Concept ;
     skos:broader me:Envelope ;
     skos:definition "Openings in walls such as doors and windows"@en ;
@@ -547,6 +521,14 @@ me:mechanical a skos:Concept ;
     skos:prefLabel "Mechanisch"@de,
         "Mechanical"@en,
         "Mécanique"@fr .
+
+me:Building a skos:Concept ;
+    skos:broader me:Object ;
+    skos:definition "Exemplary buildings or structures made with a earnest commitment to using regenerative materials."@en ;
+    skos:inScheme me:MyThesaurus ;
+    skos:prefLabel "Gebäude"@de,
+        "Building"@en,
+        "Bâtiments"@fr .
 
 me:BuildingMaterial a skos:Concept ;
     skos:broader me:Object ;
@@ -594,14 +576,6 @@ me:Object a skos:Concept ;
     skos:prefLabel "Objekt"@de,
         "Object"@en,
         "Objet"@fr .
-
-me:Building a skos:Concept ;
-    skos:broader me:Object ;
-    skos:definition "Exemplary buildings or structures made with a earnest commitment to using regenerative materials."@en ;
-    skos:inScheme me:MyThesaurus ;
-    skos:prefLabel "Gebäude"@de,
-        "Building"@en,
-        "Bâtiments"@fr .
 
 me:hygrothermal a skos:Concept ;
     skos:broader me:Property ;
