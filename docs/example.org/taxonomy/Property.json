@@ -11,6 +11,14 @@
   },
   "narrower": [
     {
+      "id": "http://example.org/taxonomy/acoustic",
+      "prefLabel": {
+        "en": "Acoustic",
+        "de": "Akustisch",
+        "fr": "Acoustique"
+      }
+    },
+    {
       "id": "http://example.org/taxonomy/mechanical",
       "prefLabel": {
         "en": "Mechanical",
@@ -24,14 +32,6 @@
         "en": "Hygrothermal",
         "de": "Hygrothermisch",
         "fr": "Hygrothermique"
-      }
-    },
-    {
-      "id": "http://example.org/taxonomy/acoustic",
-      "prefLabel": {
-        "en": "Acoustic",
-        "de": "Akustisch",
-        "fr": "Acoustique"
       }
     },
     {
@@ -49,11 +49,6 @@
     }
   ],
   "inSchemeAll": [
-    {
-      "id": "http://example.org/taxonomy/MyThesaurus"
-    }
-  ],
-  "topConceptOf": [
     {
       "id": "http://example.org/taxonomy/MyThesaurus"
     }

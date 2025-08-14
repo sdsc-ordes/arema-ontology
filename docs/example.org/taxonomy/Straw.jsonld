@@ -12,7 +12,7 @@
   "broader": {
     "id": "http://example.org/taxonomy/NaturalResource",
     "prefLabel": {
-      "en": "Resources",
+      "en": "Resource",
       "de": "Ressourcen",
       "fr": "Ressources"
     }

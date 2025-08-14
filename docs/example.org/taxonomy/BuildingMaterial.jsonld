@@ -2,8 +2,8 @@
   "id": "http://example.org/taxonomy/BuildingMaterial",
   "type": "Concept",
   "prefLabel": {
-    "en": "Building Materials",
-    "de": "Baustoffe",
+    "en": "Building Material",
+    "de": "Baustoff",
     "fr": "Matériaux de Construction"
   },
   "definition": {
@@ -11,9 +11,9 @@
   },
   "narrower": [
     {
-      "id": "http://example.org/taxonomy/Bricks",
+      "id": "http://example.org/taxonomy/Brick",
       "prefLabel": {
-        "en": "Bricks",
+        "en": "Brick",
         "de": "Baustein",
         "fr": "Briques"
       }
@@ -43,34 +43,25 @@
       }
     },
     {
-      "id": "http://example.org/taxonomy/Panels",
+      "id": "http://example.org/taxonomy/Panel",
       "prefLabel": {
-        "en": "Panels, Boards",
+        "en": "Panel",
         "de": "Platten",
         "fr": "Plaques"
       }
-    },
-    {
-      "id": "http://example.org/taxonomy/Timber",
-      "prefLabel": {
-        "en": "Timber"
-      }
     }
   ],
-  "broader": {
-    "id": "http://example.org/taxonomy/Object",
-    "prefLabel": {
-      "en": "Object",
-      "de": "Objekt",
-      "fr": "Objet"
-    }
-  },
   "inScheme": [
     {
       "id": "http://example.org/taxonomy/MyThesaurus"
     }
   ],
   "inSchemeAll": [
+    {
+      "id": "http://example.org/taxonomy/MyThesaurus"
+    }
+  ],
+  "topConceptOf": [
     {
       "id": "http://example.org/taxonomy/MyThesaurus"
     }

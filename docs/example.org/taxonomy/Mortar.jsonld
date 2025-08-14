@@ -7,13 +7,13 @@
     "fr": "Mortier, Crépis"
   },
   "definition": {
-    "en": "Mixes of a binder, fillers and sometimes additives to bond bricks or to plaster or render surfaces."
+    "en": "Mixes of a binder, fillers and sometimes additives to bond Brick or to plaster or render surfaces."
   },
   "broader": {
     "id": "http://example.org/taxonomy/BuildingMaterial",
     "prefLabel": {
-      "en": "Building Materials",
-      "de": "Baustoffe",
+      "en": "Building Material",
+      "de": "Baustoff",
       "fr": "Matériaux de Construction"
     }
   },

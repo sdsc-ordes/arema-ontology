@@ -12,8 +12,8 @@
   "broader": {
     "id": "http://example.org/taxonomy/BuildingMaterial",
     "prefLabel": {
-      "en": "Building Materials",
-      "de": "Baustoffe",
+      "en": "Building Material",
+      "de": "Baustoff",
       "fr": "Matériaux de Construction"
     }
   },

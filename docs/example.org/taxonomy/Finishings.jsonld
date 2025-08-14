@@ -47,11 +47,11 @@
     }
   ],
   "broader": {
-    "id": "http://example.org/taxonomy/TechnicalConstruction",
+    "id": "http://example.org/taxonomy/Construction",
     "prefLabel": {
-      "en": "Construction Techniques",
-      "de": "Bauweise",
-      "fr": "Systèmes Constructifs"
+      "en": "Construction",
+      "de": "Bauwerk",
+      "fr": "Construction"
     }
   },
   "inScheme": [

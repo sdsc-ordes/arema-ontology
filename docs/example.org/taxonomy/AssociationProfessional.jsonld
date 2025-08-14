@@ -2,7 +2,7 @@
   "id": "http://example.org/taxonomy/AssociationProfessional",
   "type": "Concept",
   "prefLabel": {
-    "en": "Association",
+    "en": "Association Professional",
     "de": "Verband/Verein",
     "fr": "Association"
   },
@@ -12,7 +12,7 @@
   "broader": {
     "id": "http://example.org/taxonomy/Professional",
     "prefLabel": {
-      "en": "Professionals",
+      "en": "Professional",
       "de": "Fachleute",
       "fr": "Professionnels"
     }

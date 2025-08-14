@@ -11,27 +11,19 @@
   },
   "narrower": [
     {
-      "id": "http://example.org/taxonomy/thermalConductivity",
+      "id": "http://example.org/taxonomy/effusivity",
       "prefLabel": {
-        "en": "Thermal Conductivity",
-        "de": "Wärmeleitfähigkeit",
-        "fr": "Conductivité Thermique"
+        "en": "Effusivity",
+        "de": "Effusivität",
+        "fr": "Effusivité"
       }
     },
     {
-      "id": "http://example.org/taxonomy/thermalCapacity",
+      "id": "http://example.org/taxonomy/freeSaturation",
       "prefLabel": {
-        "en": "Thermal Capacity",
-        "de": "Wärmekapazität",
-        "fr": "Capacité Thermique"
-      }
-    },
-    {
-      "id": "http://example.org/taxonomy/watervaporDiffusionResistance",
-      "prefLabel": {
-        "en": "Water vapor Diffusion Resistance",
-        "de": "Wasserdampfdiffusionswiderstand",
-        "fr": "Résistance à la Diffusion de la Vapeur d'Eau"
+        "en": "Free Saturation",
+        "de": "Freie Sättigung",
+        "fr": "Saturation Libre"
       }
     },
     {
@@ -51,11 +43,19 @@
       }
     },
     {
-      "id": "http://example.org/taxonomy/effusivity",
+      "id": "http://example.org/taxonomy/thermalCapacity",
       "prefLabel": {
-        "en": "Effusivity",
-        "de": "Effusivität",
-        "fr": "Effusivité"
+        "en": "Thermal Capacity",
+        "de": "Wärmekapazität",
+        "fr": "Capacité Thermique"
+      }
+    },
+    {
+      "id": "http://example.org/taxonomy/thermalConductivity",
+      "prefLabel": {
+        "en": "Thermal Conductivity",
+        "de": "Wärmeleitfähigkeit",
+        "fr": "Conductivité Thermique"
       }
     },
     {
@@ -67,11 +67,11 @@
       }
     },
     {
-      "id": "http://example.org/taxonomy/freeSaturation",
+      "id": "http://example.org/taxonomy/watervaporDiffusionResistance",
       "prefLabel": {
-        "en": "Free Saturation",
-        "de": "Freie Sättigung",
-        "fr": "Saturation Libre"
+        "en": "Water vapor Diffusion Resistance",
+        "de": "Wasserdampfdiffusionswiderstand",
+        "fr": "Résistance à la Diffusion de la Vapeur d'Eau"
       }
     }
   ],

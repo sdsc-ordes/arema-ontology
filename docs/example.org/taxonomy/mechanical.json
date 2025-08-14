@@ -11,19 +11,19 @@
   },
   "narrower": [
     {
-      "id": "http://example.org/taxonomy/density",
-      "prefLabel": {
-        "en": "Density",
-        "de": "Dichte",
-        "fr": "Densité"
-      }
-    },
-    {
       "id": "http://example.org/taxonomy/compressiveStrength",
       "prefLabel": {
         "en": "Compressive Strength",
         "de": "Druckfestigkeit",
         "fr": "Résistance à la Compression"
+      }
+    },
+    {
+      "id": "http://example.org/taxonomy/density",
+      "prefLabel": {
+        "en": "Density",
+        "de": "Dichte",
+        "fr": "Densité"
       }
     },
     {

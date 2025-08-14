@@ -30,7 +30,7 @@
   "broader": {
     "id": "http://example.org/taxonomy/Building",
     "prefLabel": {
-      "en": "Buildings",
+      "en": "Building",
       "de": "Gebäude",
       "fr": "Bâtiments"
     }

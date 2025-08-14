@@ -2,7 +2,7 @@
   "id": "http://example.org/taxonomy/BuildingPhysicsProfessional",
   "type": "Concept",
   "prefLabel": {
-    "en": "Building Physics",
+    "en": "Building Physics Professional",
     "de": "Bauphysiker:in",
     "fr": "Physique du Bâtiment"
   },
@@ -12,7 +12,7 @@
   "broader": {
     "id": "http://example.org/taxonomy/Professional",
     "prefLabel": {
-      "en": "Professionals",
+      "en": "Professional",
       "de": "Fachleute",
       "fr": "Professionnels"
     }

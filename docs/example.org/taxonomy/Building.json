@@ -2,7 +2,7 @@
   "id": "http://example.org/taxonomy/Building",
   "type": "Concept",
   "prefLabel": {
-    "en": "Buildings",
+    "en": "Building",
     "de": "Gebäude",
     "fr": "Bâtiments"
   },
@@ -75,20 +75,17 @@
       }
     }
   ],
-  "broader": {
-    "id": "http://example.org/taxonomy/Object",
-    "prefLabel": {
-      "en": "Object",
-      "de": "Objekt",
-      "fr": "Objet"
-    }
-  },
   "inScheme": [
     {
       "id": "http://example.org/taxonomy/MyThesaurus"
     }
   ],
   "inSchemeAll": [
+    {
+      "id": "http://example.org/taxonomy/MyThesaurus"
+    }
+  ],
+  "topConceptOf": [
     {
       "id": "http://example.org/taxonomy/MyThesaurus"
     }

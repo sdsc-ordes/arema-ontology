@@ -2,7 +2,7 @@
   "id": "http://example.org/taxonomy/NaturalResource",
   "type": "Concept",
   "prefLabel": {
-    "en": "Resources",
+    "en": "Resource",
     "de": "Ressourcen",
     "fr": "Ressources"
   },
@@ -27,9 +27,9 @@
       }
     },
     {
-      "id": "http://example.org/taxonomy/OtherFibers",
+      "id": "http://example.org/taxonomy/OtherFiber",
       "prefLabel": {
-        "en": "Other Fibres",
+        "en": "Other Fibre",
         "de": "Andere Fasern",
         "fr": "Autres fibres"
       }
@@ -59,20 +59,17 @@
       }
     }
   ],
-  "broader": {
-    "id": "http://example.org/taxonomy/Object",
-    "prefLabel": {
-      "en": "Object",
-      "de": "Objekt",
-      "fr": "Objet"
-    }
-  },
   "inScheme": [
     {
       "id": "http://example.org/taxonomy/MyThesaurus"
     }
   ],
   "inSchemeAll": [
+    {
+      "id": "http://example.org/taxonomy/MyThesaurus"
+    }
+  ],
+  "topConceptOf": [
     {
       "id": "http://example.org/taxonomy/MyThesaurus"
     }

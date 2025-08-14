@@ -2,7 +2,7 @@
   "id": "http://example.org/taxonomy/Professional",
   "type": "Concept",
   "prefLabel": {
-    "en": "Professionals",
+    "en": "Professional",
     "de": "Fachleute",
     "fr": "Professionnels"
   },
@@ -21,7 +21,7 @@
     {
       "id": "http://example.org/taxonomy/AssociationProfessional",
       "prefLabel": {
-        "en": "Association",
+        "en": "Association Professional",
         "de": "Verband/Verein",
         "fr": "Association"
       }
@@ -29,7 +29,7 @@
     {
       "id": "http://example.org/taxonomy/BuildingPhysicsProfessional",
       "prefLabel": {
-        "en": "Building Physics",
+        "en": "Building Physics Professional",
         "de": "Bauphysiker:in",
         "fr": "Physique du Bâtiment"
       }
@@ -83,20 +83,17 @@
       }
     }
   ],
-  "broader": {
-    "id": "http://example.org/taxonomy/Object",
-    "prefLabel": {
-      "en": "Object",
-      "de": "Objekt",
-      "fr": "Objet"
-    }
-  },
   "inScheme": [
     {
       "id": "http://example.org/taxonomy/MyThesaurus"
     }
   ],
   "inSchemeAll": [
+    {
+      "id": "http://example.org/taxonomy/MyThesaurus"
+    }
+  ],
+  "topConceptOf": [
     {
       "id": "http://example.org/taxonomy/MyThesaurus"
     }

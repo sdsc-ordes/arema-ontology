@@ -7,9 +7,16 @@
     "fr": "Enveloppe"
   },
   "definition": {
-    "en": "The outer shell of a building, including walls, roofs, and windows, that separates the interior from the exterior environment."
+    "en": "The outer shell of a building, including walls, roofs, and windows, that separates the interior from the exterior environment.\n"
   },
   "narrower": [
+    {
+      "id": "http://example.org/taxonomy/Opening",
+      "prefLabel": {
+        "en": "Opening",
+        "de": "Offnung"
+      }
+    },
     {
       "id": "http://example.org/taxonomy/ExteriorThermalInsulation",
       "prefLabel": {
@@ -44,21 +51,14 @@
         "en": "Sun & Weather Protection",
         "de": "Sonnen- & Wetterschutz"
       }
-    },
-    {
-      "id": "http://example.org/taxonomy/WindowDoor",
-      "prefLabel": {
-        "en": "Windows & Doors",
-        "de": "Fenster & Türen"
-      }
     }
   ],
   "broader": {
-    "id": "http://example.org/taxonomy/TechnicalConstruction",
+    "id": "http://example.org/taxonomy/Construction",
     "prefLabel": {
-      "en": "Construction Techniques",
-      "de": "Bauweise",
-      "fr": "Systèmes Constructifs"
+      "en": "Construction",
+      "de": "Bauwerk",
+      "fr": "Construction"
     }
   },
   "inScheme": [
