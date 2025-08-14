@@ -76,18 +76,10 @@ me:MyThesaurus a skos:ConceptScheme ;
     dct:description "AREMA Ontology for building materials, buildings, natural resources, professionals, and technical constructions."@en ;
     vann:preferredNamespaceUri "https://w3id.org/arema/ontology/" ;
     vann:preferredNamespacePrefix "me" ;
-    skos:hasTopConcept me:BuildingMaterial, me:Building, me:NaturalResource, me:Professional, me:Construction ;
+    skos:hasTopConcept me:Object, me:Property ;
     skos:prefLabel "AREMA Ontology"@en , "AREMA Ontologie"@de , "Ontologie AREMA"@fr , "Ontologia AREMA"@it ;
     dct:license <https://creativecommons.org/licenses/by/4.0/> .
 
-me:Object a skos:Concept ;
-    skos:prefLabel "Objekt"@de,
-        "Object"@en,
-        "Objet"@fr ;
-    skos:definition "A general term for any physical entity that can be identified and described."@en ;
-    skos:inScheme me:MyThesaurus ;
-    skos:narrower me:Building, me:BuildingMaterial, me:NaturalResource, me:Professional, me:Construction .
-    
 me:Property a skos:Concept ;
     skos:definition "Properties of building materials."@en ;
     skos:inScheme me:MyThesaurus ;
