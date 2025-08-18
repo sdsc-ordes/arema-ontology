@@ -232,6 +232,15 @@ me:reactionToFireClassDINEN135011 a skos:Concept ;
     skos:prefLabel "Reaktion auf Feuer Klasse DIN EN 13501-1"@de,
         "Reaction to Fire Class DIN EN 13501-1"@en,
         "Classe de Réaction au Feu DIN EN 13501-1"@fr .
+
+me:interventionType a skos:Concept ;
+    skos:broader me:Property ;
+    skos:definition "The status of a building or construction, indicating whether it is new, existing, or under renovation."@en ;
+    skos:inScheme me:MyThesaurus ;
+    skos:example "New"@en, "Renovation"@en ;
+    skos:prefLabel "Art der Massnahme"@de,
+        "Intervention Type"@en,
+        "Type d'Intervention"@fr .
 """
 
 # Parse the static Turtle into your existing graph

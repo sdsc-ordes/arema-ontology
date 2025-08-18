@@ -403,6 +403,16 @@ me:freeSaturation a skos:Concept ;
         "Free Saturation"@en,
         "Saturation Libre"@fr .
 
+me:interventionType a skos:Concept ;
+    skos:broader me:Property ;
+    skos:definition "The status of a building or construction, indicating whether it is new, existing, or under renovation."@en ;
+    skos:example "New"@en,
+        "Renovation"@en ;
+    skos:inScheme me:MyThesaurus ;
+    skos:prefLabel "Art der Massnahme"@de,
+        "Intervention Type"@en,
+        "Type d'Intervention"@fr .
+
 me:moistureBufferingValue a skos:Concept ;
     skos:broader me:hygrothermal ;
     skos:definition "The ability of a material to buffer changes in moisture content, defined as the ratio of the change in moisture content to the change in relative humidity."@en ;
@@ -546,13 +556,6 @@ me:Finishings a skos:Concept ;
         "Finishings"@en,
         "Finitions"@fr .
 
-me:Property a skos:Concept ;
-    skos:definition "Properties of building materials."@en ;
-    skos:inScheme me:MyThesaurus ;
-    skos:prefLabel "Eigenschaft"@de,
-        "Property"@en,
-        "Propriété"@fr .
-
 me:Envelope a skos:Concept ;
     skos:broader me:Construction ;
     skos:definition """The outer shell of a building, including walls, roofs, and windows, that separates the interior from the exterior environment.
@@ -576,6 +579,13 @@ me:Object a skos:Concept ;
     skos:prefLabel "Objekt"@de,
         "Object"@en,
         "Objet"@fr .
+
+me:Property a skos:Concept ;
+    skos:definition "Properties of building materials."@en ;
+    skos:inScheme me:MyThesaurus ;
+    skos:prefLabel "Eigenschaft"@de,
+        "Property"@en,
+        "Propriété"@fr .
 
 me:hygrothermal a skos:Concept ;
     skos:broader me:Property ;
