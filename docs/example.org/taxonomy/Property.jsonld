@@ -35,6 +35,14 @@
       }
     },
     {
+      "id": "http://example.org/taxonomy/interventionType",
+      "prefLabel": {
+        "en": "Intervention Type",
+        "de": "Art der Massnahme",
+        "fr": "Type d'Intervention"
+      }
+    },
+    {
       "id": "http://example.org/taxonomy/fireResistance",
       "prefLabel": {
         "en": "Fire Resistance",

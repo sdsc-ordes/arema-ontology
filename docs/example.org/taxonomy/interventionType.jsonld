@@ -1,67 +1,28 @@
 {
-  "id": "http://example.org/taxonomy/Property",
+  "id": "http://example.org/taxonomy/interventionType",
   "type": "Concept",
   "prefLabel": {
-    "en": "Property",
-    "de": "Eigenschaft",
-    "fr": "Propriété"
+    "en": "Intervention Type",
+    "de": "Art der Massnahme",
+    "fr": "Type d'Intervention"
   },
   "definition": {
-    "en": "Properties of building materials."
+    "en": "The status of a building or construction, indicating whether it is new, existing, or under renovation."
   },
-  "narrower": [
-    {
-      "id": "http://example.org/taxonomy/acoustic",
-      "prefLabel": {
-        "en": "Acoustic",
-        "de": "Akustisch",
-        "fr": "Acoustique"
-      }
-    },
-    {
-      "id": "http://example.org/taxonomy/mechanical",
-      "prefLabel": {
-        "en": "Mechanical",
-        "de": "Mechanisch",
-        "fr": "Mécanique"
-      }
-    },
-    {
-      "id": "http://example.org/taxonomy/hygrothermal",
-      "prefLabel": {
-        "en": "Hygrothermal",
-        "de": "Hygrothermisch",
-        "fr": "Hygrothermique"
-      }
-    },
-    {
-      "id": "http://example.org/taxonomy/interventionType",
-      "prefLabel": {
-        "en": "Intervention Type",
-        "de": "Art der Massnahme",
-        "fr": "Type d'Intervention"
-      }
-    },
-    {
-      "id": "http://example.org/taxonomy/fireResistance",
-      "prefLabel": {
-        "en": "Fire Resistance",
-        "de": "Brandwiderstand",
-        "fr": "Résistance au Feu"
-      }
+  "broader": {
+    "id": "http://example.org/taxonomy/Property",
+    "prefLabel": {
+      "en": "Property",
+      "de": "Eigenschaft",
+      "fr": "Propriété"
     }
-  ],
+  },
   "inScheme": [
     {
       "id": "http://example.org/taxonomy/MyThesaurus"
     }
   ],
   "inSchemeAll": [
-    {
-      "id": "http://example.org/taxonomy/MyThesaurus"
-    }
-  ],
-  "topConceptOf": [
     {
       "id": "http://example.org/taxonomy/MyThesaurus"
     }
