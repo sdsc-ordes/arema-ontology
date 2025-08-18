@@ -10,7 +10,9 @@
     "en": "The status of a building or construction, indicating whether it is new, existing, or under renovation."
   },
   "example": {
-    "en": "New, Renovation"
+    "en": "New, Renovation",
+    "de": "Neu, Umbau",
+    "fr": "Neuf, Rénovation"
   },
   "broader": {
     "id": "http://example.org/taxonomy/Property",
