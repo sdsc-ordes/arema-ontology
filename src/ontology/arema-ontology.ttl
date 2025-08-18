@@ -595,7 +595,7 @@ me:Professional a skos:Concept ;
 
 me:Structure a skos:Concept ;
     skos:broader me:Construction ;
-    skos:definition "A structure"@en ;
+    skos:definition "Load-bearing elements of a building"@en ;
     skos:inScheme me:MyThesaurus ;
     skos:prefLabel "Struktur"@de,
         "Structure"@en,
