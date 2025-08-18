@@ -406,7 +406,9 @@ me:freeSaturation a skos:Concept ;
 me:interventionType a skos:Concept ;
     skos:broader me:Property ;
     skos:definition "The status of a building or construction, indicating whether it is new, existing, or under renovation."@en ;
-    skos:example "New, Renovation"@en ;
+    skos:example "Neu, Umbau"@de,
+        "New, Renovation"@en,
+        "Neuf, Rénovation"@fr ;
     skos:inScheme me:MyThesaurus ;
     skos:prefLabel "Art der Massnahme"@de,
         "Intervention Type"@en,
