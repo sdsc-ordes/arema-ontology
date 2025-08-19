@@ -1,5 +1,6 @@
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix me: <http://example.org/taxonomy/> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix vann: <http://purl.org/vocab/vann/> .
 
@@ -372,6 +373,7 @@ me:absorptionCoefficientAt500Hz a skos:Concept ;
         "Coefficient d'Absorption à 500 Hz"@fr .
 
 me:compressiveStrength a skos:Concept ;
+    qudt:unit qudt:MegaPascal ;
     skos:broader me:mechanical ;
     skos:definition "The ability of a material to withstand axial loads without failure."@en ;
     skos:inScheme me:MyThesaurus ;
@@ -380,6 +382,7 @@ me:compressiveStrength a skos:Concept ;
         "Résistance à la Compression"@fr .
 
 me:density a skos:Concept ;
+    qudt:unit qudt:KilogramPerCubicMeter ;
     skos:broader me:mechanical ;
     skos:definition "Density of a material, defined as its mass per unit volume."@en ;
     skos:inScheme me:MyThesaurus ;
