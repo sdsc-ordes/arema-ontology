@@ -110,7 +110,7 @@ me:compressiveStrength a skos:Concept ;
     skos:broader me:mechanical ;
     skos:definition "The ability of a material to withstand axial loads without failure."@en ;
     skos:inScheme me:MyThesaurus ;
-    qudt:unit qudt:MegaPascal
+    qudt:unit qudt:MegaPascal ;
     skos:prefLabel "Druckfestigkeit"@de,
         "Compressive Strength"@en,
         "Résistance à la Compression"@fr .
