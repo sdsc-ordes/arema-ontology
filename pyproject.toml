@@ -2,7 +2,7 @@
 name = "arema-ontology"
 version = "0.1.0"
 description = "Ontology tooling and docs generation for AREMA"
-authors = [{ name = "Your Name", email = "you@example.com" }]
+authors = [{ name = "Robin Franken", email = "robin.franken@epfl.ch" }]
 readme = "README.md"
 requires-python = ">=3.10"
 
