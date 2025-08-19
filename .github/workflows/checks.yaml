@@ -21,10 +21,17 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Install dependencies
+      - name: Install uv
         run: |
-          python -m pip install --upgrade pip
-          pip install -r tools/python/requirements.txt
+          curl -LsSf https://astral.sh/uv/install.sh | sh
+          echo "$HOME/.cargo/bin" >> $GITHUB_PATH
+
+      - name: Sync Python environment
+        run: uv sync --frozen
+      
+      - name: Activate uv venv
+        run: source .venv/bin/activate
+
 
       - name: SHACL validation
         run: |

@@ -1,0 +1,9 @@
+apiVersion: vendir.k14s.io/v1alpha1
+kind: Config
+directories:
+- path: skohub-vocabs
+  contents:
+  - git:
+      url: https://github.com/sdsc-ordes/skohub-vocabs
+      ref: main   # or a specific tag/commit/branch
+    includePaths: ["**/*"]
