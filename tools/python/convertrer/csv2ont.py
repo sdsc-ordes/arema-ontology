@@ -24,6 +24,7 @@ g.bind("skos", "http://www.w3.org/2004/02/skos/core#")
 g.bind("xsd", "http://www.w3.org/2001/XMLSchema#")
 g.bind("dct", "http://purl.org/dc/terms/")
 g.bind("vann", "http://purl.org/vocab/vann/")
+g.bind("qudt", "http://qudt.org/schema/qudt/")
 
 # Add concepts to the graph
 for _, row in df.iterrows():
@@ -68,6 +69,7 @@ static_turtle = """
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix vann: <http://purl.org/vocab/vann/> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
 
 @base <https://w3id.org/arema/ontology/> .
 
@@ -99,6 +101,7 @@ me:density a skos:Concept ;
     skos:broader me:mechanical ;
     skos:definition "Density of a material, defined as its mass per unit volume."@en ;
     skos:inScheme me:MyThesaurus ;
+    qudt:unit qudt:KilogramPerCubicMeter ;
     skos:prefLabel "Dichte"@de,
         "Density"@en,
         "Densité"@fr .
@@ -107,6 +110,7 @@ me:compressiveStrength a skos:Concept ;
     skos:broader me:mechanical ;
     skos:definition "The ability of a material to withstand axial loads without failure."@en ;
     skos:inScheme me:MyThesaurus ;
+    qudt:unit qudt:MegaPascal
     skos:prefLabel "Druckfestigkeit"@de,
         "Compressive Strength"@en,
         "Résistance à la Compression"@fr .
