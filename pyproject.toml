@@ -14,4 +14,3 @@ dependencies = [
 ]
 
 [tool.uv]
-resolver = "pip"
