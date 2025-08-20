@@ -1,0 +1,9 @@
+apiVersion: vendir.k14s.io/v1alpha1
+directories:
+- contents:
+  - git:
+      commitTitle: 'fix: add qudt prefix to context'
+      sha: df6ab5435d3de2ca2ee5c47146d1f1062faf3738
+    path: .
+  path: skohub-vocabs
+kind: LockConfig
