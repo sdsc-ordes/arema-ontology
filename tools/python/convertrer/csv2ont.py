@@ -115,7 +115,17 @@ me:compressiveStrength a skos:Concept ;
         "Compressive Strength"@en,
         "Résistance à la Compression"@fr .
 
+qudt:KilogramPerCubicMeter a qudt:Unit ;
+    qudt:unitSymbol "kg/m³" ;
+    skos:prefLabel "Kilogramm pro Kubikmeter"@de,
+        "Kilogram per Cubic Meter"@en,
+        "Kilogramme par Mètre Cube"@fr .
 
+qudt:MegaPascal a qudt:Unit ;
+    qudt:unitSymbol "MPa" ;
+    skos:prefLabel "Megapascal"@de,
+        "MegaPascal"@en,
+        "Mégapascal"@fr .
 
 me:tensileStrength a skos:Concept ;
     skos:broader me:mechanical ;
@@ -252,4 +262,4 @@ me:interventionType a skos:Concept ;
 g.parse(data=static_turtle, format="turtle")
 
 # Save to Turtle
-g.serialize("./src/ontology/sheet-ontology.ttl", format="turtle")
+g.serialize("./src/ontology/arema-ontology.ttl", format="turtle")

@@ -513,6 +513,18 @@ me:fireResistance a skos:Concept ;
         "Fire Resistance"@en,
         "Résistance au Feu"@fr .
 
+qudt:KilogramPerCubicMeter a qudt:Unit ;
+    qudt:unitSymbol "kg/m³" ;
+    skos:prefLabel "Kilogramm pro Kubikmeter"@de,
+        "Kilogram per Cubic Meter"@en,
+        "Kilogramme par Mètre Cube"@fr .
+
+qudt:MegaPascal a qudt:Unit ;
+    qudt:unitSymbol "MPa" ;
+    skos:prefLabel "Megapascal"@de,
+        "MegaPascal"@en,
+        "Mégapascal"@fr .
+
 me:Opening a skos:Concept ;
     skos:broader me:Envelope ;
     skos:definition "Openings in walls such as doors and windows"@en ;
