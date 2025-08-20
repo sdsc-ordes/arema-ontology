@@ -5,6 +5,7 @@ on:
     paths:
       - 'src/ontology/arema-ontology.ttl'
       - '.github/workflows/docs.yml'
+      - 'vendir.yml'
 
 jobs:
   build-docs:
@@ -14,22 +15,28 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Install vendir
+        run: |
+          curl -L https://carvel.dev/install.sh | bash
+
+      - name: Sync Skohub Vocabs
+        run: vendir sync
+
       - name: Prepare clean public and data directories
         run: |
           rm -rf public data docs/public
           mkdir -p public data
-          chmod -R 777 public data
           cp src/ontology/arema-ontology.ttl data/
           echo "BASEURL=/$(basename $GITHUB_REPOSITORY)" > .env
-          chmod 666 .env
 
-      - name: Run Skohub Vocabs Docker
+      - name: Run Skohub Vocabs (local checkout)
         run: |
+          docker build -t skohub-vocabs ./skohub-vocabs
           docker run --rm \
             -v ${{ github.workspace }}/public:/app/public \
             -v ${{ github.workspace }}/data:/app/data \
             -v ${{ github.workspace }}/.env:/app/.env \
-            skohub/skohub-vocabs-docker:latest
+            skohub-vocabs
           rm -rf docs/*
           cp -r public/* docs/
 
@@ -42,4 +49,3 @@ jobs:
           git push
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
