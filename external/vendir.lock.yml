@@ -2,8 +2,8 @@ apiVersion: vendir.k14s.io/v1alpha1
 directories:
 - contents:
   - git:
-      commitTitle: 'fix: syntax error'
-      sha: 32c5ceec78b185e9085a921b151d297d12a66af0
+      commitTitle: 'fix: don''t get unit iri'
+      sha: e173eea439527e35c09f2a45a5558bcaff332861
     path: .
   path: skohub-vocabs
 kind: LockConfig
