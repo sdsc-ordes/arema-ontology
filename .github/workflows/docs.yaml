@@ -33,7 +33,7 @@ jobs:
 
       - name: Run Skohub Vocabs (local checkout)
         run: |
-          docker build -t skohub-vocabs ./skohub-vocabs
+          docker build -t skohub-vocabs ./external/skohub-vocabs
           docker run --rm \
             -v ${{ github.workspace }}/public:/app/public \
             -v ${{ github.workspace }}/data:/app/data \
