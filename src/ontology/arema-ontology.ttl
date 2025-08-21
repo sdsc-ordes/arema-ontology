@@ -1,8 +1,15 @@
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix me: <http://example.org/taxonomy/> .
-@prefix qudt: <http://qudt.org/schema/qudt/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix vann: <http://purl.org/vocab/vann/> .
+
+me:AbsorptionCoefficientAt500hz a skos:Concept ;
+    me:symbol "α" ;
+    skos:broader me:Acoustic ;
+    skos:inScheme me:MyThesaurus ;
+    skos:prefLabel "Schallabsorptionsgrad (bei 500Hz)"@de,
+        "Absorption coefficient (at 500Hz)"@en,
+        "Coefficient d'absorption (à 500Hz)"@fr .
 
 me:ApartmentBuilding a skos:Concept ;
     skos:broader me:Building ;
@@ -88,6 +95,15 @@ me:Column a skos:Concept ;
     skos:prefLabel "Stütze"@de,
         "Column"@en .
 
+me:CompressiveStrength a skos:Concept ;
+    me:symbol "σc" ;
+    me:unit "MPa" ;
+    skos:broader me:Mechanical ;
+    skos:inScheme me:MyThesaurus ;
+    skos:prefLabel "Druckfestigkeit"@de,
+        "Compressive strength"@en,
+        "Résistance à la compression"@fr .
+
 me:ConstructionFirmProfessional a skos:Concept ;
     skos:broader me:Professional ;
     skos:definition "A company engaged in building construction projects and services."@en ;
@@ -104,6 +120,15 @@ me:Craftsman a skos:Concept ;
         "Craftsman"@en,
         "Artisan/ne"@fr .
 
+me:Density a skos:Concept ;
+    me:symbol "ρ" ;
+    me:unit "kg/m3" ;
+    skos:broader me:Mechanical ;
+    skos:inScheme me:MyThesaurus ;
+    skos:prefLabel "Dichte"@de,
+        "Density"@en,
+        "masse volumique"@fr .
+
 me:Door a skos:Concept ;
     skos:broader me:Opening ;
     skos:definition "A door is a structure to enter or exit a room"@en ;
@@ -117,6 +142,15 @@ me:Earth a skos:Concept ;
     skos:prefLabel "Lehm"@de,
         "Earth"@en,
         "Terre"@fr .
+
+me:Effusivity a skos:Concept ;
+    me:symbol "E" ;
+    me:unit "kJ/(K*m2*sqrt(s))" ;
+    skos:broader me:Hygrothermal ;
+    skos:inScheme me:MyThesaurus ;
+    skos:prefLabel "Effusivität"@de,
+        "Effusivity"@en,
+        "Effusivité"@fr .
 
 me:ExteriorThermalInsulation a skos:Concept ;
     skos:broader me:Envelope ;
@@ -175,6 +209,14 @@ me:Foundation a skos:Concept ;
     skos:prefLabel "Fundament"@de,
         "Foundation"@en .
 
+me:FreeSaturation a skos:Concept ;
+    me:symbol "wf" ;
+    me:unit "kg/m3" ;
+    skos:broader me:Hygrothermal ;
+    skos:inScheme me:MyThesaurus ;
+    skos:prefLabel "Freie Wassersättigung"@de,
+        "Free saturation"@en .
+
 me:Hemp a skos:Concept ;
     skos:broader me:NaturalResource ;
     skos:definition "Hemp"@en ;
@@ -204,6 +246,22 @@ me:InteriorWallFinishing a skos:Concept ;
     skos:prefLabel "Wandbekleidung"@de,
         "Interior Wall Finishing"@en .
 
+me:InterventionType a skos:Concept ;
+    skos:broader me:OtherProperty ;
+    skos:inScheme me:MyThesaurus ;
+    skos:prefLabel "Art der Massnahme"@de,
+        "Intervention Type"@en,
+        "Type d'Intervention"@fr .
+
+me:LiquidTransferCoefficientForAbsorption a skos:Concept ;
+    me:symbol "A" ;
+    me:unit "kg/(m2*sqrt(s))" ;
+    skos:broader me:Hygrothermal ;
+    skos:inScheme me:MyThesaurus ;
+    skos:prefLabel "Wasseraufnahmekoeffizient"@de,
+        "Liquid transfer coefficient for absorption"@en,
+        "Coefficient d'absorption d'eau"@fr .
+
 me:Massive a skos:Concept ;
     skos:broader me:BuildingMaterial ;
     skos:definition "Building Materials that can be processed to become massive, homogene building elements. They can be load-bearing or not and are mostly in need of formwork. "@en ;
@@ -219,6 +277,13 @@ me:MaterialProducer a skos:Concept ;
     skos:prefLabel "Materialhersteller:in"@de,
         "Material Producer"@en,
         "Producteur de Matériaux"@fr .
+
+me:MoistureBufferingValue a skos:Concept ;
+    me:symbol "MBV" ;
+    me:unit "g/(m2*%RH)" ;
+    skos:broader me:Hygrothermal ;
+    skos:inScheme me:MyThesaurus ;
+    skos:prefLabel "Moisture Buffering value"@en .
 
 me:Mortar a skos:Concept ;
     skos:broader me:BuildingMaterial ;
@@ -259,6 +324,15 @@ me:PartitionWall a skos:Concept ;
     skos:prefLabel "Trennwand"@de,
         "Partition Wall"@en .
 
+me:Porosity a skos:Concept ;
+    me:symbol "ξ" ;
+    me:unit "%vol" ;
+    skos:broader me:Hygrothermal ;
+    skos:inScheme me:MyThesaurus ;
+    skos:prefLabel "Porosität"@de,
+        "Porosity"@en,
+        "Porosité"@fr .
+
 me:PublicBuilding a skos:Concept ;
     skos:broader me:Building ;
     skos:definition "Buildings intended for use by the public, such as schools, libraries, or government offices."@en ;
@@ -266,6 +340,13 @@ me:PublicBuilding a skos:Concept ;
     skos:prefLabel "Öffentliches Gebäude"@de,
         "Public Building"@en,
         "Bâtiment Public"@fr .
+
+me:ReactionToFireClassDinEn135011 a skos:Concept ;
+    skos:broader me:FireResistance ;
+    skos:inScheme me:MyThesaurus ;
+    skos:prefLabel "Brandverhaltensklasse (EN 13501-1)"@de,
+        "Reaction to fire class (DIN EN 13501-1)"@en,
+        "Classe de réaction au feu"@fr .
 
 me:Researcher a skos:Concept ;
     skos:broader me:Professional ;
@@ -350,6 +431,49 @@ me:TechnicalEquipement a skos:Concept ;
     skos:prefLabel "Technik"@de,
         "Technical Equipement"@en .
 
+me:TensileStrength a skos:Concept ;
+    me:symbol "σ" ;
+    me:unit "MPa" ;
+    skos:broader me:Mechanical ;
+    skos:inScheme me:MyThesaurus ;
+    skos:prefLabel "Zugfestigkeit"@de,
+        "tensile strength"@en,
+        "Résistance à la traction"@fr .
+
+me:ThermalCapacity a skos:Concept ;
+    me:symbol "c" ;
+    me:unit "J(kg*K)" ;
+    skos:broader me:Hygrothermal ;
+    skos:inScheme me:MyThesaurus ;
+    skos:prefLabel "Wärmekapazität"@de,
+        "thermal capacity"@en,
+        "Capacité thermique"@fr .
+
+me:ThermalConductivity a skos:Concept ;
+    me:symbol "λ" ;
+    me:unit "W/(m*K)" ;
+    skos:broader me:Hygrothermal ;
+    skos:inScheme me:MyThesaurus ;
+    skos:prefLabel "Wärmeleitfähigkeit"@de,
+        "thermal conductivity"@en,
+        "conductivité thermique"@fr .
+
+me:WaterContentAt80 a skos:Concept ;
+    me:symbol "w80%" ;
+    me:unit "kg/m3" ;
+    skos:broader me:Hygrothermal ;
+    skos:inScheme me:MyThesaurus ;
+    skos:prefLabel "Wassergehalt bei 80%"@de,
+        "Water content at 80%"@en .
+
+me:WaterVaporDiffusionResistance a skos:Concept ;
+    me:symbol "µ" ;
+    skos:broader me:Hygrothermal ;
+    skos:inScheme me:MyThesaurus ;
+    skos:prefLabel "Wasserdampfdiffusionswiderstand"@de,
+        "Water vapor diffusion resistance"@en,
+        "Résistance à la diffusion de vapeur d'eau"@fr .
+
 me:Window a skos:Concept ;
     skos:broader me:Opening ;
     skos:definition "A window is a structure to let light or air into a room"@en ;
@@ -364,130 +488,28 @@ me:Wood a skos:Concept ;
         "Wood"@en,
         "Bois"@fr .
 
-me:absorptionCoefficientAt500Hz a skos:Concept ;
-    skos:broader me:acoustic ;
-    skos:definition "The sound absorption coefficient of a material at 500 Hz, defined as the ratio of the sound energy absorbed by the material to the total sound energy incident on the material."@en ;
-    skos:inScheme me:MyThesaurus ;
-    skos:prefLabel "Absorptionskoeffizient bei 500 Hz"@de,
-        "Absorption Coefficient at 500 Hz"@en,
-        "Coefficient d'Absorption à 500 Hz"@fr .
-
-me:compressiveStrength a skos:Concept ;
-    qudt:unit qudt:MegaPascal ;
-    skos:broader me:mechanical ;
-    skos:definition "The ability of a material to withstand axial loads without failure."@en ;
-    skos:inScheme me:MyThesaurus ;
-    skos:prefLabel "Druckfestigkeit"@de,
-        "Compressive Strength"@en,
-        "Résistance à la Compression"@fr .
-
-me:density a skos:Concept ;
-    qudt:unit qudt:KilogramPerCubicMeter ;
-    skos:broader me:mechanical ;
-    skos:definition "Density of a material, defined as its mass per unit volume."@en ;
-    skos:inScheme me:MyThesaurus ;
-    skos:prefLabel "Dichte"@de,
-        "Density"@en,
-        "Densité"@fr .
-
-me:effusivity a skos:Concept ;
-    skos:broader me:hygrothermal ;
-    skos:definition "A measure of a material's ability to exchange heat with its environment, defined as the square root of the product of thermal conductivity and volumetric heat capacity."@en ;
-    skos:inScheme me:MyThesaurus ;
-    skos:prefLabel "Effusivität"@de,
-        "Effusivity"@en,
-        "Effusivité"@fr .
-
-me:freeSaturation a skos:Concept ;
-    skos:broader me:hygrothermal ;
-    skos:definition "The maximum amount of water that a material can absorb without any free water present, expressed as a percentage of the dry mass of the material."@en ;
-    skos:inScheme me:MyThesaurus ;
-    skos:prefLabel "Freie Sättigung"@de,
-        "Free Saturation"@en,
-        "Saturation Libre"@fr .
-
-me:interventionType a skos:Concept ;
-    skos:broader me:Property ;
-    skos:definition "The status of a building or construction, indicating whether it is new, existing, or under renovation."@en ;
-    skos:example "Neu, Umbau"@de,
-        "New, Renovation"@en,
-        "Neuf, Rénovation"@fr ;
-    skos:inScheme me:MyThesaurus ;
-    skos:prefLabel "Art der Massnahme"@de,
-        "Intervention Type"@en,
-        "Type d'Intervention"@fr .
-
-me:moistureBufferingValue a skos:Concept ;
-    skos:broader me:hygrothermal ;
-    skos:definition "The ability of a material to buffer changes in moisture content, defined as the ratio of the change in moisture content to the change in relative humidity."@en ;
-    skos:inScheme me:MyThesaurus ;
-    skos:prefLabel "Feuchtepufferwert"@de,
-        "Moisture Buffering Value"@en,
-        "Valeur de Tampon d'Humidité"@fr .
-
-me:porosity a skos:Concept ;
-    skos:broader me:hygrothermal ;
-    skos:definition "The ratio of the volume of voids in a material to the total volume of the material, expressed as a percentage."@en ;
-    skos:inScheme me:MyThesaurus ;
-    skos:prefLabel "Porosität"@de,
-        "Porosity"@en,
-        "Porosité"@fr .
-
-me:reactionToFireClassDINEN135011 a skos:Concept ;
-    skos:broader me:fireResistance ;
-    skos:definition "The classification of a material's reaction to fire according to the DIN EN 13501-1 standard, which assesses the fire performance of construction products."@en ;
-    skos:inScheme me:MyThesaurus ;
-    skos:prefLabel "Reaktion auf Feuer Klasse DIN EN 13501-1"@de,
-        "Reaction to Fire Class DIN EN 13501-1"@en,
-        "Classe de Réaction au Feu DIN EN 13501-1"@fr .
-
-me:tensileStrength a skos:Concept ;
-    skos:broader me:mechanical ;
-    skos:definition "The ability of a material to withstand tensile (pulling) forces without failure."@en ;
-    skos:inScheme me:MyThesaurus ;
-    skos:prefLabel "Zugfestigkeit"@de,
-        "Tensile Strength"@en,
-        "Résistance à la Traction"@fr .
-
-me:thermalCapacity a skos:Concept ;
-    skos:broader me:hygrothermal ;
-    skos:definition "The ability of a material to store thermal energy, defined as the amount of heat required to change the temperature of a unit mass of the material by one degree Celsius."@en ;
-    skos:inScheme me:MyThesaurus ;
-    skos:prefLabel "Wärmekapazität"@de,
-        "Thermal Capacity"@en,
-        "Capacité Thermique"@fr .
-
-me:thermalConductivity a skos:Concept ;
-    skos:broader me:hygrothermal ;
-    skos:definition "The ability of a material to conduct heat, defined as the amount of heat that passes through a unit area of the material per unit time for a given temperature difference."@en ;
-    skos:inScheme me:MyThesaurus ;
-    skos:prefLabel "Wärmeleitfähigkeit"@de,
-        "Thermal Conductivity"@en,
-        "Conductivité Thermique"@fr .
-
-me:waterContentAt80Percent a skos:Concept ;
-    skos:broader me:hygrothermal ;
-    skos:definition "The water content of a material at 80% relative humidity, expressed as a percentage of the dry mass of the material."@en ;
-    skos:inScheme me:MyThesaurus ;
-    skos:prefLabel "Wassergehalt bei 80% relativer Luftfeuchte"@de,
-        "Water Content at 80% Relative Humidity"@en,
-        "Teneur en Eau à 80% d'Humidité Relative"@fr .
-
-me:watervaporDiffusionResistance a skos:Concept ;
-    skos:broader me:hygrothermal ;
-    skos:definition "The resistance of a material to the diffusion of water vapor, defined as the ratio of the water vapor pressure difference across the material to the water vapor flux through the material."@en ;
-    skos:inScheme me:MyThesaurus ;
-    skos:prefLabel "Wasserdampfdiffusionswiderstand"@de,
-        "Water vapor Diffusion Resistance"@en,
-        "Résistance à la Diffusion de la Vapeur d'Eau"@fr .
-
-me:youngsModulus a skos:Concept ;
-    skos:broader me:mechanical ;
-    skos:definition "A measure of the stiffness of a material, defined as the ratio of stress to strain in the linear elastic region."@en ;
+me:YoungSModulus a skos:Concept ;
+    me:symbol "E" ;
+    me:unit "Gpa" ;
+    skos:broader me:Mechanical ;
     skos:inScheme me:MyThesaurus ;
     skos:prefLabel "E-Modul"@de,
         "Young's Modulus"@en,
         "Module d'élasticité"@fr .
+
+me:Acoustic a skos:Concept ;
+    skos:broader me:Property ;
+    skos:inScheme me:MyThesaurus ;
+    skos:prefLabel "Akustik"@de,
+        "Acoustic"@en,
+        "Acousitque"@fr .
+
+me:FireResistance a skos:Concept ;
+    skos:broader me:Property ;
+    skos:inScheme me:MyThesaurus ;
+    skos:prefLabel "Brandverhalten"@de,
+        "Fire resistance"@en,
+        "Résistance au feu"@fr .
 
 me:Other a skos:Concept ;
     skos:broader me:Construction ;
@@ -497,33 +519,12 @@ me:Other a skos:Concept ;
         "Other"@en,
         "Autre"@fr .
 
-me:acoustic a skos:Concept ;
+me:OtherProperty a skos:Concept ;
     skos:broader me:Property ;
-    skos:definition "Properties of materials related to their acoustic behavior, such as sound absorption and sound insulation."@en ;
     skos:inScheme me:MyThesaurus ;
-    skos:prefLabel "Akustisch"@de,
-        "Acoustic"@en,
-        "Acoustique"@fr .
-
-me:fireResistance a skos:Concept ;
-    skos:broader me:Property ;
-    skos:definition "The ability of a material to withstand fire or heat without significant degradation or failure."@en ;
-    skos:inScheme me:MyThesaurus ;
-    skos:prefLabel "Brandwiderstand"@de,
-        "Fire Resistance"@en,
-        "Résistance au Feu"@fr .
-
-qudt:KilogramPerCubicMeter a qudt:Unit ;
-    qudt:unitSymbol "kg/m³" ;
-    skos:prefLabel "Kilogramm pro Kubikmeter"@de,
-        "Kilogram per Cubic Meter"@en,
-        "Kilogramme par Mètre Cube"@fr .
-
-qudt:MegaPascal a qudt:Unit ;
-    qudt:unitSymbol "MPa" ;
-    skos:prefLabel "Megapascal"@de,
-        "MegaPascal"@en,
-        "Mégapascal"@fr .
+    skos:prefLabel "Andere"@de,
+        "Other Property"@en,
+        "Autre"@fr .
 
 me:Opening a skos:Concept ;
     skos:broader me:Envelope ;
@@ -540,13 +541,12 @@ me:Construction a skos:Concept ;
         "Construction"@en,
         "Construction"@fr .
 
-me:mechanical a skos:Concept ;
+me:Mechanical a skos:Concept ;
     skos:broader me:Property ;
-    skos:definition "Properties of materials that are related to their mechanical behavior, such as strength, elasticity, and durability."@en ;
     skos:inScheme me:MyThesaurus ;
     skos:prefLabel "Mechanisch"@de,
         "Mechanical"@en,
-        "Mécanique"@fr .
+        "Mecanique"@fr .
 
 me:Building a skos:Concept ;
     skos:broader me:Object ;
@@ -574,8 +574,7 @@ me:Finishings a skos:Concept ;
 
 me:Envelope a skos:Concept ;
     skos:broader me:Construction ;
-    skos:definition """The outer shell of a building, including walls, roofs, and windows, that separates the interior from the exterior environment.
-"""@en ;
+    skos:definition "The outer shell of a building, including walls, roofs, and windows, that separates the interior from the exterior environment."@en ;
     skos:inScheme me:MyThesaurus ;
     skos:prefLabel "Hülle"@de,
         "Envelope"@en,
@@ -596,16 +595,8 @@ me:Object a skos:Concept ;
         "Object"@en,
         "Objet"@fr .
 
-me:Property a skos:Concept ;
-    skos:definition "Properties of building materials."@en ;
-    skos:inScheme me:MyThesaurus ;
-    skos:prefLabel "Eigenschaft"@de,
-        "Property"@en,
-        "Propriété"@fr .
-
-me:hygrothermal a skos:Concept ;
+me:Hygrothermal a skos:Concept ;
     skos:broader me:Property ;
-    skos:definition "Properties of materials related to their moisture and thermal behavior, such as thermal conductivity and moisture permeability."@en ;
     skos:inScheme me:MyThesaurus ;
     skos:prefLabel "Hygrothermisch"@de,
         "Hygrothermal"@en,
@@ -638,3 +629,4 @@ me:MyThesaurus a skos:ConceptScheme ;
         "AREMA Ontology"@en,
         "Ontologie AREMA"@fr,
         "Ontologia AREMA"@it .
+

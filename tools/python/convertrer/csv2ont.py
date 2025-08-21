@@ -124,4 +124,4 @@ for _, row in df_properties.iterrows():
     add_concept_from_row(g, row, is_property=True)
 
 # Serialize all concepts to one TTL
-g.serialize("arema-ontology.ttl", format="turtle")
+g.serialize("./src/ontology/arema-ontology.ttl", format="turtle")
