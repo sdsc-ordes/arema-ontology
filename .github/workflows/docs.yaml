@@ -22,7 +22,7 @@ jobs:
           curl -L https://carvel.dev/install.sh | bash
 
       - name: Sync Skohub Vocabs
-        run: vendir sync -f ./external/vendir.yml
+        run: cd external && vendir sync -f ./external/vendir.yml && cd ..
 
       - name: Prepare clean public and data directories
         run: |
