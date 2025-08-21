@@ -12,11 +12,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
           submodules: false
-          
+
       - name: Install vendir
         run: |
           curl -L https://carvel.dev/install.sh | bash
@@ -51,3 +52,10 @@ jobs:
           git push
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Clean broken submodule (if exists)
+        run: |
+          if [ -d external/skohub-vocabs ]; then
+            git rm --cached external/skohub-vocabs || true
+            rm -rf .git/modules/external/skohub-vocabs || true
+          fi
