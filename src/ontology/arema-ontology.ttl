@@ -595,6 +595,12 @@ me:Object a skos:Concept ;
         "Object"@en,
         "Objet"@fr .
 
+me:Property a skos:Concept ;
+    skos:inScheme me:MyThesaurus ;
+    skos:prefLabel "Eigenschaft"@de,
+        "Property"@en,
+        "Propriété"@fr .
+
 me:Hygrothermal a skos:Concept ;
     skos:broader me:Property ;
     skos:inScheme me:MyThesaurus ;
