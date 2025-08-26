@@ -38,8 +38,9 @@ jobs:
           docker run --rm \
             -v ./public:/app/public \
             -v ./data:/app/data \
-            -v ./config.yaml:/app/config.yaml \
-            -v ./static/fonts:/app/static/fonts \
+            -v ./tools/config.yaml:/app/config.yaml \
+            -v ./tools/static:/app/static \
+            -v ./tools/src:/app/src \
             -e "BASEURL=http://example.org/taxonomy/" \
             skohub-vocabs
           rm -rf docs/*
