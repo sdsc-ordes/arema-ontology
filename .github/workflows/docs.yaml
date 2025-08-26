@@ -36,9 +36,11 @@ jobs:
         run: |
           docker build -t skohub-vocabs ./external/skohub-vocabs
           docker run --rm \
-            -v ${{ github.workspace }}/public:/app/public \
-            -v ${{ github.workspace }}/data:/app/data \
-            -v ${{ github.workspace }}/.env:/app/.env \
+            -v ./public:/app/public \
+            -v ./data:/app/data \
+            -v ./config.yaml:/app/config.yaml \
+            -v ./static/fonts:/app/static/fonts \
+            -e "BASEURL=http://example.org/taxonomy/" \
             skohub-vocabs
           rm -rf docs/*
           cp -r public/* docs/
