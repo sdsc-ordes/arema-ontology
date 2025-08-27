@@ -34,18 +34,15 @@ jobs:
 
       - name: Run Skohub Vocabs (local checkout)
         run: |
+          # Build the container
           docker build -t skohub-vocabs ./external/skohub-vocabs
+
+          # Run the container, mount only what is needed (data and tools)
           docker run --rm \
-            -v ./src/ontology:/app/data \
-            -v ./tools/skohub-vocabs:/app \
-            skohub-vocabs sh -c "
-              # Copy source overrides
-              cp -r ./tools/skohub-vocabs/src/* /app/src/ && \
-              # Copy static overrides
-              cp -r ./tools/skohub-vocabs/static/* /app/static/ && \
-              # Copy config
-              cp ./tools/config.yaml /app/config.yaml
-            "
+            -v ${{ github.workspace }}/public:/app/public \
+            -v ${{ github.workspace }}/data:/app/data \
+            -v ${{ github.workspace }}/.env:/app/.env \
+            skohub-vocabs
           rm -rf docs/*
           cp -r public/* docs/
 
