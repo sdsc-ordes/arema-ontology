@@ -36,13 +36,14 @@ jobs:
         run: |
           docker build -t skohub-vocabs ./external/skohub-vocabs
           docker run --rm \
-            -v ./public:/app/public \
-            -v ./data:/app/data \
+            -v ./src/ontology:/app/data \
             -v ./tools/config.yaml:/app/config.yaml \
             -v ./tools/static:/app/static \
-            -v ./tools/skohub-vocabs/src:/app/src \
-            -e "BASEURL=http://example.org/taxonomy/" \
-            skohub-vocabs
+            -v ./tools/skohub-vocabs/:/app/ \
+            skohub-vocabs sh -c "
+              cp -r /app/tools/skohub-vocabs/src/* /app/src/ && \
+              cp -r /app/tools/skohub-vocabs/static/* /app/static/ && \
+            "
           rm -rf docs/*
           cp -r public/* docs/
 
