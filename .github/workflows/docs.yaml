@@ -40,7 +40,7 @@ jobs:
             -v ./data:/app/data \
             -v ./tools/config.yaml:/app/config.yaml \
             -v ./tools/static:/app/static \
-            -v ./tools/src:/app/src \
+            -v ./tools/skohub-vocabs/src:/app/src \
             -e "BASEURL=http://example.org/taxonomy/" \
             skohub-vocabs
           rm -rf docs/*
