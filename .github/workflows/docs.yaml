@@ -37,15 +37,18 @@ jobs:
           docker build -t skohub-vocabs ./external/skohub-vocabs
           docker run --rm \
             -v ./src/ontology:/app/data \
-            -v ./tools/config.yaml:/app/config.yaml \
-            -v ./tools/static:/app/static \
-            -v ./tools/skohub-vocabs/:/app/ \
+            -v ./tools:/app/tools \
             skohub-vocabs sh -c "
+              # Copy source overrides
               cp -r /app/tools/skohub-vocabs/src/* /app/src/ && \
+              # Copy static overrides
               cp -r /app/tools/skohub-vocabs/static/* /app/static/ && \
+              # Copy config
+              cp /app/tools/config.yaml /app/config.yaml
             "
           rm -rf docs/*
           cp -r public/* docs/
+
 
       - name: Commit updated docs
         run: |
