@@ -40,11 +40,11 @@ jobs:
             -v ./tools/skohub-vocabs:/app \
             skohub-vocabs sh -c "
               # Copy source overrides
-              cp -r /app/tools/skohub-vocabs/src/* /app/src/ && \
+              cp -r /tools/skohub-vocabs/src/* /app/src/ && \
               # Copy static overrides
-              cp -r /app/tools/skohub-vocabs/static/* /app/static/ && \
+              cp -r /tools/skohub-vocabs/static/* /app/static/ && \
               # Copy config
-              cp /app/tools/config.yaml /app/config.yaml
+              cp /tools/config.yaml /app/config.yaml
             "
           rm -rf docs/*
           cp -r public/* docs/
