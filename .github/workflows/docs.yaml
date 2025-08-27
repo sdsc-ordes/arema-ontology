@@ -37,7 +37,7 @@ jobs:
           docker build -t skohub-vocabs ./external/skohub-vocabs
           docker run --rm \
             -v ./src/ontology:/app/data \
-            -v ./tools:/app/tools \
+            -v ./tools/skohub-vocabs:/app \
             skohub-vocabs sh -c "
               # Copy source overrides
               cp -r /app/tools/skohub-vocabs/src/* /app/src/ && \
