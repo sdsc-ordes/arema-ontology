@@ -37,12 +37,26 @@ jobs:
           # Build the container
           docker build -t skohub-vocabs ./external/skohub-vocabs
 
-          # Run the container, mount only what is needed (data and tools)
-          docker run --rm \
-            -v ${{ github.workspace }}/public:/app/public \
-            -v ${{ github.workspace }}/data:/app/data \
-            -v ${{ github.workspace }}/.env:/app/.env \
-            skohub-vocabs
+          # Run the container, mount only what is needed (ontology data and tools)
+          CONTAINER_ID=$(docker create \
+            -v ${{ github.workspace }}/src/ontology:/app/data \
+            -v ${{ github.workspace }}/tools:/app/tools \
+            skohub-vocabs)
+
+          # Copy in overrides
+          docker start -a $CONTAINER_ID sh -c "
+            cp -r /app/tools/skohub-vocabs/src/* /app/src/ && \
+            cp -r /app/tools/skohub-vocabs/static/* /app/static/ && \
+            cp /app/tools/config.yaml /app/config.yaml
+          "
+
+          # Copy output from container to host
+          docker cp $CONTAINER_ID:/app/public ./public
+
+          # Clean up container
+          docker rm $CONTAINER_ID
+
+          # Copy into docs
           rm -rf docs/*
           cp -r public/* docs/
 
