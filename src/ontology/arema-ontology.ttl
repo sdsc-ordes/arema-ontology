@@ -598,7 +598,7 @@ me:Object a skos:Concept ;
 me:Property a skos:Concept ;
     skos:inScheme me:MyThesaurus ;
     skos:prefLabel "Eigenschaft"@de,
-        "Property"@en,
+        "Property test"@en,
         "Propriété"@fr .
 
 me:Hygrothermal a skos:Concept ;
