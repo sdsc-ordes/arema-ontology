@@ -27,9 +27,8 @@ jobs:
 
       - name: Prepare clean public and data directories
         run: |
-          rm -rf public data docs/public
-          mkdir -p public data
-          cp src/ontology/arema-ontology.ttl data/
+          rm -rf public docs/public
+          # mkdir -p public 
           echo "BASEURL=/$(basename $GITHUB_REPOSITORY)" > .env
 
       - name: Run Skohub Vocabs (local checkout)
@@ -45,10 +44,6 @@ jobs:
             -v ./docs:/public:rw \
             -v ./tools/skohub-vocabs:/custom-assets \
             skohub-vocabs 
-
-          # Place the output in the docs folder
-          mkdir -p docs
-          mv docs/public/* docs/
 
       - name: Commit updated docs
         run: |
