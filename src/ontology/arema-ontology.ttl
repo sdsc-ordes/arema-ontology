@@ -594,11 +594,15 @@ me:Object a skos:Concept ;
     skos:prefLabel "Objekt"@de,
         "Object"@en,
         "Objet"@fr .
-
+###################
+###################
+#REMOVE TEST#######
+###################
+###################
 me:Property a skos:Concept ;
     skos:inScheme me:MyThesaurus ;
     skos:prefLabel "Eigenschaft"@de,
-        "Property test"@en,
+        "Property tessty"@en,
         "Propriété"@fr .
 
 me:Hygrothermal a skos:Concept ;
