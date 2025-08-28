@@ -45,7 +45,7 @@ jobs:
               # Copy your local overrides into the container
               cp -r /app/tools/skohub-vocabs/src/* /app/src/ && \
               cp -r /app/tools/skohub-vocabs/static/* /app/static/ && \
-              cp /app/tools/config.yaml /app/config.yaml
+              cp /app/tools/skohub-vocabs/config.yaml /app/config.yaml
             "
 
           # Copy the generated public folder out of the container
