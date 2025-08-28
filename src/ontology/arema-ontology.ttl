@@ -598,7 +598,7 @@ me:Object a skos:Concept ;
 ###################
 #REMOVE TEST#######
 ###################
-##################
+###################
 me:Property a skos:Concept ;
     skos:inScheme me:MyThesaurus ;
     skos:prefLabel "Eigenschaft"@de,
