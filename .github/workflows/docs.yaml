@@ -36,28 +36,15 @@ jobs:
         run: |
           # Build the container
           docker build -t skohub-vocabs ./external/skohub-vocabs
+          
+          rm -rf docs/*
 
           # Run the container, mount only data and tools
           docker run --rm \
-            -v ${{ github.workspace }}/src/ontology:/app/data \
-            -v ${{ github.workspace }}/tools:/app/tools \
-            skohub-vocabs sh -c "
-              # Copy your local overrides into the container
-              cp -r /app/tools/skohub-vocabs/src/* /app/src/ && \
-              cp -r /app/tools/skohub-vocabs/static/* /app/static/ && \
-              cp /app/tools/skohub-vocabs/config.yaml /app/config.yaml
-            "
-
-          # Copy the generated public folder out of the container
-          docker run --rm \
-            -v ${{ github.workspace }}/public:/app/public \
-            skohub-vocabs cp -r /app/public /app/public
-
-          # Copy into docs
-          rm -rf docs/*
-          cp -r public/* docs/
-
-
+            -v ./src/ontology:/data:ro \
+            -v ./docs:/public:rw \
+            -v ./tools/skohub-vocabs:/custom-assets \
+            skohub-vocabs 
 
       - name: Commit updated docs
         run: |
