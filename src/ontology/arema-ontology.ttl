@@ -3,6 +3,7 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix qudt: <http://qudt.org/schema/qudt#> .
+
 me:AbsorptionCoefficientAt500hz a skos:Concept ;
     me:symbol "α" ;
     skos:broader me:Acoustic ;
