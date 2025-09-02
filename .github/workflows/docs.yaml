@@ -43,6 +43,8 @@ jobs:
             skohub-vocabs
           echo "Docs contents after build:"
           ls -l docs
+          find . -type f -name "*.html" | head -n 50
+
           
       - name: Commit updated docs
         run: |
