@@ -36,6 +36,10 @@ jobs:
           set -x
           docker build -t skohub-vocabs ./external/skohub-vocabs
           rm -rf docs/*
+          mkdir -p docs
+          echo "Docs contents before build:"
+          ls -l docs
+          sudo chown -R 1000:1000 docs
           docker run --rm \
             -v ./src/ontology:/app/data:ro \
             -v ./docs:/app/public:rw \
