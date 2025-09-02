@@ -51,6 +51,7 @@ jobs:
 
       - name: Run Skohub Vocabs Docker
         run: |
+          sudo chown -R 1000:1000 docs public data
           docker run --rm \
             -v ${{ github.workspace }}/public:/app/public \
             -v ${{ github.workspace }}/data:/app/data \
