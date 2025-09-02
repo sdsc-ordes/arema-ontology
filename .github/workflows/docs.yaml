@@ -38,7 +38,7 @@ jobs:
           rm -rf docs/*
           docker run --rm \
             -v ./src/ontology:/app/data:ro \
-            -v ./docs:/public:rw \
+            -v ./docs:/app/public:rw \
             -v ./tools/skohub-vocabs:/custom-assets \
             skohub-vocabs
           echo "Docs contents after build:"
