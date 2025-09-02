@@ -31,24 +31,33 @@ jobs:
           # mkdir -p public 
           echo "BASEURL=/$(basename $GITHUB_REPOSITORY)" > .env
 
-      - name: Run Skohub Vocabs (local checkout)
-        run: |
-          set -x
-          docker build -t skohub-vocabs ./external/skohub-vocabs
-          rm -rf docs/*
-          mkdir -p docs
-          echo "Docs contents before build:"
-          ls -l docs
-          sudo chown -R 1000:1000 docs
-          docker run --rm \
-            -v ./src/ontology:/app/data:ro \
-            -v ./docs:/app/public:rw \
-            -v ./tools/skohub-vocabs:/custom-assets \
-            skohub-vocabs
-          echo "Docs contents after build:"
-          ls -l docs
-          find . -type f -name "*.html" | head -n 50
+      # - name: Run Skohub Vocabs (local checkout)
+      #   run: |
+      #     set -x
+      #     docker build -t skohub-vocabs ./external/skohub-vocabs
+      #     rm -rf docs/*
+      #     mkdir -p docs
+      #     echo "Docs contents before build:"
+      #     ls -l docs
+      #     sudo chown -R 1000:1000 docs
+      #     docker run --rm \
+      #       -v ./src/ontology:/app/data:ro \
+      #       -v ./docs:/app/public:rw \
+      #       -v ./tools/skohub-vocabs:/custom-assets \
+      #       skohub-vocabs
+      #     echo "Docs contents after build:"
+      #     ls -l docs
+      #     find . -type f -name "*.html" | head -n 50
 
+      - name: Run Skohub Vocabs Docker
+        run: |
+          docker run --rm \
+            -v ${{ github.workspace }}/public:/app/public \
+            -v ${{ github.workspace }}/data:/app/data \
+            -v ${{ github.workspace }}/.env:/app/.env \
+            skohub/skohub-vocabs-docker:latest
+          rm -rf docs/*
+          cp -r public/* docs/
           
       - name: Commit updated docs
         run: |
