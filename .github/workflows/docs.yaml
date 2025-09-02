@@ -42,7 +42,7 @@ jobs:
             -v ./tools/skohub-vocabs:/custom-assets \
             skohub-vocabs
           echo "Docs contents after build:"
-          ls -l ./docs
+          ls -l 
           
       - name: Commit updated docs
         run: |
