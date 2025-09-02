@@ -33,18 +33,15 @@ jobs:
 
       - name: Run Skohub Vocabs (local checkout)
         run: |
-          # Build the container
+          set -x
           docker build -t skohub-vocabs ./external/skohub-vocabs
-          
           rm -rf docs/*
-
-          # Run the container, mount only data and tools
           docker run --rm \
             -v ./src/ontology:/app/data:ro \
             -v ./docs:/public:rw \
             -v ./tools/skohub-vocabs:/custom-assets \
             skohub-vocabs
-
+          echo "Docs contents after build:"
           ls -l docs
           
       - name: Commit updated docs
