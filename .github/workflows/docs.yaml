@@ -53,10 +53,12 @@ jobs:
         run: |
           mkdir -p docs
           sudo chown -R 1000:1000 docs
-          docker run --rm \-v $(pwd)/public:/app/public \                                                                                                                                  ✔ ╱ at 15:13:51  
+          docker run --rm \
+          -v $(pwd)/public:/app/public \
           -v $(pwd)/src/ontology:/app/data \
           -v $(pwd)/.env:/app/.env \
           ghcr.io/sdsc-ordes/skohub-vocabs:latest
+
           
           # docker run --rm \
           #   -v ${{ github.workspace }}/public:/app/public \
