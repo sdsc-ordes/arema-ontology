@@ -23,13 +23,25 @@ jobs:
       - name: Build docs in container
         run: |
           mkdir -p public docs
-          CONTAINER_ID=$(docker create ghcr.io/sdsc-ordes/skohub-vocabs:latest)
+
+          # Mount src/ontology as /app/data inside container
+          CONTAINER_ID=$(docker create \
+            -v $(pwd)/src/ontology:/app/data \
+            -v $(pwd)/.env:/app/.env \
+            ghcr.io/sdsc-ordes/skohub-vocabs:latest
+          )
+
           docker start -ai $CONTAINER_ID
+
+          # Copy output
           docker cp $CONTAINER_ID:/app/public ./public
           docker rm $CONTAINER_ID
+
+          # Copy to docs/
           rm -rf docs/*
           mkdir -p docs
           cp -r public/* docs/
+
 
       - name: Commit updated docs
         run: |
