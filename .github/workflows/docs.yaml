@@ -53,12 +53,18 @@ jobs:
         run: |
           mkdir -p docs
           sudo chown -R 1000:1000 docs
-          docker run --rm \
-            -v ${{ github.workspace }}/public:/app/public \
-            -v ${{ github.workspace }}/data:/app/data \
-            -v ${{ github.workspace }}/.env:/app/.env \
-            skohub/skohub-vocabs-docker:latest
+          docker run --rm \-v $(pwd)/public:/app/public \                                                                                                                                  ✔ ╱ at 15:13:51  
+          -v $(pwd)/src/ontology:/app/data \
+          -v $(pwd)/.env:/app/.env \
+          ghcr.io/sdsc-ordes/skohub-vocabs:latest
+          
+          # docker run --rm \
+          #   -v ${{ github.workspace }}/public:/app/public \
+          #   -v ${{ github.workspace }}/data:/app/data \
+          #   -v ${{ github.workspace }}/.env:/app/.env \
+          #   skohub/skohub-vocabs-docker:latest
           rm -rf docs/*
+          mkdir -p docs
           cp -r public/* docs/
           
       - name: Commit updated docs
