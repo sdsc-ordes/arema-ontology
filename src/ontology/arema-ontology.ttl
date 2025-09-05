@@ -629,7 +629,7 @@ me:MyThesaurus a skos:ConceptScheme ;
     dct:description "AREMA Ontology for building materials, buildings, natural resources, professionals, and technical constructions."@en ;
     dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     vann:preferredNamespacePrefix "me" ;
-    vann:preferredNamespaceUri "https://w3id.org/arema/ontology/" ;
+    vann:preferredNamespaceUri "http://example.org/taxonomy/" ;
     skos:hasTopConcept me:Object,
         me:Property ;
     skos:prefLabel "AREMA Ontologie"@de,
