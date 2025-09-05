@@ -32,15 +32,11 @@ jobs:
           )
 
           docker start -ai $CONTAINER_ID
-
+          mkdir -p docs
           # Copy output
-          docker cp $CONTAINER_ID:/app/public ./public
+          docker cp $CONTAINER_ID:/app/public/. ./docs
           docker rm $CONTAINER_ID
 
-          # Copy to docs/
-          rm -rf docs/*
-          mkdir -p docs
-          cp -r public/* docs/
 
 
       - name: Commit updated docs
