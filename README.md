@@ -15,24 +15,30 @@ By formalizing the domain knowledge as RDF and SHACL, the ontology supports stru
 ## 📂 Repository Structure
 ```plaintext
 AREMA Ontology Repository
-├── docs/                # Documentation outputs (placeholder)
-├── external/            # External resources (placeholder)
-├── LICENSE              # Licensing information
-├── README.md            # This file
+├── docs/                        # Documentation outputs 
+├── external/                    # External resources (placeholder)
 ├── src/
-│   ├── ontology/        # The ontology files
+│   ├── ontology/                # The ontology files
 │   │   ├── arema-ontology.ttl
-│   │   └── README.md    # Additional documentation for the ontology itself
-│   └── quality-checks/  # SHACL shapes for validating the ontology
+│   │   └── README.md
+│   └── quality-checks/          # SHACL shapes for checking ontology validity and skohub compatibility
 │       ├── shacl-shacl.ttl
 │       └── skohub.shacl.ttl
-└── tools/
-    └── python/          # Python tooling for validation and documentation
-        ├── checks/
-        │   └── shacl.py
-        ├── docs/
-        │   └── sparql.py
-        └── requirements.txt
+├── tools/
+│   ├── python/                  # Python tooling for validation and documentation
+│   │   ├── checks/
+│   │   │   └── shacl.py
+│   │   ├── docs/
+│   │   │   └── sparql.py
+│   │   └── requirements.txt
+│   └── skohub-vocabs/           # Custom skohub-vocabs files required to match AREMA style
+├── LICENSE
+├── README.md                    
+├── .env                         
+├── .gitignore
+├── pyproject.toml
+├── uv.lock
+
 ```
 
 ### Key Components
