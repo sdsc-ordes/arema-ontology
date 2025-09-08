@@ -2,8 +2,8 @@
   "id": "http://example.org/taxonomy/Building",
   "type": "Concept",
   "prefLabel": {
-    "en": "Building",
     "de": "Gebäude",
+    "en": "Building",
     "fr": "Bâtiments"
   },
   "definition": {
@@ -13,40 +13,40 @@
     {
       "id": "http://example.org/taxonomy/ApartmentBuilding",
       "prefLabel": {
-        "en": "Multi-Storey Housing",
         "de": "Mehrfamilienhaus",
+        "en": "Multi-Storey Housing",
         "fr": "Immeuble d'Habitation"
       }
     },
     {
       "id": "http://example.org/taxonomy/OfficeBuilding",
       "prefLabel": {
-        "en": "Office Building",
         "de": "Bürogebäude",
+        "en": "Office Building",
         "fr": "Immeuble de Bureaux"
       }
     },
     {
       "id": "http://example.org/taxonomy/PublicBuilding",
       "prefLabel": {
-        "en": "Public Building",
         "de": "Öffentliches Gebäude",
+        "en": "Public Building",
         "fr": "Bâtiment Public"
       }
     },
     {
       "id": "http://example.org/taxonomy/SimpleStructure",
       "prefLabel": {
-        "en": "Simple Structure",
         "de": "Einfache Struktur",
+        "en": "Simple Structure",
         "fr": "Structure Simple"
       }
     },
     {
       "id": "http://example.org/taxonomy/SingleFamilyHouse",
       "prefLabel": {
-        "en": "Single Family House",
         "de": "Einfamilienhaus",
+        "en": "Single Family House",
         "fr": "Maison Individuelle"
       }
     }
@@ -54,8 +54,8 @@
   "broader": {
     "id": "http://example.org/taxonomy/Object",
     "prefLabel": {
-      "en": "Object",
       "de": "Objekt",
+      "en": "Object",
       "fr": "Objet"
     }
   },
@@ -81,6 +81,7 @@
     "vann": "http://purl.org/vocab/vann/",
     "ldp": "http://www.w3.org/ns/ldp#",
     "owl": "http://www.w3.org/2002/07/owl#",
+    "qudt": "http://qudt.org/schema/qudt#",
     "title": {
       "@id": "dct:title",
       "@container": "@language"
@@ -212,6 +213,10 @@
     "isReplacedBy": {
       "@id": "dct:isReplacedBy",
       "@container": "@set"
+    },
+    "qudt:unit": {
+      "@id": "qudt:unit",
+      "@container": "@language"
     }
   }
 }

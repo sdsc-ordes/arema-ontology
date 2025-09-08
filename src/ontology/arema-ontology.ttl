@@ -2,6 +2,7 @@
 @prefix me: <http://example.org/taxonomy/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix vann: <http://purl.org/vocab/vann/> .
+@prefix qudt: <http://qudt.org/schema/qudt#> .
 
 me:AbsorptionCoefficientAt500hz a skos:Concept ;
     me:symbol "α" ;
@@ -97,7 +98,7 @@ me:Column a skos:Concept ;
 
 me:CompressiveStrength a skos:Concept ;
     me:symbol "σc" ;
-    me:unit "MPa" ;
+    qudt:unit "MPa" ;
     skos:broader me:Mechanical ;
     skos:inScheme me:MyThesaurus ;
     skos:prefLabel "Druckfestigkeit"@de,
@@ -122,7 +123,7 @@ me:Craftsman a skos:Concept ;
 
 me:Density a skos:Concept ;
     me:symbol "ρ" ;
-    me:unit "kg/m3" ;
+    qudt:unit "kg/m3" ;
     skos:broader me:Mechanical ;
     skos:inScheme me:MyThesaurus ;
     skos:prefLabel "Dichte"@de,
@@ -145,7 +146,7 @@ me:Earth a skos:Concept ;
 
 me:Effusivity a skos:Concept ;
     me:symbol "E" ;
-    me:unit "kJ/(K*m2*sqrt(s))" ;
+    qudt:unit "kJ/(K*m2*sqrt(s))" ;
     skos:broader me:Hygrothermal ;
     skos:inScheme me:MyThesaurus ;
     skos:prefLabel "Effusivität"@de,
@@ -211,7 +212,7 @@ me:Foundation a skos:Concept ;
 
 me:FreeSaturation a skos:Concept ;
     me:symbol "wf" ;
-    me:unit "kg/m3" ;
+    qudt:unit "kg/m3" ;
     skos:broader me:Hygrothermal ;
     skos:inScheme me:MyThesaurus ;
     skos:prefLabel "Freie Wassersättigung"@de,
@@ -255,7 +256,7 @@ me:InterventionType a skos:Concept ;
 
 me:LiquidTransferCoefficientForAbsorption a skos:Concept ;
     me:symbol "A" ;
-    me:unit "kg/(m2*sqrt(s))" ;
+    qudt:unit "kg/(m2*sqrt(s))" ;
     skos:broader me:Hygrothermal ;
     skos:inScheme me:MyThesaurus ;
     skos:prefLabel "Wasseraufnahmekoeffizient"@de,
@@ -280,7 +281,7 @@ me:MaterialProducer a skos:Concept ;
 
 me:MoistureBufferingValue a skos:Concept ;
     me:symbol "MBV" ;
-    me:unit "g/(m2*%RH)" ;
+    qudt:unit "g/(m2*%RH)" ;
     skos:broader me:Hygrothermal ;
     skos:inScheme me:MyThesaurus ;
     skos:prefLabel "Moisture Buffering value"@en .
@@ -326,7 +327,7 @@ me:PartitionWall a skos:Concept ;
 
 me:Porosity a skos:Concept ;
     me:symbol "ξ" ;
-    me:unit "%vol" ;
+    qudt:unit "%vol" ;
     skos:broader me:Hygrothermal ;
     skos:inScheme me:MyThesaurus ;
     skos:prefLabel "Porosität"@de,
@@ -433,7 +434,7 @@ me:TechnicalEquipement a skos:Concept ;
 
 me:TensileStrength a skos:Concept ;
     me:symbol "σ" ;
-    me:unit "MPa" ;
+    qudt:unit "MPa" ;
     skos:broader me:Mechanical ;
     skos:inScheme me:MyThesaurus ;
     skos:prefLabel "Zugfestigkeit"@de,
@@ -442,7 +443,7 @@ me:TensileStrength a skos:Concept ;
 
 me:ThermalCapacity a skos:Concept ;
     me:symbol "c" ;
-    me:unit "J(kg*K)" ;
+    qudt:unit "J(kg*K)" ;
     skos:broader me:Hygrothermal ;
     skos:inScheme me:MyThesaurus ;
     skos:prefLabel "Wärmekapazität"@de,
@@ -451,7 +452,7 @@ me:ThermalCapacity a skos:Concept ;
 
 me:ThermalConductivity a skos:Concept ;
     me:symbol "λ" ;
-    me:unit "W/(m*K)" ;
+    qudt:unit "W/(m*K)" ;
     skos:broader me:Hygrothermal ;
     skos:inScheme me:MyThesaurus ;
     skos:prefLabel "Wärmeleitfähigkeit"@de,
@@ -460,7 +461,7 @@ me:ThermalConductivity a skos:Concept ;
 
 me:WaterContentAt80 a skos:Concept ;
     me:symbol "w80%" ;
-    me:unit "kg/m3" ;
+    qudt:unit "kg/m3" ;
     skos:broader me:Hygrothermal ;
     skos:inScheme me:MyThesaurus ;
     skos:prefLabel "Wassergehalt bei 80%"@de,
@@ -490,7 +491,7 @@ me:Wood a skos:Concept ;
 
 me:YoungSModulus a skos:Concept ;
     me:symbol "E" ;
-    me:unit "Gpa" ;
+    qudt:unit "Gpa" ;
     skos:broader me:Mechanical ;
     skos:inScheme me:MyThesaurus ;
     skos:prefLabel "E-Modul"@de,
@@ -628,11 +629,10 @@ me:MyThesaurus a skos:ConceptScheme ;
     dct:description "AREMA Ontology for building materials, buildings, natural resources, professionals, and technical constructions."@en ;
     dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     vann:preferredNamespacePrefix "me" ;
-    vann:preferredNamespaceUri "https://w3id.org/arema/ontology/" ;
+    vann:preferredNamespaceUri "http://example.org/taxonomy/" ;
     skos:hasTopConcept me:Object,
         me:Property ;
     skos:prefLabel "AREMA Ontologie"@de,
         "AREMA Ontology"@en,
         "Ontologie AREMA"@fr,
         "Ontologia AREMA"@it .
-

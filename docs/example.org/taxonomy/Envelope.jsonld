@@ -2,62 +2,62 @@
   "id": "http://example.org/taxonomy/Envelope",
   "type": "Concept",
   "prefLabel": {
-    "en": "Envelope",
     "de": "Hülle",
+    "en": "Envelope",
     "fr": "Enveloppe"
   },
   "definition": {
-    "en": "The outer shell of a building, including walls, roofs, and windows, that separates the interior from the exterior environment.\n"
+    "en": "The outer shell of a building, including walls, roofs, and windows, that separates the interior from the exterior environment."
   },
   "narrower": [
     {
       "id": "http://example.org/taxonomy/Opening",
       "prefLabel": {
-        "en": "Opening",
-        "de": "Offnung"
+        "de": "Offnung",
+        "en": "Opening"
       }
     },
     {
       "id": "http://example.org/taxonomy/ExteriorThermalInsulation",
       "prefLabel": {
-        "en": "Ext. Thermal Insulation",
-        "de": "Aussenwärmedämmung"
+        "de": "Aussenwärmedämmung",
+        "en": "Ext. Thermal Insulation"
       }
     },
     {
       "id": "http://example.org/taxonomy/ExteriorWallFinishingAboveGround",
       "prefLabel": {
-        "en": "Ext. Wall Finishing Above Ground",
-        "de": "Fassadenbekleidung"
+        "de": "Fassadenbekleidung",
+        "en": "Ext. Wall Finishing Above Ground"
       }
     },
     {
       "id": "http://example.org/taxonomy/ExteriorWallFinishingBasement",
       "prefLabel": {
-        "en": "Ext. Wall Finishing Under Ground",
-        "de": "Äussere Beschichtung Unter Terrain"
+        "de": "Äussere Beschichtung Unter Terrain",
+        "en": "Ext. Wall Finishing Under Ground"
       }
     },
     {
       "id": "http://example.org/taxonomy/RoofCovering",
       "prefLabel": {
-        "en": "Roof Covering",
-        "de": "Bedachung"
+        "de": "Bedachung",
+        "en": "Roof Covering"
       }
     },
     {
       "id": "http://example.org/taxonomy/SunWeatherProtection",
       "prefLabel": {
-        "en": "Sun & Weather Protection",
-        "de": "Sonnen- & Wetterschutz"
+        "de": "Sonnen- & Wetterschutz",
+        "en": "Sun & Weather Protection"
       }
     }
   ],
   "broader": {
     "id": "http://example.org/taxonomy/Construction",
     "prefLabel": {
-      "en": "Construction",
       "de": "Bauwerk",
+      "en": "Construction",
       "fr": "Construction"
     }
   },
@@ -83,6 +83,7 @@
     "vann": "http://purl.org/vocab/vann/",
     "ldp": "http://www.w3.org/ns/ldp#",
     "owl": "http://www.w3.org/2002/07/owl#",
+    "qudt": "http://qudt.org/schema/qudt#",
     "title": {
       "@id": "dct:title",
       "@container": "@language"
@@ -214,6 +215,10 @@
     "isReplacedBy": {
       "@id": "dct:isReplacedBy",
       "@container": "@set"
+    },
+    "qudt:unit": {
+      "@id": "qudt:unit",
+      "@container": "@language"
     }
   }
 }

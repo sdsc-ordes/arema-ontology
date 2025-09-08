@@ -2,8 +2,8 @@
   "id": "http://example.org/taxonomy/Other",
   "type": "Concept",
   "prefLabel": {
-    "en": "Other",
     "de": "Andere",
+    "en": "Other",
     "fr": "Autre"
   },
   "definition": {
@@ -13,16 +13,16 @@
     {
       "id": "http://example.org/taxonomy/TechnicalEquipement",
       "prefLabel": {
-        "en": "Technical Equipement",
-        "de": "Technik"
+        "de": "Technik",
+        "en": "Technical Equipement"
       }
     }
   ],
   "broader": {
     "id": "http://example.org/taxonomy/Construction",
     "prefLabel": {
-      "en": "Construction",
       "de": "Bauwerk",
+      "en": "Construction",
       "fr": "Construction"
     }
   },
@@ -48,6 +48,7 @@
     "vann": "http://purl.org/vocab/vann/",
     "ldp": "http://www.w3.org/ns/ldp#",
     "owl": "http://www.w3.org/2002/07/owl#",
+    "qudt": "http://qudt.org/schema/qudt#",
     "title": {
       "@id": "dct:title",
       "@container": "@language"
@@ -179,6 +180,10 @@
     "isReplacedBy": {
       "@id": "dct:isReplacedBy",
       "@container": "@set"
+    },
+    "qudt:unit": {
+      "@id": "qudt:unit",
+      "@container": "@language"
     }
   }
 }

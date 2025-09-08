@@ -2,8 +2,8 @@
   "id": "http://example.org/taxonomy/Structure",
   "type": "Concept",
   "prefLabel": {
-    "en": "Structure",
     "de": "Struktur",
+    "en": "Structure",
     "fr": "Structure"
   },
   "definition": {
@@ -13,80 +13,80 @@
     {
       "id": "http://example.org/taxonomy/Balcony",
       "prefLabel": {
-        "en": "Balcony",
-        "de": "Balkon"
+        "de": "Balkon",
+        "en": "Balcony"
       }
     },
     {
       "id": "http://example.org/taxonomy/Ceiling",
       "prefLabel": {
-        "en": "Ceiling",
-        "de": "Decke"
+        "de": "Decke",
+        "en": "Ceiling"
       }
     },
     {
       "id": "http://example.org/taxonomy/Column",
       "prefLabel": {
-        "en": "Column",
-        "de": "Stütze"
+        "de": "Stütze",
+        "en": "Column"
       }
     },
     {
       "id": "http://example.org/taxonomy/ExteriorWallAboveGround",
       "prefLabel": {
-        "en": "Exterior Wall Above Ground",
-        "de": "Aussenwand Über Terrain"
+        "de": "Aussenwand Über Terrain",
+        "en": "Exterior Wall Above Ground"
       }
     },
     {
       "id": "http://example.org/taxonomy/ExteriorWallUnderGround",
       "prefLabel": {
-        "en": "Exterior Wall Under Ground",
-        "de": "Aussenwand Unter Terrain"
+        "de": "Aussenwand Unter Terrain",
+        "en": "Exterior Wall Under Ground"
       }
     },
     {
       "id": "http://example.org/taxonomy/FloorSlabGroundFloor",
       "prefLabel": {
-        "en": "Floor Slab Ground Floor",
         "de": "Bodenplatte EG",
+        "en": "Floor Slab Ground Floor",
         "fr": "Dalle Rez-de-chaussée"
       }
     },
     {
       "id": "http://example.org/taxonomy/Foundation",
       "prefLabel": {
-        "en": "Foundation",
-        "de": "Fundament"
+        "de": "Fundament",
+        "en": "Foundation"
       }
     },
     {
       "id": "http://example.org/taxonomy/InteriorWall",
       "prefLabel": {
-        "en": "Interior Wall",
-        "de": "Innenwand"
+        "de": "Innenwand",
+        "en": "Interior Wall"
       }
     },
     {
       "id": "http://example.org/taxonomy/Roof",
       "prefLabel": {
-        "en": "Roof",
-        "de": "Dach"
+        "de": "Dach",
+        "en": "Roof"
       }
     },
     {
       "id": "http://example.org/taxonomy/Stair",
       "prefLabel": {
-        "en": "Stair",
-        "de": "Treppe"
+        "de": "Treppe",
+        "en": "Stair"
       }
     }
   ],
   "broader": {
     "id": "http://example.org/taxonomy/Construction",
     "prefLabel": {
-      "en": "Construction",
       "de": "Bauwerk",
+      "en": "Construction",
       "fr": "Construction"
     }
   },
@@ -112,6 +112,7 @@
     "vann": "http://purl.org/vocab/vann/",
     "ldp": "http://www.w3.org/ns/ldp#",
     "owl": "http://www.w3.org/2002/07/owl#",
+    "qudt": "http://qudt.org/schema/qudt#",
     "title": {
       "@id": "dct:title",
       "@container": "@language"
@@ -243,6 +244,10 @@
     "isReplacedBy": {
       "@id": "dct:isReplacedBy",
       "@container": "@set"
+    },
+    "qudt:unit": {
+      "@id": "qudt:unit",
+      "@container": "@language"
     }
   }
 }

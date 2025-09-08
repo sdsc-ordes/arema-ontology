@@ -2,8 +2,8 @@
   "id": "http://example.org/taxonomy/Object",
   "type": "Concept",
   "prefLabel": {
-    "en": "Object",
     "de": "Objekt",
+    "en": "Object",
     "fr": "Objet"
   },
   "definition": {
@@ -13,40 +13,40 @@
     {
       "id": "http://example.org/taxonomy/Building",
       "prefLabel": {
-        "en": "Building",
         "de": "Gebäude",
+        "en": "Building",
         "fr": "Bâtiments"
       }
     },
     {
       "id": "http://example.org/taxonomy/Professional",
       "prefLabel": {
-        "en": "Professional",
         "de": "Fachleute",
+        "en": "Professional",
         "fr": "Professionnels"
       }
     },
     {
       "id": "http://example.org/taxonomy/BuildingMaterial",
       "prefLabel": {
-        "en": "Building Material",
         "de": "Baustoff",
+        "en": "Building Material",
         "fr": "Matériaux de Construction"
       }
     },
     {
       "id": "http://example.org/taxonomy/NaturalResource",
       "prefLabel": {
-        "en": "Resource",
         "de": "Ressourcen",
+        "en": "Resource",
         "fr": "Ressources"
       }
     },
     {
       "id": "http://example.org/taxonomy/Construction",
       "prefLabel": {
-        "en": "Construction",
         "de": "Bauwerk",
+        "en": "Construction",
         "fr": "Construction"
       }
     }
@@ -78,6 +78,7 @@
     "vann": "http://purl.org/vocab/vann/",
     "ldp": "http://www.w3.org/ns/ldp#",
     "owl": "http://www.w3.org/2002/07/owl#",
+    "qudt": "http://qudt.org/schema/qudt#",
     "title": {
       "@id": "dct:title",
       "@container": "@language"
@@ -209,6 +210,10 @@
     "isReplacedBy": {
       "@id": "dct:isReplacedBy",
       "@container": "@set"
+    },
+    "qudt:unit": {
+      "@id": "qudt:unit",
+      "@container": "@language"
     }
   }
 }

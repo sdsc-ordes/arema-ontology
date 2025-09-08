@@ -2,8 +2,8 @@
   "id": "http://example.org/taxonomy/ExteriorWallAboveGround",
   "type": "Concept",
   "prefLabel": {
-    "en": "Exterior Wall Above Ground",
-    "de": "Aussenwand Über Terrain"
+    "de": "Aussenwand Über Terrain",
+    "en": "Exterior Wall Above Ground"
   },
   "definition": {
     "en": "Wall that separates the exterior from teh interior of the building above ground"
@@ -11,8 +11,8 @@
   "broader": {
     "id": "http://example.org/taxonomy/Structure",
     "prefLabel": {
-      "en": "Structure",
       "de": "Struktur",
+      "en": "Structure",
       "fr": "Structure"
     }
   },
@@ -38,6 +38,7 @@
     "vann": "http://purl.org/vocab/vann/",
     "ldp": "http://www.w3.org/ns/ldp#",
     "owl": "http://www.w3.org/2002/07/owl#",
+    "qudt": "http://qudt.org/schema/qudt#",
     "title": {
       "@id": "dct:title",
       "@container": "@language"
@@ -169,6 +170,10 @@
     "isReplacedBy": {
       "@id": "dct:isReplacedBy",
       "@container": "@set"
+    },
+    "qudt:unit": {
+      "@id": "qudt:unit",
+      "@container": "@language"
     }
   }
 }

@@ -1,0 +1,39 @@
+---
+# see https://github.com/nextapps-de/flexsearch#tokenizer-prefix-search for options
+tokenizer: "full" # strict, forward, reverse, full
+custom_domain: ""
+fail_on_validation: true
+searchableAttributes:
+  - "prefLabel" # you should not delete this one
+  - "notation"
+  - "altLabel"
+  - "hiddenLabel"
+  - "example"
+  - "definition"
+  - "scopeNote"
+ui:
+  title: "Atlas of Regenerative Materials" # Title is mandatory
+  logo: "favicon-32x32.png" # Path
+  colors:
+    skoHubWhite: "#FFFFFF"
+    skoHubDarkColor: "#000000"     # Text Colour
+    skoHubMiddleColor: "#758D6B"   # Primary-2 Accents and button hover 
+    skoHubLightColor: "#BE7437"    # Primary-1 not really used? 
+    skoHubThinColor: "#BE7437"     # Secondary-2-0 not really used? 
+    skoHubBlackColor: "#BE7437"    # Primary-4 (Darkest)
+    skoHubAction: "#BE7437"        # Secondary-1-0 (Purple) links on hover 
+    skoHubNotice: "#BE7437"        # Secondary-2-1 (Light Gold)
+    skoHubDarkGrey: "#696969"      # Secondary-1-2 outlines
+    skoHubMiddleGrey: "#A7A7A7"    # Secondary-1-1
+    skoHubLightGrey: "#ACC6A1"     # Secondary-2-2 
+  fonts:
+    regular:
+      font_family: "Ubuntu"
+      font_style: "normal"
+      font_weight: 400
+      name: "ubuntu-v20-latin-regular"
+    bold:
+      font_family: "Ubuntu"
+      font_style: "normal"
+      font_weight: 700
+      name: "ubuntu-v20-latin-700"

@@ -2,8 +2,8 @@
   "id": "http://example.org/taxonomy/Finishings",
   "type": "Concept",
   "prefLabel": {
-    "en": "Finishings",
     "de": "Oberflächen",
+    "en": "Finishings",
     "fr": "Finitions"
   },
   "definition": {
@@ -13,44 +13,44 @@
     {
       "id": "http://example.org/taxonomy/CeilingFinishing",
       "prefLabel": {
-        "en": "Ceiling Finishing",
-        "de": "Deckenbekleidung"
+        "de": "Deckenbekleidung",
+        "en": "Ceiling Finishing"
       }
     },
     {
       "id": "http://example.org/taxonomy/FloorCovering",
       "prefLabel": {
-        "en": "Floor Covering",
-        "de": "Bodenbelag"
+        "de": "Bodenbelag",
+        "en": "Floor Covering"
       }
     },
     {
       "id": "http://example.org/taxonomy/InteriorDoor",
       "prefLabel": {
-        "en": "Interior Door",
-        "de": "Innentür"
+        "de": "Innentür",
+        "en": "Interior Door"
       }
     },
     {
       "id": "http://example.org/taxonomy/InteriorWallFinishing",
       "prefLabel": {
-        "en": "Interior Wall Finishing",
-        "de": "Wandbekleidung"
+        "de": "Wandbekleidung",
+        "en": "Interior Wall Finishing"
       }
     },
     {
       "id": "http://example.org/taxonomy/PartitionWall",
       "prefLabel": {
-        "en": "Partition Wall",
-        "de": "Trennwand"
+        "de": "Trennwand",
+        "en": "Partition Wall"
       }
     }
   ],
   "broader": {
     "id": "http://example.org/taxonomy/Construction",
     "prefLabel": {
-      "en": "Construction",
       "de": "Bauwerk",
+      "en": "Construction",
       "fr": "Construction"
     }
   },
@@ -76,6 +76,7 @@
     "vann": "http://purl.org/vocab/vann/",
     "ldp": "http://www.w3.org/ns/ldp#",
     "owl": "http://www.w3.org/2002/07/owl#",
+    "qudt": "http://qudt.org/schema/qudt#",
     "title": {
       "@id": "dct:title",
       "@container": "@language"
@@ -207,6 +208,10 @@
     "isReplacedBy": {
       "@id": "dct:isReplacedBy",
       "@container": "@set"
+    },
+    "qudt:unit": {
+      "@id": "qudt:unit",
+      "@container": "@language"
     }
   }
 }

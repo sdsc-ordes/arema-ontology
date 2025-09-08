@@ -5,43 +5,45 @@ on:
     paths:
       - 'src/ontology/arema-ontology.ttl'
       - '.github/workflows/docs.yml'
-      - 'vendir.yml'
 
 jobs:
   build-docs:
     runs-on: ubuntu-latest
 
     steps:
-    
       - name: Checkout repository
         uses: actions/checkout@v4
-        with:
-          submodules: false
 
-      - name: Install vendir
+      - name: Prepare .env
+        run: echo "BASEURL=/$(basename $GITHUB_REPOSITORY)" > .env
+
+      - name: Log in to GitHub Container Registry
+        run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+
+      - name: Build docs in container
         run: |
-          curl -L https://carvel.dev/install.sh | bash
+          mkdir -p public docs
 
-      - name: Sync Skohub Vocabs
-        run: cd external && vendir sync -f vendir.yml && cd ..
+          CONTAINER_ID=$(docker create \
+            -v $(pwd)/src/ontology:/app/data \
+            -v $(pwd)/.env:/app/.env \
+            ghcr.io/sdsc-ordes/skohub-vocabs:latest
+          )
 
-      - name: Prepare clean public and data directories
-        run: |
-          rm -rf public data docs/public
-          mkdir -p public data
-          cp src/ontology/arema-ontology.ttl data/
-          echo "BASEURL=/$(basename $GITHUB_REPOSITORY)" > .env
+          # Copy custom files + config into the container
+          docker cp ./tools/skohub-vocabs/config.yaml $CONTAINER_ID:/app/config.yaml
+          docker cp ./tools/skohub-vocabs/src/. $CONTAINER_ID:/app/src/
+          docker cp ./tools/skohub-vocabs/static/. $CONTAINER_ID:/app/static/
 
-      - name: Run Skohub Vocabs (local checkout)
-        run: |
-          docker build -t skohub-vocabs ./external/skohub-vocabs
-          docker run --rm \
-            -v ${{ github.workspace }}/public:/app/public \
-            -v ${{ github.workspace }}/data:/app/data \
-            -v ${{ github.workspace }}/.env:/app/.env \
-            skohub-vocabs
-          rm -rf docs/*
-          cp -r public/* docs/
+          # Run build
+          docker start -ai $CONTAINER_ID
+
+          # Copy generated site into ./docs
+          docker cp $CONTAINER_ID:/app/public/. ./docs
+          docker rm $CONTAINER_ID
+
+
+
 
       - name: Commit updated docs
         run: |
@@ -52,10 +54,3 @@ jobs:
           git push
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Clean broken submodule (if exists)
-        run: |
-          if [ -d external/skohub-vocabs ]; then
-            git rm --cached external/skohub-vocabs || true
-            rm -rf .git/modules/external/skohub-vocabs || true
-          fi

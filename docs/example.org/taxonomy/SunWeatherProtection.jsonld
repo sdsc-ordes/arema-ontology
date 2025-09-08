@@ -2,8 +2,8 @@
   "id": "http://example.org/taxonomy/SunWeatherProtection",
   "type": "Concept",
   "prefLabel": {
-    "en": "Sun & Weather Protection",
-    "de": "Sonnen- & Wetterschutz"
+    "de": "Sonnen- & Wetterschutz",
+    "en": "Sun & Weather Protection"
   },
   "definition": {
     "en": "Sun & Weather Protection"
@@ -11,8 +11,8 @@
   "broader": {
     "id": "http://example.org/taxonomy/Envelope",
     "prefLabel": {
-      "en": "Envelope",
       "de": "Hülle",
+      "en": "Envelope",
       "fr": "Enveloppe"
     }
   },
@@ -38,6 +38,7 @@
     "vann": "http://purl.org/vocab/vann/",
     "ldp": "http://www.w3.org/ns/ldp#",
     "owl": "http://www.w3.org/2002/07/owl#",
+    "qudt": "http://qudt.org/schema/qudt#",
     "title": {
       "@id": "dct:title",
       "@container": "@language"
@@ -169,6 +170,10 @@
     "isReplacedBy": {
       "@id": "dct:isReplacedBy",
       "@container": "@set"
+    },
+    "qudt:unit": {
+      "@id": "qudt:unit",
+      "@container": "@language"
     }
   }
 }

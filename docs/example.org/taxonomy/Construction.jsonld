@@ -2,8 +2,8 @@
   "id": "http://example.org/taxonomy/Construction",
   "type": "Concept",
   "prefLabel": {
-    "en": "Construction",
     "de": "Bauwerk",
+    "en": "Construction",
     "fr": "Construction"
   },
   "definition": {
@@ -13,32 +13,32 @@
     {
       "id": "http://example.org/taxonomy/Structure",
       "prefLabel": {
-        "en": "Structure",
         "de": "Struktur",
+        "en": "Structure",
         "fr": "Structure"
       }
     },
     {
       "id": "http://example.org/taxonomy/Finishings",
       "prefLabel": {
-        "en": "Finishings",
         "de": "Oberflächen",
+        "en": "Finishings",
         "fr": "Finitions"
       }
     },
     {
       "id": "http://example.org/taxonomy/Envelope",
       "prefLabel": {
-        "en": "Envelope",
         "de": "Hülle",
+        "en": "Envelope",
         "fr": "Enveloppe"
       }
     },
     {
       "id": "http://example.org/taxonomy/Other",
       "prefLabel": {
-        "en": "Other",
         "de": "Andere",
+        "en": "Other",
         "fr": "Autre"
       }
     }
@@ -46,8 +46,8 @@
   "broader": {
     "id": "http://example.org/taxonomy/Object",
     "prefLabel": {
-      "en": "Object",
       "de": "Objekt",
+      "en": "Object",
       "fr": "Objet"
     }
   },
@@ -73,6 +73,7 @@
     "vann": "http://purl.org/vocab/vann/",
     "ldp": "http://www.w3.org/ns/ldp#",
     "owl": "http://www.w3.org/2002/07/owl#",
+    "qudt": "http://qudt.org/schema/qudt#",
     "title": {
       "@id": "dct:title",
       "@container": "@language"
@@ -204,6 +205,10 @@
     "isReplacedBy": {
       "@id": "dct:isReplacedBy",
       "@container": "@set"
+    },
+    "qudt:unit": {
+      "@id": "qudt:unit",
+      "@container": "@language"
     }
   }
 }

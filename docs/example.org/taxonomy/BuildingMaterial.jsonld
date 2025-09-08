@@ -2,8 +2,8 @@
   "id": "http://example.org/taxonomy/BuildingMaterial",
   "type": "Concept",
   "prefLabel": {
-    "en": "Building Material",
     "de": "Baustoff",
+    "en": "Building Material",
     "fr": "Matériaux de Construction"
   },
   "definition": {
@@ -13,40 +13,40 @@
     {
       "id": "http://example.org/taxonomy/Brick",
       "prefLabel": {
-        "en": "Brick",
         "de": "Baustein",
+        "en": "Brick",
         "fr": "Briques"
       }
     },
     {
       "id": "http://example.org/taxonomy/Bulk",
       "prefLabel": {
-        "en": "Bulk",
         "de": "Schüttgut",
+        "en": "Bulk",
         "fr": "Vrac"
       }
     },
     {
       "id": "http://example.org/taxonomy/Massive",
       "prefLabel": {
-        "en": "Massive",
         "de": "Massivbau",
+        "en": "Massive",
         "fr": "Massif"
       }
     },
     {
       "id": "http://example.org/taxonomy/Mortar",
       "prefLabel": {
-        "en": "Mortar, Plaster",
         "de": "Mörtel, Putz",
+        "en": "Mortar, Plaster",
         "fr": "Mortier, Crépis"
       }
     },
     {
       "id": "http://example.org/taxonomy/Panel",
       "prefLabel": {
-        "en": "Panel",
         "de": "Platten",
+        "en": "Panel",
         "fr": "Plaques"
       }
     }
@@ -54,8 +54,8 @@
   "broader": {
     "id": "http://example.org/taxonomy/Object",
     "prefLabel": {
-      "en": "Object",
       "de": "Objekt",
+      "en": "Object",
       "fr": "Objet"
     }
   },
@@ -81,6 +81,7 @@
     "vann": "http://purl.org/vocab/vann/",
     "ldp": "http://www.w3.org/ns/ldp#",
     "owl": "http://www.w3.org/2002/07/owl#",
+    "qudt": "http://qudt.org/schema/qudt#",
     "title": {
       "@id": "dct:title",
       "@container": "@language"
@@ -212,6 +213,10 @@
     "isReplacedBy": {
       "@id": "dct:isReplacedBy",
       "@container": "@set"
+    },
+    "qudt:unit": {
+      "@id": "qudt:unit",
+      "@container": "@language"
     }
   }
 }

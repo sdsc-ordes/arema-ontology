@@ -2,8 +2,8 @@
   "id": "http://example.org/taxonomy/Massive",
   "type": "Concept",
   "prefLabel": {
-    "en": "Massive",
     "de": "Massivbau",
+    "en": "Massive",
     "fr": "Massif"
   },
   "definition": {
@@ -12,8 +12,8 @@
   "broader": {
     "id": "http://example.org/taxonomy/BuildingMaterial",
     "prefLabel": {
-      "en": "Building Material",
       "de": "Baustoff",
+      "en": "Building Material",
       "fr": "Matériaux de Construction"
     }
   },
@@ -39,6 +39,7 @@
     "vann": "http://purl.org/vocab/vann/",
     "ldp": "http://www.w3.org/ns/ldp#",
     "owl": "http://www.w3.org/2002/07/owl#",
+    "qudt": "http://qudt.org/schema/qudt#",
     "title": {
       "@id": "dct:title",
       "@container": "@language"
@@ -170,6 +171,10 @@
     "isReplacedBy": {
       "@id": "dct:isReplacedBy",
       "@container": "@set"
+    },
+    "qudt:unit": {
+      "@id": "qudt:unit",
+      "@container": "@language"
     }
   }
 }

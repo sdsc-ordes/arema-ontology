@@ -2,52 +2,49 @@
   "id": "http://example.org/taxonomy/Property",
   "type": "Concept",
   "prefLabel": {
-    "en": "Property",
     "de": "Eigenschaft",
+    "en": "Property",
     "fr": "Propriété"
-  },
-  "definition": {
-    "en": "Properties of building materials."
   },
   "narrower": [
     {
-      "id": "http://example.org/taxonomy/acoustic",
+      "id": "http://example.org/taxonomy/Acoustic",
       "prefLabel": {
+        "de": "Akustik",
         "en": "Acoustic",
-        "de": "Akustisch",
-        "fr": "Acoustique"
+        "fr": "Acousitque"
       }
     },
     {
-      "id": "http://example.org/taxonomy/mechanical",
+      "id": "http://example.org/taxonomy/Mechanical",
       "prefLabel": {
-        "en": "Mechanical",
         "de": "Mechanisch",
-        "fr": "Mécanique"
+        "en": "Mechanical",
+        "fr": "Mecanique"
       }
     },
     {
-      "id": "http://example.org/taxonomy/hygrothermal",
+      "id": "http://example.org/taxonomy/Hygrothermal",
       "prefLabel": {
-        "en": "Hygrothermal",
         "de": "Hygrothermisch",
+        "en": "Hygrothermal",
         "fr": "Hygrothermique"
       }
     },
     {
-      "id": "http://example.org/taxonomy/interventionType",
+      "id": "http://example.org/taxonomy/OtherProperty",
       "prefLabel": {
-        "en": "Intervention Type",
-        "de": "Art der Massnahme",
-        "fr": "Type d'Intervention"
+        "de": "Andere",
+        "en": "Other Property",
+        "fr": "Autre"
       }
     },
     {
-      "id": "http://example.org/taxonomy/fireResistance",
+      "id": "http://example.org/taxonomy/FireResistance",
       "prefLabel": {
-        "en": "Fire Resistance",
-        "de": "Brandwiderstand",
-        "fr": "Résistance au Feu"
+        "de": "Brandverhalten",
+        "en": "Fire resistance",
+        "fr": "Résistance au feu"
       }
     }
   ],
@@ -78,6 +75,7 @@
     "vann": "http://purl.org/vocab/vann/",
     "ldp": "http://www.w3.org/ns/ldp#",
     "owl": "http://www.w3.org/2002/07/owl#",
+    "qudt": "http://qudt.org/schema/qudt#",
     "title": {
       "@id": "dct:title",
       "@container": "@language"
@@ -209,6 +207,10 @@
     "isReplacedBy": {
       "@id": "dct:isReplacedBy",
       "@container": "@set"
+    },
+    "qudt:unit": {
+      "@id": "qudt:unit",
+      "@container": "@language"
     }
   }
 }

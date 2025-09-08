@@ -2,8 +2,8 @@
   "id": "http://example.org/taxonomy/NaturalResource",
   "type": "Concept",
   "prefLabel": {
-    "en": "Resource",
     "de": "Ressourcen",
+    "en": "Resource",
     "fr": "Ressources"
   },
   "definition": {
@@ -13,48 +13,48 @@
     {
       "id": "http://example.org/taxonomy/Earth",
       "prefLabel": {
-        "en": "Earth",
         "de": "Lehm",
+        "en": "Earth",
         "fr": "Terre"
       }
     },
     {
       "id": "http://example.org/taxonomy/Hemp",
       "prefLabel": {
-        "en": "Hemp",
         "de": "Hanf",
+        "en": "Hemp",
         "fr": "Chanvre"
       }
     },
     {
       "id": "http://example.org/taxonomy/OtherFiber",
       "prefLabel": {
-        "en": "Other Fibre",
         "de": "Andere Fasern",
+        "en": "Other Fibre",
         "fr": "Autres fibres"
       }
     },
     {
       "id": "http://example.org/taxonomy/Rock",
       "prefLabel": {
-        "en": "Rock",
         "de": "Gestein",
+        "en": "Rock",
         "fr": "Roche"
       }
     },
     {
       "id": "http://example.org/taxonomy/Straw",
       "prefLabel": {
-        "en": "Straw",
         "de": "Stroh",
+        "en": "Straw",
         "fr": "Paille"
       }
     },
     {
       "id": "http://example.org/taxonomy/Wood",
       "prefLabel": {
-        "en": "Wood",
         "de": "Holz",
+        "en": "Wood",
         "fr": "Bois"
       }
     }
@@ -62,8 +62,8 @@
   "broader": {
     "id": "http://example.org/taxonomy/Object",
     "prefLabel": {
-      "en": "Object",
       "de": "Objekt",
+      "en": "Object",
       "fr": "Objet"
     }
   },
@@ -89,6 +89,7 @@
     "vann": "http://purl.org/vocab/vann/",
     "ldp": "http://www.w3.org/ns/ldp#",
     "owl": "http://www.w3.org/2002/07/owl#",
+    "qudt": "http://qudt.org/schema/qudt#",
     "title": {
       "@id": "dct:title",
       "@container": "@language"
@@ -220,6 +221,10 @@
     "isReplacedBy": {
       "@id": "dct:isReplacedBy",
       "@container": "@set"
+    },
+    "qudt:unit": {
+      "@id": "qudt:unit",
+      "@container": "@language"
     }
   }
 }
