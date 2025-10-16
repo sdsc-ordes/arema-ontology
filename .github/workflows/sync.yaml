@@ -1,0 +1,77 @@
+name: Deploy Ontology to SPARQL Endpoint
+
+on:
+  workflow_run:
+    workflows: ["docs", "checks"]
+    types:
+      - completed
+
+jobs:
+  deploy-ontology:
+    if: |
+      github.event.workflow_run.conclusion == 'success' &&
+      github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 🧾 Check out repository
+        uses: actions/checkout@v4
+
+      - name: 🕵️ Detect changes in src/ontology
+        id: changes
+        uses: tj-actions/changed-files@v44
+        with:
+          files: src/ontology/**
+
+      - name: 🛑 Skip if no ontology changes
+        if: steps.changes.outputs.any_changed != 'true'
+        run: echo "No ontology changes detected. Skipping deployment."
+
+      - name: 🌱 Load .env
+        if: steps.changes.outputs.any_changed == 'true'
+        uses: falti/dotenv-action@v1
+        with:
+          path: .env
+
+      - name: 🚀 Backup and deploy ontology
+        if: steps.changes.outputs.any_changed == 'true'
+        env:
+          ONTOLOGY_SPARQL_ENDPOINT: ${{ env.ONTOLOGY_SPARQL_ENDPOINT }}
+          GRAPHDB_USERNAME: ${{ env.GRAPHDB_USERNAME }}
+          GRAPHDB_PASSWORD: ${{ env.GRAPHDB_PASSWORD }}
+          GRAPH_URI: ${{ env.GRAPH_URI }}
+        run: |
+          set -euo pipefail
+
+          timestamp=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+          ARCHIVE_URI="${GRAPH_URI}/archive/${timestamp}"
+
+          echo "🚀 Deploying ontology to ${ONTOLOGY_SPARQL_ENDPOINT}"
+          echo "Target graph: ${GRAPH_URI}"
+          echo "Backup archive graph: ${ARCHIVE_URI}"
+
+          echo "📦 Backing up current graph to ${ARCHIVE_URI}..."
+          curl -sf -u "${GRAPHDB_USERNAME}:${GRAPHDB_PASSWORD}" \
+            -X POST \
+            -H "Content-Type: application/sparql-update" \
+            --data "COPY GRAPH <${GRAPH_URI}> TO GRAPH <${ARCHIVE_URI}>" \
+            "${ONTOLOGY_SPARQL_ENDPOINT}" || echo "⚠️ No existing graph to back up (this may be the first deployment)."
+
+          echo "🧹 Dropping existing graph <${GRAPH_URI}>..."
+          curl -sf -u "${GRAPHDB_USERNAME}:${GRAPHDB_PASSWORD}" \
+            -X POST \
+            -H "Content-Type: application/sparql-update" \
+            --data "DROP GRAPH <${GRAPH_URI}>" \
+            "${ONTOLOGY_SPARQL_ENDPOINT}"
+
+          echo "📤 Uploading TTL files from src/ontology to <${GRAPH_URI}>..."
+          find src/ontology -type f -name "*.ttl" -print0 | while IFS= read -r -d '' file; do
+            echo "→ $file"
+            curl -sf -u "${GRAPHDB_USERNAME}:${GRAPHDB_PASSWORD}" \
+              -X POST \
+              -H "Content-Type: text/turtle" \
+              --data-binary "@${file}" \
+              "${ONTOLOGY_SPARQL_ENDPOINT}?graph=${GRAPH_URI}"
+          done
+
+          echo "🎉 Ontology deployment completed successfully."
