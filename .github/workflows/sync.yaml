@@ -2,21 +2,22 @@ name: Deploy Ontology to SPARQL Endpoint
 
 on:
   workflow_run:
-    workflows: ["docs", "checks"]
+    workflows: ["Generate Public Ontology Docs"]  # Trigger after docs
     types:
       - completed
+  workflow_dispatch:  # Optional manual trigger
 
 jobs:
   deploy-ontology:
-    if: |
-      github.event.workflow_run.conclusion == 'success' &&
-      github.event.workflow_run.head_branch == 'main'
+    if: github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
 
     steps:
+      # --- 1. Checkout ---
       - name: 🧾 Check out repository
         uses: actions/checkout@v4
 
+      # --- 2. Detect ontology changes ---
       - name: 🕵️ Detect changes in src/ontology
         id: changes
         uses: tj-actions/changed-files@v44
@@ -27,12 +28,14 @@ jobs:
         if: steps.changes.outputs.any_changed != 'true'
         run: echo "No ontology changes detected. Skipping deployment."
 
+      # --- 3. Load environment variables ---
       - name: 🌱 Load .env
         if: steps.changes.outputs.any_changed == 'true'
         uses: falti/dotenv-action@v1
         with:
           path: .env
 
+      # --- 4. Backup and deploy ontology ---
       - name: 🚀 Backup and deploy ontology
         if: steps.changes.outputs.any_changed == 'true'
         env:
