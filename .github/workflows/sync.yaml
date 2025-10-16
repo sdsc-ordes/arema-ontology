@@ -28,21 +28,14 @@ jobs:
         if: steps.changes.outputs.any_changed != 'true'
         run: echo "No ontology changes detected. Skipping deployment."
 
-      # --- 3. Load environment variables ---
-      - name: 🌱 Load .env
-        if: steps.changes.outputs.any_changed == 'true'
-        uses: falti/dotenv-action@v1
-        with:
-          path: .env
-
-      # --- 4. Backup and deploy ontology ---
+      # --- 3. Backup and deploy ontology ---
       - name: 🚀 Backup and deploy ontology
         if: steps.changes.outputs.any_changed == 'true'
         env:
-          ONTOLOGY_SPARQL_ENDPOINT: ${{ env.ONTOLOGY_SPARQL_ENDPOINT }}
-          GRAPHDB_USERNAME: ${{ env.GRAPHDB_USERNAME }}
-          GRAPHDB_PASSWORD: ${{ env.GRAPHDB_PASSWORD }}
-          GRAPH_URI: ${{ env.GRAPH_URI }}
+          ONTOLOGY_SPARQL_ENDPOINT: ${{ secrets.ONTOLOGY_SPARQL_ENDPOINT }}
+          GRAPHDB_USERNAME: ${{ secrets.GRAPHDB_USERNAME }}
+          GRAPHDB_PASSWORD: ${{ secrets.GRAPHDB_PASSWORD }}
+          GRAPH_URI: ${{ secrets.GRAPH_URI }}
         run: |
           set -euo pipefail
 
@@ -58,7 +51,7 @@ jobs:
             -X POST \
             -H "Content-Type: application/sparql-update" \
             --data "COPY GRAPH <${GRAPH_URI}> TO GRAPH <${ARCHIVE_URI}>" \
-            "${ONTOLOGY_SPARQL_ENDPOINT}" || echo "⚠️ No existing graph to back up (this may be the first deployment)."
+            "${ONTOLOGY_SPARQL_ENDPOINT}" || echo "⚠️ No existing graph to back up (may be first deployment)."
 
           echo "🧹 Dropping existing graph <${GRAPH_URI}>..."
           curl -sf -u "${GRAPHDB_USERNAME}:${GRAPHDB_PASSWORD}" \
