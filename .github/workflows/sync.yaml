@@ -61,6 +61,7 @@ jobs:
             "${ONTOLOGY_SPARQL_ENDPOINT}"
 
           echo "📤 Uploading TTL files from src/ontology to <${GRAPH_URI}>..."
+          ls -l src/ontology/
           find src/ontology -type f -name "*.ttl" -print0 | while IFS= read -r -d '' file; do
             echo "→ $file"
             curl -sf -u "${GRAPHDB_USERNAME}:${GRAPHDB_PASSWORD}" \
