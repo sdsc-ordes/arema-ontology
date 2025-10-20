@@ -15,7 +15,11 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Prepare .env
-        run: echo "BASEURL=/$(basename $GITHUB_REPOSITORY)" > .env
+        run: |
+          # BASEURL for the final domain (correct)
+          echo "BASEURL=/" > .env
+          echo "PATH_PREFIX=/" >> .env
+          echo "GATSBY_BASE_PATH=/" >> .env
 
       - name: Log in to GitHub Container Registry
         run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
@@ -27,7 +31,8 @@ jobs:
           CONTAINER_ID=$(docker create \
             -v $(pwd)/src/ontology:/app/data \
             -v $(pwd)/.env:/app/.env \
-            ghcr.io/sdsc-ordes/skohub-vocabs:latest
+            ghcr.io/sdsc-ordes/skohub-vocabs:v0.2.2 \
+            sh -c "npm run build"
           )
 
           # Copy custom files + config into the container
@@ -35,15 +40,12 @@ jobs:
           docker cp ./tools/skohub-vocabs/src/. $CONTAINER_ID:/app/src/
           docker cp ./tools/skohub-vocabs/static/. $CONTAINER_ID:/app/static/
 
-          # Run build
+          # Run build (no prefix paths!)
           docker start -ai $CONTAINER_ID
 
           # Copy generated site into ./docs
           docker cp $CONTAINER_ID:/app/public/. ./docs
           docker rm $CONTAINER_ID
-
-
-
 
       - name: Commit updated docs
         run: |
