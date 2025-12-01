@@ -1,16 +1,27 @@
 @prefix dct: <http://purl.org/dc/terms/> .
-@prefix me: <http://example.org/taxonomy/> .
+@prefix me: <https://ontology.atlas-regenmat.ch/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix vann: <http://purl.org/vocab/vann/> .
-@prefix qudt: <http://qudt.org/schema/qudt#> .
+
+me:MyThesaurus a skos:ConceptScheme ;
+    dct:description "AREMA Ontology for building materials, buildings, natural resources, professionals, and technical constructions."@en ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
+    vann:preferredNamespacePrefix "me" ;
+    vann:preferredNamespaceUri "https://ontology.atlas-regenmat.ch/" ;
+    skos:hasTopConcept me:Object,
+        me:Property ;
+    skos:prefLabel "AREMA Ontologie"@de,
+        "AREMA Ontology"@en,
+        "Ontologie AREMA"@fr,
+        "Ontologia AREMA"@it .
 
 me:AbsorptionCoefficientAt500hz a skos:Concept ;
-    me:symbol "α" ;
     skos:broader me:Acoustic ;
     skos:inScheme me:MyThesaurus ;
     skos:prefLabel "Schallabsorptionsgrad (bei 500Hz)"@de,
         "Absorption coefficient (at 500Hz)"@en,
-        "Coefficient d'absorption (à 500Hz)"@fr .
+        "Coefficient d'absorption (à 500Hz)"@fr ;
+    me:symbol "α" .
 
 me:ApartmentBuilding a skos:Concept ;
     skos:broader me:Building ;
@@ -97,13 +108,13 @@ me:Column a skos:Concept ;
         "Column"@en .
 
 me:CompressiveStrength a skos:Concept ;
-    me:symbol "σc" ;
-    qudt:unit "MPa" ;
     skos:broader me:Mechanical ;
     skos:inScheme me:MyThesaurus ;
     skos:prefLabel "Druckfestigkeit"@de,
         "Compressive strength"@en,
-        "Résistance à la compression"@fr .
+        "Résistance à la compression"@fr ;
+    me:symbol "σc" ;
+    me:unit "MPa" .
 
 me:ConstructionFirmProfessional a skos:Concept ;
     skos:broader me:Professional ;
@@ -122,13 +133,13 @@ me:Craftsman a skos:Concept ;
         "Artisan/ne"@fr .
 
 me:Density a skos:Concept ;
-    me:symbol "ρ" ;
-    qudt:unit "kg/m3" ;
     skos:broader me:Mechanical ;
     skos:inScheme me:MyThesaurus ;
     skos:prefLabel "Dichte"@de,
         "Density"@en,
-        "masse volumique"@fr .
+        "masse volumique"@fr ;
+    me:symbol "ρ" ;
+    me:unit "kg/m3" .
 
 me:Door a skos:Concept ;
     skos:broader me:Opening ;
@@ -145,13 +156,13 @@ me:Earth a skos:Concept ;
         "Terre"@fr .
 
 me:Effusivity a skos:Concept ;
-    me:symbol "E" ;
-    qudt:unit "kJ/(K*m2*sqrt(s))" ;
     skos:broader me:Hygrothermal ;
     skos:inScheme me:MyThesaurus ;
     skos:prefLabel "Effusivität"@de,
         "Effusivity"@en,
-        "Effusivité"@fr .
+        "Effusivité"@fr ;
+    me:symbol "E" ;
+    me:unit "kJ/(K*m2*sqrt(s))" .
 
 me:ExteriorThermalInsulation a skos:Concept ;
     skos:broader me:Envelope ;
@@ -211,12 +222,12 @@ me:Foundation a skos:Concept ;
         "Foundation"@en .
 
 me:FreeSaturation a skos:Concept ;
-    me:symbol "wf" ;
-    qudt:unit "kg/m3" ;
     skos:broader me:Hygrothermal ;
     skos:inScheme me:MyThesaurus ;
     skos:prefLabel "Freie Wassersättigung"@de,
-        "Free saturation"@en .
+        "Free saturation"@en ;
+    me:symbol "wf" ;
+    me:unit "kg/m3" .
 
 me:Hemp a skos:Concept ;
     skos:broader me:NaturalResource ;
@@ -255,13 +266,13 @@ me:InterventionType a skos:Concept ;
         "Type d'Intervention"@fr .
 
 me:LiquidTransferCoefficientForAbsorption a skos:Concept ;
-    me:symbol "A" ;
-    qudt:unit "kg/(m2*sqrt(s))" ;
     skos:broader me:Hygrothermal ;
     skos:inScheme me:MyThesaurus ;
     skos:prefLabel "Wasseraufnahmekoeffizient"@de,
         "Liquid transfer coefficient for absorption"@en,
-        "Coefficient d'absorption d'eau"@fr .
+        "Coefficient d'absorption d'eau"@fr ;
+    me:symbol "A" ;
+    me:unit "kg/(m2*sqrt(s))" .
 
 me:Massive a skos:Concept ;
     skos:broader me:BuildingMaterial ;
@@ -280,11 +291,11 @@ me:MaterialProducer a skos:Concept ;
         "Producteur de Matériaux"@fr .
 
 me:MoistureBufferingValue a skos:Concept ;
-    me:symbol "MBV" ;
-    qudt:unit "g/(m2*%RH)" ;
     skos:broader me:Hygrothermal ;
     skos:inScheme me:MyThesaurus ;
-    skos:prefLabel "Moisture Buffering value"@en .
+    skos:prefLabel "Moisture Buffering value"@en ;
+    me:symbol "MBV" ;
+    me:unit "g/(m2*%RH)" .
 
 me:Mortar a skos:Concept ;
     skos:broader me:BuildingMaterial ;
@@ -326,13 +337,13 @@ me:PartitionWall a skos:Concept ;
         "Partition Wall"@en .
 
 me:Porosity a skos:Concept ;
-    me:symbol "ξ" ;
-    qudt:unit "%vol" ;
     skos:broader me:Hygrothermal ;
     skos:inScheme me:MyThesaurus ;
     skos:prefLabel "Porosität"@de,
         "Porosity"@en,
-        "Porosité"@fr .
+        "Porosité"@fr ;
+    me:symbol "ξ" ;
+    me:unit "%vol" .
 
 me:PublicBuilding a skos:Concept ;
     skos:broader me:Building ;
@@ -433,47 +444,47 @@ me:TechnicalEquipement a skos:Concept ;
         "Technical Equipement"@en .
 
 me:TensileStrength a skos:Concept ;
-    me:symbol "σ" ;
-    qudt:unit "MPa" ;
     skos:broader me:Mechanical ;
     skos:inScheme me:MyThesaurus ;
     skos:prefLabel "Zugfestigkeit"@de,
         "tensile strength"@en,
-        "Résistance à la traction"@fr .
+        "Résistance à la traction"@fr ;
+    me:symbol "σ" ;
+    me:unit "MPa" .
 
 me:ThermalCapacity a skos:Concept ;
-    me:symbol "c" ;
-    qudt:unit "J(kg*K)" ;
     skos:broader me:Hygrothermal ;
     skos:inScheme me:MyThesaurus ;
     skos:prefLabel "Wärmekapazität"@de,
         "thermal capacity"@en,
-        "Capacité thermique"@fr .
+        "Capacité thermique"@fr ;
+    me:symbol "c" ;
+    me:unit "J(kg*K)" .
 
 me:ThermalConductivity a skos:Concept ;
-    me:symbol "λ" ;
-    qudt:unit "W/(m*K)" ;
     skos:broader me:Hygrothermal ;
     skos:inScheme me:MyThesaurus ;
     skos:prefLabel "Wärmeleitfähigkeit"@de,
         "thermal conductivity"@en,
-        "conductivité thermique"@fr .
+        "conductivité thermique"@fr ;
+    me:symbol "λ" ;
+    me:unit "W/(m*K)" .
 
 me:WaterContentAt80 a skos:Concept ;
-    me:symbol "w80%" ;
-    qudt:unit "kg/m3" ;
     skos:broader me:Hygrothermal ;
     skos:inScheme me:MyThesaurus ;
     skos:prefLabel "Wassergehalt bei 80%"@de,
-        "Water content at 80%"@en .
+        "Water content at 80%"@en ;
+    me:symbol "w80%" ;
+    me:unit "kg/m3" .
 
 me:WaterVaporDiffusionResistance a skos:Concept ;
-    me:symbol "µ" ;
     skos:broader me:Hygrothermal ;
     skos:inScheme me:MyThesaurus ;
     skos:prefLabel "Wasserdampfdiffusionswiderstand"@de,
         "Water vapor diffusion resistance"@en,
-        "Résistance à la diffusion de vapeur d'eau"@fr .
+        "Résistance à la diffusion de vapeur d'eau"@fr ;
+    me:symbol "µ" .
 
 me:Window a skos:Concept ;
     skos:broader me:Opening ;
@@ -490,13 +501,13 @@ me:Wood a skos:Concept ;
         "Bois"@fr .
 
 me:YoungSModulus a skos:Concept ;
-    me:symbol "E" ;
-    qudt:unit "Gpa" ;
     skos:broader me:Mechanical ;
     skos:inScheme me:MyThesaurus ;
     skos:prefLabel "E-Modul"@de,
         "Young's Modulus"@en,
-        "Module d'élasticité"@fr .
+        "Module d'élasticité"@fr ;
+    me:symbol "E" ;
+    me:unit "Gpa" .
 
 me:Acoustic a skos:Concept ;
     skos:broader me:Property ;
@@ -573,6 +584,19 @@ me:Finishings a skos:Concept ;
         "Finishings"@en,
         "Finitions"@fr .
 
+me:Object a skos:Concept ;
+    skos:definition "A general term for any physical entity that can be identified and described."@en ;
+    skos:inScheme me:MyThesaurus ;
+    skos:prefLabel "Objekt"@de,
+        "Object"@en,
+        "Objet"@fr .
+
+me:Property a skos:Concept ;
+    skos:inScheme me:MyThesaurus ;
+    skos:prefLabel "Eigenschaft"@de,
+        "Property"@en,
+        "Propriété"@fr .
+
 me:Envelope a skos:Concept ;
     skos:broader me:Construction ;
     skos:definition "The outer shell of a building, including walls, roofs, and windows, that separates the interior from the exterior environment."@en ;
@@ -588,19 +612,6 @@ me:NaturalResource a skos:Concept ;
     skos:prefLabel "Ressourcen"@de,
         "Resource"@en,
         "Ressources"@fr .
-
-me:Object a skos:Concept ;
-    skos:definition "A general term for any physical entity that can be identified and described."@en ;
-    skos:inScheme me:MyThesaurus ;
-    skos:prefLabel "Objekt"@de,
-        "Object"@en,
-        "Objet"@fr .
-
-me:Property a skos:Concept ;
-    skos:inScheme me:MyThesaurus ;
-    skos:prefLabel "Eigenschaft"@de,
-        "Property"@en,
-        "Propriété"@fr .
 
 me:Hygrothermal a skos:Concept ;
     skos:broader me:Property ;
@@ -625,14 +636,3 @@ me:Structure a skos:Concept ;
         "Structure"@en,
         "Structure"@fr .
 
-me:MyThesaurus a skos:ConceptScheme ;
-    dct:description "AREMA Ontology for building materials, buildings, natural resources, professionals, and technical constructions."@en ;
-    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
-    vann:preferredNamespacePrefix "me" ;
-    vann:preferredNamespaceUri "http://example.org/taxonomy/" ;
-    skos:hasTopConcept me:Object,
-        me:Property ;
-    skos:prefLabel "AREMA Ontologie"@de,
-        "AREMA Ontology"@en,
-        "Ontologie AREMA"@fr,
-        "Ontologia AREMA"@it .

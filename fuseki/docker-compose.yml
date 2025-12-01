@@ -1,0 +1,9 @@
+services:
+  fuseki:
+    image: stain/jena-fuseki:5.1.0
+    ports:
+      - "3030:3030"
+    volumes:
+      - ./data:/fuseki/databases
+    environment:
+      - FUSEKI_HOME=/jena-fuseki

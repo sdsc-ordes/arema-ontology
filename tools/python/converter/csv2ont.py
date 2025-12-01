@@ -1,14 +1,34 @@
+import os
 import pandas as pd
 from rdflib import Graph, Namespace, URIRef, Literal
 from rdflib.namespace import SKOS, RDF
+from dotenv import load_dotenv
+import requests
+from pathlib import Path
+
+# Base folder of the script
+BASE_DIR = Path(__file__).parent.parent.parent  # adjust as needed from converter/csv2ont.py
+
+# Path to the TTL file
+TTL_PATH = BASE_DIR / "src" / "ontology" / "arema-ontology.ttl"
+TTL_PATH.parent.mkdir(parents=True, exist_ok=True)  # make sure the directory exists
+
+
+# === BASE DIRS ===
+SCRIPT_DIR = Path(__file__).parent      # tools/python/converter
+ROOT_DIR = SCRIPT_DIR.parent.parent.parent  # ../../.. from converter -> root of repo
+ONTOLOGY_DIR = ROOT_DIR / "src" / "ontology"
+ONTOLOGY_DIR.mkdir(parents=True, exist_ok=True)
+
+TTL_PATH = ONTOLOGY_DIR / "arema-ontology.ttl"
 
 # === CONFIG ===
-BASE_URI = "http://example.org/taxonomy/"
+BASE_URI = "https://ontology.atlas-regenmat.ch/"
 ME = Namespace(BASE_URI)
 
 sheet_id = "1RL6Y120_H9-yD8x52eZO44S2iLQpLoZHitcExHsPfPs"
 objects_gid = "1120751986"     # your objects sheet gid
-properties_gid = "373147482"   # replace with your properties sheet gid
+properties_gid = "373147482"   # your properties sheet gid
 
 # === HELPERS ===
 def to_camel_case(s: str) -> str:
@@ -29,43 +49,38 @@ def add_concept_from_row(g, row, is_property=False):
     g.add((concept_uri, SKOS.inScheme, ME.MyThesaurus))
 
     # Labels
-    if pd.notna(row.get('enLabel')):
-        g.add((concept_uri, SKOS.prefLabel, Literal(row['enLabel'], lang='en')))
-    if pd.notna(row.get('deLabel')):
-        g.add((concept_uri, SKOS.prefLabel, Literal(row['deLabel'], lang='de')))
-    if pd.notna(row.get('frLabel')):
-        g.add((concept_uri, SKOS.prefLabel, Literal(row['frLabel'], lang='fr')))
-    if pd.notna(row.get('itLabel')):
-        g.add((concept_uri, SKOS.prefLabel, Literal(row['itLabel'], lang='it')))
+    for lang in ['en', 'de', 'fr', 'it']:
+        label_key = f"{lang}Label"
+        if pd.notna(row.get(label_key)):
+            g.add((concept_uri, SKOS.prefLabel, Literal(row[label_key], lang=lang)))
 
     # Definitions
-    if pd.notna(row.get('enDefinition')):
-        g.add((concept_uri, SKOS.definition, Literal(row['enDefinition'], lang='en')))
-    if pd.notna(row.get('deDefinition')):
-        g.add((concept_uri, SKOS.definition, Literal(row['deDefinition'], lang='de')))
-    if pd.notna(row.get('frDefinition')):
-        g.add((concept_uri, SKOS.definition, Literal(row['frDefinition'], lang='fr')))
-    if pd.notna(row.get('itDefinition')):
-        g.add((concept_uri, SKOS.definition, Literal(row['itDefinition'], lang='it')))
+    for lang in ['en', 'de', 'fr', 'it']:
+        def_key = f"{lang}Definition"
+        if pd.notna(row.get(def_key)):
+            g.add((concept_uri, SKOS.definition, Literal(row[def_key], lang=lang)))
 
     # Broader relationships
-    if pd.notna(row.get('sub-entity level')):
-        parent_camel = to_camel_case(row['sub-entity level'])
-        if parent_camel:
-            g.add((concept_uri, SKOS.broader, URIRef(BASE_URI + parent_camel)))
-    if pd.notna(row.get('entity')):
-        parent_camel = to_camel_case(row['entity'])
-        if parent_camel:
-            g.add((concept_uri, SKOS.broader, URIRef(BASE_URI + parent_camel)))
+    for parent_field in ['sub-entity level', 'entity']:
+        if pd.notna(row.get(parent_field)):
+            parent_camel = to_camel_case(row[parent_field])
+            if parent_camel:
+                g.add((concept_uri, SKOS.broader, URIRef(BASE_URI + parent_camel)))
 
     # Extra fields for properties
     if is_property:
-        if pd.notna(row.get('symbol')):
-            g.add((concept_uri, ME.symbol, Literal(row['symbol'])))
-        if pd.notna(row.get('unit')):
-            g.add((concept_uri, ME.unit, Literal(row['unit'])))
+        for extra_field in ['symbol', 'unit']:
+            if pd.notna(row.get(extra_field)):
+                g.add((concept_uri, ME[extra_field], Literal(row[extra_field])))
 
 # === MAIN ===
+# Load environment variables
+load_dotenv()
+FUSEKI_BASE = os.getenv("FUSEKI_URL")           # e.g., "http://localhost:3030/arema/data"
+GRAPH_URI = "https://ontology.atlas-regenmat.ch/"        # named graph IRI
+USERNAME = os.getenv("FUSEKI_USERNAME")         # e.g., "admin"
+PASSWORD = os.getenv("FUSEKI_PASSWORD")         # e.g., "Ve2mEu0Ll32W0jn"
+
 # Init graph
 g = Graph()
 g.bind("rdfs", "http://www.w3.org/2000/01/rdf-schema#")
@@ -82,7 +97,7 @@ g.bind("qudt", "http://qudt.org/schema/qudt/")
 # Static ontology metadata
 ontology_metadata = """
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix me: <http://example.org/taxonomy/> .
+@prefix me: <https://ontology.atlas-regenmat.ch/> .
 @prefix brick: <https://w3id.org/brick#> .
 @prefix ifc: <https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -91,12 +106,12 @@ ontology_metadata = """
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix vann: <http://purl.org/vocab/vann/> .
 
-@base <https://w3id.org/arema/ontology/> .
+@base <https://ontology.atlas-regenmat.ch/> .
 
 me:MyThesaurus a skos:ConceptScheme ;
     skos:prefLabel "AREMA Ontology"@en ;
     dct:description "AREMA Ontology for building materials, buildings, natural resources, professionals, and technical constructions."@en ;
-    vann:preferredNamespaceUri "https://w3id.org/arema/ontology/" ;
+    vann:preferredNamespaceUri "https://ontology.atlas-regenmat.ch/" ;
     vann:preferredNamespacePrefix "me" ;
     skos:hasTopConcept me:Object, me:Property ;
     skos:prefLabel "AREMA Ontology"@en ,
@@ -105,23 +120,37 @@ me:MyThesaurus a skos:ConceptScheme ;
                    "Ontologia AREMA"@it ;
     dct:license <https://creativecommons.org/licenses/by/4.0/> .
 """
-
-# Inject into the graph
 g.parse(data=ontology_metadata, format="turtle")
 
-# Load objects sheet
+# Load Google Sheets
 objects_url = f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=csv&gid={objects_gid}"
 df_objects = pd.read_csv(objects_url)
-
 for _, row in df_objects.iterrows():
     add_concept_from_row(g, row, is_property=False)
 
-# Load properties sheet
 properties_url = f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=csv&gid={properties_gid}"
 df_properties = pd.read_csv(properties_url)
-
 for _, row in df_properties.iterrows():
     add_concept_from_row(g, row, is_property=True)
 
-# Serialize all concepts to one TTL
-g.serialize("./src/ontology/arema-ontology.ttl", format="turtle")
+# Serialize TTL to file
+TTL_PATH = ONTOLOGY_DIR / "arema-ontology.ttl"
+g.serialize(TTL_PATH, format="turtle")
+
+
+# === UPLOAD TO FUSEKI ===
+upload_url = f"{FUSEKI_BASE}?graph={GRAPH_URI}"
+with open(TTL_PATH, "rb") as f:
+    ttl_data = f.read()
+
+resp = requests.put(
+    upload_url,
+    data=ttl_data,
+    headers={"Content-Type": "text/turtle"},
+    auth=(USERNAME, PASSWORD)
+)
+
+if resp.ok:
+    print(f"✅ Updated Fuseki dataset ({resp.status_code})")
+else:
+    print(f"❌ Fuseki update failed ({resp.status_code}):\n{resp.text}")

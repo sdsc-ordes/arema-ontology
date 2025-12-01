@@ -1,2 +1,3 @@
 external/skohub-vocabs
 .env
+/fuseki/data/
