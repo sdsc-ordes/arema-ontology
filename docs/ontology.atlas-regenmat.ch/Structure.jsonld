@@ -1,0 +1,253 @@
+{
+  "id": "https://ontology.atlas-regenmat.ch/Structure",
+  "type": "Concept",
+  "prefLabel": {
+    "en": "Structure",
+    "de": "Struktur",
+    "fr": "Structure"
+  },
+  "definition": {
+    "en": "Load-bearing elements of a building"
+  },
+  "narrower": [
+    {
+      "id": "https://ontology.atlas-regenmat.ch/Balcony",
+      "prefLabel": {
+        "en": "Balcony",
+        "de": "Balkon"
+      }
+    },
+    {
+      "id": "https://ontology.atlas-regenmat.ch/Ceiling",
+      "prefLabel": {
+        "en": "Ceiling",
+        "de": "Decke"
+      }
+    },
+    {
+      "id": "https://ontology.atlas-regenmat.ch/Column",
+      "prefLabel": {
+        "en": "Column",
+        "de": "Stütze"
+      }
+    },
+    {
+      "id": "https://ontology.atlas-regenmat.ch/ExteriorWallAboveGround",
+      "prefLabel": {
+        "en": "Exterior Wall Above Ground",
+        "de": "Aussenwand Über Terrain"
+      }
+    },
+    {
+      "id": "https://ontology.atlas-regenmat.ch/ExteriorWallUnderGround",
+      "prefLabel": {
+        "en": "Exterior Wall Under Ground",
+        "de": "Aussenwand Unter Terrain"
+      }
+    },
+    {
+      "id": "https://ontology.atlas-regenmat.ch/FloorSlabGroundFloor",
+      "prefLabel": {
+        "en": "Floor Slab Ground Floor",
+        "de": "Bodenplatte EG",
+        "fr": "Dalle Rez-de-chaussée"
+      }
+    },
+    {
+      "id": "https://ontology.atlas-regenmat.ch/Foundation",
+      "prefLabel": {
+        "en": "Foundation",
+        "de": "Fundament"
+      }
+    },
+    {
+      "id": "https://ontology.atlas-regenmat.ch/InteriorWall",
+      "prefLabel": {
+        "en": "Interior Wall",
+        "de": "Innenwand"
+      }
+    },
+    {
+      "id": "https://ontology.atlas-regenmat.ch/Roof",
+      "prefLabel": {
+        "en": "Roof",
+        "de": "Dach"
+      }
+    },
+    {
+      "id": "https://ontology.atlas-regenmat.ch/Stair",
+      "prefLabel": {
+        "en": "Stair",
+        "de": "Treppe"
+      }
+    }
+  ],
+  "broader": {
+    "id": "https://ontology.atlas-regenmat.ch/Construction",
+    "prefLabel": {
+      "en": "Construction",
+      "de": "Bauwerk",
+      "fr": "Construction"
+    }
+  },
+  "inScheme": [
+    {
+      "id": "https://ontology.atlas-regenmat.ch/MyThesaurus"
+    }
+  ],
+  "inSchemeAll": [
+    {
+      "id": "https://ontology.atlas-regenmat.ch/MyThesaurus"
+    }
+  ],
+  "@context": {
+    "@version": 1.1,
+    "id": "@id",
+    "type": "@type",
+    "@vocab": "http://www.w3.org/2004/02/skos/core#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "dct": "http://purl.org/dc/terms/",
+    "dc": "http://purl.org/dc/elements/1.1/",
+    "schema": "https://schema.org/",
+    "vann": "http://purl.org/vocab/vann/",
+    "ldp": "http://www.w3.org/ns/ldp#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "qudt": "http://qudt.org/schema/qudt#",
+    "title": {
+      "@id": "dct:title",
+      "@container": "@language"
+    },
+    "dc:title": {
+      "@id": "dc:title",
+      "@container": "@language"
+    },
+    "dc:description": {
+      "@id": "dc:description",
+      "@container": "@language"
+    },
+    "description": {
+      "@id": "dct:description",
+      "@container": "@language"
+    },
+    "issued": {
+      "@id": "dct:issued",
+      "@type": "xsd:date"
+    },
+    "created": {
+      "@id": "dct:created",
+      "@type": "xsd:date"
+    },
+    "modified": {
+      "@id": "dct:modified",
+      "@type": "xsd:date"
+    },
+    "creator": "dct:creator",
+    "publisher": "dct:publisher",
+    "preferredNamespacePrefix": "vann:preferredNamespacePrefix",
+    "preferredNamespaceUri": "vann:preferredNamespaceUri",
+    "isBasedOn": "schema:isBasedOn",
+    "source": "dct:source",
+    "prefLabel": {
+      "@container": "@language"
+    },
+    "altLabel": {
+      "@container": [
+        "@language",
+        "@set"
+      ]
+    },
+    "hiddenLabel": {
+      "@container": [
+        "@language",
+        "@set"
+      ]
+    },
+    "definition": {
+      "@container": "@language"
+    },
+    "note": {
+      "@container": [
+        "@language",
+        "@set"
+      ]
+    },
+    "changeNote": {
+      "@container": [
+        "@language",
+        "@set"
+      ]
+    },
+    "editorialNote": {
+      "@container": [
+        "@language",
+        "@set"
+      ]
+    },
+    "historyNote": {
+      "@container": [
+        "@language",
+        "@set"
+      ]
+    },
+    "scopeNote": {
+      "@container": [
+        "@language",
+        "@set"
+      ]
+    },
+    "notation": {
+      "@container": "@set"
+    },
+    "example": {
+      "@container": "@language"
+    },
+    "narrower": {
+      "@container": "@set"
+    },
+    "related": {
+      "@container": "@set"
+    },
+    "relatedMatch": {
+      "@container": "@set"
+    },
+    "narrowerTransitive": {
+      "@container": "@set"
+    },
+    "broaderTransitive": {
+      "@container": "@set"
+    },
+    "broadMatch": {
+      "@container": "@set"
+    },
+    "narrowMatch": {
+      "@container": "@set"
+    },
+    "closeMatch": {
+      "@container": "@set"
+    },
+    "exactMatch": {
+      "@container": "@set"
+    },
+    "hasTopConcept": {
+      "@container": "@set"
+    },
+    "inScheme": {
+      "@container": "@set"
+    },
+    "topConceptOf": {
+      "@container": "@set"
+    },
+    "deprecated": {
+      "@id": "owl:deprecated",
+      "@type": "xsd:boolean"
+    },
+    "isReplacedBy": {
+      "@id": "dct:isReplacedBy",
+      "@container": "@set"
+    },
+    "qudt:unit": {
+      "@id": "qudt:unit",
+      "@container": "@language"
+    }
+  }
+}

@@ -1,1 +1,1 @@
-{"data":{"allConceptScheme":{"edges":[{"node":{"id":"http://example.org/taxonomy/MyThesaurus","fields":{"languages":["de","en","fr","it"]}}}]}}}
+{"data":{"allConceptScheme":{"edges":[{"node":{"id":"https://ontology.atlas-regenmat.ch/MyThesaurus","fields":{"languages":["de","en","fr","it"]}}}]}}}
