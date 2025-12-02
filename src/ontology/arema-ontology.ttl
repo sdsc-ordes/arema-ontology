@@ -635,4 +635,3 @@ me:Structure a skos:Concept ;
     skos:prefLabel "Struktur"@de,
         "Structure"@en,
         "Structure"@fr .
-        
