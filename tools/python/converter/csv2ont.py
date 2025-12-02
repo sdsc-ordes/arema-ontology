@@ -46,7 +46,7 @@ def add_concept_from_row(g, row, is_property=False):
     concept_uri = URIRef(BASE_URI + camel_name)
 
     g.add((concept_uri, RDF.type, SKOS.Concept))
-    g.add((concept_uri, SKOS.inScheme, ME.MyThesaurus))
+    g.add((concept_uri, SKOS.inScheme, ME.AREMA))
 
     # Labels
     for lang in ['en', 'de', 'fr', 'it']:
@@ -108,7 +108,7 @@ ontology_metadata = """
 
 @base <https://ontology.atlas-regenmat.ch/> .
 
-me:MyThesaurus a skos:ConceptScheme ;
+me:AREMA a skos:ConceptScheme ;
     skos:prefLabel "AREMA Ontology"@en ;
     dct:description "AREMA Ontology for building materials, buildings, natural resources, professionals, and technical constructions."@en ;
     vann:preferredNamespaceUri "https://ontology.atlas-regenmat.ch/" ;
