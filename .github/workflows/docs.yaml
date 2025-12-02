@@ -52,11 +52,6 @@ jobs:
           docker cp $CONTAINER_ID:/app/public/. ./docs
           docker rm $CONTAINER_ID
 
-      - name: Fix Gatsby routing bug
-        run: |
-          chmod +x ./tools/skohub-vocabs/fix-gatsby-routing.sh
-          ./tools/skohub-vocabs/fix-gatsby-routing.sh
-
       - name: Commit updated docs
         run: |
           git config user.name "github-actions[bot]"
