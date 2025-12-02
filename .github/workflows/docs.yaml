@@ -24,17 +24,15 @@ jobs:
       - name: Log in to GitHub Container Registry
         run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
 
-      - name: Clean old docs (preserve CNAME and .htaccess)
+      - name: Clean old docs (preserve CNAME)
         run: |
-          # Backup CNAME and .htaccess
+          # Backup CNAME
           [ -f docs/CNAME ] && cp docs/CNAME /tmp/CNAME || true
-          [ -f docs/.htaccess ] && cp docs/.htaccess /tmp/.htaccess || true
           # Clean everything
           rm -rf docs/*
           mkdir -p docs
-          # Restore CNAME and .htaccess
+          # Restore CNAME
           [ -f /tmp/CNAME ] && mv /tmp/CNAME docs/CNAME || true
-          [ -f /tmp/.htaccess ] && mv /tmp/.htaccess docs/.htaccess || true
 
       - name: Build docs in container
         run: |
