@@ -3,6 +3,22 @@ AddType text/index .index
 AddType application/json .json
 AddType application/ld+json .jsonld
 
+# URL Rewriting to remove doubled domain path
+# Redirects /ontology.atlas-regenmat.ch/Professional.html -> /Professional.html
+RewriteEngine On
+RewriteBase /
+
+# Redirect requests from /ontology.atlas-regenmat.ch/* to root /*
+RewriteRule ^ontology\.atlas-regenmat\.ch/(.*)$ /$1 [R=301,L]
+
+# Internally rewrite root requests to the actual files in ontology.atlas-regenmat.ch/
+# (only if the file doesn't exist at root)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{DOCUMENT_ROOT}/ontology.atlas-regenmat.ch%{REQUEST_URI} -f [OR]
+RewriteCond %{DOCUMENT_ROOT}/ontology.atlas-regenmat.ch%{REQUEST_URI} -d
+RewriteRule ^(.*)$ /ontology.atlas-regenmat.ch/$1 [L]
+
 <IfModule mod_deflate.c>
   # Compress HTML, CSS, JavaScript, Text, XML and fonts
   AddOutputFilterByType DEFLATE application/javascript
