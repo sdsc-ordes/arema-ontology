@@ -1,5 +1,5 @@
 [project]
-name = "arema-ontology"
+name = "AREMA-ontology"
 version = "0.1.0"
 description = "Ontology tooling and docs generation for AREMA"
 authors = [{ name = "Robin Franken", email = "robin.franken@epfl.ch" }]

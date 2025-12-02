@@ -35,4 +35,4 @@ jobs:
 
       - name: SHACL validation
         run: |
-          uv run python tools/python/checks/shacl.py src/ontology/arema-ontology.ttl src/quality-checks/skohub.shacl.ttl
+          uv run python tools/python/checks/shacl.py src/ontology/AREMA-ontology.ttl src/quality-checks/skohub.shacl.ttl

@@ -10,7 +10,7 @@ from pathlib import Path
 BASE_DIR = Path(__file__).parent.parent.parent  # adjust as needed from converter/csv2ont.py
 
 # Path to the TTL file
-TTL_PATH = BASE_DIR / "src" / "ontology" / "arema-ontology.ttl"
+TTL_PATH = BASE_DIR / "src" / "ontology" / "AREMA-ontology.ttl"
 TTL_PATH.parent.mkdir(parents=True, exist_ok=True)  # make sure the directory exists
 
 
@@ -20,7 +20,7 @@ ROOT_DIR = SCRIPT_DIR.parent.parent.parent  # ../../.. from converter -> root of
 ONTOLOGY_DIR = ROOT_DIR / "src" / "ontology"
 ONTOLOGY_DIR.mkdir(parents=True, exist_ok=True)
 
-TTL_PATH = ONTOLOGY_DIR / "arema-ontology.ttl"
+TTL_PATH = ONTOLOGY_DIR / "AREMA-ontology.ttl"
 
 # === CONFIG ===
 BASE_URI = "https://ontology.atlas-regenmat.ch/"
@@ -76,7 +76,7 @@ def add_concept_from_row(g, row, is_property=False):
 # === MAIN ===
 # Load environment variables
 load_dotenv()
-FUSEKI_BASE = os.getenv("FUSEKI_URL")           # e.g., "http://localhost:3030/arema/data"
+FUSEKI_BASE = os.getenv("FUSEKI_URL")           # e.g., "http://localhost:3030/AREMA/data"
 GRAPH_URI = "https://ontology.atlas-regenmat.ch/"        # named graph IRI
 USERNAME = os.getenv("FUSEKI_USERNAME")         # e.g., "admin"
 PASSWORD = os.getenv("FUSEKI_PASSWORD")         # e.g., "Ve2mEu0Ll32W0jn"
@@ -134,7 +134,7 @@ for _, row in df_properties.iterrows():
     add_concept_from_row(g, row, is_property=True)
 
 # Serialize TTL to file
-TTL_PATH = ONTOLOGY_DIR / "arema-ontology.ttl"
+TTL_PATH = ONTOLOGY_DIR / "AREMA-ontology.ttl"
 g.serialize(TTL_PATH, format="turtle")
 
 

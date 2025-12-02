@@ -19,7 +19,7 @@ AREMA Ontology Repository
 ├── external/                    # External resources (placeholder)
 ├── src/
 │   ├── ontology/                # The ontology files
-│   │   ├── arema-ontology.ttl
+│   │   ├── AREMA-ontology.ttl
 │   │   └── README.md
 │   └── quality-checks/          # SHACL shapes for checking ontology validity and skohub compatibility
 │       ├── shacl-shacl.ttl

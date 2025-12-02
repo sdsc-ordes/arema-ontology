@@ -7,7 +7,7 @@
 
 # # Load the input ontology
 # g = Graph()
-# g.parse("src/ontology/arema-ontology.ttl", format="turtle")
+# g.parse("src/ontology/AREMA-ontology.ttl", format="turtle")
 
 # to_replace = []
 # for s, p, o in g.triples((None, SH.node, None)):

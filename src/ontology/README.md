@@ -1,4 +1,4 @@
-# 🧬 Editing the AREMA Ontology (`arema-ontology.ttl`)
+# 🧬 Editing the AREMA Ontology (`AREMA-ontology.ttl`)
 
 This document provides guidance for contributors who want to modify the ontology file directly.
 
@@ -9,7 +9,7 @@ This document provides guidance for contributors who want to modify the ontology
 All ontology definitions are located in:
 
 ```
-src/ontology/arema-ontology.ttl
+src/ontology/AREMA-ontology.ttl
 ```
 
 It contains:

@@ -3,7 +3,7 @@ name: Generate Public Ontology Docs
 on:
   push:
     paths:
-      - 'src/ontology/arema-ontology.ttl'
+      - 'src/ontology/AREMA-ontology.ttl'
       - '.github/workflows/docs.yml'
 
 jobs:
