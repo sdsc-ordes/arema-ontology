@@ -53,17 +53,17 @@
   ],
   "inScheme": [
     {
-      "id": "https://ontology.atlas-regenmat.ch/MyThesaurus"
+      "id": "https://ontology.atlas-regenmat.ch/AREMA"
     }
   ],
   "inSchemeAll": [
     {
-      "id": "https://ontology.atlas-regenmat.ch/MyThesaurus"
+      "id": "https://ontology.atlas-regenmat.ch/AREMA"
     }
   ],
   "topConceptOf": [
     {
-      "id": "https://ontology.atlas-regenmat.ch/MyThesaurus"
+      "id": "https://ontology.atlas-regenmat.ch/AREMA"
     }
   ],
   "@context": {
