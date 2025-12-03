@@ -6,14 +6,6 @@ from dotenv import load_dotenv
 import requests
 from pathlib import Path
 
-# Base folder of the script
-BASE_DIR = Path(__file__).parent.parent.parent  # adjust as needed from converter/csv2ont.py
-
-# Path to the TTL file
-TTL_PATH = BASE_DIR / "src" / "ontology" / "AREMA-ontology.ttl"
-TTL_PATH.parent.mkdir(parents=True, exist_ok=True)  # make sure the directory exists
-
-
 # === BASE DIRS ===
 SCRIPT_DIR = Path(__file__).parent      # tools/python/converter
 ROOT_DIR = SCRIPT_DIR.parent.parent.parent  # ../../.. from converter -> root of repo
@@ -25,10 +17,12 @@ TTL_PATH = ONTOLOGY_DIR / "AREMA-ontology.ttl"
 # === CONFIG ===
 BASE_URI = "https://ontology.atlas-regenmat.ch/"
 ME = Namespace(BASE_URI)
+QUDT = Namespace("http://qudt.org/schema/qudt/")
 
+# Google Sheets IDs, you can find them in the URL of the sheet
 sheet_id = "1RL6Y120_H9-yD8x52eZO44S2iLQpLoZHitcExHsPfPs"
-objects_gid = "1120751986"     # your objects sheet gid
-properties_gid = "373147482"   # your properties sheet gid
+objects_gid = "1120751986" 
+properties_gid = "373147482" 
 
 # === HELPERS ===
 def to_camel_case(s: str) -> str:
@@ -71,7 +65,7 @@ def add_concept_from_row(g, row, is_property=False):
     if is_property:
         for extra_field in ['symbol', 'unit']:
             if pd.notna(row.get(extra_field)):
-                g.add((concept_uri, ME[extra_field], Literal(row[extra_field])))
+                g.add((concept_uri, QUDT[extra_field], Literal(row[extra_field])))
 
 # === MAIN ===
 # Load environment variables
@@ -105,6 +99,7 @@ ontology_metadata = """
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix vann: <http://purl.org/vocab/vann/> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
 
 @base <https://ontology.atlas-regenmat.ch/> .
 
