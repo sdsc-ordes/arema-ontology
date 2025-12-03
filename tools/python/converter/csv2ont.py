@@ -142,7 +142,6 @@ g.serialize(TTL_PATH, format="turtle")
 upload_url = f"{FUSEKI_BASE}?graph={GRAPH_URI}"
 with open(TTL_PATH, "rb") as f:
     ttl_data = f.read()
-
 resp = requests.put(
     upload_url,
     data=ttl_data,

@@ -3,18 +3,6 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix vann: <http://purl.org/vocab/vann/> .
 
-me:AREMA a skos:ConceptScheme ;
-    dct:description "AREMA Ontology for building materials, buildings, natural resources, professionals, and technical constructions."@en ;
-    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
-    vann:preferredNamespacePrefix "me" ;
-    vann:preferredNamespaceUri "https://ontology.atlas-regenmat.ch/" ;
-    skos:hasTopConcept me:Object,
-        me:Property ;
-    skos:prefLabel "AREMA Ontologie"@de,
-        "AREMA Ontology"@en,
-        "Ontologie AREMA"@fr,
-        "Ontologia AREMA"@it .
-
 me:AbsorptionCoefficientAt500hz a skos:Concept ;
     skos:broader me:Acoustic ;
     skos:inScheme me:AREMA ;
@@ -584,19 +572,6 @@ me:Finishings a skos:Concept ;
         "Finishings"@en,
         "Finitions"@fr .
 
-me:Object a skos:Concept ;
-    skos:definition "A general term for any physical entity that can be identified and described."@en ;
-    skos:inScheme me:AREMA ;
-    skos:prefLabel "Objekt"@de,
-        "Object"@en,
-        "Objet"@fr .
-
-me:Property a skos:Concept ;
-    skos:inScheme me:AREMA ;
-    skos:prefLabel "Eigenschaft"@de,
-        "Property"@en,
-        "Propriété"@fr .
-
 me:Envelope a skos:Concept ;
     skos:broader me:Construction ;
     skos:definition "The outer shell of a building, including walls, roofs, and windows, that separates the interior from the exterior environment."@en ;
@@ -612,6 +587,19 @@ me:NaturalResource a skos:Concept ;
     skos:prefLabel "Ressourcen"@de,
         "Resource"@en,
         "Ressources"@fr .
+
+me:Object a skos:Concept ;
+    skos:definition "A general term for any physical entity that can be identified and described."@en ;
+    skos:inScheme me:AREMA ;
+    skos:prefLabel "Objekt"@de,
+        "Object"@en,
+        "Objet"@fr .
+
+me:Property a skos:Concept ;
+    skos:inScheme me:AREMA ;
+    skos:prefLabel "Eigenschaft"@de,
+        "Property"@en,
+        "Propriété"@fr .
 
 me:Hygrothermal a skos:Concept ;
     skos:broader me:Property ;
@@ -635,3 +623,16 @@ me:Structure a skos:Concept ;
     skos:prefLabel "Struktur"@de,
         "Structure"@en,
         "Structure"@fr .
+
+me:AREMA a skos:ConceptScheme ;
+    dct:description "AREMA Ontology for building materials, buildings, natural resources, professionals, and technical constructions."@en ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
+    vann:preferredNamespacePrefix "me" ;
+    vann:preferredNamespaceUri "https://ontology.atlas-regenmat.ch/" ;
+    skos:hasTopConcept me:Object,
+        me:Property ;
+    skos:prefLabel "AREMA Ontologie"@de,
+        "AREMA Ontology"@en,
+        "Ontologie AREMA"@fr,
+        "Ontologia AREMA"@it .
+

@@ -1,0 +1,11 @@
+services:
+  fuseki:
+    image: stain/jena-fuseki:5.1.0
+    ports:
+      - "3030:3030"
+    volumes:
+      - ./data:/fuseki/databases
+      - ./config.ttl:/fuseki/config.ttl
+    environment:
+      - ADMIN_PASSWORD=Ve2mEu0Ll32W0jn
+    command: ["/jena-fuseki/fuseki-server", "--config=/fuseki/config.ttl"]
