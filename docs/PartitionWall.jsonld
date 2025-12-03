@@ -2,8 +2,8 @@
   "id": "https://ontology.atlas-regenmat.ch/PartitionWall",
   "type": "Concept",
   "prefLabel": {
-    "en": "Partition Wall",
-    "de": "Trennwand"
+    "de": "Trennwand",
+    "en": "Partition Wall"
   },
   "definition": {
     "en": "Partition Wall, non load-bearing"
@@ -11,8 +11,8 @@
   "broader": {
     "id": "https://ontology.atlas-regenmat.ch/Finishings",
     "prefLabel": {
-      "en": "Finishings",
       "de": "Oberflächen",
+      "en": "Finishings",
       "fr": "Finitions"
     }
   },

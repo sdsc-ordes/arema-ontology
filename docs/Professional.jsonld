@@ -2,8 +2,8 @@
   "id": "https://ontology.atlas-regenmat.ch/Professional",
   "type": "Concept",
   "prefLabel": {
-    "en": "Professional",
     "de": "Fachleute",
+    "en": "Professional",
     "fr": "Professionnels"
   },
   "definition": {
@@ -13,72 +13,72 @@
     {
       "id": "https://ontology.atlas-regenmat.ch/Architect",
       "prefLabel": {
-        "en": "Architect",
         "de": "Architekt:in",
+        "en": "Architect",
         "fr": "Architecte"
       }
     },
     {
       "id": "https://ontology.atlas-regenmat.ch/AssociationProfessional",
       "prefLabel": {
-        "en": "Association Professional",
         "de": "Verband/Verein",
+        "en": "Association Professional",
         "fr": "Association"
       }
     },
     {
       "id": "https://ontology.atlas-regenmat.ch/BuildingPhysicsProfessional",
       "prefLabel": {
-        "en": "Building Physics Professional",
         "de": "Bauphysiker:in",
+        "en": "Building Physics Professional",
         "fr": "Physique du Bâtiment"
       }
     },
     {
       "id": "https://ontology.atlas-regenmat.ch/CivilEngineer",
       "prefLabel": {
-        "en": "Civil engineer",
         "de": "Bauingenieur:in",
+        "en": "Civil engineer",
         "fr": "Ingénieur civil"
       }
     },
     {
       "id": "https://ontology.atlas-regenmat.ch/ConstructionFirmProfessional",
       "prefLabel": {
-        "en": "Construction Firm",
         "de": "Bauunternehmen",
+        "en": "Construction Firm",
         "fr": "Entreprise de Construction"
       }
     },
     {
       "id": "https://ontology.atlas-regenmat.ch/Craftsman",
       "prefLabel": {
-        "en": "Craftsman",
         "de": "Handwerker:in",
+        "en": "Craftsman",
         "fr": "Artisan/ne"
       }
     },
     {
       "id": "https://ontology.atlas-regenmat.ch/MaterialProducer",
       "prefLabel": {
-        "en": "Material Producer",
         "de": "Materialhersteller:in",
+        "en": "Material Producer",
         "fr": "Producteur de Matériaux"
       }
     },
     {
       "id": "https://ontology.atlas-regenmat.ch/Researcher",
       "prefLabel": {
-        "en": "Researcher",
         "de": "Forscher:in",
+        "en": "Researcher",
         "fr": "Chercheur/se"
       }
     },
     {
       "id": "https://ontology.atlas-regenmat.ch/Reseller",
       "prefLabel": {
-        "en": "Reseller",
         "de": "Händler:in",
+        "en": "Reseller",
         "fr": "Revendeur/se"
       }
     }
@@ -86,8 +86,8 @@
   "broader": {
     "id": "https://ontology.atlas-regenmat.ch/Object",
     "prefLabel": {
-      "en": "Object",
       "de": "Objekt",
+      "en": "Object",
       "fr": "Objet"
     }
   },

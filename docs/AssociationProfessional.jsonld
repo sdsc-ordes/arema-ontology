@@ -2,8 +2,8 @@
   "id": "https://ontology.atlas-regenmat.ch/AssociationProfessional",
   "type": "Concept",
   "prefLabel": {
-    "en": "Association Professional",
     "de": "Verband/Verein",
+    "en": "Association Professional",
     "fr": "Association"
   },
   "definition": {
@@ -12,8 +12,8 @@
   "broader": {
     "id": "https://ontology.atlas-regenmat.ch/Professional",
     "prefLabel": {
-      "en": "Professional",
       "de": "Fachleute",
+      "en": "Professional",
       "fr": "Professionnels"
     }
   },

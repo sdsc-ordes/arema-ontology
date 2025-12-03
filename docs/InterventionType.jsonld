@@ -2,15 +2,15 @@
   "id": "https://ontology.atlas-regenmat.ch/InterventionType",
   "type": "Concept",
   "prefLabel": {
-    "en": "Intervention Type",
     "de": "Art der Massnahme",
+    "en": "Intervention Type",
     "fr": "Type d'Intervention"
   },
   "broader": {
     "id": "https://ontology.atlas-regenmat.ch/OtherProperty",
     "prefLabel": {
-      "en": "Other Property",
       "de": "Andere",
+      "en": "Other Property",
       "fr": "Autre"
     }
   },

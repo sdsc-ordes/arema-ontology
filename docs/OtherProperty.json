@@ -2,16 +2,16 @@
   "id": "https://ontology.atlas-regenmat.ch/OtherProperty",
   "type": "Concept",
   "prefLabel": {
-    "en": "Other Property",
     "de": "Andere",
+    "en": "Other Property",
     "fr": "Autre"
   },
   "narrower": [
     {
       "id": "https://ontology.atlas-regenmat.ch/InterventionType",
       "prefLabel": {
-        "en": "Intervention Type",
         "de": "Art der Massnahme",
+        "en": "Intervention Type",
         "fr": "Type d'Intervention"
       }
     }
@@ -19,8 +19,8 @@
   "broader": {
     "id": "https://ontology.atlas-regenmat.ch/Property",
     "prefLabel": {
-      "en": "Property",
       "de": "Eigenschaft",
+      "en": "Property",
       "fr": "Propriété"
     }
   },

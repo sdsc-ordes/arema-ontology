@@ -2,8 +2,8 @@
   "id": "https://ontology.atlas-regenmat.ch/Architect",
   "type": "Concept",
   "prefLabel": {
-    "en": "Architect",
     "de": "Architekt:in",
+    "en": "Architect",
     "fr": "Architecte"
   },
   "definition": {
@@ -12,8 +12,8 @@
   "broader": {
     "id": "https://ontology.atlas-regenmat.ch/Professional",
     "prefLabel": {
-      "en": "Professional",
       "de": "Fachleute",
+      "en": "Professional",
       "fr": "Professionnels"
     }
   },

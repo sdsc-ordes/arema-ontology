@@ -10,8 +10,8 @@
   "broader": {
     "id": "https://ontology.atlas-regenmat.ch/Opening",
     "prefLabel": {
-      "en": "Opening",
-      "de": "Offnung"
+      "de": "Offnung",
+      "en": "Opening"
     }
   },
   "inScheme": [

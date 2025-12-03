@@ -2,8 +2,8 @@
   "id": "https://ontology.atlas-regenmat.ch/ApartmentBuilding",
   "type": "Concept",
   "prefLabel": {
-    "en": "Multi-Storey Housing",
     "de": "Mehrfamilienhaus",
+    "en": "Multi-Storey Housing",
     "fr": "Immeuble d'Habitation"
   },
   "definition": {
@@ -12,8 +12,8 @@
   "broader": {
     "id": "https://ontology.atlas-regenmat.ch/Building",
     "prefLabel": {
-      "en": "Building",
       "de": "Gebäude",
+      "en": "Building",
       "fr": "Bâtiments"
     }
   },

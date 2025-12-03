@@ -2,8 +2,8 @@
   "id": "https://ontology.atlas-regenmat.ch/ExteriorWallFinishingBasement",
   "type": "Concept",
   "prefLabel": {
-    "en": "Ext. Wall Finishing Under Ground",
-    "de": "Äussere Beschichtung Unter Terrain"
+    "de": "Äussere Beschichtung Unter Terrain",
+    "en": "Ext. Wall Finishing Under Ground"
   },
   "definition": {
     "en": "External wall finishing under ground"
@@ -11,8 +11,8 @@
   "broader": {
     "id": "https://ontology.atlas-regenmat.ch/Envelope",
     "prefLabel": {
-      "en": "Envelope",
       "de": "Hülle",
+      "en": "Envelope",
       "fr": "Enveloppe"
     }
   },

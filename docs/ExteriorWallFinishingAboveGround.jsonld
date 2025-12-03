@@ -2,8 +2,8 @@
   "id": "https://ontology.atlas-regenmat.ch/ExteriorWallFinishingAboveGround",
   "type": "Concept",
   "prefLabel": {
-    "en": "Ext. Wall Finishing Above Ground",
-    "de": "Fassadenbekleidung"
+    "de": "Fassadenbekleidung",
+    "en": "Ext. Wall Finishing Above Ground"
   },
   "definition": {
     "en": "Facade finishing above ground"
@@ -11,8 +11,8 @@
   "broader": {
     "id": "https://ontology.atlas-regenmat.ch/Envelope",
     "prefLabel": {
-      "en": "Envelope",
       "de": "Hülle",
+      "en": "Envelope",
       "fr": "Enveloppe"
     }
   },

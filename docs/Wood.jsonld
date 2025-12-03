@@ -2,8 +2,8 @@
   "id": "https://ontology.atlas-regenmat.ch/Wood",
   "type": "Concept",
   "prefLabel": {
-    "en": "Wood",
     "de": "Holz",
+    "en": "Wood",
     "fr": "Bois"
   },
   "definition": {
@@ -12,8 +12,8 @@
   "broader": {
     "id": "https://ontology.atlas-regenmat.ch/NaturalResource",
     "prefLabel": {
-      "en": "Resource",
       "de": "Ressourcen",
+      "en": "Resource",
       "fr": "Ressources"
     }
   },

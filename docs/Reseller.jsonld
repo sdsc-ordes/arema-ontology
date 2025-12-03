@@ -2,8 +2,8 @@
   "id": "https://ontology.atlas-regenmat.ch/Reseller",
   "type": "Concept",
   "prefLabel": {
-    "en": "Reseller",
     "de": "Händler:in",
+    "en": "Reseller",
     "fr": "Revendeur/se"
   },
   "definition": {
@@ -12,8 +12,8 @@
   "broader": {
     "id": "https://ontology.atlas-regenmat.ch/Professional",
     "prefLabel": {
-      "en": "Professional",
       "de": "Fachleute",
+      "en": "Professional",
       "fr": "Professionnels"
     }
   },

@@ -2,8 +2,8 @@
   "id": "https://ontology.atlas-regenmat.ch/PublicBuilding",
   "type": "Concept",
   "prefLabel": {
-    "en": "Public Building",
     "de": "Öffentliches Gebäude",
+    "en": "Public Building",
     "fr": "Bâtiment Public"
   },
   "definition": {
@@ -12,8 +12,8 @@
   "broader": {
     "id": "https://ontology.atlas-regenmat.ch/Building",
     "prefLabel": {
-      "en": "Building",
       "de": "Gebäude",
+      "en": "Building",
       "fr": "Bâtiments"
     }
   },

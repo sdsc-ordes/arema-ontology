@@ -2,8 +2,8 @@
   "id": "https://ontology.atlas-regenmat.ch/Finishings",
   "type": "Concept",
   "prefLabel": {
-    "en": "Finishings",
     "de": "Oberflächen",
+    "en": "Finishings",
     "fr": "Finitions"
   },
   "definition": {
@@ -13,44 +13,44 @@
     {
       "id": "https://ontology.atlas-regenmat.ch/CeilingFinishing",
       "prefLabel": {
-        "en": "Ceiling Finishing",
-        "de": "Deckenbekleidung"
+        "de": "Deckenbekleidung",
+        "en": "Ceiling Finishing"
       }
     },
     {
       "id": "https://ontology.atlas-regenmat.ch/FloorCovering",
       "prefLabel": {
-        "en": "Floor Covering",
-        "de": "Bodenbelag"
+        "de": "Bodenbelag",
+        "en": "Floor Covering"
       }
     },
     {
       "id": "https://ontology.atlas-regenmat.ch/InteriorDoor",
       "prefLabel": {
-        "en": "Interior Door",
-        "de": "Innentür"
+        "de": "Innentür",
+        "en": "Interior Door"
       }
     },
     {
       "id": "https://ontology.atlas-regenmat.ch/InteriorWallFinishing",
       "prefLabel": {
-        "en": "Interior Wall Finishing",
-        "de": "Wandbekleidung"
+        "de": "Wandbekleidung",
+        "en": "Interior Wall Finishing"
       }
     },
     {
       "id": "https://ontology.atlas-regenmat.ch/PartitionWall",
       "prefLabel": {
-        "en": "Partition Wall",
-        "de": "Trennwand"
+        "de": "Trennwand",
+        "en": "Partition Wall"
       }
     }
   ],
   "broader": {
     "id": "https://ontology.atlas-regenmat.ch/Construction",
     "prefLabel": {
-      "en": "Construction",
       "de": "Bauwerk",
+      "en": "Construction",
       "fr": "Construction"
     }
   },

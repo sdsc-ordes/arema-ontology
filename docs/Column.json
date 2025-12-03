@@ -2,8 +2,8 @@
   "id": "https://ontology.atlas-regenmat.ch/Column",
   "type": "Concept",
   "prefLabel": {
-    "en": "Column",
-    "de": "Stütze"
+    "de": "Stütze",
+    "en": "Column"
   },
   "definition": {
     "en": "Load-bearing elements usually indoors"
@@ -11,8 +11,8 @@
   "broader": {
     "id": "https://ontology.atlas-regenmat.ch/Structure",
     "prefLabel": {
-      "en": "Structure",
       "de": "Struktur",
+      "en": "Structure",
       "fr": "Structure"
     }
   },

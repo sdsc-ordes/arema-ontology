@@ -2,15 +2,15 @@
   "id": "https://ontology.atlas-regenmat.ch/LiquidTransferCoefficientForAbsorption",
   "type": "Concept",
   "prefLabel": {
-    "en": "Liquid transfer coefficient for absorption",
     "de": "Wasseraufnahmekoeffizient",
+    "en": "Liquid transfer coefficient for absorption",
     "fr": "Coefficient d'absorption d'eau"
   },
   "broader": {
     "id": "https://ontology.atlas-regenmat.ch/Hygrothermal",
     "prefLabel": {
-      "en": "Hygrothermal",
       "de": "Hygrothermisch",
+      "en": "Hygrothermal",
       "fr": "Hygrothermique"
     }
   },

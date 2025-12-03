@@ -2,8 +2,8 @@
   "id": "https://ontology.atlas-regenmat.ch/ExteriorWallUnderGround",
   "type": "Concept",
   "prefLabel": {
-    "en": "Exterior Wall Under Ground",
-    "de": "Aussenwand Unter Terrain"
+    "de": "Aussenwand Unter Terrain",
+    "en": "Exterior Wall Under Ground"
   },
   "definition": {
     "en": "Wall that separates the exterior from teh interior of the building under ground"
@@ -11,8 +11,8 @@
   "broader": {
     "id": "https://ontology.atlas-regenmat.ch/Structure",
     "prefLabel": {
-      "en": "Structure",
       "de": "Struktur",
+      "en": "Structure",
       "fr": "Structure"
     }
   },

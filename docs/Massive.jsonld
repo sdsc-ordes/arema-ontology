@@ -2,8 +2,8 @@
   "id": "https://ontology.atlas-regenmat.ch/Massive",
   "type": "Concept",
   "prefLabel": {
-    "en": "Massive",
     "de": "Massivbau",
+    "en": "Massive",
     "fr": "Massif"
   },
   "definition": {
@@ -12,8 +12,8 @@
   "broader": {
     "id": "https://ontology.atlas-regenmat.ch/BuildingMaterial",
     "prefLabel": {
-      "en": "Building Material",
       "de": "Baustoff",
+      "en": "Building Material",
       "fr": "Matériaux de Construction"
     }
   },

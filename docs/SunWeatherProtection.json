@@ -2,8 +2,8 @@
   "id": "https://ontology.atlas-regenmat.ch/SunWeatherProtection",
   "type": "Concept",
   "prefLabel": {
-    "en": "Sun & Weather Protection",
-    "de": "Sonnen- & Wetterschutz"
+    "de": "Sonnen- & Wetterschutz",
+    "en": "Sun & Weather Protection"
   },
   "definition": {
     "en": "Sun & Weather Protection"
@@ -11,8 +11,8 @@
   "broader": {
     "id": "https://ontology.atlas-regenmat.ch/Envelope",
     "prefLabel": {
-      "en": "Envelope",
       "de": "Hülle",
+      "en": "Envelope",
       "fr": "Enveloppe"
     }
   },

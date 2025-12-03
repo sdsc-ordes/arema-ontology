@@ -2,8 +2,8 @@
   "id": "https://ontology.atlas-regenmat.ch/OfficeBuilding",
   "type": "Concept",
   "prefLabel": {
-    "en": "Office Building",
     "de": "Bürogebäude",
+    "en": "Office Building",
     "fr": "Immeuble de Bureaux"
   },
   "definition": {
@@ -12,8 +12,8 @@
   "broader": {
     "id": "https://ontology.atlas-regenmat.ch/Building",
     "prefLabel": {
-      "en": "Building",
       "de": "Gebäude",
+      "en": "Building",
       "fr": "Bâtiments"
     }
   },

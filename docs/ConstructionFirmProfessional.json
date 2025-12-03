@@ -2,8 +2,8 @@
   "id": "https://ontology.atlas-regenmat.ch/ConstructionFirmProfessional",
   "type": "Concept",
   "prefLabel": {
-    "en": "Construction Firm",
     "de": "Bauunternehmen",
+    "en": "Construction Firm",
     "fr": "Entreprise de Construction"
   },
   "definition": {
@@ -12,8 +12,8 @@
   "broader": {
     "id": "https://ontology.atlas-regenmat.ch/Professional",
     "prefLabel": {
-      "en": "Professional",
       "de": "Fachleute",
+      "en": "Professional",
       "fr": "Professionnels"
     }
   },

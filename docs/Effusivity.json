@@ -2,15 +2,15 @@
   "id": "https://ontology.atlas-regenmat.ch/Effusivity",
   "type": "Concept",
   "prefLabel": {
-    "en": "Effusivity",
     "de": "Effusivität",
+    "en": "Effusivity",
     "fr": "Effusivité"
   },
   "broader": {
     "id": "https://ontology.atlas-regenmat.ch/Hygrothermal",
     "prefLabel": {
-      "en": "Hygrothermal",
       "de": "Hygrothermisch",
+      "en": "Hygrothermal",
       "fr": "Hygrothermique"
     }
   },

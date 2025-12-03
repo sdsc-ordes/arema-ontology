@@ -2,8 +2,8 @@
   "id": "https://ontology.atlas-regenmat.ch/Straw",
   "type": "Concept",
   "prefLabel": {
-    "en": "Straw",
     "de": "Stroh",
+    "en": "Straw",
     "fr": "Paille"
   },
   "definition": {
@@ -12,8 +12,8 @@
   "broader": {
     "id": "https://ontology.atlas-regenmat.ch/NaturalResource",
     "prefLabel": {
-      "en": "Resource",
       "de": "Ressourcen",
+      "en": "Resource",
       "fr": "Ressources"
     }
   },

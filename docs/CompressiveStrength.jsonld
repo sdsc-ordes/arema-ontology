@@ -2,15 +2,15 @@
   "id": "https://ontology.atlas-regenmat.ch/CompressiveStrength",
   "type": "Concept",
   "prefLabel": {
-    "en": "Compressive strength",
     "de": "Druckfestigkeit",
+    "en": "Compressive strength",
     "fr": "Résistance à la compression"
   },
   "broader": {
     "id": "https://ontology.atlas-regenmat.ch/Mechanical",
     "prefLabel": {
-      "en": "Mechanical",
       "de": "Mechanisch",
+      "en": "Mechanical",
       "fr": "Mecanique"
     }
   },

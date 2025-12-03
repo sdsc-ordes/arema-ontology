@@ -2,8 +2,8 @@
   "id": "https://ontology.atlas-regenmat.ch/ExteriorThermalInsulation",
   "type": "Concept",
   "prefLabel": {
-    "en": "Ext. Thermal Insulation",
-    "de": "Aussenwärmedämmung"
+    "de": "Aussenwärmedämmung",
+    "en": "Ext. Thermal Insulation"
   },
   "definition": {
     "en": "External Thermal Insulation"
@@ -11,8 +11,8 @@
   "broader": {
     "id": "https://ontology.atlas-regenmat.ch/Envelope",
     "prefLabel": {
-      "en": "Envelope",
       "de": "Hülle",
+      "en": "Envelope",
       "fr": "Enveloppe"
     }
   },

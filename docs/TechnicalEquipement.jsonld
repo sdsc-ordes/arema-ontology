@@ -2,8 +2,8 @@
   "id": "https://ontology.atlas-regenmat.ch/TechnicalEquipement",
   "type": "Concept",
   "prefLabel": {
-    "en": "Technical Equipement",
-    "de": "Technik"
+    "de": "Technik",
+    "en": "Technical Equipement"
   },
   "definition": {
     "en": "Technical Equipement as Heating, Ventilation, Water or electricity supply"
@@ -11,8 +11,8 @@
   "broader": {
     "id": "https://ontology.atlas-regenmat.ch/Other",
     "prefLabel": {
-      "en": "Other",
       "de": "Andere",
+      "en": "Other",
       "fr": "Autre"
     }
   },

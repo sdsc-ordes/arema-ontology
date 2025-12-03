@@ -2,8 +2,8 @@
   "id": "https://ontology.atlas-regenmat.ch/Stair",
   "type": "Concept",
   "prefLabel": {
-    "en": "Stair",
-    "de": "Treppe"
+    "de": "Treppe",
+    "en": "Stair"
   },
   "definition": {
     "en": "Stair"
@@ -11,8 +11,8 @@
   "broader": {
     "id": "https://ontology.atlas-regenmat.ch/Structure",
     "prefLabel": {
-      "en": "Structure",
       "de": "Struktur",
+      "en": "Structure",
       "fr": "Structure"
     }
   },

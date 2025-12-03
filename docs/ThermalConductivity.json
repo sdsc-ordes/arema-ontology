@@ -2,15 +2,15 @@
   "id": "https://ontology.atlas-regenmat.ch/ThermalConductivity",
   "type": "Concept",
   "prefLabel": {
-    "en": "thermal conductivity",
     "de": "Wärmeleitfähigkeit",
+    "en": "thermal conductivity",
     "fr": "conductivité thermique"
   },
   "broader": {
     "id": "https://ontology.atlas-regenmat.ch/Hygrothermal",
     "prefLabel": {
-      "en": "Hygrothermal",
       "de": "Hygrothermisch",
+      "en": "Hygrothermal",
       "fr": "Hygrothermique"
     }
   },

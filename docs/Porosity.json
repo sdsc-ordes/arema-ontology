@@ -2,15 +2,15 @@
   "id": "https://ontology.atlas-regenmat.ch/Porosity",
   "type": "Concept",
   "prefLabel": {
-    "en": "Porosity",
     "de": "Porosität",
+    "en": "Porosity",
     "fr": "Porosité"
   },
   "broader": {
     "id": "https://ontology.atlas-regenmat.ch/Hygrothermal",
     "prefLabel": {
-      "en": "Hygrothermal",
       "de": "Hygrothermisch",
+      "en": "Hygrothermal",
       "fr": "Hygrothermique"
     }
   },

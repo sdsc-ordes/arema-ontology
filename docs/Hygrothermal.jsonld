@@ -2,31 +2,31 @@
   "id": "https://ontology.atlas-regenmat.ch/Hygrothermal",
   "type": "Concept",
   "prefLabel": {
-    "en": "Hygrothermal",
     "de": "Hygrothermisch",
+    "en": "Hygrothermal",
     "fr": "Hygrothermique"
   },
   "narrower": [
     {
       "id": "https://ontology.atlas-regenmat.ch/Effusivity",
       "prefLabel": {
-        "en": "Effusivity",
         "de": "Effusivität",
+        "en": "Effusivity",
         "fr": "Effusivité"
       }
     },
     {
       "id": "https://ontology.atlas-regenmat.ch/FreeSaturation",
       "prefLabel": {
-        "en": "Free saturation",
-        "de": "Freie Wassersättigung"
+        "de": "Freie Wassersättigung",
+        "en": "Free saturation"
       }
     },
     {
       "id": "https://ontology.atlas-regenmat.ch/LiquidTransferCoefficientForAbsorption",
       "prefLabel": {
-        "en": "Liquid transfer coefficient for absorption",
         "de": "Wasseraufnahmekoeffizient",
+        "en": "Liquid transfer coefficient for absorption",
         "fr": "Coefficient d'absorption d'eau"
       }
     },
@@ -39,39 +39,39 @@
     {
       "id": "https://ontology.atlas-regenmat.ch/Porosity",
       "prefLabel": {
-        "en": "Porosity",
         "de": "Porosität",
+        "en": "Porosity",
         "fr": "Porosité"
       }
     },
     {
       "id": "https://ontology.atlas-regenmat.ch/ThermalCapacity",
       "prefLabel": {
-        "en": "thermal capacity",
         "de": "Wärmekapazität",
+        "en": "thermal capacity",
         "fr": "Capacité thermique"
       }
     },
     {
       "id": "https://ontology.atlas-regenmat.ch/ThermalConductivity",
       "prefLabel": {
-        "en": "thermal conductivity",
         "de": "Wärmeleitfähigkeit",
+        "en": "thermal conductivity",
         "fr": "conductivité thermique"
       }
     },
     {
       "id": "https://ontology.atlas-regenmat.ch/WaterContentAt80",
       "prefLabel": {
-        "en": "Water content at 80%",
-        "de": "Wassergehalt bei 80%"
+        "de": "Wassergehalt bei 80%",
+        "en": "Water content at 80%"
       }
     },
     {
       "id": "https://ontology.atlas-regenmat.ch/WaterVaporDiffusionResistance",
       "prefLabel": {
-        "en": "Water vapor diffusion resistance",
         "de": "Wasserdampfdiffusionswiderstand",
+        "en": "Water vapor diffusion resistance",
         "fr": "Résistance à la diffusion de vapeur d'eau"
       }
     }
@@ -79,8 +79,8 @@
   "broader": {
     "id": "https://ontology.atlas-regenmat.ch/Property",
     "prefLabel": {
-      "en": "Property",
       "de": "Eigenschaft",
+      "en": "Property",
       "fr": "Propriété"
     }
   },

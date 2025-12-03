@@ -2,8 +2,8 @@
   "id": "https://ontology.atlas-regenmat.ch/InteriorWall",
   "type": "Concept",
   "prefLabel": {
-    "en": "Interior Wall",
-    "de": "Innenwand"
+    "de": "Innenwand",
+    "en": "Interior Wall"
   },
   "definition": {
     "en": "Structural wall inside the building"
@@ -11,8 +11,8 @@
   "broader": {
     "id": "https://ontology.atlas-regenmat.ch/Structure",
     "prefLabel": {
-      "en": "Structure",
       "de": "Struktur",
+      "en": "Structure",
       "fr": "Structure"
     }
   },

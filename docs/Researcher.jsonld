@@ -2,8 +2,8 @@
   "id": "https://ontology.atlas-regenmat.ch/Researcher",
   "type": "Concept",
   "prefLabel": {
-    "en": "Researcher",
     "de": "Forscher:in",
+    "en": "Researcher",
     "fr": "Chercheur/se"
   },
   "definition": {
@@ -12,8 +12,8 @@
   "broader": {
     "id": "https://ontology.atlas-regenmat.ch/Professional",
     "prefLabel": {
-      "en": "Professional",
       "de": "Fachleute",
+      "en": "Professional",
       "fr": "Professionnels"
     }
   },

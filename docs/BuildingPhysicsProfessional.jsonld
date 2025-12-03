@@ -2,8 +2,8 @@
   "id": "https://ontology.atlas-regenmat.ch/BuildingPhysicsProfessional",
   "type": "Concept",
   "prefLabel": {
-    "en": "Building Physics Professional",
     "de": "Bauphysiker:in",
+    "en": "Building Physics Professional",
     "fr": "Physique du Bâtiment"
   },
   "definition": {
@@ -12,8 +12,8 @@
   "broader": {
     "id": "https://ontology.atlas-regenmat.ch/Professional",
     "prefLabel": {
-      "en": "Professional",
       "de": "Fachleute",
+      "en": "Professional",
       "fr": "Professionnels"
     }
   },

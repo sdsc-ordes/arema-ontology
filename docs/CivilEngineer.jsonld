@@ -2,8 +2,8 @@
   "id": "https://ontology.atlas-regenmat.ch/CivilEngineer",
   "type": "Concept",
   "prefLabel": {
-    "en": "Civil engineer",
     "de": "Bauingenieur:in",
+    "en": "Civil engineer",
     "fr": "Ingénieur civil"
   },
   "definition": {
@@ -12,8 +12,8 @@
   "broader": {
     "id": "https://ontology.atlas-regenmat.ch/Professional",
     "prefLabel": {
-      "en": "Professional",
       "de": "Fachleute",
+      "en": "Professional",
       "fr": "Professionnels"
     }
   },

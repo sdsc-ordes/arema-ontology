@@ -2,8 +2,8 @@
   "id": "https://ontology.atlas-regenmat.ch/Foundation",
   "type": "Concept",
   "prefLabel": {
-    "en": "Foundation",
-    "de": "Fundament"
+    "de": "Fundament",
+    "en": "Foundation"
   },
   "definition": {
     "en": "Foundation of a structure, either underground or above, to transmit the forces applied by the structure to the ground, underground or bedrock"
@@ -11,8 +11,8 @@
   "broader": {
     "id": "https://ontology.atlas-regenmat.ch/Structure",
     "prefLabel": {
-      "en": "Structure",
       "de": "Struktur",
+      "en": "Structure",
       "fr": "Structure"
     }
   },

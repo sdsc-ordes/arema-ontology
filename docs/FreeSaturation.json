@@ -2,14 +2,14 @@
   "id": "https://ontology.atlas-regenmat.ch/FreeSaturation",
   "type": "Concept",
   "prefLabel": {
-    "en": "Free saturation",
-    "de": "Freie Wassersättigung"
+    "de": "Freie Wassersättigung",
+    "en": "Free saturation"
   },
   "broader": {
     "id": "https://ontology.atlas-regenmat.ch/Hygrothermal",
     "prefLabel": {
-      "en": "Hygrothermal",
       "de": "Hygrothermisch",
+      "en": "Hygrothermal",
       "fr": "Hygrothermique"
     }
   },

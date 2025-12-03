@@ -2,8 +2,8 @@
   "id": "https://ontology.atlas-regenmat.ch/FloorCovering",
   "type": "Concept",
   "prefLabel": {
-    "en": "Floor Covering",
-    "de": "Bodenbelag"
+    "de": "Bodenbelag",
+    "en": "Floor Covering"
   },
   "definition": {
     "en": "Floor Covering"
@@ -11,8 +11,8 @@
   "broader": {
     "id": "https://ontology.atlas-regenmat.ch/Finishings",
     "prefLabel": {
-      "en": "Finishings",
       "de": "Oberflächen",
+      "en": "Finishings",
       "fr": "Finitions"
     }
   },

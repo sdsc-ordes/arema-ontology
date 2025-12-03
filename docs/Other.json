@@ -2,8 +2,8 @@
   "id": "https://ontology.atlas-regenmat.ch/Other",
   "type": "Concept",
   "prefLabel": {
-    "en": "Other",
     "de": "Andere",
+    "en": "Other",
     "fr": "Autre"
   },
   "definition": {
@@ -13,16 +13,16 @@
     {
       "id": "https://ontology.atlas-regenmat.ch/TechnicalEquipement",
       "prefLabel": {
-        "en": "Technical Equipement",
-        "de": "Technik"
+        "de": "Technik",
+        "en": "Technical Equipement"
       }
     }
   ],
   "broader": {
     "id": "https://ontology.atlas-regenmat.ch/Construction",
     "prefLabel": {
-      "en": "Construction",
       "de": "Bauwerk",
+      "en": "Construction",
       "fr": "Construction"
     }
   },

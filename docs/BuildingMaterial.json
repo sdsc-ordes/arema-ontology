@@ -2,8 +2,8 @@
   "id": "https://ontology.atlas-regenmat.ch/BuildingMaterial",
   "type": "Concept",
   "prefLabel": {
-    "en": "Building Material",
     "de": "Baustoff",
+    "en": "Building Material",
     "fr": "Matériaux de Construction"
   },
   "definition": {
@@ -13,40 +13,40 @@
     {
       "id": "https://ontology.atlas-regenmat.ch/Brick",
       "prefLabel": {
-        "en": "Brick",
         "de": "Baustein",
+        "en": "Brick",
         "fr": "Briques"
       }
     },
     {
       "id": "https://ontology.atlas-regenmat.ch/Bulk",
       "prefLabel": {
-        "en": "Bulk",
         "de": "Schüttgut",
+        "en": "Bulk",
         "fr": "Vrac"
       }
     },
     {
       "id": "https://ontology.atlas-regenmat.ch/Massive",
       "prefLabel": {
-        "en": "Massive",
         "de": "Massivbau",
+        "en": "Massive",
         "fr": "Massif"
       }
     },
     {
       "id": "https://ontology.atlas-regenmat.ch/Mortar",
       "prefLabel": {
-        "en": "Mortar, Plaster",
         "de": "Mörtel, Putz",
+        "en": "Mortar, Plaster",
         "fr": "Mortier, Crépis"
       }
     },
     {
       "id": "https://ontology.atlas-regenmat.ch/Panel",
       "prefLabel": {
-        "en": "Panel",
         "de": "Platten",
+        "en": "Panel",
         "fr": "Plaques"
       }
     }
@@ -54,8 +54,8 @@
   "broader": {
     "id": "https://ontology.atlas-regenmat.ch/Object",
     "prefLabel": {
-      "en": "Object",
       "de": "Objekt",
+      "en": "Object",
       "fr": "Objet"
     }
   },

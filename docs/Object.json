@@ -2,8 +2,8 @@
   "id": "https://ontology.atlas-regenmat.ch/Object",
   "type": "Concept",
   "prefLabel": {
-    "en": "Object",
     "de": "Objekt",
+    "en": "Object",
     "fr": "Objet"
   },
   "definition": {
@@ -13,40 +13,40 @@
     {
       "id": "https://ontology.atlas-regenmat.ch/Building",
       "prefLabel": {
-        "en": "Building",
         "de": "Gebäude",
+        "en": "Building",
         "fr": "Bâtiments"
       }
     },
     {
       "id": "https://ontology.atlas-regenmat.ch/Professional",
       "prefLabel": {
-        "en": "Professional",
         "de": "Fachleute",
+        "en": "Professional",
         "fr": "Professionnels"
       }
     },
     {
       "id": "https://ontology.atlas-regenmat.ch/BuildingMaterial",
       "prefLabel": {
-        "en": "Building Material",
         "de": "Baustoff",
+        "en": "Building Material",
         "fr": "Matériaux de Construction"
       }
     },
     {
       "id": "https://ontology.atlas-regenmat.ch/NaturalResource",
       "prefLabel": {
-        "en": "Resource",
         "de": "Ressourcen",
+        "en": "Resource",
         "fr": "Ressources"
       }
     },
     {
       "id": "https://ontology.atlas-regenmat.ch/Construction",
       "prefLabel": {
-        "en": "Construction",
         "de": "Bauwerk",
+        "en": "Construction",
         "fr": "Construction"
       }
     }

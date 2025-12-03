@@ -2,15 +2,15 @@
   "id": "https://ontology.atlas-regenmat.ch/ThermalCapacity",
   "type": "Concept",
   "prefLabel": {
-    "en": "thermal capacity",
     "de": "Wärmekapazität",
+    "en": "thermal capacity",
     "fr": "Capacité thermique"
   },
   "broader": {
     "id": "https://ontology.atlas-regenmat.ch/Hygrothermal",
     "prefLabel": {
-      "en": "Hygrothermal",
       "de": "Hygrothermisch",
+      "en": "Hygrothermal",
       "fr": "Hygrothermique"
     }
   },

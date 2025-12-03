@@ -2,8 +2,8 @@
   "id": "https://ontology.atlas-regenmat.ch/InteriorDoor",
   "type": "Concept",
   "prefLabel": {
-    "en": "Interior Door",
-    "de": "Innentür"
+    "de": "Innentür",
+    "en": "Interior Door"
   },
   "definition": {
     "en": "Interior Door"
@@ -11,8 +11,8 @@
   "broader": {
     "id": "https://ontology.atlas-regenmat.ch/Finishings",
     "prefLabel": {
-      "en": "Finishings",
       "de": "Oberflächen",
+      "en": "Finishings",
       "fr": "Finitions"
     }
   },

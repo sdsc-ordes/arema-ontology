@@ -2,40 +2,40 @@
   "id": "https://ontology.atlas-regenmat.ch/Mechanical",
   "type": "Concept",
   "prefLabel": {
-    "en": "Mechanical",
     "de": "Mechanisch",
+    "en": "Mechanical",
     "fr": "Mecanique"
   },
   "narrower": [
     {
       "id": "https://ontology.atlas-regenmat.ch/CompressiveStrength",
       "prefLabel": {
-        "en": "Compressive strength",
         "de": "Druckfestigkeit",
+        "en": "Compressive strength",
         "fr": "Résistance à la compression"
       }
     },
     {
       "id": "https://ontology.atlas-regenmat.ch/Density",
       "prefLabel": {
-        "en": "Density",
         "de": "Dichte",
+        "en": "Density",
         "fr": "masse volumique"
       }
     },
     {
       "id": "https://ontology.atlas-regenmat.ch/TensileStrength",
       "prefLabel": {
-        "en": "tensile strength",
         "de": "Zugfestigkeit",
+        "en": "tensile strength",
         "fr": "Résistance à la traction"
       }
     },
     {
       "id": "https://ontology.atlas-regenmat.ch/YoungSModulus",
       "prefLabel": {
-        "en": "Young's Modulus",
         "de": "E-Modul",
+        "en": "Young's Modulus",
         "fr": "Module d'élasticité"
       }
     }
@@ -43,8 +43,8 @@
   "broader": {
     "id": "https://ontology.atlas-regenmat.ch/Property",
     "prefLabel": {
-      "en": "Property",
       "de": "Eigenschaft",
+      "en": "Property",
       "fr": "Propriété"
     }
   },

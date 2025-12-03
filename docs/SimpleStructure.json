@@ -2,8 +2,8 @@
   "id": "https://ontology.atlas-regenmat.ch/SimpleStructure",
   "type": "Concept",
   "prefLabel": {
-    "en": "Simple Structure",
     "de": "Einfache Struktur",
+    "en": "Simple Structure",
     "fr": "Structure Simple"
   },
   "definition": {
@@ -12,8 +12,8 @@
   "broader": {
     "id": "https://ontology.atlas-regenmat.ch/Building",
     "prefLabel": {
-      "en": "Building",
       "de": "Gebäude",
+      "en": "Building",
       "fr": "Bâtiments"
     }
   },

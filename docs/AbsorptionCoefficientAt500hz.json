@@ -2,15 +2,15 @@
   "id": "https://ontology.atlas-regenmat.ch/AbsorptionCoefficientAt500hz",
   "type": "Concept",
   "prefLabel": {
-    "en": "Absorption coefficient (at 500Hz)",
     "de": "Schallabsorptionsgrad (bei 500Hz)",
+    "en": "Absorption coefficient (at 500Hz)",
     "fr": "Coefficient d'absorption (à 500Hz)"
   },
   "broader": {
     "id": "https://ontology.atlas-regenmat.ch/Acoustic",
     "prefLabel": {
-      "en": "Acoustic",
       "de": "Akustik",
+      "en": "Acoustic",
       "fr": "Acousitque"
     }
   },
