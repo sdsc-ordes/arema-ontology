@@ -23,14 +23,14 @@ UNIT = Namespace("http://qudt.org/vocab/unit/")
 # Mapping from Google Sheets unit strings to QUDT unit URIs
 UNIT_MAPPING = {
     "kg/m3": UNIT["KiloGM-PER-M3"],
-    "MPa": UNIT.MegaPA,
-    "Gpa": UNIT.GigaPA,
+    "MPa": UNIT["MegaPA"],
+    "Gpa": UNIT["GigaPA"],
     "W/(m*K)": UNIT["W-PER-M-K"],
     "J(kg*K)": UNIT["J-PER-KiloGM-K"],
     "g/(m2*%RH)": UNIT["GM-PER-M2"],
-    "%vol": UNIT.PERCENT,
-    "kJ/(K*m2*sqrt(s))": UNIT["KiloJ-PER-K-M2-SEC0_5"],
-    "kg/(m2*sqrt(s))": UNIT["KiloGM-PER-M2-SEC0_5"],
+    "%vol": UNIT["PERCENT"],
+    "kJ/(K*m2*sqrt(s))": UNIT["KiloJ-PER-K-M2-SEC"],
+    "kg/(m2*sqrt(s))": UNIT["KiloGM-PER-M2-SEC"],
 }
 
 # Google Sheets IDs, you can find them in the URL of the sheet
