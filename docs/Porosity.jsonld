@@ -24,6 +24,9 @@
       "id": "https://ontology.atlas-regenmat.ch/AREMA"
     }
   ],
+  "unit": [
+    "http://qudt.org/vocab/unit/PERCENT"
+  ],
   "@context": {
     "@version": 1.1,
     "id": "@id",
