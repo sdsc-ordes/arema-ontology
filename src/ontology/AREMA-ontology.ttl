@@ -2,6 +2,7 @@
 @prefix me: <https://ontology.atlas-regenmat.ch/> .
 @prefix qudt: <http://qudt.org/schema/qudt/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
 @prefix vann: <http://purl.org/vocab/vann/> .
 
 me:AbsorptionCoefficientAt500hz a skos:Concept ;
@@ -98,7 +99,7 @@ me:Column a skos:Concept ;
 
 me:CompressiveStrength a skos:Concept ;
     qudt:symbol "σc" ;
-    qudt:unit "MPa" ;
+    qudt:unit unit:MegaPA ;
     skos:broader me:Mechanical ;
     skos:inScheme me:AREMA ;
     skos:prefLabel "Druckfestigkeit"@de,
@@ -123,7 +124,7 @@ me:Craftsman a skos:Concept ;
 
 me:Density a skos:Concept ;
     qudt:symbol "ρ" ;
-    qudt:unit "kg/m3" ;
+    qudt:unit unit:KiloGM-PER-M3 ;
     skos:broader me:Mechanical ;
     skos:inScheme me:AREMA ;
     skos:prefLabel "Dichte"@de,
@@ -146,7 +147,7 @@ me:Earth a skos:Concept ;
 
 me:Effusivity a skos:Concept ;
     qudt:symbol "E" ;
-    qudt:unit "kJ/(K*m2*sqrt(s))" ;
+    qudt:unit unit:KiloJ-PER-K-M2-SEC0_5 ;
     skos:broader me:Hygrothermal ;
     skos:inScheme me:AREMA ;
     skos:prefLabel "Effusivität"@de,
@@ -212,7 +213,7 @@ me:Foundation a skos:Concept ;
 
 me:FreeSaturation a skos:Concept ;
     qudt:symbol "wf" ;
-    qudt:unit "kg/m3" ;
+    qudt:unit unit:KiloGM-PER-M3 ;
     skos:broader me:Hygrothermal ;
     skos:inScheme me:AREMA ;
     skos:prefLabel "Freie Wassersättigung"@de,
@@ -256,7 +257,7 @@ me:InterventionType a skos:Concept ;
 
 me:LiquidTransferCoefficientForAbsorption a skos:Concept ;
     qudt:symbol "A" ;
-    qudt:unit "kg/(m2*sqrt(s))" ;
+    qudt:unit unit:KiloGM-PER-M2-SEC0_5 ;
     skos:broader me:Hygrothermal ;
     skos:inScheme me:AREMA ;
     skos:prefLabel "Wasseraufnahmekoeffizient"@de,
@@ -281,7 +282,7 @@ me:MaterialProducer a skos:Concept ;
 
 me:MoistureBufferingValue a skos:Concept ;
     qudt:symbol "MBV" ;
-    qudt:unit "g/(m2*%RH)" ;
+    qudt:unit unit:GM-PER-M2 ;
     skos:broader me:Hygrothermal ;
     skos:inScheme me:AREMA ;
     skos:prefLabel "Moisture Buffering value"@en .
@@ -327,7 +328,7 @@ me:PartitionWall a skos:Concept ;
 
 me:Porosity a skos:Concept ;
     qudt:symbol "ξ" ;
-    qudt:unit "%vol" ;
+    qudt:unit unit:PERCENT ;
     skos:broader me:Hygrothermal ;
     skos:inScheme me:AREMA ;
     skos:prefLabel "Porosität"@de,
@@ -434,7 +435,7 @@ me:TechnicalEquipement a skos:Concept ;
 
 me:TensileStrength a skos:Concept ;
     qudt:symbol "σ" ;
-    qudt:unit "MPa" ;
+    qudt:unit unit:MegaPA ;
     skos:broader me:Mechanical ;
     skos:inScheme me:AREMA ;
     skos:prefLabel "Zugfestigkeit"@de,
@@ -443,7 +444,7 @@ me:TensileStrength a skos:Concept ;
 
 me:ThermalCapacity a skos:Concept ;
     qudt:symbol "c" ;
-    qudt:unit "J(kg*K)" ;
+    qudt:unit unit:J-PER-KiloGM-K ;
     skos:broader me:Hygrothermal ;
     skos:inScheme me:AREMA ;
     skos:prefLabel "Wärmekapazität"@de,
@@ -452,7 +453,7 @@ me:ThermalCapacity a skos:Concept ;
 
 me:ThermalConductivity a skos:Concept ;
     qudt:symbol "λ" ;
-    qudt:unit "W/(m*K)" ;
+    qudt:unit unit:W-PER-M-K ;
     skos:broader me:Hygrothermal ;
     skos:inScheme me:AREMA ;
     skos:prefLabel "Wärmeleitfähigkeit"@de,
@@ -461,7 +462,7 @@ me:ThermalConductivity a skos:Concept ;
 
 me:WaterContentAt80 a skos:Concept ;
     qudt:symbol "w80%" ;
-    qudt:unit "kg/m3" ;
+    qudt:unit unit:KiloGM-PER-M3 ;
     skos:broader me:Hygrothermal ;
     skos:inScheme me:AREMA ;
     skos:prefLabel "Wassergehalt bei 80%"@de,
@@ -491,7 +492,7 @@ me:Wood a skos:Concept ;
 
 me:YoungSModulus a skos:Concept ;
     qudt:symbol "E" ;
-    qudt:unit "Gpa" ;
+    qudt:unit unit:GigaPA ;
     skos:broader me:Mechanical ;
     skos:inScheme me:AREMA ;
     skos:prefLabel "E-Modul"@de,
@@ -636,3 +637,4 @@ me:AREMA a skos:ConceptScheme ;
         "AREMA Ontology"@en,
         "Ontologie AREMA"@fr,
         "Ontologia AREMA"@it .
+
