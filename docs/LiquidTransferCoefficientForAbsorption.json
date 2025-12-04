@@ -25,7 +25,7 @@
     }
   ],
   "unit": [
-    "http://qudt.org/vocab/unit/KiloGM-PER-M2-SEC0_5"
+    "http://qudt.org/vocab/unit/KiloGM-PER-M2-SEC"
   ],
   "@context": {
     "@version": 1.1,
