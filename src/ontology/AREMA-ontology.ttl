@@ -147,7 +147,7 @@ me:Earth a skos:Concept ;
 
 me:Effusivity a skos:Concept ;
     qudt:symbol "E" ;
-    qudt:unit unit:KiloJ-PER-K-M2-SEC0_5 ;
+    qudt:unit unit:KiloJ-PER-K-M2-SEC ;
     skos:broader me:Hygrothermal ;
     skos:inScheme me:AREMA ;
     skos:prefLabel "Effusivität"@de,
@@ -257,7 +257,7 @@ me:InterventionType a skos:Concept ;
 
 me:LiquidTransferCoefficientForAbsorption a skos:Concept ;
     qudt:symbol "A" ;
-    qudt:unit unit:KiloGM-PER-M2-SEC0_5 ;
+    qudt:unit unit:KiloGM-PER-M2-SEC ;
     skos:broader me:Hygrothermal ;
     skos:inScheme me:AREMA ;
     skos:prefLabel "Wasseraufnahmekoeffizient"@de,
