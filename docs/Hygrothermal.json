@@ -19,7 +19,8 @@
       "id": "https://ontology.atlas-regenmat.ch/FreeSaturation",
       "prefLabel": {
         "de": "Freie Wassersättigung",
-        "en": "Free saturation"
+        "en": "Free saturation",
+        "fr": "Saturation libre"
       }
     },
     {
@@ -33,7 +34,9 @@
     {
       "id": "https://ontology.atlas-regenmat.ch/MoistureBufferingValue",
       "prefLabel": {
-        "en": "Moisture Buffering value"
+        "de": "Feuchtepufferwert",
+        "en": "Moisture Buffering value",
+        "fr": "Moisture Buffering value"
       }
     },
     {

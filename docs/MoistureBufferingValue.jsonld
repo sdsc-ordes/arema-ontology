@@ -2,7 +2,9 @@
   "id": "https://ontology.atlas-regenmat.ch/MoistureBufferingValue",
   "type": "Concept",
   "prefLabel": {
-    "en": "Moisture Buffering value"
+    "de": "Feuchtepufferwert",
+    "en": "Moisture Buffering value",
+    "fr": "Moisture Buffering value"
   },
   "broader": {
     "id": "https://ontology.atlas-regenmat.ch/Hygrothermal",
