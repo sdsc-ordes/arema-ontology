@@ -217,7 +217,8 @@ me:FreeSaturation a skos:Concept ;
     skos:broader me:Hygrothermal ;
     skos:inScheme me:AREMA ;
     skos:prefLabel "Freie Wassersättigung"@de,
-        "Free saturation"@en .
+        "Free saturation"@en,
+        "Saturation libre"@fr .
 
 me:Hemp a skos:Concept ;
     skos:broader me:NaturalResource ;
@@ -285,7 +286,9 @@ me:MoistureBufferingValue a skos:Concept ;
     qudt:unit unit:GM-PER-M2 ;
     skos:broader me:Hygrothermal ;
     skos:inScheme me:AREMA ;
-    skos:prefLabel "Moisture Buffering value"@en .
+    skos:prefLabel "Feuchtepufferwert"@de,
+        "Moisture Buffering value"@en,
+        "Moisture Buffering value"@fr .
 
 me:Mortar a skos:Concept ;
     skos:broader me:BuildingMaterial ;
