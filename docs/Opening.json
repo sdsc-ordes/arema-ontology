@@ -18,6 +18,7 @@
     {
       "id": "https://ontology.atlas-regenmat.ch/Window",
       "prefLabel": {
+        "de": "Fenster",
         "en": "Window"
       }
     }

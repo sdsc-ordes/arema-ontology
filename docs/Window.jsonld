@@ -2,6 +2,7 @@
   "id": "https://ontology.atlas-regenmat.ch/Window",
   "type": "Concept",
   "prefLabel": {
+    "de": "Fenster",
     "en": "Window"
   },
   "definition": {
