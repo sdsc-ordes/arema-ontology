@@ -7,5 +7,5 @@ services:
       - ./data:/fuseki/databases
       - ./config.ttl:/fuseki/config.ttl
     environment:
-      - ADMIN_PASSWORD=Ve2mEu0Ll32W0jn
+      - ADMIN_PASSWORD=${FUSEKI_PASSWORD}
     command: ["/jena-fuseki/fuseki-server", "--config=/fuseki/config.ttl"]

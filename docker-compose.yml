@@ -1,0 +1,39 @@
+services:
+  arema-ontology:
+    build: .
+    container_name: arema-ontology-service
+    ports:
+      - "8000:8000"
+    environment:
+      - FUSEKI_URL=http://fuseki:3030/arema/data
+      - FUSEKI_UPDATE_URL=http://fuseki:3030/arema/data
+      - FUSEKI_USERNAME=${FUSEKI_USERNAME}
+      - FUSEKI_PASSWORD=${FUSEKI_PASSWORD}
+      - GITHUB_TOKEN=${GITHUB_TOKEN}
+    volumes:
+      - ./data:/app/data
+      - ./src:/app/src
+      - ./tools:/app/tools
+      - ./.git:/app/.git
+    depends_on:
+      - fuseki
+    networks:
+      - arema-network
+
+  fuseki:
+    image: stain/jena-fuseki:5.1.0
+    container_name: arema-fuseki
+    ports:
+      - "3030:3030"
+    environment:
+      - ADMIN_PASSWORD=${FUSEKI_PASSWORD}
+    volumes:
+      - ./tools/fuseki/data:/fuseki/databases
+      - ./tools/fuseki/config.ttl:/fuseki/config.ttl
+    command: ["/jena-fuseki/fuseki-server", "--config=/fuseki/config.ttl"]
+    networks:
+      - arema-network
+
+networks:
+  arema-network:
+    driver: bridge

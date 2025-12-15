@@ -89,30 +89,63 @@ def add_concept_from_row(g, row, is_property=False):
                 print(f"⚠️  Unit '{unit_str}' not in mapping, using literal")
                 g.add((concept_uri, QUDT.unit, Literal(unit_str)))
 
-# === MAIN ===
-# Load environment variables
-load_dotenv()
-FUSEKI_BASE = os.getenv("FUSEKI_URL")           # e.g., "http://localhost:3030/AREMA/data"
-GRAPH_URI = "https://ontology.atlas-regenmat.ch/"        # named graph IRI
-USERNAME = os.getenv("FUSEKI_USERNAME")         # e.g., "admin"
-PASSWORD = os.getenv("FUSEKI_PASSWORD")         # e.g., "Ve2mEu0Ll32W0jn"
+def upload_to_fuseki(file_path, fuseki_url=None, username=None, password=None, graph_uri=None):
+    """Upload the generated TTL file to Fuseki database."""
+    if not fuseki_url:
+        fuseki_url = os.getenv("FUSEKI_UPDATE_URL") or os.getenv("FUSEKI_URL")
+    
+    if not fuseki_url:
+        print("⚠️  Skipping upload: FUSEKI_UPDATE_URL not set.")
+        return False
+    
+    username = username or os.getenv("FUSEKI_USERNAME", "admin")
+    password = password or os.getenv("FUSEKI_PASSWORD")
+    graph_uri = graph_uri or "https://ontology.atlas-regenmat.ch/"
+    
+    upload_url = f"{fuseki_url}?graph={graph_uri}"
+    
+    print(f"📤 Uploading {file_path} to {upload_url}...")
+    try:
+        with open(file_path, "rb") as f:
+            ttl_data = f.read()
+        
+        response = requests.put(
+            upload_url,
+            data=ttl_data,
+            headers={"Content-Type": "text/turtle"},
+            auth=(username, password) if username and password else None
+        )
+        response.raise_for_status()
+        print(f"✅ Upload successful! ({response.status_code})")
+        return True
+    except Exception as e:
+        print(f"❌ Upload failed: {e}")
+        return False
 
-# Init graph
-g = Graph()
-g.bind("rdfs", "http://www.w3.org/2000/01/rdf-schema#")
-g.bind("me", BASE_URI)
-g.bind("brick", "https://w3id.org/brick#")
-g.bind("ifc", "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#")
-g.bind("owl", "http://www.w3.org/2002/07/owl#")
-g.bind("skos", "http://www.w3.org/2004/02/skos/core#")
-g.bind("xsd", "http://www.w3.org/2001/XMLSchema#")
-g.bind("dct", "http://purl.org/dc/terms/")
-g.bind("vann", "http://purl.org/vocab/vann/")
-g.bind("qudt", "http://qudt.org/schema/qudt/")
-g.bind("unit", "http://qudt.org/vocab/unit/")
 
-# Static ontology metadata
-ontology_metadata = """
+def main():
+    """Main conversion logic."""
+    load_dotenv()
+    FUSEKI_BASE = os.getenv("FUSEKI_URL")
+    GRAPH_URI = "https://ontology.atlas-regenmat.ch/"
+    USERNAME = os.getenv("FUSEKI_USERNAME")
+    PASSWORD = os.getenv("FUSEKI_PASSWORD")
+
+    # Init graph
+    g = Graph()
+    g.bind("rdfs", "http://www.w3.org/2000/01/rdf-schema#")
+    g.bind("me", BASE_URI)
+    g.bind("brick", "https://w3id.org/brick#")
+    g.bind("ifc", "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#")
+    g.bind("owl", "http://www.w3.org/2002/07/owl#")
+    g.bind("skos", "http://www.w3.org/2004/02/skos/core#")
+    g.bind("xsd", "http://www.w3.org/2001/XMLSchema#")
+    g.bind("dct", "http://purl.org/dc/terms/")
+    g.bind("vann", "http://purl.org/vocab/vann/")
+    g.bind("qudt", "http://qudt.org/schema/qudt/")
+    g.bind("unit", "http://qudt.org/vocab/unit/")
+
+    ontology_metadata = """
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix me: <https://ontology.atlas-regenmat.ch/> .
 @prefix brick: <https://w3id.org/brick#> .
@@ -139,36 +172,27 @@ me:AREMA a skos:ConceptScheme ;
                    "Ontologia AREMA"@it ;
     dct:license <https://creativecommons.org/licenses/by/4.0/> .
 """
-g.parse(data=ontology_metadata, format="turtle")
+    g.parse(data=ontology_metadata, format="turtle")
 
-# Load Google Sheets
-objects_url = f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=csv&gid={objects_gid}"
-df_objects = pd.read_csv(objects_url)
-for _, row in df_objects.iterrows():
-    add_concept_from_row(g, row, is_property=False)
+    # Load Google Sheets
+    objects_url = f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=csv&gid={objects_gid}"
+    df_objects = pd.read_csv(objects_url)
+    for _, row in df_objects.iterrows():
+        add_concept_from_row(g, row, is_property=False)
 
-properties_url = f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=csv&gid={properties_gid}"
-df_properties = pd.read_csv(properties_url)
-for _, row in df_properties.iterrows():
-    add_concept_from_row(g, row, is_property=True)
+    properties_url = f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=csv&gid={properties_gid}"
+    df_properties = pd.read_csv(properties_url)
+    for _, row in df_properties.iterrows():
+        add_concept_from_row(g, row, is_property=True)
 
-# Serialize TTL to file
-TTL_PATH = ONTOLOGY_DIR / "AREMA-ontology.ttl"
-g.serialize(TTL_PATH, format="turtle")
+    # Serialize TTL to file
+    TTL_PATH = ONTOLOGY_DIR / "AREMA-ontology.ttl"
+    g.serialize(TTL_PATH, format="turtle")
+    print(f"✅ Generated ontology file: {TTL_PATH}")
+
+    # === UPLOAD TO FUSEKI ===
+    upload_to_fuseki(TTL_PATH, FUSEKI_BASE, USERNAME, PASSWORD, GRAPH_URI)
 
 
-# === UPLOAD TO FUSEKI ===
-upload_url = f"{FUSEKI_BASE}?graph={GRAPH_URI}"
-with open(TTL_PATH, "rb") as f:
-    ttl_data = f.read()
-resp = requests.put(
-    upload_url,
-    data=ttl_data,
-    headers={"Content-Type": "text/turtle"},
-    auth=(USERNAME, PASSWORD)
-)
-
-if resp.ok:
-    print(f"✅ Updated Fuseki dataset ({resp.status_code})")
-else:
-    print(f"❌ Fuseki update failed ({resp.status_code}):\n{resp.text}")
+if __name__ == "__main__":
+    main()

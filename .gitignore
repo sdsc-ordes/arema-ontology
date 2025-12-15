@@ -1,3 +1,5 @@
 external/skohub-vocabs
 .env
 /tools/fuseki/data/
+tools/python/converter/__pycache__/csv2ont.cpython-311.pyc
+tools/python/converter/__pycache__/csv2ont.cpython-312.pyc
