@@ -67,7 +67,8 @@
       "id": "https://ontology.atlas-regenmat.ch/WaterContentAt80",
       "prefLabel": {
         "de": "Wassergehalt bei 80%",
-        "en": "Water content at 80%"
+        "en": "Water content at 80%",
+        "fr": "Teneur en eau à 80%"
       }
     },
     {
