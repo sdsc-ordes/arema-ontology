@@ -484,7 +484,8 @@ me:Window a skos:Concept ;
     skos:broader me:Opening ;
     skos:definition "A window is a structure to let light or air into a room"@en ;
     skos:inScheme me:AREMA ;
-    skos:prefLabel "Window"@en .
+    skos:prefLabel "Fenster"@de,
+        "Window"@en .
 
 me:Wood a skos:Concept ;
     skos:broader me:NaturalResource ;
