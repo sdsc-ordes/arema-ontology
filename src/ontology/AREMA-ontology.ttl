@@ -469,7 +469,8 @@ me:WaterContentAt80 a skos:Concept ;
     skos:broader me:Hygrothermal ;
     skos:inScheme me:AREMA ;
     skos:prefLabel "Wassergehalt bei 80%"@de,
-        "Water content at 80%"@en .
+        "Water content at 80%"@en,
+        "Teneur en eau à 80%"@fr .
 
 me:WaterVaporDiffusionResistance a skos:Concept ;
     qudt:symbol "µ" ;
