@@ -129,7 +129,7 @@ me:Density a skos:Concept ;
     skos:inScheme me:AREMA ;
     skos:prefLabel "Dichte"@de,
         "Density"@en,
-        "masse volumique"@fr .
+        "Masse volumique"@fr .
 
 me:Door a skos:Concept ;
     skos:broader me:Opening ;
