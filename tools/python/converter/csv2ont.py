@@ -4,6 +4,7 @@ from rdflib import Graph, Namespace, URIRef, Literal
 from rdflib.namespace import SKOS, RDF
 from dotenv import load_dotenv
 import requests
+from inflection import camelize
 from pathlib import Path
 
 # === BASE DIRS ===
@@ -33,22 +34,14 @@ UNIT_MAPPING = {
     "kg/(m2*sqrt(s))": UNIT["KiloGM-PER-M2-SEC"],
 }
 
-# Google Sheets IDs, you can find them in the URL of the sheet
-sheet_id = "1RL6Y120_H9-yD8x52eZO44S2iLQpLoZHitcExHsPfPs"
-objects_gid = "1120751986" 
-properties_gid = "373147482" 
-
-# === HELPERS ===
-def to_camel_case(s: str) -> str:
-    """Turn a label into CamelCase suitable for an IRI fragment."""
-    if pd.isna(s):
-        return None
-    parts = ''.join(c if c.isalnum() or c.isspace() else ' ' for c in str(s)).split()
-    return ''.join(p.capitalize() for p in parts)
-
 def add_concept_from_row(g, row, is_property=False):
     """Add SKOS Concept triples from a sheet row."""
-    camel_name = to_camel_case(row['s'])
+    s_value = row['s']
+    if pd.isna(s_value):
+        return
+
+    cleaned = ''.join(c if c.isalnum() or c.isspace() else ' ' for c in str(s_value))
+    camel_name = camelize(cleaned.strip())
     if not camel_name:
         return
     concept_uri = URIRef(BASE_URI + camel_name)
@@ -71,7 +64,9 @@ def add_concept_from_row(g, row, is_property=False):
     # Broader relationships
     for parent_field in ['sub-entity level', 'entity']:
         if pd.notna(row.get(parent_field)):
-            parent_camel = to_camel_case(row[parent_field])
+            parent_value = row[parent_field]
+            cleaned_parent = ''.join(c if c.isalnum() or c.isspace() else ' ' for c in str(parent_value))
+            parent_camel = camelize(cleaned_parent.strip())
             if parent_camel:
                 g.add((concept_uri, SKOS.broader, URIRef(BASE_URI + parent_camel)))
 
@@ -123,8 +118,8 @@ def upload_to_fuseki(file_path, fuseki_url=None, username=None, password=None, g
         return False
 
 
-def main():
-    """Main conversion logic."""
+def convert_sheets_to_ontology():
+    """Convert Google Sheets data to SKOS/RDF ontology and upload to Fuseki."""
     load_dotenv()
     FUSEKI_BASE = os.getenv("FUSEKI_URL")
     GRAPH_URI = "https://ontology.atlas-regenmat.ch/"
@@ -175,6 +170,9 @@ me:AREMA a skos:ConceptScheme ;
     g.parse(data=ontology_metadata, format="turtle")
 
     # Load Google Sheets
+    sheet_id = os.getenv("GOOGLE_SHEET_ID", "1RL6Y120_H9-yD8x52eZO44S2iLQpLoZHitcExHsPfPs")
+    objects_gid = os.getenv("GOOGLE_SHEET_OBJECTS_GID", "1120751986")
+    properties_gid = os.getenv("GOOGLE_SHEET_PROPERTIES_GID", "373147482")
     objects_url = f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=csv&gid={objects_gid}"
     df_objects = pd.read_csv(objects_url)
     for _, row in df_objects.iterrows():
@@ -195,4 +193,4 @@ me:AREMA a skos:ConceptScheme ;
 
 
 if __name__ == "__main__":
-    main()
+    convert_sheets_to_ontology()
