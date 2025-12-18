@@ -135,7 +135,8 @@ me:Door a skos:Concept ;
     skos:broader me:Opening ;
     skos:definition "A door is a structure to enter or exit a room"@en ;
     skos:inScheme me:AREMA ;
-    skos:prefLabel "Door"@en .
+    skos:prefLabel "Tür"@de,
+        "Door"@en .
 
 me:Earth a skos:Concept ;
     skos:broader me:NaturalResource ;
@@ -163,7 +164,7 @@ me:ExteriorThermalInsulation a skos:Concept ;
 
 me:ExteriorWallAboveGround a skos:Concept ;
     skos:broader me:Structure ;
-    skos:definition "Wall that separates the exterior from teh interior of the building above ground"@en ;
+    skos:definition "Wall that separates the exterior from the interior of the building above ground"@en ;
     skos:inScheme me:AREMA ;
     skos:prefLabel "Aussenwand Über Terrain"@de,
         "Exterior Wall Above Ground"@en .
@@ -184,7 +185,7 @@ me:ExteriorWallFinishingBasement a skos:Concept ;
 
 me:ExteriorWallUnderGround a skos:Concept ;
     skos:broader me:Structure ;
-    skos:definition "Wall that separates the exterior from teh interior of the building under ground"@en ;
+    skos:definition "Wall that separates the exterior from the interior of the building under ground"@en ;
     skos:inScheme me:AREMA ;
     skos:prefLabel "Aussenwand Unter Terrain"@de,
         "Exterior Wall Under Ground"@en .
@@ -409,7 +410,7 @@ me:SingleFamilyHouse a skos:Concept ;
 
 me:Stair a skos:Concept ;
     skos:broader me:Structure ;
-    skos:definition "Stair"@en ;
+    skos:definition "Stair(s) connecting two floors"@en ;
     skos:inScheme me:AREMA ;
     skos:prefLabel "Treppe"@de,
         "Stair"@en .
@@ -461,7 +462,7 @@ me:ThermalConductivity a skos:Concept ;
     skos:inScheme me:AREMA ;
     skos:prefLabel "Wärmeleitfähigkeit"@de,
         "thermal conductivity"@en,
-        "conductivité thermique"@fr .
+        "Conductivité thermique"@fr .
 
 me:WaterContentAt80 a skos:Concept ;
     qudt:symbol "w80%" ;
