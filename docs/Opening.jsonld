@@ -12,6 +12,7 @@
     {
       "id": "https://ontology.atlas-regenmat.ch/Door",
       "prefLabel": {
+        "de": "Tür",
         "en": "Door"
       }
     },

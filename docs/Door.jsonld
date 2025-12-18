@@ -2,6 +2,7 @@
   "id": "https://ontology.atlas-regenmat.ch/Door",
   "type": "Concept",
   "prefLabel": {
+    "de": "Tür",
     "en": "Door"
   },
   "definition": {

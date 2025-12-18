@@ -4,7 +4,7 @@
   "prefLabel": {
     "de": "Dichte",
     "en": "Density",
-    "fr": "masse volumique"
+    "fr": "Masse volumique"
   },
   "broader": {
     "id": "https://ontology.atlas-regenmat.ch/Mechanical",

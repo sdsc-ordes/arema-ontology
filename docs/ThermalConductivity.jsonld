@@ -4,7 +4,7 @@
   "prefLabel": {
     "de": "Wärmeleitfähigkeit",
     "en": "thermal conductivity",
-    "fr": "conductivité thermique"
+    "fr": "Conductivité thermique"
   },
   "broader": {
     "id": "https://ontology.atlas-regenmat.ch/Hygrothermal",
