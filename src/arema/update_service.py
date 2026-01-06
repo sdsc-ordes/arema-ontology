@@ -17,9 +17,6 @@ def run_conversion():
     """
     logger.info("Starting ontology conversion")
     
-    # Set environment variable for the script
-    os.environ["INPUT_SOURCE"] = "google_sheets"
-    
     # Run conversion
     csv2ont.convert_sheets_to_ontology()
     

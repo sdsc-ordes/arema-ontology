@@ -57,7 +57,6 @@ arema-ontology/
 │       └── docs.yaml            # CI/CD for SKOHub builds
 ├── Dockerfile                   # Container definition
 ├── docker-compose.yml           # Multi-service orchestration
-├── start.sh                     # Quick start script
 ├── pyproject.toml               # Python dependencies
 └── uv.lock                      # Locked dependencies
 ```
@@ -129,10 +128,9 @@ cp .env.dist .env
 # 2. Place your service_account.json in the repository root
 
 # 3. Start services (Fuseki + Ontology Manager)
-./start.sh
-# Or manually: docker compose up -d
+docker compose up -d
 
-# 3. Check service health
+# 4. Check service health
 curl http://localhost:8000/
 curl http://localhost:3030/$/ping
 ```

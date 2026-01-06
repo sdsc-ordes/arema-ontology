@@ -12,3 +12,7 @@ src/arema/__pycache__/update_service.cpython-311.pyc
 src/server/__pycache__/__init__.cpython-311.pyc
 src/server/__pycache__/main.cpython-311.pyc
 src/__pycache__/__init__.cpython-311.pyc
+tools/__pycache__/__init__.cpython-311.pyc
+tools/python/__pycache__/__init__.cpython-311.pyc
+src/arema/__pycache__/__init__.cpython-311.pyc
+tools/python/converter/__pycache__/__init__.cpython-311.pyc
