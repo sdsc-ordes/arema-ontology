@@ -41,7 +41,7 @@ jobs:
           CONTAINER_ID=$(docker create \
             -v $(pwd)/src/ontology:/app/data \
             -v $(pwd)/.env:/app/.env \
-            ghcr.io/sdsc-ordes/skohub-vocabs:v0.3.1 \
+            ghcr.io/sdsc-ordes/skohub-vocabs:v0.3.2 \
             sh -c "npm run build"
           )
 

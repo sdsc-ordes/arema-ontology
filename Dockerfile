@@ -16,6 +16,9 @@ RUN uv sync
 # Copy application code
 COPY . .
 
+# Set Python path so imports work correctly
+ENV PYTHONPATH="/app/src:/app/tools/python/converter:${PYTHONPATH}"
+
 # Expose port
 EXPOSE 8000
 
