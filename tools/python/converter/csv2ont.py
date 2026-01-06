@@ -19,20 +19,6 @@ TTL_PATH = ONTOLOGY_DIR / "AREMA-ontology.ttl"
 BASE_URI = "https://ontology.atlas-regenmat.ch/"
 ME = Namespace(BASE_URI)
 QUDT = Namespace("http://qudt.org/schema/qudt/")
-UNIT = Namespace("http://qudt.org/vocab/unit/")
-
-# Mapping from Google Sheets unit strings to QUDT unit URIs
-UNIT_MAPPING = {
-    "kg/m3": UNIT["KiloGM-PER-M3"],
-    "MPa": UNIT["MegaPA"],
-    "Gpa": UNIT["GigaPA"],
-    "W/(m*K)": UNIT["W-PER-M-K"],
-    "J(kg*K)": UNIT["J-PER-KiloGM-K"],
-    "g/(m2*%RH)": UNIT["GM-PER-M2"],
-    "%vol": UNIT["PERCENT"],
-    "kJ/(K*m2*sqrt(s))": UNIT["KiloJ-PER-K-M2-SEC"],
-    "kg/(m2*sqrt(s))": UNIT["KiloGM-PER-M2-SEC"],
-}
 
 def add_concept_from_row(g, row, is_property=False):
     """Add SKOS Concept triples from a sheet row."""
@@ -41,7 +27,7 @@ def add_concept_from_row(g, row, is_property=False):
         return
 
     cleaned = ''.join(c if c.isalnum() or c.isspace() else ' ' for c in str(s_value))
-    camel_name = camelize(cleaned.strip())
+    camel_name = camelize(cleaned.strip()).replace(' ', '')
     if not camel_name:
         return
     concept_uri = URIRef(BASE_URI + camel_name)
@@ -66,7 +52,7 @@ def add_concept_from_row(g, row, is_property=False):
         if pd.notna(row.get(parent_field)):
             parent_value = row[parent_field]
             cleaned_parent = ''.join(c if c.isalnum() or c.isspace() else ' ' for c in str(parent_value))
-            parent_camel = camelize(cleaned_parent.strip())
+            parent_camel = camelize(cleaned_parent.strip()).replace(' ', '')
             if parent_camel:
                 g.add((concept_uri, SKOS.broader, URIRef(BASE_URI + parent_camel)))
 
@@ -75,14 +61,7 @@ def add_concept_from_row(g, row, is_property=False):
         if pd.notna(row.get('symbol')):
             g.add((concept_uri, QUDT.symbol, Literal(row['symbol'])))
         if pd.notna(row.get('unit')):
-            unit_str = row['unit']
-            if unit_str in UNIT_MAPPING:
-                # Use QUDT unit URI
-                g.add((concept_uri, QUDT.unit, UNIT_MAPPING[unit_str]))
-            else:
-                # Fallback to literal if not in mapping
-                print(f"⚠️  Unit '{unit_str}' not in mapping, using literal")
-                g.add((concept_uri, QUDT.unit, Literal(unit_str)))
+            g.add((concept_uri, QUDT.unit, Literal(row['unit'])))
 
 def upload_to_fuseki(file_path, fuseki_url=None, username=None, password=None, graph_uri=None):
     """Upload the generated TTL file to Fuseki database."""
@@ -138,7 +117,6 @@ def convert_sheets_to_ontology():
     g.bind("dct", "http://purl.org/dc/terms/")
     g.bind("vann", "http://purl.org/vocab/vann/")
     g.bind("qudt", "http://qudt.org/schema/qudt/")
-    g.bind("unit", "http://qudt.org/vocab/unit/")
 
     ontology_metadata = """
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -151,7 +129,6 @@ def convert_sheets_to_ontology():
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix qudt: <http://qudt.org/schema/qudt/> .
-@prefix unit: <http://qudt.org/vocab/unit/> .
 
 @base <https://ontology.atlas-regenmat.ch/> .
 
