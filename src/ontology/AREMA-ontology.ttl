@@ -451,7 +451,7 @@ me:Thermalcapacity a skos:Concept ;
     skos:broader me:Hygrothermal ;
     skos:inScheme me:AREMA ;
     skos:prefLabel "Wärmekapazität"@de,
-        "thermal capacity"@en,
+        "Thermal capacity"@en,
         "Capacité thermique"@fr .
 
 me:Thermalconductivity a skos:Concept ;
