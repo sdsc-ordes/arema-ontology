@@ -16,3 +16,16 @@ tools/__pycache__/__init__.cpython-311.pyc
 tools/python/__pycache__/__init__.cpython-311.pyc
 src/arema/__pycache__/__init__.cpython-311.pyc
 tools/python/converter/__pycache__/__init__.cpython-311.pyc
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+
