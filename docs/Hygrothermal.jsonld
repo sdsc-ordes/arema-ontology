@@ -51,7 +51,7 @@
       "id": "https://ontology.atlas-regenmat.ch/Thermalcapacity",
       "prefLabel": {
         "de": "Wärmekapazität",
-        "en": "thermal capacity",
+        "en": "Thermal capacity",
         "fr": "Capacité thermique"
       }
     },
@@ -59,7 +59,7 @@
       "id": "https://ontology.atlas-regenmat.ch/Thermalconductivity",
       "prefLabel": {
         "de": "Wärmeleitfähigkeit",
-        "en": "thermal conductivity",
+        "en": "Thermal conductivity",
         "fr": "Conductivité thermique"
       }
     },
