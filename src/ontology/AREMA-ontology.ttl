@@ -460,7 +460,7 @@ me:Thermalconductivity a skos:Concept ;
     skos:broader me:Hygrothermal ;
     skos:inScheme me:AREMA ;
     skos:prefLabel "Wärmeleitfähigkeit"@de,
-        "thermal conductivity"@en,
+        "Thermal conductivity"@en,
         "Conductivité thermique"@fr .
 
 me:Watercontentat80 a skos:Concept ;
