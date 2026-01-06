@@ -25,7 +25,7 @@
     }
   ],
   "unit": [
-    "http://qudt.org/vocab/unit/KiloGM-PER-M3"
+    "kg/m3"
   ],
   "@context": {
     "@version": 1.1,
@@ -175,7 +175,6 @@
     },
     "unit": {
       "@id": "qudt:unit",
-      "@type": "@id",
       "@container": "@set"
     },
     "domain": {

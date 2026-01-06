@@ -25,7 +25,7 @@
     }
   ],
   "unit": [
-    "http://qudt.org/vocab/unit/KiloJ-PER-K-M2-SEC"
+    "kJ/(K*m2*sqrt(s))"
   ],
   "@context": {
     "@version": 1.1,
@@ -175,7 +175,6 @@
     },
     "unit": {
       "@id": "qudt:unit",
-      "@type": "@id",
       "@container": "@set"
     },
     "domain": {

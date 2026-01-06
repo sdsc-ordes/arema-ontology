@@ -8,7 +8,7 @@
   },
   "narrower": [
     {
-      "id": "https://ontology.atlas-regenmat.ch/CompressiveStrength",
+      "id": "https://ontology.atlas-regenmat.ch/Compressivestrength",
       "prefLabel": {
         "de": "Druckfestigkeit",
         "en": "Compressive strength",
@@ -24,15 +24,15 @@
       }
     },
     {
-      "id": "https://ontology.atlas-regenmat.ch/TensileStrength",
+      "id": "https://ontology.atlas-regenmat.ch/Tensilestrength",
       "prefLabel": {
         "de": "Zugfestigkeit",
-        "en": "tensile strength",
+        "en": "Tensile strength",
         "fr": "Résistance à la traction"
       }
     },
     {
-      "id": "https://ontology.atlas-regenmat.ch/YoungSModulus",
+      "id": "https://ontology.atlas-regenmat.ch/YoungsModulus",
       "prefLabel": {
         "de": "E-Modul",
         "en": "Young's Modulus",
@@ -206,7 +206,6 @@
     },
     "unit": {
       "@id": "qudt:unit",
-      "@type": "@id",
       "@container": "@set"
     },
     "domain": {

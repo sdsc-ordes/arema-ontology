@@ -16,7 +16,7 @@
       }
     },
     {
-      "id": "https://ontology.atlas-regenmat.ch/FreeSaturation",
+      "id": "https://ontology.atlas-regenmat.ch/Freesaturation",
       "prefLabel": {
         "de": "Freie Wassersättigung",
         "en": "Free saturation",
@@ -24,7 +24,7 @@
       }
     },
     {
-      "id": "https://ontology.atlas-regenmat.ch/LiquidTransferCoefficientForAbsorption",
+      "id": "https://ontology.atlas-regenmat.ch/Liquidtransfercoefficientforabsorption",
       "prefLabel": {
         "de": "Wasseraufnahmekoeffizient",
         "en": "Liquid transfer coefficient for absorption",
@@ -32,7 +32,7 @@
       }
     },
     {
-      "id": "https://ontology.atlas-regenmat.ch/MoistureBufferingValue",
+      "id": "https://ontology.atlas-regenmat.ch/MoistureBufferingvalue",
       "prefLabel": {
         "de": "Feuchtepufferwert",
         "en": "Moisture Buffering value",
@@ -48,7 +48,7 @@
       }
     },
     {
-      "id": "https://ontology.atlas-regenmat.ch/ThermalCapacity",
+      "id": "https://ontology.atlas-regenmat.ch/Thermalcapacity",
       "prefLabel": {
         "de": "Wärmekapazität",
         "en": "thermal capacity",
@@ -56,7 +56,7 @@
       }
     },
     {
-      "id": "https://ontology.atlas-regenmat.ch/ThermalConductivity",
+      "id": "https://ontology.atlas-regenmat.ch/Thermalconductivity",
       "prefLabel": {
         "de": "Wärmeleitfähigkeit",
         "en": "thermal conductivity",
@@ -64,7 +64,7 @@
       }
     },
     {
-      "id": "https://ontology.atlas-regenmat.ch/WaterContentAt80",
+      "id": "https://ontology.atlas-regenmat.ch/Watercontentat80",
       "prefLabel": {
         "de": "Wassergehalt bei 80%",
         "en": "Water content at 80%",
@@ -72,7 +72,7 @@
       }
     },
     {
-      "id": "https://ontology.atlas-regenmat.ch/WaterVaporDiffusionResistance",
+      "id": "https://ontology.atlas-regenmat.ch/Watervapordiffusionresistance",
       "prefLabel": {
         "de": "Wasserdampfdiffusionswiderstand",
         "en": "Water vapor diffusion resistance",
@@ -246,7 +246,6 @@
     },
     "unit": {
       "@id": "qudt:unit",
-      "@type": "@id",
       "@container": "@set"
     },
     "domain": {
