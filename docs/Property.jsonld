@@ -40,7 +40,7 @@
       }
     },
     {
-      "id": "https://ontology.atlas-regenmat.ch/FireResistance",
+      "id": "https://ontology.atlas-regenmat.ch/Fireresistance",
       "prefLabel": {
         "de": "Brandverhalten",
         "en": "Fire resistance",
@@ -211,7 +211,6 @@
     },
     "unit": {
       "@id": "qudt:unit",
-      "@type": "@id",
       "@container": "@set"
     },
     "domain": {

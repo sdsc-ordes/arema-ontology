@@ -4,6 +4,7 @@ from rdflib import Graph, Namespace, URIRef, Literal
 from rdflib.namespace import SKOS, RDF
 from dotenv import load_dotenv
 import requests
+from inflection import camelize
 from pathlib import Path
 
 # === BASE DIRS ===
@@ -18,37 +19,15 @@ TTL_PATH = ONTOLOGY_DIR / "AREMA-ontology.ttl"
 BASE_URI = "https://ontology.atlas-regenmat.ch/"
 ME = Namespace(BASE_URI)
 QUDT = Namespace("http://qudt.org/schema/qudt/")
-UNIT = Namespace("http://qudt.org/vocab/unit/")
-
-# Mapping from Google Sheets unit strings to QUDT unit URIs
-UNIT_MAPPING = {
-    "kg/m3": UNIT["KiloGM-PER-M3"],
-    "MPa": UNIT["MegaPA"],
-    "Gpa": UNIT["GigaPA"],
-    "W/(m*K)": UNIT["W-PER-M-K"],
-    "J(kg*K)": UNIT["J-PER-KiloGM-K"],
-    "g/(m2*%RH)": UNIT["GM-PER-M2"],
-    "%vol": UNIT["PERCENT"],
-    "kJ/(K*m2*sqrt(s))": UNIT["KiloJ-PER-K-M2-SEC"],
-    "kg/(m2*sqrt(s))": UNIT["KiloGM-PER-M2-SEC"],
-}
-
-# Google Sheets IDs, you can find them in the URL of the sheet
-sheet_id = "1RL6Y120_H9-yD8x52eZO44S2iLQpLoZHitcExHsPfPs"
-objects_gid = "1120751986" 
-properties_gid = "373147482" 
-
-# === HELPERS ===
-def to_camel_case(s: str) -> str:
-    """Turn a label into CamelCase suitable for an IRI fragment."""
-    if pd.isna(s):
-        return None
-    parts = ''.join(c if c.isalnum() or c.isspace() else ' ' for c in str(s)).split()
-    return ''.join(p.capitalize() for p in parts)
 
 def add_concept_from_row(g, row, is_property=False):
     """Add SKOS Concept triples from a sheet row."""
-    camel_name = to_camel_case(row['s'])
+    s_value = row['s']
+    if pd.isna(s_value):
+        return
+
+    cleaned = ''.join(c if c.isalnum() or c.isspace() else ' ' for c in str(s_value))
+    camel_name = camelize(cleaned.strip()).replace(' ', '')
     if not camel_name:
         return
     concept_uri = URIRef(BASE_URI + camel_name)
@@ -71,7 +50,9 @@ def add_concept_from_row(g, row, is_property=False):
     # Broader relationships
     for parent_field in ['sub-entity level', 'entity']:
         if pd.notna(row.get(parent_field)):
-            parent_camel = to_camel_case(row[parent_field])
+            parent_value = row[parent_field]
+            cleaned_parent = ''.join(c if c.isalnum() or c.isspace() else ' ' for c in str(parent_value))
+            parent_camel = camelize(cleaned_parent.strip()).replace(' ', '')
             if parent_camel:
                 g.add((concept_uri, SKOS.broader, URIRef(BASE_URI + parent_camel)))
 
@@ -80,39 +61,64 @@ def add_concept_from_row(g, row, is_property=False):
         if pd.notna(row.get('symbol')):
             g.add((concept_uri, QUDT.symbol, Literal(row['symbol'])))
         if pd.notna(row.get('unit')):
-            unit_str = row['unit']
-            if unit_str in UNIT_MAPPING:
-                # Use QUDT unit URI
-                g.add((concept_uri, QUDT.unit, UNIT_MAPPING[unit_str]))
-            else:
-                # Fallback to literal if not in mapping
-                print(f"⚠️  Unit '{unit_str}' not in mapping, using literal")
-                g.add((concept_uri, QUDT.unit, Literal(unit_str)))
+            g.add((concept_uri, QUDT.unit, Literal(row['unit'])))
 
-# === MAIN ===
-# Load environment variables
-load_dotenv()
-FUSEKI_BASE = os.getenv("FUSEKI_URL")           # e.g., "http://localhost:3030/AREMA/data"
-GRAPH_URI = "https://ontology.atlas-regenmat.ch/"        # named graph IRI
-USERNAME = os.getenv("FUSEKI_USERNAME")         # e.g., "admin"
-PASSWORD = os.getenv("FUSEKI_PASSWORD")         # e.g., "Ve2mEu0Ll32W0jn"
+def upload_to_fuseki(file_path, fuseki_url=None, username=None, password=None, graph_uri=None):
+    """Upload the generated TTL file to Fuseki database."""
+    if not fuseki_url:
+        fuseki_url = os.getenv("FUSEKI_UPDATE_URL") or os.getenv("FUSEKI_URL")
+    
+    if not fuseki_url:
+        print("⚠️  Skipping upload: FUSEKI_UPDATE_URL not set.")
+        return False
+    
+    username = username or os.getenv("FUSEKI_USERNAME", "admin")
+    password = password or os.getenv("FUSEKI_PASSWORD")
+    graph_uri = graph_uri or "https://ontology.atlas-regenmat.ch/"
+    
+    upload_url = f"{fuseki_url}?graph={graph_uri}"
+    
+    print(f"📤 Uploading {file_path} to {upload_url}...")
+    try:
+        with open(file_path, "rb") as f:
+            ttl_data = f.read()
+        
+        response = requests.put(
+            upload_url,
+            data=ttl_data,
+            headers={"Content-Type": "text/turtle"},
+            auth=(username, password) if username and password else None
+        )
+        response.raise_for_status()
+        print(f"✅ Upload successful! ({response.status_code})")
+        return True
+    except Exception as e:
+        print(f"❌ Upload failed: {e}")
+        return False
 
-# Init graph
-g = Graph()
-g.bind("rdfs", "http://www.w3.org/2000/01/rdf-schema#")
-g.bind("me", BASE_URI)
-g.bind("brick", "https://w3id.org/brick#")
-g.bind("ifc", "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#")
-g.bind("owl", "http://www.w3.org/2002/07/owl#")
-g.bind("skos", "http://www.w3.org/2004/02/skos/core#")
-g.bind("xsd", "http://www.w3.org/2001/XMLSchema#")
-g.bind("dct", "http://purl.org/dc/terms/")
-g.bind("vann", "http://purl.org/vocab/vann/")
-g.bind("qudt", "http://qudt.org/schema/qudt/")
-g.bind("unit", "http://qudt.org/vocab/unit/")
 
-# Static ontology metadata
-ontology_metadata = """
+def convert_sheets_to_ontology():
+    """Convert Google Sheets data to SKOS/RDF ontology and upload to Fuseki."""
+    load_dotenv()
+    FUSEKI_BASE = os.getenv("FUSEKI_URL")
+    GRAPH_URI = "https://ontology.atlas-regenmat.ch/"
+    USERNAME = os.getenv("FUSEKI_USERNAME")
+    PASSWORD = os.getenv("FUSEKI_PASSWORD")
+
+    # Init graph
+    g = Graph()
+    g.bind("rdfs", "http://www.w3.org/2000/01/rdf-schema#")
+    g.bind("me", BASE_URI)
+    g.bind("brick", "https://w3id.org/brick#")
+    g.bind("ifc", "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#")
+    g.bind("owl", "http://www.w3.org/2002/07/owl#")
+    g.bind("skos", "http://www.w3.org/2004/02/skos/core#")
+    g.bind("xsd", "http://www.w3.org/2001/XMLSchema#")
+    g.bind("dct", "http://purl.org/dc/terms/")
+    g.bind("vann", "http://purl.org/vocab/vann/")
+    g.bind("qudt", "http://qudt.org/schema/qudt/")
+
+    ontology_metadata = """
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix me: <https://ontology.atlas-regenmat.ch/> .
 @prefix brick: <https://w3id.org/brick#> .
@@ -123,7 +129,6 @@ ontology_metadata = """
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix qudt: <http://qudt.org/schema/qudt/> .
-@prefix unit: <http://qudt.org/vocab/unit/> .
 
 @base <https://ontology.atlas-regenmat.ch/> .
 
@@ -139,36 +144,30 @@ me:AREMA a skos:ConceptScheme ;
                    "Ontologia AREMA"@it ;
     dct:license <https://creativecommons.org/licenses/by/4.0/> .
 """
-g.parse(data=ontology_metadata, format="turtle")
+    g.parse(data=ontology_metadata, format="turtle")
 
-# Load Google Sheets
-objects_url = f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=csv&gid={objects_gid}"
-df_objects = pd.read_csv(objects_url)
-for _, row in df_objects.iterrows():
-    add_concept_from_row(g, row, is_property=False)
+    # Load Google Sheets
+    sheet_id = os.getenv("GOOGLE_SHEET_ID", "1RL6Y120_H9-yD8x52eZO44S2iLQpLoZHitcExHsPfPs")
+    objects_gid = os.getenv("GOOGLE_SHEET_OBJECTS_GID", "1120751986")
+    properties_gid = os.getenv("GOOGLE_SHEET_PROPERTIES_GID", "373147482")
+    objects_url = f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=csv&gid={objects_gid}"
+    df_objects = pd.read_csv(objects_url)
+    for _, row in df_objects.iterrows():
+        add_concept_from_row(g, row, is_property=False)
 
-properties_url = f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=csv&gid={properties_gid}"
-df_properties = pd.read_csv(properties_url)
-for _, row in df_properties.iterrows():
-    add_concept_from_row(g, row, is_property=True)
+    properties_url = f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=csv&gid={properties_gid}"
+    df_properties = pd.read_csv(properties_url)
+    for _, row in df_properties.iterrows():
+        add_concept_from_row(g, row, is_property=True)
 
-# Serialize TTL to file
-TTL_PATH = ONTOLOGY_DIR / "AREMA-ontology.ttl"
-g.serialize(TTL_PATH, format="turtle")
+    # Serialize TTL to file
+    TTL_PATH = ONTOLOGY_DIR / "AREMA-ontology.ttl"
+    g.serialize(TTL_PATH, format="turtle")
+    print(f"✅ Generated ontology file: {TTL_PATH}")
+
+    # === UPLOAD TO FUSEKI ===
+    upload_to_fuseki(TTL_PATH, FUSEKI_BASE, USERNAME, PASSWORD, GRAPH_URI)
 
 
-# === UPLOAD TO FUSEKI ===
-upload_url = f"{FUSEKI_BASE}?graph={GRAPH_URI}"
-with open(TTL_PATH, "rb") as f:
-    ttl_data = f.read()
-resp = requests.put(
-    upload_url,
-    data=ttl_data,
-    headers={"Content-Type": "text/turtle"},
-    auth=(USERNAME, PASSWORD)
-)
-
-if resp.ok:
-    print(f"✅ Updated Fuseki dataset ({resp.status_code})")
-else:
-    print(f"❌ Fuseki update failed ({resp.status_code}):\n{resp.text}")
+if __name__ == "__main__":
+    convert_sheets_to_ontology()

@@ -4,7 +4,7 @@
   "prefLabel": {
     "de": "Dichte",
     "en": "Density",
-    "fr": "masse volumique"
+    "fr": "Masse volumique"
   },
   "broader": {
     "id": "https://ontology.atlas-regenmat.ch/Mechanical",
@@ -25,7 +25,7 @@
     }
   ],
   "unit": [
-    "http://qudt.org/vocab/unit/KiloGM-PER-M3"
+    "kg/m3"
   ],
   "@context": {
     "@version": 1.1,
@@ -175,7 +175,6 @@
     },
     "unit": {
       "@id": "qudt:unit",
-      "@type": "@id",
       "@container": "@set"
     },
     "domain": {

@@ -8,7 +8,7 @@
   },
   "narrower": [
     {
-      "id": "https://ontology.atlas-regenmat.ch/AbsorptionCoefficientAt500hz",
+      "id": "https://ontology.atlas-regenmat.ch/Absorptioncoefficientat500Hz",
       "prefLabel": {
         "de": "Schallabsorptionsgrad (bei 500Hz)",
         "en": "Absorption coefficient (at 500Hz)",
@@ -182,7 +182,6 @@
     },
     "unit": {
       "@id": "qudt:unit",
-      "@type": "@id",
       "@container": "@set"
     },
     "domain": {

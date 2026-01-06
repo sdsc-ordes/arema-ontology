@@ -6,7 +6,7 @@
     "en": "Exterior Wall Under Ground"
   },
   "definition": {
-    "en": "Wall that separates the exterior from teh interior of the building under ground"
+    "en": "Wall that separates the exterior from the interior of the building under ground"
   },
   "broader": {
     "id": "https://ontology.atlas-regenmat.ch/Structure",
@@ -174,7 +174,6 @@
     },
     "unit": {
       "@id": "qudt:unit",
-      "@type": "@id",
       "@container": "@set"
     },
     "domain": {

@@ -1,0 +1,43 @@
+# Git
+.git
+.gitignore
+
+# Python
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+*.egg
+*.egg-info
+dist
+build
+.venv
+venv/
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+*~
+
+# Documentation
+docs/
+public/
+README.md
+
+# External dependencies
+external/
+
+# Environment
+.env
+.env.*
+!.env.dist
+
+# Fuseki data
+tools/fuseki/data/
+
+# GitHub
+.github/
