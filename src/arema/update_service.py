@@ -6,8 +6,13 @@ from pathlib import Path
 import requests
 
 from tools.python.converter import csv2ont
+from tools.python.checks import shacl
 
 logger = logging.getLogger("OntologyUpdateService")
+
+# Paths
+ROOT_DIR = Path(__file__).parent.parent.parent
+SHAPES_FILE = ROOT_DIR / "src" / "quality-checks" / "skohub.shacl.ttl"
 
 
 def create_github_release():
@@ -92,24 +97,51 @@ def run_conversion():
     """
     Execute the ontology conversion from Google Sheets.
     
-    Converts Google Sheets data to RDF/TTL format and creates a GitHub Release.
-    The release triggers GitHub Actions which:
-    - Downloads the ontology from the release asset
-    - Validates using SHACL
-    - Generates documentation
-    - Deploys to production Fuseki endpoint
+    This function:
+    1. Converts Google Sheets data to RDF/TTL format
+    2. Validates the resulting graph using SHACL
+    3. Uploads to local Fuseki instance
+    4. Creates a GitHub Release (triggers docs generation)
     
     Raises:
-        Exception: If conversion fails
+        Exception: If conversion or validation fails
     """
     logger.info("Starting ontology conversion from Google Sheets")
     
-    # Convert Google Sheets to RDF/TTL
+    # Step 1: Convert Google Sheets to RDF/TTL
     csv2ont.convert_sheets_to_ontology()
     logger.info(f"✅ Ontology converted and saved to {csv2ont.TTL_PATH}")
     
-    # Create GitHub release with the ontology file
-    if create_github_release():
-        logger.info("✅ GitHub release created - this will trigger validation and deployment")
+    # Step 2: Validate the resulting graph using SHACL
+    logger.info("Validating ontology with SHACL shapes...")
+    is_valid = shacl.run_shacl_validation(
+        str(csv2ont.TTL_PATH), 
+        str(SHAPES_FILE)
+    )
+    
+    if not is_valid:
+        logger.error("Ontology validation failed: graph does not conform to SHACL shapes")
+        raise Exception("Ontology validation failed: resulting graph is not valid")
+    
+    logger.info("✅ Ontology validation passed")
+    
+    # Step 3: Upload to local Fuseki instance
+    logger.info("Uploading validated ontology to local Fuseki...")
+    upload_success = csv2ont.upload_to_fuseki(
+        csv2ont.TTL_PATH,
+        os.getenv("FUSEKI_URL"),
+        os.getenv("FUSEKI_USERNAME"),
+        os.getenv("FUSEKI_PASSWORD"),
+        "https://ontology.atlas-regenmat.ch/"
+    )
+    
+    if not upload_success:
+        logger.warning("Upload to Fuseki was skipped or failed")
     else:
-        logger.warning("Release creation skipped - ontology saved locally only")
+        logger.info("✅ Successfully uploaded to local Fuseki")
+    
+    # Step 4: Create GitHub release (triggers docs generation workflow)
+    if create_github_release():
+        logger.info("✅ GitHub release created - this will trigger documentation generation")
+    else:
+        logger.warning("Release creation skipped - ontology updated locally only")

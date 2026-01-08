@@ -1,6 +1,12 @@
 external/skohub-vocabs
 .env
 /tools/fuseki/data/
+service_account.json
+
+# Generated ontology files (only stored as release assets)
+src/ontology/
+
+# Python cache
 tools/python/converter/__pycache__/csv2ont.cpython-311.pyc
 tools/python/converter/__pycache__/csv2ont.cpython-312.pyc
 service_account.json

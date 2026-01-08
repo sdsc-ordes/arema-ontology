@@ -136,62 +136,20 @@ jobs:
           
           echo "✅ Documentation generated!"
 
-      - name: 💾 Commit Documentation & Ontology
+      - name: 💾 Commit Documentation
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           
-          # Add both docs and the ontology file (updates src/ontology/)
-          git add docs src/ontology/AREMA-ontology.ttl
+          # Add only docs (not the ontology file)
+          git add docs
           
           # Only commit if there are changes
           if ! git diff --cached --quiet; then
             RELEASE_TAG="${{ github.event.release.tag_name || inputs.release_tag || 'manual' }}"
-            git commit -m "Update ontology and docs from release ${RELEASE_TAG} [skip ci]"
+            git commit -m "Update docs from release ${RELEASE_TAG} [skip ci]"
             git push origin ${{ github.event.repository.default_branch }}
-            echo "✅ Documentation and ontology committed"
+            echo "✅ Documentation committed"
           else
             echo "ℹ️ No changes to commit"
           fi
-
-      - name: 🚀 Deploy to Fuseki
-        env:
-          FUSEKI_SPARQL_ENDPOINT: ${{ secrets.FUSEKI_SPARQL_ENDPOINT }}
-          FUSEKI_USERNAME: ${{ secrets.FUSEKI_USERNAME }}
-          FUSEKI_PASSWORD: ${{ secrets.FUSEKI_PASSWORD }}
-          GRAPH_URI: ${{ secrets.GRAPH_URI }}
-        run: |
-          set -euo pipefail
-          
-          timestamp=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
-          ARCHIVE_URI="${GRAPH_URI}/archive/${timestamp}"
-          
-          echo "🚀 Deploying ontology to ${FUSEKI_SPARQL_ENDPOINT}"
-          echo "📍 Target graph: ${GRAPH_URI}"
-          echo "💾 Backup graph: ${ARCHIVE_URI}"
-          
-          # Backup existing graph
-          echo "📦 Backing up current graph..."
-          curl -sf -u "${FUSEKI_USERNAME}:${FUSEKI_PASSWORD}" \
-            -X POST \
-            -H "Content-Type: application/sparql-update" \
-            --data "COPY GRAPH <${GRAPH_URI}> TO GRAPH <${ARCHIVE_URI}>" \
-            "${FUSEKI_SPARQL_ENDPOINT}" || echo "⚠️  No existing graph to back up"
-          
-          # Drop existing graph
-          echo "🧹 Dropping existing graph..."
-          curl -sf -u "${FUSEKI_USERNAME}:${FUSEKI_PASSWORD}" \
-            -X POST \
-            -H "Content-Type: application/sparql-update" \
-            --data "DROP GRAPH <${GRAPH_URI}>" \
-            "${FUSEKI_SPARQL_ENDPOINT}"
-          
-          # Upload new ontology
-          echo "📤 Uploading ontology..."
-          curl -sf -u "${FUSEKI_USERNAME}:${FUSEKI_PASSWORD}" \
-            -X POST \
-            -H "Content-Type: text/turtle" \
-            --data-binary "@src/ontology/AREMA-ontology.ttl" \
-            "${FUSEKI_SPARQL_ENDPOINT}?graph=${GRAPH_URI}"
-          
-          echo "✅ Deployment completed successfully!"
