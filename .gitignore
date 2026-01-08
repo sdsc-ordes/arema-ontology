@@ -6,23 +6,6 @@ service_account.json
 # Generated ontology files (only stored as release assets)
 src/ontology/
 
-# Python cache
-tools/python/converter/__pycache__/csv2ont.cpython-311.pyc
-tools/python/converter/__pycache__/csv2ont.cpython-312.pyc
-service_account.json
-src/arema/__pycache__/file_utils.cpython-311.pyc
-src/arema/__pycache__/git_utils.cpython-311.pyc
-src/arema/__pycache__/scheduler.cpython-311.pyc
-src/arema/__pycache__/sheets_utils.cpython-311.pyc
-src/arema/__pycache__/update_service.cpython-311.pyc
-src/server/__pycache__/__init__.cpython-311.pyc
-src/server/__pycache__/main.cpython-311.pyc
-src/__pycache__/__init__.cpython-311.pyc
-tools/__pycache__/__init__.cpython-311.pyc
-tools/python/__pycache__/__init__.cpython-311.pyc
-src/arema/__pycache__/__init__.cpython-311.pyc
-tools/python/converter/__pycache__/__init__.cpython-311.pyc
-
 # Python
 __pycache__/
 *.py[cod]
@@ -35,3 +18,4 @@ build/
 .venv/
 venv/
 
+src/ontology/AREMA-ontology.ttl
