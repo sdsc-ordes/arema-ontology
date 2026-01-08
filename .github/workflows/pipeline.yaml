@@ -107,16 +107,28 @@ jobs:
           # Preserve CNAME if it exists
           [ -f docs/CNAME ] && cp docs/CNAME /tmp/CNAME || true
           
-          # Build using volumes (simpler than docker create/cp/start)
-          docker run --rm \
+          # Clear docs folder
+          rm -rf docs/*
+          
+          # Create container with volume mounts for input only
+          CONTAINER_ID=$(docker create \
             -v $(pwd)/src/ontology:/app/data \
             -v $(pwd)/.env:/app/.env \
             -v $(pwd)/tools/skohub-vocabs/config.yaml:/app/config.yaml \
             -v $(pwd)/tools/skohub-vocabs/src:/app/src/custom \
             -v $(pwd)/tools/skohub-vocabs/static:/app/static/custom \
-            -v $(pwd)/docs:/app/public \
             ghcr.io/sdsc-ordes/skohub-vocabs:v0.3.2 \
             npm run build
+          )
+          
+          # Run build
+          docker start -a $CONTAINER_ID
+          
+          # Copy output from container
+          docker cp $CONTAINER_ID:/app/public/. ./docs/
+          
+          # Cleanup
+          docker rm $CONTAINER_ID
           
           # Restore CNAME
           [ -f /tmp/CNAME ] && mv /tmp/CNAME docs/CNAME || true

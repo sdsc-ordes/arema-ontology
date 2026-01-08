@@ -14,6 +14,8 @@ def create_github_release():
     """
     Create a GitHub release with the ontology file as an asset.
     
+    If a release already exists for today, it will be deleted and recreated.
+    
     Returns:
         bool: True if release was created successfully
     """
@@ -24,9 +26,9 @@ def create_github_release():
         logger.warning("GITHUB_TOKEN not set - skipping release creation")
         return False
     
-    # Create release tag based on timestamp
-    timestamp = datetime.now(timezone.utc).strftime("%Y%m%d-%H%M%S")
-    tag_name = f"ontology-v{timestamp}"
+    # Create release tag based on date only (overwrites releases on same day)
+    date_str = datetime.now(timezone.utc).strftime("%Y%m%d")
+    tag_name = f"ontology-v{date_str}"
     
     # Create release
     release_url = f"https://api.github.com/repos/{github_repo}/releases"
@@ -38,13 +40,28 @@ def create_github_release():
     
     release_data = {
         "tag_name": tag_name,
-        "name": f"Ontology Update {timestamp}",
+        "name": f"Ontology Update {date_str}",
         "body": f"Automated ontology update from Google Sheets\n\nGenerated: {datetime.now(timezone.utc).isoformat()}",
         "draft": False,
         "prerelease": False
     }
     
     try:
+        # Check if release already exists and delete it
+        existing_release_url = f"https://api.github.com/repos/{github_repo}/releases/tags/{tag_name}"
+        existing_response = requests.get(existing_release_url, headers=headers)
+        
+        if existing_response.status_code == 200:
+            logger.info(f"Found existing release for {tag_name}, deleting...")
+            existing_release = existing_response.json()
+            delete_url = f"https://api.github.com/repos/{github_repo}/releases/{existing_release['id']}"
+            requests.delete(delete_url, headers=headers)
+            
+            # Also delete the tag
+            tag_delete_url = f"https://api.github.com/repos/{github_repo}/git/refs/tags/{tag_name}"
+            requests.delete(tag_delete_url, headers=headers)
+            logger.info("Previous release and tag deleted")
+        
         logger.info(f"Creating GitHub release {tag_name}...")
         response = requests.post(release_url, json=release_data, headers=headers)
         response.raise_for_status()
