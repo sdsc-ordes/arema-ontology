@@ -165,9 +165,6 @@ me:AREMA a skos:ConceptScheme ;
     g.serialize(TTL_PATH, format="turtle")
     print(f"✅ Generated ontology file: {TTL_PATH}")
 
-    # === UPLOAD TO FUSEKI ===
-    upload_to_fuseki(TTL_PATH, FUSEKI_BASE, USERNAME, PASSWORD, GRAPH_URI)
-
 
 if __name__ == "__main__":
     convert_sheets_to_ontology()

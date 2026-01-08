@@ -1,0 +1,187 @@
+name: Ontology CI/CD Pipeline
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:  # Manual trigger
+    inputs:
+      release_tag:
+        description: 'Release tag to process (leave empty for latest)'
+        required: false
+        type: string
+
+jobs:
+  # ============================================
+  # JOB 1: DOWNLOAD & VALIDATE
+  # ============================================
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🧾 Checkout repository
+        uses: actions/checkout@v4
+
+      - name: 📥 Download ontology from release
+        run: |
+          # Get release info
+          if [ -n "${{ inputs.release_tag }}" ]; then
+            RELEASE_TAG="${{ inputs.release_tag }}"
+            echo "Using specified release: ${RELEASE_TAG}"
+            RELEASE_URL="https://api.github.com/repos/${{ github.repository }}/releases/tags/${RELEASE_TAG}"
+          else
+            echo "Using latest release"
+            RELEASE_URL="https://api.github.com/repos/${{ github.repository }}/releases/latest"
+          fi
+          
+          # Get download URL for the ontology asset
+          ASSET_URL=$(curl -s -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+            "${RELEASE_URL}" | \
+            jq -r '.assets[] | select(.name=="AREMA-ontology.ttl") | .browser_download_url')
+          
+          echo "📥 Downloading ontology from: ${ASSET_URL}"
+          mkdir -p src/ontology
+          curl -L -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+            "${ASSET_URL}" -o src/ontology/AREMA-ontology.ttl
+          
+          echo "✅ Ontology downloaded"
+          ls -lh src/ontology/AREMA-ontology.ttl
+
+      - name: 🐍 Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: 📦 Install uv
+        run: |
+          curl -LsSf https://astral.sh/uv/install.sh | sh
+          echo "$HOME/.cargo/bin" >> $GITHUB_PATH
+
+      - name: 🔧 Sync Python environment
+        run: uv sync --frozen
+
+      - name: ✅ SHACL Validation
+        run: |
+          echo "🔍 Validating ontology with SHACL shapes..."
+          uv run python tools/python/checks/shacl.py \
+            src/ontology/AREMA-ontology.ttl \
+            src/quality-checks/skohub.shacl.ttl
+          echo "✅ Validation passed!"
+      
+      - name: 💾 Upload ontology artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: validated-ontology
+          path: src/ontology/AREMA-ontology.ttl
+          retention-days: 7
+
+  # ============================================
+  # JOB 2: BUILD DOCS & DEPLOY
+  # ============================================
+  build-and-deploy:
+    needs: validate
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write  # Required to push docs back to repo
+
+    steps:
+      - name: 🧾 Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Full history for proper git operations
+
+      - name: 📥 Download validated ontology
+        uses: actions/download-artifact@v4
+        with:
+          name: validated-ontology
+          path: src/ontology
+
+      - name: 📚 Build Documentation
+        run: |
+          echo "🏗️ Generating documentation with SKOHub..."
+          
+          # Prepare environment
+          mkdir -p docs
+          echo "BASEURL=/" > .env
+          echo "PATH_PREFIX=/" >> .env
+          echo "GATSBY_BASE_PATH=/" >> .env
+          
+          # Preserve CNAME if it exists
+          [ -f docs/CNAME ] && cp docs/CNAME /tmp/CNAME || true
+          
+          # Build using volumes (simpler than docker create/cp/start)
+          docker run --rm \
+            -v $(pwd)/src/ontology:/app/data \
+            -v $(pwd)/.env:/app/.env \
+            -v $(pwd)/tools/skohub-vocabs/config.yaml:/app/config.yaml \
+            -v $(pwd)/tools/skohub-vocabs/src:/app/src/custom \
+            -v $(pwd)/tools/skohub-vocabs/static:/app/static/custom \
+            -v $(pwd)/docs:/app/public \
+            ghcr.io/sdsc-ordes/skohub-vocabs:v0.3.2 \
+            npm run build
+          
+          # Restore CNAME
+          [ -f /tmp/CNAME ] && mv /tmp/CNAME docs/CNAME || true
+          
+          echo "✅ Documentation generated!"
+
+      - name: 💾 Commit Documentation & Ontology
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          
+          # Pull latest changes to avoid race conditions
+          git pull --rebase origin ${{ github.ref_name }} || true
+          
+          # Add both docs and the ontology file (updates src/ontology/)
+          git add docs src/ontology/AREMA-ontology.ttl
+          
+          # Only commit if there are changes
+          if ! git diff --cached --quiet; then
+            RELEASE_TAG="${{ github.event.release.tag_name || inputs.release_tag || 'manual' }}"
+            git commit -m "Update ontology and docs from release ${RELEASE_TAG} [skip ci]"
+            git push
+            echo "✅ Documentation and ontology committed"
+          else
+            echo "ℹ️ No changes to commit"
+          fi
+
+      - name: 🚀 Deploy to Fuseki
+        env:
+          FUSEKI_SPARQL_ENDPOINT: ${{ secrets.FUSEKI_SPARQL_ENDPOINT }}
+          FUSEKI_USERNAME: ${{ secrets.FUSEKI_USERNAME }}
+          FUSEKI_PASSWORD: ${{ secrets.FUSEKI_PASSWORD }}
+          GRAPH_URI: ${{ secrets.GRAPH_URI }}
+        run: |
+          set -euo pipefail
+          
+          timestamp=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+          ARCHIVE_URI="${GRAPH_URI}/archive/${timestamp}"
+          
+          echo "🚀 Deploying ontology to ${FUSEKI_SPARQL_ENDPOINT}"
+          echo "📍 Target graph: ${GRAPH_URI}"
+          echo "💾 Backup graph: ${ARCHIVE_URI}"
+          
+          # Backup existing graph
+          echo "📦 Backing up current graph..."
+          curl -sf -u "${FUSEKI_USERNAME}:${FUSEKI_PASSWORD}" \
+            -X POST \
+            -H "Content-Type: application/sparql-update" \
+            --data "COPY GRAPH <${GRAPH_URI}> TO GRAPH <${ARCHIVE_URI}>" \
+            "${FUSEKI_SPARQL_ENDPOINT}" || echo "⚠️  No existing graph to back up"
+          
+          # Drop existing graph
+          echo "🧹 Dropping existing graph..."
+          curl -sf -u "${FUSEKI_USERNAME}:${FUSEKI_PASSWORD}" \
+            -X POST \
+            -H "Content-Type: application/sparql-update" \
+            --data "DROP GRAPH <${GRAPH_URI}>" \
+            "${FUSEKI_SPARQL_ENDPOINT}"
+          
+          # Upload new ontology
+          echo "📤 Uploading ontology..."
+          curl -sf -u "${FUSEKI_USERNAME}:${FUSEKI_PASSWORD}" \
+            -X POST \
+            -H "Content-Type: text/turtle" \
+            --data-binary "@src/ontology/AREMA-ontology.ttl" \
+            "${FUSEKI_SPARQL_ENDPOINT}?graph=${GRAPH_URI}"
+          
+          echo "✅ Deployment completed successfully!"

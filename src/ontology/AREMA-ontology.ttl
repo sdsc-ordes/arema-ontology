@@ -38,7 +38,8 @@ me:AssociationProfessional a skos:Concept ;
 
 me:Balcony a skos:Concept ;
     skos:broader me:Structure ;
-    skos:definition "Structure outside exterior wall"@en ;
+    skos:definition "Structure outside exterior wall"@de,
+        "Structure outside exterior wall"@en ;
     skos:inScheme me:AREMA ;
     skos:prefLabel "Balkon"@de,
         "Balcony"@en .
