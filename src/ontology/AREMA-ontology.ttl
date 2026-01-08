@@ -92,7 +92,7 @@ me:CivilEngineer a skos:Concept ;
 
 me:Column a skos:Concept ;
     skos:broader me:Structure ;
-    skos:definition "Load-bearing elements usually indoors"@en ;
+    skos:definition "Load-bearing elements, usually indoors"@en ;
     skos:inScheme me:AREMA ;
     skos:prefLabel "Stütze"@de,
         "Column"@en .
@@ -380,7 +380,7 @@ me:Rock a skos:Concept ;
 
 me:Roof a skos:Concept ;
     skos:broader me:Structure ;
-    skos:definition "Roof construction load-bearing"@en ;
+    skos:definition "Load-bearing roof construction"@en ;
     skos:inScheme me:AREMA ;
     skos:prefLabel "Dach"@de,
         "Roof"@en .
