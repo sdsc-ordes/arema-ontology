@@ -128,11 +128,11 @@ def run_conversion():
     # Step 3: Upload to local Fuseki instance
     logger.info("Uploading validated ontology to local Fuseki...")
     upload_success = csv2ont.upload_to_fuseki(
-        csv2ont.TTL_PATH,
+        str(csv2ont.TTL_PATH),
         os.getenv("FUSEKI_URL"),
         os.getenv("FUSEKI_USERNAME"),
         os.getenv("FUSEKI_PASSWORD"),
-        "https://ontology.atlas-regenmat.ch/"
+        os.getenv("GRAPH_URI", "https://ontology.atlas-regenmat.ch/")
     )
     
     if not upload_success:

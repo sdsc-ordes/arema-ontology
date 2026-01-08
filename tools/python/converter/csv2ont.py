@@ -69,12 +69,12 @@ def upload_to_fuseki(file_path, fuseki_url=None, username=None, password=None, g
         fuseki_url = os.getenv("FUSEKI_UPDATE_URL") or os.getenv("FUSEKI_URL")
     
     if not fuseki_url:
-        print("⚠️  Skipping upload: FUSEKI_UPDATE_URL not set.")
+        print("⚠️  Skipping upload: FUSEKI_URL not set.")
         return False
     
     username = username or os.getenv("FUSEKI_USERNAME", "admin")
     password = password or os.getenv("FUSEKI_PASSWORD")
-    graph_uri = graph_uri or "https://ontology.atlas-regenmat.ch/"
+    graph_uri = graph_uri or os.getenv("GRAPH_URI", "https://ontology.atlas-regenmat.ch/")
     
     upload_url = f"{fuseki_url}?graph={graph_uri}"
     
