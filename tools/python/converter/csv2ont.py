@@ -8,7 +8,7 @@ from inflection import camelize
 from pathlib import Path
 
 # === BASE DIRS ===
-SCRIPT_DIR = Path(__file__).parent      # tools/python/converter
+SCRIPT_DIR = Path(__file__).parent  # tools/python/converter
 ROOT_DIR = SCRIPT_DIR.parent.parent.parent  # ../../.. from converter -> root of repo
 ONTOLOGY_DIR = ROOT_DIR / "src" / "ontology"
 ONTOLOGY_DIR.mkdir(parents=True, exist_ok=True)
@@ -20,14 +20,15 @@ BASE_URI = "https://ontology.atlas-regenmat.ch/"
 ME = Namespace(BASE_URI)
 QUDT = Namespace("http://qudt.org/schema/qudt/")
 
+
 def add_concept_from_row(g, row, is_property=False):
     """Add SKOS Concept triples from a sheet row."""
-    s_value = row['s']
+    s_value = row["s"]
     if pd.isna(s_value):
         return
 
-    cleaned = ''.join(c if c.isalnum() or c.isspace() else ' ' for c in str(s_value))
-    camel_name = camelize(cleaned.strip()).replace(' ', '')
+    cleaned = "".join(c if c.isalnum() or c.isspace() else " " for c in str(s_value))
+    camel_name = camelize(cleaned.strip()).replace(" ", "")
     if not camel_name:
         return
     concept_uri = URIRef(BASE_URI + camel_name)
@@ -36,58 +37,65 @@ def add_concept_from_row(g, row, is_property=False):
     g.add((concept_uri, SKOS.inScheme, ME.AREMA))
 
     # Labels
-    for lang in ['en', 'de', 'fr', 'it']:
+    for lang in ["en", "de", "fr", "it"]:
         label_key = f"{lang}Label"
         if pd.notna(row.get(label_key)):
             g.add((concept_uri, SKOS.prefLabel, Literal(row[label_key], lang=lang)))
 
     # Definitions
-    for lang in ['en', 'de', 'fr', 'it']:
+    for lang in ["en", "de", "fr", "it"]:
         def_key = f"{lang}Definition"
         if pd.notna(row.get(def_key)):
             g.add((concept_uri, SKOS.definition, Literal(row[def_key], lang=lang)))
 
     # Broader relationships
-    for parent_field in ['sub-entity level', 'entity']:
+    for parent_field in ["sub-entity level", "entity"]:
         if pd.notna(row.get(parent_field)):
             parent_value = row[parent_field]
-            cleaned_parent = ''.join(c if c.isalnum() or c.isspace() else ' ' for c in str(parent_value))
-            parent_camel = camelize(cleaned_parent.strip()).replace(' ', '')
+            cleaned_parent = "".join(
+                c if c.isalnum() or c.isspace() else " " for c in str(parent_value)
+            )
+            parent_camel = camelize(cleaned_parent.strip()).replace(" ", "")
             if parent_camel:
                 g.add((concept_uri, SKOS.broader, URIRef(BASE_URI + parent_camel)))
 
     # Extra fields for properties
     if is_property:
-        if pd.notna(row.get('symbol')):
-            g.add((concept_uri, QUDT.symbol, Literal(row['symbol'])))
-        if pd.notna(row.get('unit')):
-            g.add((concept_uri, QUDT.unit, Literal(row['unit'])))
+        if pd.notna(row.get("symbol")):
+            g.add((concept_uri, QUDT.symbol, Literal(row["symbol"])))
+        if pd.notna(row.get("unit")):
+            g.add((concept_uri, QUDT.unit, Literal(row["unit"])))
 
-def upload_to_fuseki(file_path, fuseki_url=None, username=None, password=None, graph_uri=None):
+
+def upload_to_fuseki(
+    file_path, fuseki_url=None, username=None, password=None, graph_uri=None
+):
     """Upload the generated TTL file to Fuseki database."""
     if not fuseki_url:
         fuseki_url = os.getenv("FUSEKI_UPDATE_URL") or os.getenv("FUSEKI_URL")
-    
+
     if not fuseki_url:
         print("⚠️  Skipping upload: FUSEKI_URL not set.")
         return False
-    
+
     username = username or os.getenv("FUSEKI_USERNAME", "admin")
     password = password or os.getenv("FUSEKI_PASSWORD")
-    graph_uri = graph_uri or os.getenv("GRAPH_URI", "https://ontology.atlas-regenmat.ch/")
-    
+    graph_uri = graph_uri or os.getenv(
+        "GRAPH_URI", "https://ontology.atlas-regenmat.ch/"
+    )
+
     upload_url = f"{fuseki_url}?graph={graph_uri}"
-    
+
     print(f"📤 Uploading {file_path} to {upload_url}...")
     try:
         with open(file_path, "rb") as f:
             ttl_data = f.read()
-        
+
         response = requests.put(
             upload_url,
             data=ttl_data,
             headers={"Content-Type": "text/turtle"},
-            auth=(username, password) if username and password else None
+            auth=(username, password) if username and password else None,
         )
         response.raise_for_status()
         print(f"✅ Upload successful! ({response.status_code})")
@@ -105,7 +113,6 @@ def convert_sheets_to_ontology():
     USERNAME = os.getenv("FUSEKI_USERNAME")
     PASSWORD = os.getenv("FUSEKI_PASSWORD")
 
-    # Init graph
     g = Graph()
     g.bind("rdfs", "http://www.w3.org/2000/01/rdf-schema#")
     g.bind("me", BASE_URI)
@@ -147,7 +154,9 @@ me:AREMA a skos:ConceptScheme ;
     g.parse(data=ontology_metadata, format="turtle")
 
     # Load Google Sheets
-    sheet_id = os.getenv("GOOGLE_SHEET_ID", "1RL6Y120_H9-yD8x52eZO44S2iLQpLoZHitcExHsPfPs")
+    sheet_id = os.getenv(
+        "GOOGLE_SHEET_ID", "1RL6Y120_H9-yD8x52eZO44S2iLQpLoZHitcExHsPfPs"
+    )
     objects_gid = os.getenv("GOOGLE_SHEET_OBJECTS_GID", "1120751986")
     properties_gid = os.getenv("GOOGLE_SHEET_PROPERTIES_GID", "373147482")
     objects_url = f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=csv&gid={objects_gid}"
@@ -160,7 +169,6 @@ me:AREMA a skos:ConceptScheme ;
     for _, row in df_properties.iterrows():
         add_concept_from_row(g, row, is_property=True)
 
-    # Serialize TTL to file
     TTL_PATH = ONTOLOGY_DIR / "AREMA-ontology.ttl"
     g.serialize(TTL_PATH, format="turtle")
     print(f"✅ Generated ontology file: {TTL_PATH}")

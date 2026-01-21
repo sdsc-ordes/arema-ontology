@@ -16,7 +16,7 @@ logging.basicConfig(level=logging.INFO)
 
 class OntologyManagerState:
     """Simple state container for the ontology manager."""
-    
+
     def __init__(self):
         self.is_updating: bool = False
         self.last_sheet_check_time: datetime = datetime.now(timezone.utc)
@@ -24,24 +24,23 @@ class OntologyManagerState:
         self.scheduler: BackgroundScheduler = BackgroundScheduler()
 
 
-# Application state
 state = OntologyManagerState()
 
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     """Manage application lifespan - startup and shutdown."""
-    # Startup
     state.last_sheet_check_time = datetime.now(timezone.utc)
     logger.info(f"Starting scheduler - will check for Sheet updates every 5 minutes")
-    
-    state.scheduler.add_job(lambda: check_and_update(state), 'interval', minutes=5, id='check_updates')
+
+    state.scheduler.add_job(
+        lambda: check_and_update(state), "interval", minutes=5, id="check_updates"
+    )
     state.scheduler.start()
     logger.info("Scheduler started")
-    
-    yield  # Application runs here
-    
-    # Shutdown
+
+    yield
+
     state.scheduler.shutdown()
     logger.info("Scheduler shutdown")
 
@@ -50,7 +49,7 @@ app = FastAPI(
     title="AREMA Ontology Manager",
     description="API service for managing AREMA ontology conversions with automatic polling",
     version="2.0.0",
-    lifespan=lifespan
+    lifespan=lifespan,
 )
 
 
@@ -74,11 +73,19 @@ async def root():
         "status": "healthy",
         "updating": state.is_updating,
         "scheduler": {
-            "active": state.scheduler.running if hasattr(state.scheduler, 'running') else True,
+            "active": (
+                state.scheduler.running if hasattr(state.scheduler, "running") else True
+            ),
             "check_interval": "5 minutes",
-            "last_sheet_check": state.last_sheet_check_time.isoformat() if state.last_sheet_check_time else None,
-            "last_update": state.last_update_time.isoformat() if state.last_update_time else None
-        }
+            "last_sheet_check": (
+                state.last_sheet_check_time.isoformat()
+                if state.last_sheet_check_time
+                else None
+            ),
+            "last_update": (
+                state.last_update_time.isoformat() if state.last_update_time else None
+            ),
+        },
     }
 
 
@@ -86,18 +93,15 @@ async def root():
 async def trigger_update(background_tasks: BackgroundTasks):
     """
     Trigger an ontology update from Google Sheets.
-    
+
     Converts Google Sheets to RDF and uploads to Fuseki triplestore.
     """
     if state.is_updating:
-        raise HTTPException(
-            status_code=409,
-            detail="Update already in progress"
-        )
+        raise HTTPException(status_code=409, detail="Update already in progress")
 
     state.is_updating = True
     background_tasks.add_task(run_update_task)
     return {
         "status": "Update started",
-        "message": "Converting Google Sheets to ontology and uploading to Fuseki"
+        "message": "Converting Google Sheets to ontology and uploading to Fuseki",
     }

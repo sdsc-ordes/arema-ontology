@@ -6,8 +6,9 @@ import logging
 # Set up basic logging
 logging.basicConfig(
     level=logging.INFO,  # Default to INFO level
-    format="%(asctime)s - %(levelname)s - %(message)s"
+    format="%(asctime)s - %(levelname)s - %(message)s",
 )
+
 
 def run_shacl_validation(data_file, shapes_file):
     # Load the data graph
@@ -22,20 +23,18 @@ def run_shacl_validation(data_file, shapes_file):
 
     # Perform SHACL validation
     conforms, results_graph, results_text = validate(
-        data_graph=data_graph,
-        shacl_graph=shapes_graph,
-        debug=False
+        data_graph=data_graph, shacl_graph=shapes_graph, debug=False
     )
     logging.info("Validation Results:")
     logging.info(results_text)
-    
+
     if conforms:
         logging.info("The ontology conforms to the SHACL shapes.")
     else:
         logging.error("The ontology does not conform to the SHACL shapes.")
         logging.error("Results graph:")
-        logging.error(results_graph.serialize(format='turtle'))
-    
+        logging.error(results_graph.serialize(format="turtle"))
+
     return conforms
 
 
@@ -47,6 +46,8 @@ if __name__ == "__main__":
     data_file = sys.argv[1]
     shapes_file = sys.argv[2]
 
-    logging.info(f"Running SHACL validation on {data_file} with shapes {shapes_file}...")
+    logging.info(
+        f"Running SHACL validation on {data_file} with shapes {shapes_file}..."
+    )
     conforms = run_shacl_validation(data_file, shapes_file)
     sys.exit(0 if conforms else 1)

@@ -22,3 +22,8 @@ dependencies = [
 ]
 
 [tool.uv]
+
+[dependency-groups]
+dev = [
+    "black>=26.1.0",
+]
