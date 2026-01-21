@@ -12,13 +12,19 @@ on:
 
 jobs:
   # ============================================
-  # JOB 1: DOWNLOAD & VALIDATE
+  # VALIDATE, BUILD & DEPLOY
   # ============================================
-  validate:
+  validate-build-deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write  # Required to push docs back to repo
+
     steps:
       - name: 🧾 Checkout repository
         uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+          fetch-depth: 0  # Full history for proper git operations
 
       - name: 📥 Download ontology from release
         run: |
@@ -45,57 +51,7 @@ jobs:
           echo "✅ Ontology downloaded"
           ls -lh src/ontology/AREMA-ontology.ttl
 
-      - name: 🐍 Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
-
-      - name: 📦 Install uv
-        run: |
-          curl -LsSf https://astral.sh/uv/install.sh | sh
-          echo "$HOME/.cargo/bin" >> $GITHUB_PATH
-
-      - name: 🔧 Sync Python environment
-        run: uv sync --frozen
-
-      - name: ✅ SHACL Validation
-        run: |
-          echo "🔍 Validating ontology with SHACL shapes..."
-          uv run python tools/python/checks/shacl.py \
-            src/ontology/AREMA-ontology.ttl \
-            src/quality-checks/skohub.shacl.ttl
-          echo "✅ Validation passed!"
-      
-      - name: 💾 Upload ontology artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: validated-ontology
-          path: src/ontology/AREMA-ontology.ttl
-          retention-days: 7
-
-  # ============================================
-  # JOB 2: BUILD DOCS & DEPLOY
-  # ============================================
-  build-and-deploy:
-    needs: validate
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write  # Required to push docs back to repo
-
-    steps:
-      - name: 🧾 Checkout repository
-        uses: actions/checkout@v4
-        with:
-          ref: ${{ github.event.repository.default_branch }}
-          fetch-depth: 0  # Full history for proper git operations
-
-      - name: 📥 Download validated ontology
-        uses: actions/download-artifact@v4
-        with:
-          name: validated-ontology
-          path: src/ontology
-
-      - name: 📚 Build Documentation
+      - name:  Build Documentation
         run: |
           echo "🏗️ Generating documentation with SKOHub..."
           
