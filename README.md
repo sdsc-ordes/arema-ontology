@@ -36,8 +36,7 @@ arema-ontology/
 │   │   └── sheets_utils.py      # Google Sheets API utilities
 │   ├── server/                  # FastAPI service
 │   │   └── main.py              # API endpoints and scheduler
-│   ├── ontology/                # Generated ontology files
-│   │   └── AREMA-ontology.ttl   # Main ontology (auto-generated)
+│   ├── ontology/                # Generated ontology files (not in git, available as releases)
 │   └── quality-checks/          # SHACL validation shapes
 │       ├── shacl-shacl.ttl
 │       └── skohub.shacl.ttl
@@ -72,7 +71,6 @@ Core utility modules for git operations and file management.
 **tools/python/converter/csv2ont.py**  
 Converts Google Sheets data to SKOS/RDF format with support for:
 - Multilingual labels (en/de/fr/it)
-- QUDT units and symbols
 - Hierarchical concept schemes
 - Automatic upload to Fuseki
 
@@ -89,7 +87,7 @@ SHACL shapes for validating ontology consistency and SKOHub compatibility.
 
 The ontology undergoes multiple validation checks:
 
-- **SHACL Validation**: Ensures structural consistency and conformance to SKOS/QUDT patterns
+- **SHACL Validation**: Ensures structural consistency and conformance to SKOS patterns
 - **SKOHub Compatibility**: Validates compatibility with the static site generator
 - **Automated Testing**: `test.sh` script validates the full workflow
 
@@ -178,12 +176,7 @@ curl http://localhost:3030/$/ping
 
 ### Environment Variables
 
-Required in `.env`:
-```bash
-FUSEKI_URL=http://localhost:3030/arema/data
-FUSEKI_USERNAME=admin
-FUSEKI_PASSWORD=your_secure_password
-```
+Required in `.env` (copy from `.env.dist`):
 
 ### Ports
 - `8000` - Ontology Manager API
@@ -198,7 +191,7 @@ FUSEKI_PASSWORD=your_secure_password
 
 1. **Edit Google Sheet** - Domain experts update the taxonomy
 2. **Trigger Update** - API endpoint or wait for scheduled update
-3. **Conversion** - CSV → SKOS/RDF with QUDT units
+3. **Conversion** - CSV → SKOS/RDF format
 4. **Upload** - Data uploaded to Fuseki triplestore
 5. **Validation** - SHACL checks ensure quality
 6. **Publication** - GitHub Actions builds SKOHub static site
