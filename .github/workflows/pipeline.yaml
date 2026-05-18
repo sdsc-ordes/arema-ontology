@@ -73,7 +73,7 @@ jobs:
             -v $(pwd)/.env:/app/.env \
             -v $(pwd)/tools/skohub-vocabs/config.yaml:/app/config.yaml \
             -v $(pwd)/tools/skohub-vocabs/src:/app/src/custom \
-            -v $(pwd)/tools/skohub-vocabs/static:/app/static/custom \
+            -v $(pwd)/tools/skohub-vocabs/static/img:/app/static/img \
             ghcr.io/sdsc-ordes/skohub-vocabs:v0.3.2 \
             npm run build
           )
