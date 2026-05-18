@@ -2,8 +2,8 @@
   "id": "https://ontology.atlas-regenmat.ch/NaturalResource",
   "type": "Concept",
   "prefLabel": {
-    "de": "Ressourcen",
     "en": "Resource",
+    "de": "Ressourcen",
     "fr": "Ressources"
   },
   "definition": {
@@ -13,48 +13,48 @@
     {
       "id": "https://ontology.atlas-regenmat.ch/Earth",
       "prefLabel": {
-        "de": "Lehm",
         "en": "Earth",
+        "de": "Lehm",
         "fr": "Terre"
       }
     },
     {
       "id": "https://ontology.atlas-regenmat.ch/Hemp",
       "prefLabel": {
-        "de": "Hanf",
         "en": "Hemp",
+        "de": "Hanf",
         "fr": "Chanvre"
       }
     },
     {
       "id": "https://ontology.atlas-regenmat.ch/OtherFiber",
       "prefLabel": {
-        "de": "Andere Fasern",
         "en": "Other Fibre",
+        "de": "Andere Fasern",
         "fr": "Autres fibres"
       }
     },
     {
       "id": "https://ontology.atlas-regenmat.ch/Rock",
       "prefLabel": {
-        "de": "Gestein",
         "en": "Rock",
+        "de": "Gestein",
         "fr": "Roche"
       }
     },
     {
       "id": "https://ontology.atlas-regenmat.ch/Straw",
       "prefLabel": {
-        "de": "Stroh",
         "en": "Straw",
+        "de": "Stroh",
         "fr": "Paille"
       }
     },
     {
       "id": "https://ontology.atlas-regenmat.ch/Wood",
       "prefLabel": {
-        "de": "Holz",
         "en": "Wood",
+        "de": "Holz",
         "fr": "Bois"
       }
     }
@@ -62,8 +62,8 @@
   "broader": {
     "id": "https://ontology.atlas-regenmat.ch/Object",
     "prefLabel": {
-      "de": "Objekt",
       "en": "Object",
+      "de": "Objekt",
       "fr": "Objet"
     }
   },
@@ -105,6 +105,10 @@
     },
     "description": {
       "@id": "dct:description",
+      "@container": "@language"
+    },
+    "license": {
+      "@id": "dct:license",
       "@container": "@language"
     },
     "issued": {

@@ -2,8 +2,8 @@
   "id": "https://ontology.atlas-regenmat.ch/CeilingFinishing",
   "type": "Concept",
   "prefLabel": {
-    "de": "Deckenbekleidung",
-    "en": "Ceiling Finishing"
+    "en": "Ceiling Finishing",
+    "de": "Deckenbekleidung"
   },
   "definition": {
     "en": "Ceiling Finishing"
@@ -11,8 +11,8 @@
   "broader": {
     "id": "https://ontology.atlas-regenmat.ch/Finishings",
     "prefLabel": {
-      "de": "Oberflächen",
       "en": "Finishings",
+      "de": "Oberflächen",
       "fr": "Finitions"
     }
   },
@@ -54,6 +54,10 @@
     },
     "description": {
       "@id": "dct:description",
+      "@container": "@language"
+    },
+    "license": {
+      "@id": "dct:license",
       "@container": "@language"
     },
     "issued": {

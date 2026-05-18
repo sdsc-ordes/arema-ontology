@@ -2,15 +2,18 @@
   "id": "https://ontology.atlas-regenmat.ch/Watercontentat80",
   "type": "Concept",
   "prefLabel": {
-    "de": "Wassergehalt bei 80%",
     "en": "Water content at 80%",
+    "de": "Wassergehalt bei 80%",
     "fr": "Teneur en eau à 80%"
+  },
+  "definition": {
+    "en": "Water intake of a material at 80% RH"
   },
   "broader": {
     "id": "https://ontology.atlas-regenmat.ch/Hygrothermal",
     "prefLabel": {
-      "de": "Hygrothermisch",
       "en": "Hygrothermal",
+      "de": "Hygrothermisch",
       "fr": "Hygrothermique"
     }
   },
@@ -55,6 +58,10 @@
     },
     "description": {
       "@id": "dct:description",
+      "@container": "@language"
+    },
+    "license": {
+      "@id": "dct:license",
       "@container": "@language"
     },
     "issued": {

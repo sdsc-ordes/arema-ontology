@@ -2,15 +2,18 @@
   "id": "https://ontology.atlas-regenmat.ch/ReactiontofireclassDINEN135011",
   "type": "Concept",
   "prefLabel": {
-    "de": "Brandverhaltensklasse (EN 13501-1)",
     "en": "Reaction to fire class (DIN EN 13501-1)",
-    "fr": "Classe de réaction au feu"
+    "de": "Brandverhaltensklasse (EN 13501-1)",
+    "fr": "Classe de réaction au feu (EN 13501-1)"
+  },
+  "definition": {
+    "en": "Characteristic describing the reaction to fire"
   },
   "broader": {
     "id": "https://ontology.atlas-regenmat.ch/Fireresistance",
     "prefLabel": {
-      "de": "Brandverhalten",
       "en": "Fire resistance",
+      "de": "Brandverhalten",
       "fr": "Résistance au feu"
     }
   },
@@ -52,6 +55,10 @@
     },
     "description": {
       "@id": "dct:description",
+      "@container": "@language"
+    },
+    "license": {
+      "@id": "dct:license",
       "@container": "@language"
     },
     "issued": {

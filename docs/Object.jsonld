@@ -2,8 +2,8 @@
   "id": "https://ontology.atlas-regenmat.ch/Object",
   "type": "Concept",
   "prefLabel": {
-    "de": "Objekt",
     "en": "Object",
+    "de": "Objekt",
     "fr": "Objet"
   },
   "definition": {
@@ -13,40 +13,40 @@
     {
       "id": "https://ontology.atlas-regenmat.ch/Building",
       "prefLabel": {
-        "de": "Gebäude",
         "en": "Building",
+        "de": "Gebäude",
         "fr": "Bâtiments"
       }
     },
     {
       "id": "https://ontology.atlas-regenmat.ch/Professional",
       "prefLabel": {
-        "de": "Fachleute",
         "en": "Professional",
+        "de": "Fachleute",
         "fr": "Professionnels"
       }
     },
     {
       "id": "https://ontology.atlas-regenmat.ch/BuildingMaterial",
       "prefLabel": {
-        "de": "Baustoff",
         "en": "Building Material",
+        "de": "Baustoff",
         "fr": "Matériaux de Construction"
       }
     },
     {
       "id": "https://ontology.atlas-regenmat.ch/NaturalResource",
       "prefLabel": {
-        "de": "Ressourcen",
         "en": "Resource",
+        "de": "Ressourcen",
         "fr": "Ressources"
       }
     },
     {
       "id": "https://ontology.atlas-regenmat.ch/Construction",
       "prefLabel": {
-        "de": "Bauwerk",
         "en": "Construction",
+        "de": "Bauwerk",
         "fr": "Construction"
       }
     }
@@ -94,6 +94,10 @@
     },
     "description": {
       "@id": "dct:description",
+      "@container": "@language"
+    },
+    "license": {
+      "@id": "dct:license",
       "@container": "@language"
     },
     "issued": {

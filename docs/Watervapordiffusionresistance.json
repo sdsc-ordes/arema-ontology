@@ -2,15 +2,18 @@
   "id": "https://ontology.atlas-regenmat.ch/Watervapordiffusionresistance",
   "type": "Concept",
   "prefLabel": {
-    "de": "Wasserdampfdiffusionswiderstand",
     "en": "Water vapor diffusion resistance",
+    "de": "Wasserdampfdiffusionswiderstand",
     "fr": "Résistance à la diffusion de vapeur d'eau"
+  },
+  "definition": {
+    "en": "Characteristic describing the water vapor capacity"
   },
   "broader": {
     "id": "https://ontology.atlas-regenmat.ch/Hygrothermal",
     "prefLabel": {
-      "de": "Hygrothermisch",
       "en": "Hygrothermal",
+      "de": "Hygrothermisch",
       "fr": "Hygrothermique"
     }
   },
@@ -52,6 +55,10 @@
     },
     "description": {
       "@id": "dct:description",
+      "@container": "@language"
+    },
+    "license": {
+      "@id": "dct:license",
       "@container": "@language"
     },
     "issued": {

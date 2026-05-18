@@ -2,27 +2,27 @@
   "id": "https://ontology.atlas-regenmat.ch/Other",
   "type": "Concept",
   "prefLabel": {
-    "de": "Andere",
     "en": "Other",
+    "de": "Andere",
     "fr": "Autre"
   },
   "definition": {
-    "en": "Other concepts not fitting into the main categories of the AREMA Ontology."
+    "en": "Elements other than structure, finishing or envelope"
   },
   "narrower": [
     {
       "id": "https://ontology.atlas-regenmat.ch/TechnicalEquipement",
       "prefLabel": {
-        "de": "Technik",
-        "en": "Technical Equipement"
+        "en": "Technical Equipement",
+        "de": "Technik"
       }
     }
   ],
   "broader": {
     "id": "https://ontology.atlas-regenmat.ch/Construction",
     "prefLabel": {
-      "de": "Bauwerk",
       "en": "Construction",
+      "de": "Bauwerk",
       "fr": "Construction"
     }
   },
@@ -64,6 +64,10 @@
     },
     "description": {
       "@id": "dct:description",
+      "@container": "@language"
+    },
+    "license": {
+      "@id": "dct:license",
       "@container": "@language"
     },
     "issued": {

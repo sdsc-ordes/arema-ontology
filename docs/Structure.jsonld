@@ -2,8 +2,8 @@
   "id": "https://ontology.atlas-regenmat.ch/Structure",
   "type": "Concept",
   "prefLabel": {
-    "de": "Struktur",
     "en": "Structure",
+    "de": "Struktur",
     "fr": "Structure"
   },
   "definition": {
@@ -13,80 +13,80 @@
     {
       "id": "https://ontology.atlas-regenmat.ch/Balcony",
       "prefLabel": {
-        "de": "Balkon",
-        "en": "Balcony"
+        "en": "Balcony",
+        "de": "Balkon"
       }
     },
     {
       "id": "https://ontology.atlas-regenmat.ch/Ceiling",
       "prefLabel": {
-        "de": "Decke",
-        "en": "Ceiling"
+        "en": "Ceiling",
+        "de": "Decke"
       }
     },
     {
       "id": "https://ontology.atlas-regenmat.ch/Column",
       "prefLabel": {
-        "de": "Stütze",
-        "en": "Column"
+        "en": "Column",
+        "de": "Stütze"
       }
     },
     {
       "id": "https://ontology.atlas-regenmat.ch/ExteriorWallAboveGround",
       "prefLabel": {
-        "de": "Aussenwand Über Terrain",
-        "en": "Exterior Wall Above Ground"
+        "en": "Exterior Wall Above Ground",
+        "de": "Aussenwand Über Terrain"
       }
     },
     {
       "id": "https://ontology.atlas-regenmat.ch/ExteriorWallUnderGround",
       "prefLabel": {
-        "de": "Aussenwand Unter Terrain",
-        "en": "Exterior Wall Under Ground"
+        "en": "Exterior Wall Under Ground",
+        "de": "Aussenwand Unter Terrain"
       }
     },
     {
       "id": "https://ontology.atlas-regenmat.ch/FloorSlabGroundFloor",
       "prefLabel": {
-        "de": "Bodenplatte EG",
         "en": "Floor Slab Ground Floor",
+        "de": "Bodenplatte EG",
         "fr": "Dalle Rez-de-chaussée"
       }
     },
     {
       "id": "https://ontology.atlas-regenmat.ch/Foundation",
       "prefLabel": {
-        "de": "Fundament",
-        "en": "Foundation"
+        "en": "Foundation",
+        "de": "Fundament"
       }
     },
     {
       "id": "https://ontology.atlas-regenmat.ch/InteriorWall",
       "prefLabel": {
-        "de": "Innenwand",
-        "en": "Interior Wall"
+        "en": "Interior Wall",
+        "de": "Innenwand"
       }
     },
     {
       "id": "https://ontology.atlas-regenmat.ch/Roof",
       "prefLabel": {
-        "de": "Dach",
-        "en": "Roof"
+        "en": "Roof",
+        "de": "Dach"
       }
     },
     {
       "id": "https://ontology.atlas-regenmat.ch/Stair",
       "prefLabel": {
-        "de": "Treppe",
-        "en": "Stair"
+        "en": "Stair",
+        "de": "Treppe"
       }
     }
   ],
   "broader": {
     "id": "https://ontology.atlas-regenmat.ch/Construction",
     "prefLabel": {
-      "de": "Bauwerk",
       "en": "Construction",
+      "de": "Bauwerk",
       "fr": "Construction"
     }
   },
@@ -128,6 +128,10 @@
     },
     "description": {
       "@id": "dct:description",
+      "@container": "@language"
+    },
+    "license": {
+      "@id": "dct:license",
       "@container": "@language"
     },
     "issued": {

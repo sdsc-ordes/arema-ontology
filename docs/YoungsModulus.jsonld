@@ -2,15 +2,18 @@
   "id": "https://ontology.atlas-regenmat.ch/YoungsModulus",
   "type": "Concept",
   "prefLabel": {
-    "de": "E-Modul",
     "en": "Young's Modulus",
+    "de": "E-Modul",
     "fr": "Module d'élasticité"
+  },
+  "definition": {
+    "en": "Elasticity characteristic"
   },
   "broader": {
     "id": "https://ontology.atlas-regenmat.ch/Mechanical",
     "prefLabel": {
-      "de": "Mechanisch",
       "en": "Mechanical",
+      "de": "Mechanisch",
       "fr": "Mecanique"
     }
   },
@@ -55,6 +58,10 @@
     },
     "description": {
       "@id": "dct:description",
+      "@container": "@language"
+    },
+    "license": {
+      "@id": "dct:license",
       "@container": "@language"
     },
     "issued": {

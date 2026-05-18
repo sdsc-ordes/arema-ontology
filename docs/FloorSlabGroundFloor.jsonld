@@ -2,8 +2,8 @@
   "id": "https://ontology.atlas-regenmat.ch/FloorSlabGroundFloor",
   "type": "Concept",
   "prefLabel": {
-    "de": "Bodenplatte EG",
     "en": "Floor Slab Ground Floor",
+    "de": "Bodenplatte EG",
     "fr": "Dalle Rez-de-chaussée"
   },
   "definition": {
@@ -12,8 +12,8 @@
   "broader": {
     "id": "https://ontology.atlas-regenmat.ch/Structure",
     "prefLabel": {
-      "de": "Struktur",
       "en": "Structure",
+      "de": "Struktur",
       "fr": "Structure"
     }
   },
@@ -55,6 +55,10 @@
     },
     "description": {
       "@id": "dct:description",
+      "@container": "@language"
+    },
+    "license": {
+      "@id": "dct:license",
       "@container": "@language"
     },
     "issued": {

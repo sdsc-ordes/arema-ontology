@@ -2,15 +2,18 @@
   "id": "https://ontology.atlas-regenmat.ch/Thermalcapacity",
   "type": "Concept",
   "prefLabel": {
-    "de": "Wärmekapazität",
     "en": "Thermal capacity",
+    "de": "Wärmekapazität",
     "fr": "Capacité thermique"
+  },
+  "definition": {
+    "en": "Amount of energy that can be stored in a material"
   },
   "broader": {
     "id": "https://ontology.atlas-regenmat.ch/Hygrothermal",
     "prefLabel": {
-      "de": "Hygrothermisch",
       "en": "Hygrothermal",
+      "de": "Hygrothermisch",
       "fr": "Hygrothermique"
     }
   },
@@ -25,7 +28,7 @@
     }
   ],
   "unit": [
-    "J(kg*K)"
+    "J/(kg*K)"
   ],
   "@context": {
     "@version": 1.1,
@@ -55,6 +58,10 @@
     },
     "description": {
       "@id": "dct:description",
+      "@container": "@language"
+    },
+    "license": {
+      "@id": "dct:license",
       "@container": "@language"
     },
     "issued": {

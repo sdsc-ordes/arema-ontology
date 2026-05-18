@@ -2,8 +2,8 @@
   "id": "https://ontology.atlas-regenmat.ch/SingleFamilyHouse",
   "type": "Concept",
   "prefLabel": {
-    "de": "Einfamilienhaus",
     "en": "Single Family House",
+    "de": "Einfamilienhaus",
     "fr": "Maison Individuelle"
   },
   "definition": {
@@ -12,8 +12,8 @@
   "broader": {
     "id": "https://ontology.atlas-regenmat.ch/Building",
     "prefLabel": {
-      "de": "Gebäude",
       "en": "Building",
+      "de": "Gebäude",
       "fr": "Bâtiments"
     }
   },
@@ -55,6 +55,10 @@
     },
     "description": {
       "@id": "dct:description",
+      "@container": "@language"
+    },
+    "license": {
+      "@id": "dct:license",
       "@container": "@language"
     },
     "issued": {

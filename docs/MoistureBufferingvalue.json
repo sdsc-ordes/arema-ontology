@@ -2,15 +2,18 @@
   "id": "https://ontology.atlas-regenmat.ch/MoistureBufferingvalue",
   "type": "Concept",
   "prefLabel": {
-    "de": "Feuchtepufferwert",
     "en": "Moisture Buffering value",
+    "de": "Feuchtepufferwert",
     "fr": "Moisture Buffering value"
+  },
+  "definition": {
+    "en": "Characteristic describing the moiture buffering capacity"
   },
   "broader": {
     "id": "https://ontology.atlas-regenmat.ch/Hygrothermal",
     "prefLabel": {
-      "de": "Hygrothermisch",
       "en": "Hygrothermal",
+      "de": "Hygrothermisch",
       "fr": "Hygrothermique"
     }
   },
@@ -55,6 +58,10 @@
     },
     "description": {
       "@id": "dct:description",
+      "@container": "@language"
+    },
+    "license": {
+      "@id": "dct:license",
       "@container": "@language"
     },
     "issued": {

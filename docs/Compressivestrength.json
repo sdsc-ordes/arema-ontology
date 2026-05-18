@@ -2,15 +2,18 @@
   "id": "https://ontology.atlas-regenmat.ch/Compressivestrength",
   "type": "Concept",
   "prefLabel": {
-    "de": "Druckfestigkeit",
     "en": "Compressive strength",
+    "de": "Druckfestigkeit",
     "fr": "Résistance à la compression"
+  },
+  "definition": {
+    "en": "Compressive stress at material failure"
   },
   "broader": {
     "id": "https://ontology.atlas-regenmat.ch/Mechanical",
     "prefLabel": {
-      "de": "Mechanisch",
       "en": "Mechanical",
+      "de": "Mechanisch",
       "fr": "Mecanique"
     }
   },
@@ -55,6 +58,10 @@
     },
     "description": {
       "@id": "dct:description",
+      "@container": "@language"
+    },
+    "license": {
+      "@id": "dct:license",
       "@container": "@language"
     },
     "issued": {

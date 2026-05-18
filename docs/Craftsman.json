@@ -2,8 +2,8 @@
   "id": "https://ontology.atlas-regenmat.ch/Craftsman",
   "type": "Concept",
   "prefLabel": {
-    "de": "Handwerker:in",
     "en": "Craftsman",
+    "de": "Handwerker:in",
     "fr": "Artisan/ne"
   },
   "definition": {
@@ -12,8 +12,8 @@
   "broader": {
     "id": "https://ontology.atlas-regenmat.ch/Professional",
     "prefLabel": {
-      "de": "Fachleute",
       "en": "Professional",
+      "de": "Fachleute",
       "fr": "Professionnels"
     }
   },
@@ -55,6 +55,10 @@
     },
     "description": {
       "@id": "dct:description",
+      "@container": "@language"
+    },
+    "license": {
+      "@id": "dct:license",
       "@container": "@language"
     },
     "issued": {

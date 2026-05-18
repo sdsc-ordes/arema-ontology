@@ -2,15 +2,18 @@
   "id": "https://ontology.atlas-regenmat.ch/Porosity",
   "type": "Concept",
   "prefLabel": {
-    "de": "Porosität",
     "en": "Porosity",
+    "de": "Porosität",
     "fr": "Porosité"
+  },
+  "definition": {
+    "en": "Amount of voids in the material"
   },
   "broader": {
     "id": "https://ontology.atlas-regenmat.ch/Hygrothermal",
     "prefLabel": {
-      "de": "Hygrothermisch",
       "en": "Hygrothermal",
+      "de": "Hygrothermisch",
       "fr": "Hygrothermique"
     }
   },
@@ -55,6 +58,10 @@
     },
     "description": {
       "@id": "dct:description",
+      "@container": "@language"
+    },
+    "license": {
+      "@id": "dct:license",
       "@container": "@language"
     },
     "issued": {

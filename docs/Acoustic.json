@@ -2,16 +2,19 @@
   "id": "https://ontology.atlas-regenmat.ch/Acoustic",
   "type": "Concept",
   "prefLabel": {
-    "de": "Akustik",
     "en": "Acoustic",
+    "de": "Akustik",
     "fr": "Acousitque"
+  },
+  "definition": {
+    "en": "Acoustic characteristic  for building materials only"
   },
   "narrower": [
     {
       "id": "https://ontology.atlas-regenmat.ch/Absorptioncoefficientat500Hz",
       "prefLabel": {
-        "de": "Schallabsorptionsgrad (bei 500Hz)",
         "en": "Absorption coefficient (at 500Hz)",
+        "de": "Schallabsorptionsgrad (bei 500Hz)",
         "fr": "Coefficient d'absorption (à 500Hz)"
       }
     }
@@ -19,8 +22,8 @@
   "broader": {
     "id": "https://ontology.atlas-regenmat.ch/Property",
     "prefLabel": {
-      "de": "Eigenschaft",
       "en": "Property",
+      "de": "Eigenschaft",
       "fr": "Propriété"
     }
   },
@@ -62,6 +65,10 @@
     },
     "description": {
       "@id": "dct:description",
+      "@container": "@language"
+    },
+    "license": {
+      "@id": "dct:license",
       "@container": "@language"
     },
     "issued": {

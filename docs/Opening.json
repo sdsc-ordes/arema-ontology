@@ -2,8 +2,8 @@
   "id": "https://ontology.atlas-regenmat.ch/Opening",
   "type": "Concept",
   "prefLabel": {
-    "de": "Offnung",
-    "en": "Opening"
+    "en": "Opening",
+    "de": "Offnung"
   },
   "definition": {
     "en": "Openings in walls such as doors and windows"
@@ -12,23 +12,23 @@
     {
       "id": "https://ontology.atlas-regenmat.ch/Door",
       "prefLabel": {
-        "de": "Tür",
-        "en": "Door"
+        "en": "Door",
+        "de": "Tür"
       }
     },
     {
       "id": "https://ontology.atlas-regenmat.ch/Window",
       "prefLabel": {
-        "de": "Fenster",
-        "en": "Window"
+        "en": "Window",
+        "de": "Fenster"
       }
     }
   ],
   "broader": {
     "id": "https://ontology.atlas-regenmat.ch/Envelope",
     "prefLabel": {
-      "de": "Hülle",
       "en": "Envelope",
+      "de": "Hülle",
       "fr": "Enveloppe"
     }
   },
@@ -70,6 +70,10 @@
     },
     "description": {
       "@id": "dct:description",
+      "@container": "@language"
+    },
+    "license": {
+      "@id": "dct:license",
       "@container": "@language"
     },
     "issued": {

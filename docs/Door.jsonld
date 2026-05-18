@@ -2,8 +2,8 @@
   "id": "https://ontology.atlas-regenmat.ch/Door",
   "type": "Concept",
   "prefLabel": {
-    "de": "Tür",
-    "en": "Door"
+    "en": "Door",
+    "de": "Tür"
   },
   "definition": {
     "en": "A door is a structure to enter or exit a room"
@@ -11,8 +11,8 @@
   "broader": {
     "id": "https://ontology.atlas-regenmat.ch/Opening",
     "prefLabel": {
-      "de": "Offnung",
-      "en": "Opening"
+      "en": "Opening",
+      "de": "Offnung"
     }
   },
   "inScheme": [
@@ -53,6 +53,10 @@
     },
     "description": {
       "@id": "dct:description",
+      "@container": "@language"
+    },
+    "license": {
+      "@id": "dct:license",
       "@container": "@language"
     },
     "issued": {

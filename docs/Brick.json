@@ -2,8 +2,8 @@
   "id": "https://ontology.atlas-regenmat.ch/Brick",
   "type": "Concept",
   "prefLabel": {
-    "de": "Baustein",
     "en": "Brick",
+    "de": "Baustein",
     "fr": "Briques"
   },
   "definition": {
@@ -12,8 +12,8 @@
   "broader": {
     "id": "https://ontology.atlas-regenmat.ch/BuildingMaterial",
     "prefLabel": {
-      "de": "Baustoff",
       "en": "Building Material",
+      "de": "Baustoff",
       "fr": "Matériaux de Construction"
     }
   },
@@ -55,6 +55,10 @@
     },
     "description": {
       "@id": "dct:description",
+      "@container": "@language"
+    },
+    "license": {
+      "@id": "dct:license",
       "@container": "@language"
     },
     "issued": {

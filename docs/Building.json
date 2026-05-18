@@ -2,8 +2,8 @@
   "id": "https://ontology.atlas-regenmat.ch/Building",
   "type": "Concept",
   "prefLabel": {
-    "de": "Gebäude",
     "en": "Building",
+    "de": "Gebäude",
     "fr": "Bâtiments"
   },
   "definition": {
@@ -13,40 +13,40 @@
     {
       "id": "https://ontology.atlas-regenmat.ch/ApartmentBuilding",
       "prefLabel": {
-        "de": "Mehrfamilienhaus",
         "en": "Multi-Storey Housing",
+        "de": "Mehrfamilienhaus",
         "fr": "Immeuble d'Habitation"
       }
     },
     {
       "id": "https://ontology.atlas-regenmat.ch/OfficeBuilding",
       "prefLabel": {
-        "de": "Bürogebäude",
         "en": "Office Building",
+        "de": "Bürogebäude",
         "fr": "Immeuble de Bureaux"
       }
     },
     {
       "id": "https://ontology.atlas-regenmat.ch/PublicBuilding",
       "prefLabel": {
-        "de": "Öffentliches Gebäude",
         "en": "Public Building",
+        "de": "Öffentliches Gebäude",
         "fr": "Bâtiment Public"
       }
     },
     {
       "id": "https://ontology.atlas-regenmat.ch/SimpleStructure",
       "prefLabel": {
-        "de": "Einfache Struktur",
         "en": "Simple Structure",
+        "de": "Einfache Struktur",
         "fr": "Structure Simple"
       }
     },
     {
       "id": "https://ontology.atlas-regenmat.ch/SingleFamilyHouse",
       "prefLabel": {
-        "de": "Einfamilienhaus",
         "en": "Single Family House",
+        "de": "Einfamilienhaus",
         "fr": "Maison Individuelle"
       }
     }
@@ -54,8 +54,8 @@
   "broader": {
     "id": "https://ontology.atlas-regenmat.ch/Object",
     "prefLabel": {
-      "de": "Objekt",
       "en": "Object",
+      "de": "Objekt",
       "fr": "Objet"
     }
   },
@@ -97,6 +97,10 @@
     },
     "description": {
       "@id": "dct:description",
+      "@container": "@language"
+    },
+    "license": {
+      "@id": "dct:license",
       "@container": "@language"
     },
     "issued": {

@@ -2,48 +2,48 @@
   "id": "https://ontology.atlas-regenmat.ch/Property",
   "type": "Concept",
   "prefLabel": {
-    "de": "Eigenschaft",
     "en": "Property",
+    "de": "Eigenschaft",
     "fr": "Propriété"
   },
   "narrower": [
     {
       "id": "https://ontology.atlas-regenmat.ch/Acoustic",
       "prefLabel": {
-        "de": "Akustik",
         "en": "Acoustic",
+        "de": "Akustik",
         "fr": "Acousitque"
       }
     },
     {
       "id": "https://ontology.atlas-regenmat.ch/Mechanical",
       "prefLabel": {
-        "de": "Mechanisch",
         "en": "Mechanical",
+        "de": "Mechanisch",
         "fr": "Mecanique"
       }
     },
     {
       "id": "https://ontology.atlas-regenmat.ch/Hygrothermal",
       "prefLabel": {
-        "de": "Hygrothermisch",
         "en": "Hygrothermal",
+        "de": "Hygrothermisch",
         "fr": "Hygrothermique"
       }
     },
     {
       "id": "https://ontology.atlas-regenmat.ch/OtherProperty",
       "prefLabel": {
-        "de": "Andere",
         "en": "Other Property",
+        "de": "Andere",
         "fr": "Autre"
       }
     },
     {
       "id": "https://ontology.atlas-regenmat.ch/Fireresistance",
       "prefLabel": {
-        "de": "Brandverhalten",
         "en": "Fire resistance",
+        "de": "Brandverhalten",
         "fr": "Résistance au feu"
       }
     }
@@ -91,6 +91,10 @@
     },
     "description": {
       "@id": "dct:description",
+      "@container": "@language"
+    },
+    "license": {
+      "@id": "dct:license",
       "@container": "@language"
     },
     "issued": {

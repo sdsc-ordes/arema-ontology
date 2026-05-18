@@ -2,8 +2,8 @@
   "id": "https://ontology.atlas-regenmat.ch/Bulk",
   "type": "Concept",
   "prefLabel": {
-    "de": "Schüttgut",
     "en": "Bulk",
+    "de": "Schüttgut",
     "fr": "Vrac"
   },
   "definition": {
@@ -12,8 +12,8 @@
   "broader": {
     "id": "https://ontology.atlas-regenmat.ch/BuildingMaterial",
     "prefLabel": {
-      "de": "Baustoff",
       "en": "Building Material",
+      "de": "Baustoff",
       "fr": "Matériaux de Construction"
     }
   },
@@ -55,6 +55,10 @@
     },
     "description": {
       "@id": "dct:description",
+      "@container": "@language"
+    },
+    "license": {
+      "@id": "dct:license",
       "@container": "@language"
     },
     "issued": {

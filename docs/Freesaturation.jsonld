@@ -2,15 +2,18 @@
   "id": "https://ontology.atlas-regenmat.ch/Freesaturation",
   "type": "Concept",
   "prefLabel": {
-    "de": "Freie Wassersättigung",
     "en": "Free saturation",
+    "de": "Freie Wassersättigung",
     "fr": "Saturation libre"
+  },
+  "definition": {
+    "en": "Max amount of water a material can absorb"
   },
   "broader": {
     "id": "https://ontology.atlas-regenmat.ch/Hygrothermal",
     "prefLabel": {
-      "de": "Hygrothermisch",
       "en": "Hygrothermal",
+      "de": "Hygrothermisch",
       "fr": "Hygrothermique"
     }
   },
@@ -55,6 +58,10 @@
     },
     "description": {
       "@id": "dct:description",
+      "@container": "@language"
+    },
+    "license": {
+      "@id": "dct:license",
       "@container": "@language"
     },
     "issued": {

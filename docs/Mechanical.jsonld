@@ -2,40 +2,43 @@
   "id": "https://ontology.atlas-regenmat.ch/Mechanical",
   "type": "Concept",
   "prefLabel": {
-    "de": "Mechanisch",
     "en": "Mechanical",
+    "de": "Mechanisch",
     "fr": "Mecanique"
+  },
+  "definition": {
+    "en": "Characteristics generally related to the structural aspect"
   },
   "narrower": [
     {
       "id": "https://ontology.atlas-regenmat.ch/Compressivestrength",
       "prefLabel": {
-        "de": "Druckfestigkeit",
         "en": "Compressive strength",
+        "de": "Druckfestigkeit",
         "fr": "Résistance à la compression"
       }
     },
     {
       "id": "https://ontology.atlas-regenmat.ch/Density",
       "prefLabel": {
-        "de": "Dichte",
         "en": "Density",
+        "de": "Dichte",
         "fr": "Masse volumique"
       }
     },
     {
       "id": "https://ontology.atlas-regenmat.ch/Tensilestrength",
       "prefLabel": {
-        "de": "Zugfestigkeit",
         "en": "Tensile strength",
+        "de": "Zugfestigkeit",
         "fr": "Résistance à la traction"
       }
     },
     {
       "id": "https://ontology.atlas-regenmat.ch/YoungsModulus",
       "prefLabel": {
-        "de": "E-Modul",
         "en": "Young's Modulus",
+        "de": "E-Modul",
         "fr": "Module d'élasticité"
       }
     }
@@ -43,8 +46,8 @@
   "broader": {
     "id": "https://ontology.atlas-regenmat.ch/Property",
     "prefLabel": {
-      "de": "Eigenschaft",
       "en": "Property",
+      "de": "Eigenschaft",
       "fr": "Propriété"
     }
   },
@@ -86,6 +89,10 @@
     },
     "description": {
       "@id": "dct:description",
+      "@container": "@language"
+    },
+    "license": {
+      "@id": "dct:license",
       "@container": "@language"
     },
     "issued": {

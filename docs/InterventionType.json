@@ -2,15 +2,18 @@
   "id": "https://ontology.atlas-regenmat.ch/InterventionType",
   "type": "Concept",
   "prefLabel": {
-    "de": "Art der Massnahme",
     "en": "Intervention Type",
+    "de": "Art der Massnahme",
     "fr": "Type d'Intervention"
+  },
+  "definition": {
+    "en": "New or Renovation"
   },
   "broader": {
     "id": "https://ontology.atlas-regenmat.ch/OtherProperty",
     "prefLabel": {
-      "de": "Andere",
       "en": "Other Property",
+      "de": "Andere",
       "fr": "Autre"
     }
   },
@@ -52,6 +55,10 @@
     },
     "description": {
       "@id": "dct:description",
+      "@container": "@language"
+    },
+    "license": {
+      "@id": "dct:license",
       "@container": "@language"
     },
     "issued": {

@@ -2,8 +2,8 @@
   "id": "https://ontology.atlas-regenmat.ch/Ceiling",
   "type": "Concept",
   "prefLabel": {
-    "de": "Decke",
-    "en": "Ceiling"
+    "en": "Ceiling",
+    "de": "Decke"
   },
   "definition": {
     "en": "Separation between storeys"
@@ -11,8 +11,8 @@
   "broader": {
     "id": "https://ontology.atlas-regenmat.ch/Structure",
     "prefLabel": {
-      "de": "Struktur",
       "en": "Structure",
+      "de": "Struktur",
       "fr": "Structure"
     }
   },
@@ -54,6 +54,10 @@
     },
     "description": {
       "@id": "dct:description",
+      "@container": "@language"
+    },
+    "license": {
+      "@id": "dct:license",
       "@container": "@language"
     },
     "issued": {

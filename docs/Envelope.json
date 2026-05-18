@@ -2,8 +2,8 @@
   "id": "https://ontology.atlas-regenmat.ch/Envelope",
   "type": "Concept",
   "prefLabel": {
-    "de": "Hülle",
     "en": "Envelope",
+    "de": "Hülle",
     "fr": "Enveloppe"
   },
   "definition": {
@@ -13,51 +13,51 @@
     {
       "id": "https://ontology.atlas-regenmat.ch/Opening",
       "prefLabel": {
-        "de": "Offnung",
-        "en": "Opening"
+        "en": "Opening",
+        "de": "Offnung"
       }
     },
     {
       "id": "https://ontology.atlas-regenmat.ch/ExteriorThermalInsulation",
       "prefLabel": {
-        "de": "Aussenwärmedämmung",
-        "en": "Ext. Thermal Insulation"
+        "en": "Ext. Thermal Insulation",
+        "de": "Aussenwärmedämmung"
       }
     },
     {
       "id": "https://ontology.atlas-regenmat.ch/ExteriorWallFinishingAboveGround",
       "prefLabel": {
-        "de": "Fassadenbekleidung",
-        "en": "Ext. Wall Finishing Above Ground"
+        "en": "Ext. Wall Finishing Above Ground",
+        "de": "Fassadenbekleidung"
       }
     },
     {
       "id": "https://ontology.atlas-regenmat.ch/ExteriorWallFinishingBasement",
       "prefLabel": {
-        "de": "Äussere Beschichtung Unter Terrain",
-        "en": "Ext. Wall Finishing Under Ground"
+        "en": "Ext. Wall Finishing Under Ground",
+        "de": "Äussere Beschichtung Unter Terrain"
       }
     },
     {
       "id": "https://ontology.atlas-regenmat.ch/RoofCovering",
       "prefLabel": {
-        "de": "Bedachung",
-        "en": "Roof Covering"
+        "en": "Roof Covering",
+        "de": "Bedachung"
       }
     },
     {
       "id": "https://ontology.atlas-regenmat.ch/SunWeatherProtection",
       "prefLabel": {
-        "de": "Sonnen- & Wetterschutz",
-        "en": "Sun & Weather Protection"
+        "en": "Sun & Weather Protection",
+        "de": "Sonnen- & Wetterschutz"
       }
     }
   ],
   "broader": {
     "id": "https://ontology.atlas-regenmat.ch/Construction",
     "prefLabel": {
-      "de": "Bauwerk",
       "en": "Construction",
+      "de": "Bauwerk",
       "fr": "Construction"
     }
   },
@@ -99,6 +99,10 @@
     },
     "description": {
       "@id": "dct:description",
+      "@container": "@language"
+    },
+    "license": {
+      "@id": "dct:license",
       "@container": "@language"
     },
     "issued": {

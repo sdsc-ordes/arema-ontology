@@ -2,15 +2,18 @@
   "id": "https://ontology.atlas-regenmat.ch/Effusivity",
   "type": "Concept",
   "prefLabel": {
-    "de": "Effusivität",
     "en": "Effusivity",
+    "de": "Effusivität",
     "fr": "Effusivité"
+  },
+  "definition": {
+    "en": "Characteristic that describes the felt temperature of a material"
   },
   "broader": {
     "id": "https://ontology.atlas-regenmat.ch/Hygrothermal",
     "prefLabel": {
-      "de": "Hygrothermisch",
       "en": "Hygrothermal",
+      "de": "Hygrothermisch",
       "fr": "Hygrothermique"
     }
   },
@@ -55,6 +58,10 @@
     },
     "description": {
       "@id": "dct:description",
+      "@container": "@language"
+    },
+    "license": {
+      "@id": "dct:license",
       "@container": "@language"
     },
     "issued": {
