@@ -19,3 +19,6 @@ build/
 venv/
 
 src/ontology/AREMA-ontology.ttl
+
+flake.nix
+flake.lock
