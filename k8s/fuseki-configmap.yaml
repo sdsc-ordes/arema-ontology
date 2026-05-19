@@ -28,10 +28,10 @@ data:
             fuseki:operation fuseki:update ;
             fuseki:name "update"
         ] ;
-        fuseki:endpoint [
-            fuseki:operation fuseki:gsp-r ;
-            fuseki:name "data"
-        ] ;
+        fuseki:endpoint [                           
+            fuseki:operation fuseki:gsp-r ;     
+            fuseki:name "data-read"        
+        ] ; 
         fuseki:endpoint [
             fuseki:operation fuseki:gsp-rw ;
             fuseki:name "data"
@@ -40,5 +40,4 @@ data:
 
     ## AREMA TDB2 dataset
     :arema_dataset rdf:type tdb2:DatasetTDB2 ;
-        tdb2:location "/fuseki/databases/arema" ;
-        ja:context [ ja:cxtName "tdb:unionDefaultGraph" ; ja:cxtValue true ] .
+        tdb2:location "/fuseki/databases/tdb/arema" .
