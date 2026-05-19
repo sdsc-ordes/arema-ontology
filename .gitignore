@@ -3,6 +3,8 @@ external/skohub-vocabs
 /tools/fuseki/data/
 service_account.json
 
+k8s/secrets.yaml
+
 # Generated ontology files (only stored as release assets)
 src/ontology/
 
@@ -20,5 +22,3 @@ venv/
 
 src/ontology/AREMA-ontology.ttl
 
-flake.nix
-flake.lock
