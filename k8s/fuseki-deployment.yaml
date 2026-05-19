@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fuseki
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: fuseki
+  strategy:
+    type: Recreate  # Recreate required: RWO PVC can only attach to one pod at a time
+  template:
+    metadata:
+      labels:
+        app: fuseki
+    spec:
+      containers:
+        - name: fuseki
+          image: stain/jena-fuseki:5.1.0
+          args:
+            - /jena-fuseki/fuseki-server
+            - --config=/fuseki/config.ttl
+          ports:
+            - containerPort: 3030
+          env:
+            - name: ADMIN_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: arema-secrets
+                  key: fuseki-password
+          volumeMounts:
+            - name: config
+              mountPath: /fuseki/config.ttl
+              subPath: config.ttl
+            - name: data
+              mountPath: /fuseki/databases
+      volumes:
+        - name: config
+          configMap:
+            name: fuseki-config
+        - name: data
+          persistentVolumeClaim:
+            claimName: fuseki-data

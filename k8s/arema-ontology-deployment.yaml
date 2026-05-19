@@ -1,0 +1,58 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: arema-ontology
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: arema-ontology
+  template:
+    metadata:
+      labels:
+        app: arema-ontology
+    spec:
+      containers:
+        - name: arema-ontology
+          # Replace with your registry image, e.g. ghcr.io/sdsc-ordes/arema-ontology:latest
+          image: arema-ontology:latest
+          env:
+            # Fuseki is reachable via the fuseki Service (not localhost)
+            - name: FUSEKI_URL
+              value: http://fuseki:3030/arema/data
+            - name: FUSEKI_UPDATE_URL
+              value: http://fuseki:3030/arema/data
+            - name: FUSEKI_USERNAME
+              value: admin
+            - name: FUSEKI_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: arema-secrets
+                  key: fuseki-password
+            - name: GITHUB_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: arema-secrets
+                  key: github-token
+            - name: GITHUB_REPOSITORY
+              value: sdsc-ordes/arema-ontology
+            - name: GOOGLE_SHEET_ID
+              value: "1RL6Y120_H9-yD8x52eZO44S2iLQpLoZHitcExHsPfPs"
+            - name: GOOGLE_SHEET_OBJECTS_GID
+              value: "1120751986"
+            - name: GOOGLE_SHEET_PROPERTIES_GID
+              value: "373147482"
+            - name: SERVICE_ACCOUNT_KEY
+              value: /app/service_account.json
+          volumeMounts:
+            - name: service-account
+              mountPath: /app/service_account.json
+              subPath: service_account.json
+              readOnly: true
+      volumes:
+        - name: service-account
+          secret:
+            secretName: arema-secrets
+            items:
+              - key: service-account-json
+                path: service_account.json
