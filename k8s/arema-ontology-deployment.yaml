@@ -15,7 +15,7 @@ spec:
       containers:
         - name: arema-ontology
           # Replace with your registry image, e.g. ghcr.io/sdsc-ordes/arema-ontology:latest
-          image: arema-ontology:latest
+          image: ghcr.io/sdsc-ordes/arema-ontology:latest 
           env:
             # Fuseki is reachable via the fuseki Service (not localhost)
             - name: FUSEKI_URL

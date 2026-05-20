@@ -165,6 +165,59 @@ curl http://localhost:8000/
 curl http://localhost:3030/$/ping
 ```
 
+## ☸️ Kubernetes Deployment
+
+### Prerequisites
+- A running Kubernetes cluster with `kubectl` configured
+- The `arema-ontology` image available in your cluster's registry (update `image:` in `k8s/arema-ontology-deployment.yaml` if needed)
+- A `service_account.json` Google service account key file
+
+### 1. Create the Secret
+
+Do not use `k8s/secrets.yaml` directly with real values committed to git. Instead, create the secret imperatively:
+
+```bash
+kubectl create secret generic arema-secrets \
+  --from-literal=fuseki-password=<PASSWORD> \
+  --from-literal=github-token=<TOKEN> \
+  --from-file=service-account-json=service_account.json
+```
+
+### 2. Apply All Resources
+
+```bash
+kubectl apply -f k8s/fuseki-configmap.yaml
+kubectl apply -f k8s/fuseki-pvc.yaml
+kubectl apply -f k8s/fuseki-service.yaml
+kubectl apply -f k8s/fuseki-deployment.yaml
+kubectl apply -f k8s/arema-ontology-deployment.yaml
+```
+
+### 3. Verify Everything is Running
+
+```bash
+kubectl get pods
+kubectl get services
+kubectl get pvc
+```
+
+### 4. Port Forwarding (local access)
+
+```bash
+kubectl port-forward service/fuseki 3030:3030
+```
+
+Fuseki is then accessible at `http://localhost:3030`.
+
+### Updating Configuration
+
+If you change `k8s/fuseki-configmap.yaml`, apply and restart:
+
+```bash
+kubectl apply -f k8s/fuseki-configmap.yaml
+kubectl rollout restart deployment/fuseki
+```
+
 ## 📖 Documentation
 
 - **[API_README.md](API_README.md)** - Detailed API documentation and usage examples
